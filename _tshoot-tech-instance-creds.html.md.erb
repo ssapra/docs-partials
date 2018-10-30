@@ -1,0 +1,12 @@
+To retrieve the admin and read-only admin credentials for a service instance, perform the following steps:
+
+<ol>
+<li><a href="#instance-deployment">Identify the service deployment by GUID</a>.</li>
+<li><a href="https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#prepare">Log into BOSH</a>.</li>
+<li><a href="#access-instance">Download the manifest for the service instance</a> and add the GUID if using the BOSH CLI v1. 
+<p class="note">Skip this step if you are using the BOSH CLI v2. You cannot download the manifest with the BOSH CLI v2. Open it in a text editor instead.</p></li>
+<li>Look in the manifest for the <code>admin</code> and <code>roadmin</code> credentials.</li>
+</ol>
+
+<!-- 
+Note: As of MySQL for PCF v2.3, this partial no longer populates the Troubleshooting MySQL for PCF topic because the procedure for retrieving credentials has changed. The procedure is now in the text of the topic itself. -->
