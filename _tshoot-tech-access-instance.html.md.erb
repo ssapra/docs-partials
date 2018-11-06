@@ -1,23 +1,23 @@
 1. To target an individual service instance deployment, retrieve the GUID of your
-service instance with the cf CLI command:
+service instance with the following cf CLI command:
 
 	```
 	cf service MY-SERVICE --guid
 	```
 
-1. View VMs in the deployment by running the following command:
+1. To view VMs in the deployment, run the following command:
 
 	```
 	bosh -d DEPLOYMENT-NAME instances
 	```
 
-1. SSH onto a VM by running the following command:
+1.To SSH into a VM, run the following command:
 
 	```
 	bosh -d service-instance_GUID ssh
 	```
 
-1. Download the instance logs by running the following command:
+1. To download the instance logs, run the following command:
 
 	```
 	bosh -d service-instance_GUID logs
