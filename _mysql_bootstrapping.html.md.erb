@@ -20,24 +20,24 @@ To check whether your cluster has lost quorum, look for the following symptoms:
 ![3 out of 3 nodes are unhealthy.](quorum-lost.png)
 - All responsive nodes report the value of `wsrep_cluster_status` as `non-Primary`:
 
-  <pre class="terminal">
-  mysql> SHOW STATUS LIKE 'wsrep_cluster_status';
-  +----------------------+-------------+
-  | Variable_name        | Value       |
-  +----------------------+-------------+
-  | wsrep_cluster_status | non-Primary |
-  +----------------------+-------------+
-  </pre>
+    <pre class="terminal">
+    mysql> SHOW STATUS LIKE 'wsrep_cluster_status';
+    +----------------------+-------------+
+    | Variable_name        | Value       |
+    +----------------------+-------------+
+    | wsrep_cluster_status | non-Primary |
+    +----------------------+-------------+
+    </pre>
 
 <!-- Is it reponsive or unresponsive? -->
 
 - All unresponsive nodes respond with `ERROR 1047` when using most statement types
 in the MySQL client:
 
-  <pre class="terminal">
-  mysql> select * from mysql.user;
-  ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use
-  </pre>
+    <pre class="terminal">
+    mysql> select * from mysql.user;
+    ERROR 1047 (08S01) at line 1: WSREP has not yet prepared node for application use
+    </pre>
 
 For more information about checking the state of your cluster, see
 [Check Cluster State](https://docs.pivotal.io/p-mysql/1-10/troubleshooting.html#check-state).
@@ -107,18 +107,22 @@ In this scenario, the VMs are running, but the cluster has been disrupted.
 To bootstrap in this scenario, follow these steps:
 
 
-<!-- Ask a person about this
+<!-- Ask a person about this. Is this step necessary? -->
 
 
-1. To select the correct deployment, run the following command:
-
+<!-- 1. To select the correct deployment, run the following command: -->
+<!-- 
     ```
     bosh deployment PATH-TO-DEPLOYMENT-MANIFEST
     ```
+ -->
+ 
 
-    Where `PATH-TO-DEPLOYMENT-MANIFEST` is the path to your deployment
-    manifest. <br><br> -->
+<!-- Where `PATH-TO-DEPLOYMENT-MANIFEST` is the path to your deployment -->
 
+<!-- manifest. -->
+
+ 
 1. To run the boostrap errand, run the following command:
 
     ```
@@ -189,7 +193,9 @@ The procedure below allows you to do the following:
 BOSH to deploy the software to each instance even if the instance is failing.
 
 To recreate your missing VMs, do the following:
+
 <!-- node or bosh vm -->
+
 1. To SSH into the BOSH VMs, follow the procedure in
    [BOSH SSH](https://docs.pivotal.io/pivotalcf/2-3/customizing/trouble-advanced.html#bosh-ssh).
 
@@ -369,7 +375,7 @@ Do the procedures in the sections below to manually bootstrap your cluster.
    and only resort to the manual process if the errand fails to repair the
    cluster.</p>
 
-### <a id="shut-down-mariadb"></a>Shut Down MySQL
+### <a id="shut-down"></a>Shut Down MySQL
 
 Do the following for each node in the cluster:
 
