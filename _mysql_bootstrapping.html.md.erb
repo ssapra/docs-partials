@@ -48,12 +48,12 @@ MySQL for PCF includes a
 [BOSH errand](http://bosh.io/docs/jobs.html#jobs-vs-errands) that automates the manual 
 bootstrapping procedure in the [Bootstrap Manually](#manual-boostrap) section below.
 
-It finds the node with the highest transaction sequence number, and asks it to
-start up by itself (i.e. in bootstrap mode), and then asks the remaining nodes
+It finds the node with the highest transaction sequence number and asks it to
+start up by itself (i.e. in bootstrap mode) and then asks the remaining nodes
 to join the cluster.
 
-In most cases, running the errand recovers your cluster. But certain scenarios
-require additional steps.
+In most cases, running the errand recovers your cluster.
+But, certain scenarios require additional steps.
 
 ### <a id="determine-failure"></a> Determine Type of Cluster Failure
 
@@ -100,7 +100,7 @@ To determine which set of instructions to follow, do the following:
     * If your MySQL instances are in the ` - ` state, continue to
     [Scenario 2](#vms-terminated).
 
-### <a id="cluster-disrupted"></a>Scenario 1: Virtual Machines Running, Cluster Disrupted ##
+### <a id="cluster-disrupted"></a>Scenario 1: VMs Running, Cluster Disrupted ##
 
 In this scenario, the VMs are running, but the cluster has been disrupted.
 
@@ -149,12 +149,12 @@ To bootstrap in this scenario, follow these steps:
     </pre>
 
 1. If the errand fails, run the bootstrap errand command again after a
-few minutes. The bootstrap errand may not work immediately.
+few minutes. The bootstrap errand might not work immediately.
 
 1. If the errand fails after several tries, bootstrap your cluster manually.
 See [Bootstrap Manually](#manual-bootstrap) below.
 
-### <a id="vms-terminated"></a>Scenario 2: Virtual Machines Terminated or Lost ##
+### <a id="vms-terminated"></a>Scenario 2: VMs Terminated or Lost ##
 
 In severe circumstances, such as a power failure, it is possible to lose all your VMs.
 You must recreate them before you can begin recovering the cluster.
@@ -227,7 +227,7 @@ To recreate your missing VMs, do the following:
     + `YOUR-ENV` is the name of your environment.
     + `YOUR-DEPLOYMENT` is the name of your deployment.
 
-    <p class="note"> Expect one of the MySQL VMs to fail. Deploying causes BOSH
+    <p class="note"><strong>Note:</strong> Expect one of the MySQL VMs to fail. Deploying causes BOSH
       to create new VMs and install the software. Forming a cluster is in a
       subsequent step.</p>
 
@@ -280,7 +280,7 @@ the `failing` state, run the following command
 
 #### <a id="run-the-errand"></a>Run the Bootstrap Errand
 
-After you recreate the VMs, all instances now have a `failing` process state, and have the MySQL code.
+After you recreate the VMs, all instances now have a `failing` process state and have the MySQL code.
 You must run the bootstrap errand to recover the cluster.
 
 To bootstrap, do the following:
@@ -313,12 +313,13 @@ To bootstrap, do the following:
       Errand `bootstrap' completed successfully (exit code 0)
       </pre>
 
-1. If the errand fails, run the bootstrap errand command again after a few minutes. The bootstrap errand may not work immediately.
+1. If the errand fails, run the bootstrap errand command again after a few minutes.
+   The bootstrap errand might not work immediately.
 
 1. See that the errand completes successfully in the shell output and continue to
 [Restore the BOSH Configuration](#reset-deployment) below.
     <p class="note"><strong>Note:</strong> After you complete the bootstrap
-      errand, you may still see instances in the <code>failing</code> state.
+      errand, you might still see instances in the <code>failing</code> state.
       Continue to the next section anyway.</p>
 
 #### <a id="reset-deployment"></a>Restore the BOSH Configuration
