@@ -442,7 +442,7 @@ to bootstrap the node:
 1. To update the state file and restart the
 <code>mysqld</code> process on the new bootstrap node, run the following commands:
 
-    <pre><code>echo -n "NEEDS_BOOTSTRAP" > /var/vcap/store/mysql/state.txt
+    <pre><code>echo -n "NEEDS_BOOTSTRAP" > /var/vcap/store/pxc-mysql/state.txt
     monit start galera-init</code></pre>
 
 1. It can take up to ten minutes for <code>monit</code> to start the
