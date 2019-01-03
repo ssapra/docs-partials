@@ -6,7 +6,7 @@ There are several ways to control the provisioning of on-demand service instance
 
 * [Global](#global)
 * [Plan](#plan)
-* [Org](#org) 
+* [Org](#org)
 * [Space](#space)
 
 After you set quotas, you can:
@@ -22,7 +22,7 @@ Each Pivotal Cloud Foundry (PCF) service has a separate service broker.
 A global quota at the service level sets the maximum number of service instances that can be created by a given service broker. If a service has more than one plan, then the number of service instances for all plans combined cannot exceed the global quota for the service.
 
 The operator sets a global quota for each PCF service independently.
-For example, if you have Redis for PCF and RabbitMQ for PCF, you must set a separate global service quota for each of them. 
+For example, if you have Redis for PCF and RabbitMQ for PCF, you must set a separate global service quota for each of them.
 
 When the global quota is reached for a service, no more instances of that service can be created unless the quota is increased, or some instances of that service are deleted.
 
@@ -30,14 +30,14 @@ When the global quota is reached for a service, no more instances of that servic
 
 A service may offer one or more plans.
 You can set a separate quota per plan so that instances of that plan cannot exceed the plan quota.
-For a service with multiple plans, the total number of instances created for all plans combined cannot exceed the [global quota](#global) for the service. 
+For a service with multiple plans, the total number of instances created for all plans combined cannot exceed the [global quota](#global) for the service.
 
 When the plan quota is reached, no more instances of that plan can be created unless the plan quota is increased or some instances of that plan are deleted.
 
 ## <a id="org"></a> Create and Set Org-level Quotas
 
 An org-level quota applies to all PCF services and sets the maximum number of service instances an organization can create within PCF.
-For example, if you set your org-level quota to 100, developers can create up to 100 service instances in that org using any combination of PCF services. 
+For example, if you set your org-level quota to 100, developers can create up to 100 service instances in that org using any combination of PCF services.
 
 When this quota is met, no more service instances of any kind can be created in the org unless the quota is increased or some service instances are deleted.
 
@@ -57,7 +57,7 @@ To create and set an org-level quota, do the following:
 	<br>`ROUTES`---Maximum number of routes allowed for all service instances combined
 	<br>`SERVICE-INSTANCES`---Maximum number of service instances allowed for the org
 
-	<br> For example: 
+	<br> For example:
 	<br>`cf create-quota myquota -m 1024mb -i 16gb -r 30 -s 50 --allow-paid-service-plans`
 
 2. Associate the quota you created above with a specific org by running the following command:
@@ -76,7 +76,7 @@ see [Creating and Modifying Quota Plans](https://docs.pivotal.io/pivotalcf/1-12/
 A space-level service quota applies to all PCF services and sets the maximum number of service instances
 that can be created within a given space in PCF.
 For example, if you set your space-level quota to 100,
-developers can create up to 100 service instances in that space using any combination of PCF services. 
+developers can create up to 100 service instances in that space using any combination of PCF services.
 
 When this quota is met, no more service instances of any kind can be created in the space unless the quota is updated
 or some service instances are deleted.
@@ -105,7 +105,7 @@ To create and set a space-level quota, do the following:
 	cf set-space-quota SPACE-NAME QUOTA-NAME
 	</pre>
 
-	For example: 
+	For example:
 	<br>`cf set-space-quota myspace myspacequota`
 
 For more information on managing space-level quotas,
@@ -113,13 +113,13 @@ see [Creating and Modifying Quota Plans](https://docs.pivotal.io/pivotalcf/1-12/
 
 ## <a id="view"></a> View Current Org and Space-level Quotas
 
-To view **org** quotas, run the following command. 
+To view **org** quotas, run the following command.
 
 ```
 cf org ORG-NAME
 ```
 
-To view **space** quotas, run the following command: 
+To view **space** quotas, run the following command:
 
 ```
 cf space SPACE-NAME
@@ -165,7 +165,7 @@ These metrics are listed below:
 On-demand plans use dedicated VMs, disks, and various other resources from an IaaS, such as AWS.
 To calculate maximum resource cost for plans individually or combined,
 you multiply the quota by the cost of VM and Persistent Disk types selected in the plan configuration(s).
-The specific costs depend on your IaaS. 
+The specific costs depend on your IaaS.
 
 The image below shows an example of the VM type and persistent disk selected, as well as the quota for this plan.
 
@@ -175,7 +175,7 @@ The image below shows an example of the VM type and persistent disk selected, as
 	Although operators can limit on-demand instances with plan quotas and a global quota, as described in the above topics,
         IaaS resource usage still varies based on the number of on-demand instances provisioned.</p>
 
-### Calculate Maximum Resource Cost Per On-Demand Plan 
+### <a id="calculate-per-plan"></a> Calculate Maximum Resource Cost Per On-Demand Plan
 
 To calculate the maximum cost of VMs and persistent disk for each plan, do the following calculation:
 
@@ -190,7 +190,7 @@ Therefore, to calculate the maximum cost of resources for this plan, multiply th
 
 **(15 x cost of micro.cpu VM type) + (15 x cost of 20&nbsp;GB persistent disk)**
 
-### Calculate Maximum Resource Cost for All On-Demand Plans
+### <a id="calculate-all-plans"></a> Calculate Maximum Resource Cost for All On-Demand Plans
 
 To calculate the maximum cost for all plans combined, add together the maximum costs for each plan.
 This assumes that the sum of your individual plan quotas is less than the global quota.
@@ -200,7 +200,7 @@ Here is an example:
 **(plan1 quota x plan1 resource cost) + ( plan2 quota x plan2 resource cost) = max cost for all plans**
 
 
-### Calculate Actual Resource Cost of all On-Demand Plans
+### <a id="calculate-actual"></a> Calculate Actual Resource Cost of all On-Demand Plans
 
 To calculate the current actual resource cost across all your on-demand plans:
 
