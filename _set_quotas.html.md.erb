@@ -34,7 +34,11 @@ For a service with multiple plans, the total number of instances created for all
 
 When the plan quota is reached, no more instances of that plan can be created unless the plan quota is increased or some instances of that plan are deleted.
 
-<p class="note"><strong>Note:</strong> If you leave the plan quota field blank, the plan quota is set to the global quota by default.</p>
+<% if vars.service_name == "Pivotal Cloud Cache" %>
+ <p class="note"><strong>Note:</strong> Plan-level maximum service instances defaults to the global quota.</p>
+<% else %>
+ <p class="note"><strong>Note:</strong> If you leave the plan quota field blank, the plan quota is set to the global quota by default.</p>
+<% end %>
 
 ## <a id="org"></a> Create and Set Org-level Quotas
 
