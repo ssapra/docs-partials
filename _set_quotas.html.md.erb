@@ -30,7 +30,7 @@ When the global quota is reached for a service, no more instances of that servic
 
 A service may offer one or more plans.
 You can set a separate quota per plan so that instances of that plan cannot exceed the plan quota.
-For a service with multiple plans, the total number of instances created for all plans combined cannot exceed the [global quota](#global) for the service.
+For a service with multiple plans, the total number of instances created for all plans combined cannot exceed the [global quota](#global) for the service. If the plan quota field is blank, the plan quota is set to the global quota by default.
 
 When the plan quota is reached, no more instances of that plan can be created unless the plan quota is increased or some instances of that plan are deleted.
 
