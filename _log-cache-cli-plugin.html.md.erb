@@ -4,17 +4,25 @@ Log Cache is enabled by default in Pivotal Application Service (PAS) v2.2 and la
 
 To access metrics for on-demand service instances, do the following:
 
-1. Install the cf CLI plugin, by running:
+1. To install the cf CLI plugin, run the following command:
 
     ```
     cf install-plugin -r CF-Community "log-cache"
     ```
 
-1. Access a service instance's metrics, by running:
+1. To access metrics for a service instance, run the following command:
 
+<% case vars.service_name 
+   when "MySQL for PCF" %> 
+    ```
+    cf tail --json SERVICE-INSTANCE-NAME
+    ```
+  <% when "Redis for PCF" || "RabbitMQ for PCF" %>
     ```
     cf tail SERVICE-INSTANCE-NAME
     ```
+  <% end %>
+    Where `SERVICE-INSTANCE-NAME` is the name of your service instance. 
     <br>
   For example:
 
@@ -25,7 +33,8 @@ To access metrics for on-demand service instances, do the following:
     <%# Switch output for different services %>
     
     <% case vars.service_name 
-       when "MySQL for PCF" %>     
+       when "MySQL for PCF" %> 
+      2019-01-14T16:14:18.22-0600 [my-instance] GAUGE /p.mysql/performance/com_replace_select:0.000000 query ...
       <% when "Redis for PCF" %>
       2018-07-03T09:54:14.84+0100 [my-instance] GAUGE info.clients.blocked_clients:0.000000 metric info.clients.client_biggest_input_buf:0.000000 metric ...
     <% when "RabbitMQ for PCF" %>
