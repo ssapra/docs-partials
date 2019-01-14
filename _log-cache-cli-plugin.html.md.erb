@@ -17,7 +17,11 @@ To access metrics for on-demand service instances, do the following:
     ```
     cf tail --json SERVICE-INSTANCE-NAME
     ```
-  <% when "Redis for PCF" || when "RabbitMQ for PCF" %>
+  <% when "Redis for PCF" %>
+    ```
+    cf tail SERVICE-INSTANCE-NAME
+    ```
+    <% when "RabbitMQ for PCF" %>
     ```
     cf tail SERVICE-INSTANCE-NAME
     ```
