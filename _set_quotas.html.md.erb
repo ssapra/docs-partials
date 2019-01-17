@@ -1,8 +1,11 @@
-On-demand provisioning is intended to accelerate app development by eliminating the need for development teams to request
+On-demand provisioning is intended to accelerate app development by eliminating
+the need for development teams to request
 and wait for operators to create a service instance.
-However, to control costs, operations teams and administrators must ensure responsible use of resources.
+However, to control costs, operations teams and administrators must ensure r
+esponsible use of resources.
 
-There are several ways to control the provisioning of on-demand service instances by setting various **quotas** at these levels:
+There are several ways to control the provisioning of on-demand service instances
+by setting various **quotas** at these levels:
 
 * [Global](#global)
 * [Plan](#plan)
@@ -19,27 +22,40 @@ After you set quotas, you can:
 ## <a id="global"></a> Create Global-level Quotas
 
 Each Pivotal Cloud Foundry (PCF) service has a separate service broker.
-A global quota at the service level sets the maximum number of service instances that can be created by a given service broker. If a service has more than one plan, then the number of service instances for all plans combined cannot exceed the global quota for the service.
+A global quota at the service level sets the maximum number of service instances
+that can be created by a given service broker. If a service has more than one plan,
+then the number of service instances for all plans combined cannot exceed the global
+quota for the service.
 
 The operator sets a global quota for each PCF service independently.
-For example, if you have Redis for PCF and RabbitMQ for PCF, you must set a separate global service quota for each of them.
+For example, if you have Redis for PCF and RabbitMQ for PCF, you must set a separate
+global service quota for each of them.
 
-When the global quota is reached for a service, no more instances of that service can be created unless the quota is increased, or some instances of that service are deleted.
+When the global quota is reached for a service, no more instances of that service
+can be created unless the quota is increased, or some instances of that service are deleted.
 
 ## <a id="plan"></a> Create Plan-level Quotas
 
 A service may offer one or more plans.
 You can set a separate quota per plan so that instances of that plan cannot exceed the plan quota.
-For a service with multiple plans, the total number of instances created for all plans combined cannot exceed the [global quota](#global) for the service. If the plan quota field is blank, the plan quota is set to the global quota by default.
+For a service with multiple plans, the total number of instances created for all
+plans combined cannot exceed the [global quota](#global) for the service.
+<% if vars.service_name == "MySQL for PCF" %>
+If the plan quota field is blank, the plan quota is set to the global quota by default.
+<%end%>
 
-When the plan quota is reached, no more instances of that plan can be created unless the plan quota is increased or some instances of that plan are deleted.
+When the plan quota is reached, no more instances of that plan can be created
+unless the plan quota is increased or some instances of that plan are deleted.
 
 ## <a id="org"></a> Create and Set Org-level Quotas
 
-An org-level quota applies to all PCF services and sets the maximum number of service instances an organization can create within PCF.
-For example, if you set your org-level quota to 100, developers can create up to 100 service instances in that org using any combination of PCF services.
+An org-level quota applies to all PCF services and sets the maximum number of
+service instances an organization can create within PCF.
+For example, if you set your org-level quota to 100, developers can create up to
+100 service instances in that org using any combination of PCF services.
 
-When this quota is met, no more service instances of any kind can be created in the org unless the quota is increased or some service instances are deleted.
+When this quota is met, no more service instances of any kind can be created in
+the org unless the quota is increased or some service instances are deleted.
 
 To create and set an org-level quota, do the following:
 
@@ -73,12 +89,15 @@ see [Creating and Modifying Quota Plans](https://docs.pivotal.io/pivotalcf/1-12/
 
 ## <a id="space"></a> Create and Set Space-level Quotas
 
-A space-level service quota applies to all PCF services and sets the maximum number of service instances
+A space-level service quota applies to all PCF services and sets the maximum
+number of service instances
 that can be created within a given space in PCF.
 For example, if you set your space-level quota to 100,
-developers can create up to 100 service instances in that space using any combination of PCF services.
+developers can create up to 100 service instances in that space using any
+combination of PCF services.
 
-When this quota is met, no more service instances of any kind can be created in the space unless the quota is updated
+When this quota is met, no more service instances of any kind can be created in
+the space unless the quota is updated
 or some service instances are deleted.
 
 To create and set a space-level quota, do the following:
@@ -157,43 +176,54 @@ These metrics are listed below:
 	</tr>
 </table>
 
-<p class="note"><strong>Note</strong>: Quota metrics are not emitted if no quota has been set.</p>
+<p class="note"><strong>Note</strong>: Quota metrics are not emitted if no quota
+	has been set.</p>
 
 
 ## <a id="calculate"></a> Calculate Resource Costs for On-Demand Plans
 
-On-demand plans use dedicated VMs, disks, and various other resources from an IaaS, such as AWS.
+On-demand plans use dedicated VMs, disks, and various other resources from an
+IaaS, such as AWS.
 To calculate maximum resource cost for plans individually or combined,
-you multiply the quota by the cost of VM and Persistent Disk types selected in the plan configuration(s).
+you multiply the quota by the cost of VM and Persistent Disk types selected in
+the plan configuration(s).
 The specific costs depend on your IaaS.
 
-The image below shows an example of the VM type and persistent disk selected, as well as the quota for this plan.
+The image below shows an example of the VM type and persistent disk selected, as
+well as the quota for this plan.
 
 <img src="../odb/images/plan-resources.png">
 
 <p class="note"><strong>Important</strong>:
-	Although operators can limit on-demand instances with plan quotas and a global quota, as described in the above topics,
-        IaaS resource usage still varies based on the number of on-demand instances provisioned.</p>
+	Although operators can limit on-demand instances with plan quotas and a global
+	quota, as described in the above topics,
+        IaaS resource usage still varies based on the number of on-demand instances
+				provisioned.</p>
 
 ### <a id="calculate-per-plan"></a> Calculate Maximum Resource Cost Per On-Demand Plan
 
-To calculate the maximum cost of VMs and persistent disk for each plan, do the following calculation:
+To calculate the maximum cost of VMs and persistent disk for each plan, do the
+following calculation:
 
 
 **plan quota x cost of selected resources**
 
 
 For example, if you selected the options in the above image,
-you have selected a VM type **micro.cpu** and a persistent disk type **20&nbsp;GB**, and the plan quota is **15**.
+you have selected a VM type **micro.cpu** and a persistent disk type **20&nbsp;GB**,
+and the plan quota is **15**.
 The VM and persistent disk types have an associated cost for the IaaS you are using.
-Therefore, to calculate the maximum cost of resources for this plan, multiply the cost of the resources selected by the plan quota:
+Therefore, to calculate the maximum cost of resources for this plan, multiply the
+cost of the resources selected by the plan quota:
 
 **(15 x cost of micro.cpu VM type) + (15 x cost of 20&nbsp;GB persistent disk)**
 
 ### <a id="calculate-all-plans"></a> Calculate Maximum Resource Cost for All On-Demand Plans
 
-To calculate the maximum cost for all plans combined, add together the maximum costs for each plan.
-This assumes that the sum of your individual plan quotas is less than the global quota.
+To calculate the maximum cost for all plans combined, add together the maximum
+costs for each plan.
+This assumes that the sum of your individual plan quotas is less than the global
+quota.
 
 Here is an example:
 
@@ -204,7 +234,8 @@ Here is an example:
 
 To calculate the current actual resource cost across all your on-demand plans:
 
-1. Find the number of instances currently provisioned for each active plan by looking at the `total_instance` [metric](#monitor) for that plan.
+1. Find the number of instances currently provisioned for each active plan by l
+ooking at the `total_instance` [metric](#monitor) for that plan.
 
 2. Multiply the `total_instance` count for each plan by that plan's resource costs.
    Record the costs for each plan.
