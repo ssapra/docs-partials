@@ -29,7 +29,7 @@ To check whether your cluster has lost quorum, look for the following symptoms:
     +----------------------+-------------+
     </pre>
 
-<!-- Is it reponsive or unresponsive? -->
+<!-- Is it responsive or unresponsive? -->
 
 - All unresponsive nodes respond with `ERROR 1047` when using most statement types
 in the MySQL client:
@@ -46,7 +46,7 @@ For more information about checking the state of your cluster, see
 
 MySQL for PCF includes a
 [BOSH errand](http://bosh.io/docs/jobs.html#jobs-vs-errands) that automates the manual 
-bootstrapping procedure in the [Bootstrap Manually](#manual-boostrap) section below.
+bootstrapping procedure in the [Bootstrap Manually](#manual-bootstrap) section below.
 
 It finds the node with the highest transaction sequence number and asks it to
 start up by itself (i.e. in bootstrap mode) and then asks the remaining nodes
@@ -123,7 +123,7 @@ To bootstrap in this scenario, follow these steps:
 <!-- manifest. -->
 
  
-1. To run the boostrap errand, run the following command:
+1. To run the bootstrap errand, run the following command:
 
     ```
     bosh -e YOUR-ENV -d YOUR-DEPLOYMENT run-errand bootstrap
@@ -394,6 +394,40 @@ Re-bootstrapping the cluster is not successful unless you shut down the
 
 ### <a id="choose-node"></a> Choose Node to Bootstrap
 
+<% if vars.product_short == "PAS" %>
+
+To choose the node to bootstrap, you must find the node with the highest transaction sequence number (`seqno`).
+
+Do the following to find the node with the highest `seqno`:
+
+1. Run the following command.    
+   ```
+   cat /var/vcap/store/pxc-mysql/grastate.dat | grep 'seqno:'
+   ```
+
+1. If a node shut down gracefully, the `seqno` is in the Galera state file. Retrieve the
+`seqno` and continue to [Bootstrap the First Node](#set-bootstrap-node). 
+    1. If a node crashed or was killed, the `seqno` in the Galera state file is recorded
+    as `-1`. In this case, the `seqno` might be recoverable from the database. Run the
+    following command to start up the database, log the recovered `seqno`, and then exit:
+        ```
+        /var/vcap/packages/pxc/bin/mysqld --wsrep-recover
+        ```
+    1. Scan the error log for the recovered `seqno`. It is the last number after the group id (`uuid`). For example:
+        <pre class="terminal">
+        $ grep "Recovered position" /var/vcap/sys/log/pxc-mysql/mysql.err.log | tail -1
+        150225 18:09:42 mysqld_safe WSREP: Recovered position e93955c7-b797-11e4-9faa-9a6f0b73eb46:15
+        </pre>
+    1. If the node never connected to the cluster before crashing, it may not even have a
+    group ID (`uuid` in `grastate.dat`). In this case, there is nothing to recover. Unless
+    all nodes crashed this way, do not choose this node for bootstrapping.
+
+1. After determining the `seqno` for all nodes in your cluster, identify the node with the
+highest `seqno`. If all nodes have the same `seqno`, you can choose any node as the new
+bootstrap node.
+
+<% else %>
+
 To choose the node to bootstrap, you must find the node with the highest
 transaction `sequence_number`.
 
@@ -426,6 +460,8 @@ For each node in the cluster do the following:
 If all nodes have the same `sequence_number`, you can choose any node as the
 new bootstrap node.
 
+<% end %>
+
 ### <a id="set-bootstrap-node"></a>Bootstrap the First Node ###
 
 After determining the node with the highest `sequence_number`, do the following
@@ -454,7 +490,7 @@ to bootstrap the node:
 
 ### <a id="restart-nodes"></a>Restart Remaining Nodes ###
 
-After the bootstrapped node is running, to restart the nodes do the folllowing:
+After the bootstrapped node is running, to restart the nodes do the following:
 
 1. To start the <code>mysqld</code> process with <code>monit</code>,
  run the following command:
