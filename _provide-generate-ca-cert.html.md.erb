@@ -35,7 +35,7 @@ Perform the following steps to create a UAA client for CredHub on your UAA serve
     ```
     <br>
     Where `BOSH-DIRECTOR` is the IP address of the BOSH Director VM.
-    You retrieved this address from the **Status** tab of the Ops Manager Director
+    You retrieved this address from the **Status** tab of the BOSH Director
     tile in step 1.
     <br><br>
     For example:
@@ -43,7 +43,7 @@ Perform the following steps to create a UAA client for CredHub on your UAA serve
     $ uaac target 10.0.0.5:8443
     </pre>
 
-1. In the **Credentials** tab of the Ops Manager Director tile, retrieve the
+1. In the **Credentials** tab of the BOSH Director tile, retrieve the
    **Uaa Login Client Credentials** and record the `identity` and `password` values.
     <p class="note"><strong>Note</strong>: These are the credentials for the UAA
         server colocated on the BOSH Director, not the UAA server colocated on
@@ -186,8 +186,7 @@ certificate, and add the certificate to Ops Manager:
     ```
 1. Copy the output.
 
-1. Navigate to the Ops Manager **Installation Dashboard** and select the Ops
-   Manager Director tile.
+1. Navigate to the Ops Manager **Installation Dashboard** and select the BOSH Director tile.
    Click **Security**.
 
 1. Paste the contents of the CA certificate into **Trusted Certificates** and
