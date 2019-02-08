@@ -65,16 +65,15 @@ To create and set an org-level quota, do the following:
 	cf create-quota QUOTA-NAME -m TOTAL-MEMORY -i INSTANCE-MEMORY -r ROUTES -s SERVICE-INSTANCES --allow-paid-service-plans
 	</pre>
 
-	where these variables are:
+	Where:
+	* `QUOTA-NAME`---A name for this quota
+	* `TOTAL-MEMORY`---Maximum memory used by all service instances combined
+	* `INSTANCE-MEMORY`---Maximum memory used by any single service instance
+	* `ROUTES`---Maximum number of routes allowed for all service instances combined
+	* `SERVICE-INSTANCES`---Maximum number of service instances allowed for the org
 
-	<br>`QUOTA-NAME`---A name for this quota
-	<br>`TOTAL-MEMORY`---Maximum memory used by all service instances combined
-	<br>`INSTANCE-MEMORY`---Maximum memory used by any single service instance
-	<br>`ROUTES`---Maximum number of routes allowed for all service instances combined
-	<br>`SERVICE-INSTANCES`---Maximum number of service instances allowed for the org
-
-	<br> For example:
-	<br>`cf create-quota myquota -m 1024mb -i 16gb -r 30 -s 50 --allow-paid-service-plans`
+	For example:
+	<pre class="terminal">cf create-quota myquota -m 1024mb -i 16gb -r 30 -s 50 --allow-paid-service-plans</pre>
 
 2. Associate the quota you created above with a specific org by running the following command:
 
@@ -82,7 +81,9 @@ To create and set an org-level quota, do the following:
 	cf set-quota ORG-NAME QUOTA-NAME
 	</pre>
 
-	For example: `cf set-quota dev_org myquota`
+	For example:
+
+	<pre class="terminal">cf set-quota dev_org myquota</pre>
 
 For more information on managing org-level quotas,
 see [Creating and Modifying Quota Plans](https://docs.pivotal.io/pivotalcf/1-12/adminguide/quota-plans.html).
@@ -105,17 +106,19 @@ To create and set a space-level quota, do the following:
 1. Run the following command to create the quota:
 
 	<pre>
-	cf create-space-quota QUOTA -m TOTAL-MEMORY -i INSTANCE-MEMORY -r ROUTES -s SERVICE-INSTANCES --allow-paid-service-plans
+	cf create-space-quota QUOTA-NAME -m TOTAL-MEMORY -i INSTANCE-MEMORY -r ROUTES -s SERVICE-INSTANCES --allow-paid-service-plans
 	</pre>
-	where these variables are:
 
-	<br>`QUOTA-NAME`---A name for this quota
-	<br>`TOTAL-MEMORY`---Maximum memory used by all service instances combined
-	<br>`INSTANCE-MEMORY`---Maximum memory used by any single service instance
-	<br>`ROUTES`---Maximum number of routes allowed for all service instances combined
-	<br>`SERVICE-INSTANCES`---Maximum number of service instances allowed for the org
+	Where:
+	* `QUOTA-NAME`---A name for this quota
+	* `TOTAL-MEMORY`---Maximum memory used by all service instances combined
+	* `INSTANCE-MEMORY`---Maximum memory used by any single service instance
+	* `ROUTES`---Maximum number of routes allowed for all service instances combined
+	* `SERVICE-INSTANCES`---Maximum number of service instances allowed for the org
 
-	<br> For example: `cf create-space-quota myspacequota -m 1024mb -i 16gb -r 30 -s 50 --allow-paid-service-plans`
+	For example:
+
+	<pre class="terminal">cf create-space-quota myspacequota -m 1024mb -i 16gb -r 30 -s 50 --allow-paid-service-plans</pre>
 
 
 2. Associate the quota you created above with a specific space by running the following command:
@@ -125,7 +128,8 @@ To create and set a space-level quota, do the following:
 	</pre>
 
 	For example:
-	<br>`cf set-space-quota myspace myspacequota`
+
+	<pre class="terminal">cf set-space-quota myspace myspacequota</pre>
 
 For more information on managing space-level quotas,
 see [Creating and Modifying Quota Plans](https://docs.pivotal.io/pivotalcf/1-12/adminguide/quota-plans.html).
@@ -155,23 +159,23 @@ These metrics are listed below:
 
 <table>
 	<tr>
-		<th><b>Metric Name</b></th>
-		<th><b>Description</b></th>
+		<th width=60%><b>Metric Name</b></th>
+		<th width=40%><b>Description</b></th>
 	</tr>
 	<tr>
-		<td>on-demand-broker/SERVICE-NAME/quota_remaining </td>
+		<td><code>on-demand-broker/SERVICE-NAME/quota_remaining</code></td>
 		<td>Quota remaining for all instances across all plans</td>
 	</tr>
 	<tr>
-		<td>on-demand-broker/SERVICE-NAME/PLAN-NAME/quota_remaining </td>
+		<td><code>on-demand-broker/SERVICE-NAME/PLAN-NAME/<br>quota_remaining</code> </td>
 		<td>Quota remaining for a specific plan</td>
 	</tr>
 	<tr>
-		<td>on-demand-broker/SERVICE-NAME/total_instances</td>
+		<td><code>on-demand-broker/SERVICE-NAME/total_instances</code> </td>
 		<td>Total instances created across all plans</td>
 	</tr>
 	<tr>
-		<td>on-demand-broker/SERVICE-NAME/PLAN-NAME/total_instances</td>
+		<td><code>on-demand-broker/SERVICE-NAME/PLAN-NAME/<br>total_instances</code> </td>
 		<td>Total instances created for a specific plan</td>
 	</tr>
 </table>
@@ -185,14 +189,26 @@ These metrics are listed below:
 On-demand plans use dedicated VMs, disks, and various other resources from an
 IaaS, such as AWS.
 To calculate maximum resource cost for plans individually or combined,
-you multiply the quota by the cost of VM and Persistent Disk types selected in
-the plan configuration(s).
+you multiply the quota by the cost of the resources selected in the plan
+configuration(s).
 The specific costs depend on your IaaS.
 
-The image below shows an example of the VM type and persistent disk selected, as
-well as the quota for this plan.
+<% if vars.service_name == 'Pivotal Cloud Cache' %>
 
-<img src="../odb/images/plan-resources.png">
+The image below shows an example that includes the VM type and persistent disk
+selected for the server VMs, as well as the quota for this plan.
+The quota is shown in the **Maximum service instances** field.
+
+<% else %>
+
+The image below shows an example that includes the VM type and persistent disk
+selected for the server VMs, as well as the quota for this plan.
+
+<% end %>
+
+<%= image_tag("../images/plan-resources.png",
+:alt => "Example showing a quota set to 15 instances, VM type set to micro, and persistent disk type set to 20 GB",
+:width => "400") %>
 
 <p class="note"><strong>Important</strong>:
 	Although operators can limit on-demand instances with plan quotas and a global
@@ -200,23 +216,23 @@ well as the quota for this plan.
         IaaS resource usage still varies based on the number of on-demand instances
 				provisioned.</p>
 
+
 ### <a id="calculate-per-plan"></a> Calculate Maximum Resource Cost Per On-Demand Plan
 
 To calculate the maximum cost of VMs and persistent disk for each plan, do the
 following calculation:
 
-
 **plan quota x cost of selected resources**
 
-
 For example, if you selected the options in the above image,
-you have selected a VM type **micro.cpu** and a persistent disk type **20&nbsp;GB**,
+you have selected a VM type **micro** and a persistent disk type **20&nbsp;GB**,
 and the plan quota is **15**.
 The VM and persistent disk types have an associated cost for the IaaS you are using.
 Therefore, to calculate the maximum cost of resources for this plan, multiply the
 cost of the resources selected by the plan quota:
 
-**(15 x cost of micro.cpu VM type) + (15 x cost of 20&nbsp;GB persistent disk)**
+**(15 x cost of micro VM type) + (15 x cost of 20&nbsp;GB persistent disk) = max cost per plan**
+
 
 ### <a id="calculate-all-plans"></a> Calculate Maximum Resource Cost for All On-Demand Plans
 
