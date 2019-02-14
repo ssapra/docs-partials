@@ -2,8 +2,8 @@
 
 To rotate CA certificates, you must do the following:
 
-+ Generate and add a CA certificate with CredHub. See [Generate and Add a CA Certificate](#add-generate).
-+ Regenerate certificates signed by the old CA certificate. See [Regenerate Certificates Instances](#regenerate).
++ Add a new CA certificate with CredHub. See [Add a New CA Certificate](#add).
++ Regenerate internal certificates signed by the old CA certificate. See [Regenerate Internal Certificates](#regenerate).
 + Rebind your apps to update the CA certificate. See [Rebind Your App](#rebind).
 + Remove the old CA certificate. See [Remove Old the CA Certificate](#remove).
 
@@ -11,18 +11,18 @@ To rotate CA certificates, you must do the following:
 Contact <a href="https://support.pivotal.io">Pivotal Support</a>
 and perform the following procedures with their assistance.</p>
 
-### <a id="add-generate"></a> Generate and Add a CA Certificate
+### <a id="add"></a> Add a New CA Certificate
 
 <p class="note warning"><strong>WARNING</strong>: This procedure involves restarting
 all of the VMs in your PCF deployment in order to apply a CA certificate. The
 operation can take a long time to complete.</p>
 
-To generate and add a CA certificate, following the procedures below:
+To add a new CA certificate, following the procedures below:
 
 ####<a id='credhub-creds'></a> Find the CredHub Credentials in Ops Manager
 
 You need the BOSH CredHub client name and client secret to complete the
-[Add the CA Certificate](#add-ca-cert) procedure below.
+[Regenerate and Add a New CA Certificate](#regenerate-cert) procedure below.
 
 To find the BOSH CredHub client name and client secret, do the following:
 
@@ -42,9 +42,9 @@ To find the BOSH CredHub client name and client secret, do the following:
   The `BOSH_CLIENT` is the BOSH CredHub client name and the `BOSH_CLIENT_SECRET` is
   the BOSH CredHub client secret.
 
-####<a id='add-ca-cert'></a> Add the CA Certificate
+####<a id='regenerate-cert'></a> Regenerate and Add the New CA Certificate
 
-To generate and add the CA Certificate to Ops Manager, do the following:
+To regenerate and add the CA Certificate to Ops Manager, do the following:
 
 1. From the Ops Manager VM, to set the API target of the CredHub CLI to your BOSH
 CredHub server, run the following: 
@@ -76,13 +76,7 @@ CredHub server, run the following:
     --client-name=credhub \
     --client-secret=abcdefghijklm123456789
     </pre>
-1. To check whether a services CA certificate already is present, run the following:
-
-    ```
-    credhub get --name="/services/tls_ca"
-    ```
-    If you already have a certificate at the `services/tls_ca` path, skip step 4.
-
+  
 1. To generate a CA certificate or provide an existing one, do one of the following:
   <p class="note"><strong>Note</strong>: Your PCF deployment may have
   multiple CA certificates.
@@ -90,11 +84,7 @@ CredHub server, run the following:
     * If you do not have a CA certificate, to generate a CA certificate run the following:
     
         ```
-        credhub generate \
-        --name="/services/tls_ca" \
-        --type="certificate" \
-        --is-ca \
-              --common-name="rootCA"
+        credhub regenerate --name="/services/tls_ca" 
         ```  
     * If you have an existing CA certificate that you want to use, create
     a new file called `root.pem` with the contents of the certificate.
@@ -126,9 +116,9 @@ Click **Security**.
 9. Return to the **Installation Dashboard** in Ops Manager and click **Apply Changes**.
 This restarts all the VMs in your PCF deployment and applies your CA certificate. 
 
-### <a id="regenerate"></a> Regenerate Certificates
+### <a id="regenerate"></a> Regenerate Internal Certificates
 
-To regenerate your certificates and redeploy your service instances, follow the procedure below:
+To regenerate your internal certificates and redeploy your service instances, follow the procedure below:
 
 1. To log in to CredHub, run the following:
 
@@ -149,7 +139,7 @@ To regenerate your certificates and redeploy your service instances, follow the 
     --client-secret=abcdefghijklm123456789
     </pre> 
     
-1. To regenerate all certificates signed but the old CA certificate, run the following
+1. To regenerate all certificates signed by the old CA certificate, run the following
 
     ```
     curl "https://BOSH-DIRECTOR/api/v1/bulk-regenerate"" -X POST \
@@ -168,7 +158,7 @@ To regenerate your certificates and redeploy your service instances, follow the 
 
 
 ### <a id='rebind'></a> Rebind Your App
-If your apps do not validate server certificates using the trusted store, you must re-bind it to the service instance to receive the updated CA certificate. 
+If your apps do not use the trusted store to validate server certificates, you must re-bind your apps to the service instance to receive the updated CA certificate. 
 
 If you are rotating your CA certificate because it was compromised, you must remove your old CA certificate before rebinding your app. If you have not removed your old CA certificate see [Remove Old the CA Certificate](#remove).
 
@@ -193,7 +183,7 @@ To re-bind your app, do the following:
 1. To re-bind your app to the service instance, run the following command:
 
 	```
-	cf bind-service YOUR-APP YOUR-SERVICE-INSTANCEe
+	cf bind-service YOUR-APP YOUR-SERVICE-INSTANCE
 	```
 	Where:
 	+ `YOUR-APP` is the name of your app.
@@ -205,21 +195,15 @@ To re-bind your app, do the following:
 	```
 	Where `YOUR-APP` is the name of your app. 
 
-    Your app now communicates securely with the MySQL service instance.
                                    
 ### <a id="remove"></a> Remove Old the CA Certificate
 
-<p class="note warning"><strong>WARNING</strong>: This procedure involves restarting
+<p class="note warning"><strong>WARNING!</strong> This procedure involves restarting
 	all of the VMs in your PCF deployment in order to apply a CA certificate. The
 	operation can take a long time to complete.</p>
 
 After your apps have reconnected to service instances with certificates generated by the new CA, do the following to remove the old CA certificate:
 
-1. To remove the old CA certificate, run the following:
-    
-    ```
-    credhub delete --name '/services/tls_ca
-    ```
 1. Navigate to the **Installation Dashboard** in Ops Manager and click the BOSH Director tile. Click **Security**.
 
 1. Remove the old CA certificate in Trusted Certificates and click **Save**.
