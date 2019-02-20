@@ -6,10 +6,10 @@ and perform the following procedures with their assistance.</p>
 
 To rotate CA certificates, you must do the following:
 
-1. Add a new CA certificate with CredHub. See [Add a New CA Certificate](#add).
-1. Regenerate internal certificates signed by the old CA certificate. See [Regenerate Internal Certificates](#regenerate).
-1. Rebind your apps to update the CA certificate. See [Rebind Your App](#rebind).
-1. Remove the old CA certificate. See [Remove Old the CA Certificate](#remove).
+1. [Add a New CA Certificate](#add)
+1. [Regenerate Internal Certificates](#regenerate)
+1. [Rebind Your App](#rebind)
+1. [Remove Old the CA Certificate](#remove)
 
 ## <a id="add"></a> Add a New CA Certificate
 
@@ -17,7 +17,10 @@ To rotate CA certificates, you must do the following:
 all of the VMs in your PCF deployment in order to apply a CA certificate. The
 operation can take a long time to complete.</p>
 
-To add a new CA certificate, follow the procedures below:
+To add a new CA certificate, follow the procedures you must do the following:
+
+1. [Find the CredHub Credentials in Ops Manager](#credhub-creds)
+1. [Regenerate and Add the New CA Certificate](#regenerate-cert)
 
 ###<a id='credhub-creds'></a> Find the CredHub Credentials in Ops Manager
 
