@@ -410,7 +410,7 @@ Do the following to find the node with the highest `seqno`:
     as `-1`. In this case, the `seqno` might be recoverable from the database. Run the
     following command to start up the database, log the recovered `seqno`, and then exit:
         ```
-        /var/vcap/packages/pxc/bin/mysqld --defaults-file=/var/vcap/jobs/pxc-mysql/config/mylogin.cnf --wsrep-recover
+        /var/vcap/packages/pxc/bin/mysqld --defaults-file=/var/vcap/jobs/pxc-mysql/config/my.cnf --wsrep-recover
         ```
     1. Scan the error log for the recovered `seqno`. It is the last number after the group id (`uuid`). For example:
         <pre class="terminal">
