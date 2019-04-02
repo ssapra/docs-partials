@@ -34,44 +34,48 @@ You can monitor the health status of your nodes by doing one of the following:
 + [Monitor Node Health Using the Dashboard](#dashboard)
 + [Monitor Node Health Using the API](#proxy-api)
 
+### <a id='dashboard'></a> Monitor Node Health Using the Dashboard
 
-## <a id='dashboard-url'></a> Construct the URL for the Dashboard
+#### <a id='dashboard-url'></a> Construct the URL for the Dashboard
 
-Each MySQL Proxy instance has its own dashboard. To access the dashboard, you must construct the URL.
+Each MySQL Proxy instance has its own Switchboard dashboard. To access the dashboard, you must construct the dashboard URL.
 
-To construct the URL for the dashboard, do the following:
+To construct the URL for the Switchboard dashboard, do the following:
 
-1. Find the system domain on the **Domains** page in the PAS tile. 
+1. Find and record the system domain on the **Domains** pane in the PAS tile. 
 
-1. Find the number of MySQL Proxy instances in your deployment in the **Resource Config* page.
+1. Find and record the number of MySQL Proxy VM instances in your deployment in the **Resource Config* pane.
 
-1. In the PAS tile, the URL in your browser contains the Ops Manager fully qualified domain name (FQDN) and the PAS product GUID, as in the following example: `https://OPS-MANAGER-FQDN/products/PAS-PRODUCT-GUID/az_and_network_assignments/edit`
+1. Use the above information to build the Switchboard dashboard URL as follows: `https://[PROXY-VM-INDEX]-proxy-p-mysql-ert.[SYSTEM-DOMAIN]`
 
-1. With the above information, you can build the MySQL Proxy dashboard URL: `https://[PROXY-VM-INDEX]-proxy-p-mysql-ert.[SYSTEM-DOMAIN]`
+#### <a id='dashboard-login'></a> Log In to the Dashboard
 
-1. To log into the dashboard, you need the username and password for the MySQL Proxy VM that are stored in the BOSH Director CredHub. To obtain them, enter `https://[OPS-MANAGER-FQDN]/api/v0/deployed/products/[PAS-PRODUCT-GUID]/variables?name=mysql-proxy-dashboard-credentials` into your browser and record the username and password.
+To log into the Switchboard dashboard, do the following:
 
+1. In the PAS tile, the URL in your browser contains the Ops Manager fully qualified domain name (FQDN) and the PAS product GUID, as in the following example: `https://OPS-MANAGER-FQDN/products/PAS-PRODUCT-GUID/az_and_network_assignments/edit`<br>
+To log into the dashboard, you need the username and password for the MySQL Proxy VM that are stored in the BOSH Director CredHub.<br>
+To obtain them, enter `https://[OPS-MANAGER-FQDN]/api/v0/deployed/products/[PAS-PRODUCT-GUID]/variables?name=mysql-proxy-dashboard-credentials` into your browser and record the username and password.
 
-## <a id="dashboard"></a> Monitor Node Health Using the Dashboard
+1. Enter the dashboard URL you constructed into your browser and log in using the credentials you obtained in [Construct the URL for the Dashboard](#dashboard-url).
+
+#### <a id="use-dashboard"></a> Use the Dashboard
 
 To monitor node health using the Switchboard dashboard, do the following:
 
-1. To view a list of proxies in your browser, navigate to the hostname that you recorded in [Construct the URL for the Dashboard](#dashboard-url) above. For example, `proxy.123abc45-67d8-912e-34f5-g34612c10dba.org.dedicated-mysql.cf-app.com`
+1. To view a list of proxies in your browser, navigate to the URL that you created in [Construct the URL for the Dashboard](#dashboard-url).
 
-1. When prompted, enter the username and password that you recorded in [Construct the URL for the Dashboard](#ashboard-url) above.
+1. When prompted, enter the username and password that you recorded in [Log In to the Dashboard](#dashboard-login).
 
 1. Click the link for the proxy that you want to use to monitor node health.
 
-1. If you are prompted, enter the username and password that you recorded in [Construct the URL for the Dashboard](#ashboard-url) above.
+1. If you are prompted, enter the username and password that you recorded in [Log In to the Dashboard](#dashboard-login).
 
     <%= image_tag "switchboard-all-healthy.png" %>
 
 
-## <a id="proxy-api"></a> Monitor Node Health Using the API
+### <a id="proxy-api"></a> Monitor Node Health Using the API
 
-You can also use the Switchboard API to obtain the information that is shown on the Switchboard dashboard.
-
-For example, you might want to use the API to write your own app to monitor the cluster.
+You can also use the Switchboard API to obtain the information that is shown on the Switchboard dashboard. For example, you might want to use the API to write your own app to monitor the cluster.
 
 To monitor node health using the Switchboard API, do the following:
 
