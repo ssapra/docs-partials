@@ -42,9 +42,9 @@ Each MySQL Proxy instance has its own Switchboard dashboard. To access the dashb
 
 To construct the URL for the Switchboard dashboard, do the following:
 
-1. Find and record the system domain on the **Domains** pane in the PAS tile. 
+1. Find and record the system domain on the **Domains** pane in the PAS tile.
 
-1. Find and record the number of MySQL Proxy VM instances in your deployment in the **Resource Config* pane.
+1. Find and record the number of MySQL Proxy VM instances in your deployment in the **Resource Config** pane.
 
 1. Use the above information to build the Switchboard dashboard URL as follows: `https://[PROXY-VM-INDEX]-proxy-p-mysql-ert.[SYSTEM-DOMAIN]`
 
@@ -85,10 +85,10 @@ To monitor node health using the Switchboard API, do the following:
     ```
 
     Where:
-    + `USERNAME` is the `username` you recorded in [Prerequisite](#prereq) above.
-    + `PASSWORD` is the `password` you recorded in [Prerequisite](#prereq) above.
+    + `USERNAME` is the `username` you recorded in [Log In to the Dashboard](#dashboard-login).
+    + `PASSWORD` is the `password` you recorded in [Log In to the Dashboard](#dashboard-login).
     + `N` is either 0, 1, or 2 depending on the proxy you want to connect to.
-    + `HOSTNAME` is the `hostname` you recorded in [Prerequisite](#prereq) above.
+    + `HOSTNAME` is the `hostname` you recorded.
 
     The above command outputs a JSON object similar to the following:
 
