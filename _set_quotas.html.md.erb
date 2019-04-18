@@ -180,7 +180,7 @@ These metrics are listed below:
 	</tr>
 </table>
 
-<p class="note"><strong>Note</strong>: Quota metrics are not emitted if no quota
+<p class="note"><strong>Note:</strong> Quota metrics are not emitted if no quota
 	has been set.</p>
 
 
@@ -193,6 +193,24 @@ you multiply the quota by the cost of the resources selected in the plan
 configuration(s).
 The specific costs depend on your IaaS.
 
+
+To view configurations for your <%= vars.service_name %> on-demand plan, do the following:
+
+1. Navigate to **Ops Manager Installation Dashboard** > **<%= vars.tile_name %>** > **Settings**.
+1. Click the section for the plan you want to view.
+<% if vars.service_name == 'RabbitMQ for PCF' %>
+For example, **On Demand Instance (RMQ 3.7): Plan 1**.
+<% end %>
+<% if vars.service_name == 'Redis for PCF' %>
+For example, **On-Demand Plan 1**.
+<% end %>
+<% if vars.service_name == 'MySQL for PCF' %>
+For example, **Plan 1**.
+<% end %>
+<% if vars.service_name == 'Pivotal Cloud Cache' %>
+For example, **Plan 1**.
+<% end %>
+
 <% if vars.service_name == 'Pivotal Cloud Cache' %>
 
 The image below shows an example that includes the VM type and persistent disk
@@ -203,14 +221,13 @@ The quota is shown in the **Maximum service instances** field.
 
 The image below shows an example that includes the VM type and persistent disk
 selected for the server VMs, as well as the quota for this plan.
-
 <% end %>
 
 <%= image_tag("../images/plan-resources.png",
 :alt => "Example showing a quota set to 15 instances, VM type set to micro, and persistent disk type set to 20 GB",
 :width => "400") %>
 
-<p class="note"><strong>Important</strong>:
+<p class="note"><strong>Note:</strong>
 	Although operators can limit on-demand instances with plan quotas and a global
 	quota, as described in the above topics,
         IaaS resource usage still varies based on the number of on-demand instances
