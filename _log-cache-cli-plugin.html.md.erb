@@ -18,7 +18,7 @@ To access metrics for on-demand service instances, do the following:
     cf tail SERVICE-INSTANCE-NAME
     ```
     Two useful flags to append to this command are:
-      - `-f`, `--follow`: Append metrics logs to stdout as they are generated.
+      - `-f`, `--follow`: Append metrics logs to stdout as they are generated, rather than returning a fixed number of metrics or metrics over a fixed interval.
       - `--json`: Output metrics logs as envelopes in JSON format.  
       For a complete list of `cf tail` options, see the [Log Cache CLI repository](https://github.com/cloudfoundry/log-cache-cli#usage).
     
