@@ -144,11 +144,11 @@ To bootstrap in this scenario, follow these steps:
     + /var/vcap/packages/bootstrap/bin/cf-mysql-bootstrap -configPath=/var/vcap/jobs/bootstrap/config/config.yml
     + echo 'Bootstrap errand completed'
     + exit 0
-    Errand `bootstrap' completed successfully (exit code 0)
+    Errand 'bootstrap' completed successfully (exit code 0)
     </pre>
 
 1. If the errand fails, run the bootstrap errand command again after a
-few minutes. The bootstrap errand might not work immediately.
+few minutes. The bootstrap errand might not work the first time.
 
 1. If the errand fails after several tries, bootstrap your cluster manually.
 See [Bootstrap Manually](#manual-bootstrap) below.
@@ -309,7 +309,7 @@ To bootstrap, do the following:
       /var/vcap/packages/bootstrap/bin/cf-mysql-bootstrap -configPath=/var/vcap/jobs/bootstrap/config/config.yml
       echo 'Bootstrap errand completed'
       exit 0
-      Errand `bootstrap' completed successfully (exit code 0)
+      Errand 'bootstrap' completed successfully (exit code 0)
       </pre>
 
 1. If the errand fails, run the bootstrap errand command again after a few minutes.
@@ -395,35 +395,39 @@ Re-bootstrapping the cluster is not successful unless you shut down the
 
 <% if vars.product_short == "PAS" %>
 
-To choose the node to bootstrap, you must find the node with the highest transaction sequence number (`seqno`).
+To avoid losing data, you must bootstrap from a node in the cluster that has
+the highest transaction sequence number (`seqno`).
 
-Do the following to find the node with the highest `seqno`:
+For each node in the cluster, do the following to find its `seqno`:
 
-1. Run the following command.    
+1. SSH into the node, using the procedure in
+   [BOSH SSH](https://docs.pivotal.io/pivotalcf/2-3/customizing/trouble-advanced.html#bosh-ssh).
+
+1. Run the following command to find `seqno` values in the node's Galera state file, `grastate.dat`:    
    ```
    cat /var/vcap/store/pxc-mysql/grastate.dat | grep 'seqno:'
    ```
 
-1. If a node shut down gracefully, the `seqno` is in the Galera state file. Retrieve the
-`seqno` and continue to [Bootstrap the First Node](#set-bootstrap-node). 
-    1. If a node crashed or was killed, the `seqno` in the Galera state file is recorded
-    as `-1`. In this case, the `seqno` might be recoverable from the database. Run the
-    following command to start up the database, log the recovered `seqno`, and then exit:
-        ```
-        /var/vcap/packages/pxc/bin/mysqld --defaults-file=/var/vcap/jobs/pxc-mysql/config/my.cnf --wsrep-recover
-        ```
-    1. Scan the error log for the recovered `seqno`. It is the last number after the group id (`uuid`). For example:
+1. Do one of the following, based on the last and highest `seqno` value in the `grep` output above:
+  - **If `seqno` is a positive integer**, then the node shut down gracefully. Record this number for comparison with the latest `seqno` of other nodes in the cluster.
+  - **If `seqno` is `-1`**, then node crashed or was killed. Proceed as follows to possibly recover the `seqno` from the database:
+      1. Run the following command to temporarily start the database and append the last sequence number to its error log:
+          ```
+          /var/vcap/packages/pxc/bin/mysqld --defaults-file=/var/vcap/jobs/pxc-mysql/config/my.cnf --wsrep-recover
+          ```
+       1. Scan the end of the error log `mysql.err.log` for the recovered `seqno`.
+       It appears after the group ID (a UUID) and a colon. 
+       For example, it is `15026` in the following output:
         <pre class="terminal">
         $ grep "Recovered position" /var/vcap/sys/log/pxc-mysql/mysql.err.log | tail -1
-        150225 18:09:42 mysqld_safe WSREP: Recovered position e93955c7-b797-11e4-9faa-9a6f0b73eb46:15
+        150225 18:09:42 mysqld_safe WSREP: Recovered position e93955c7-b797-11e4-9faa-9a6f0b73eb46:15026
         </pre>
-    1. If the node never connected to the cluster before crashing, it may not even have a
-    group ID (`uuid` in `grastate.dat`). In this case, there is nothing to recover. Unless
-    all nodes crashed this way, do not choose this node for bootstrapping.
+        1. If the node never connected to the cluster before crashing, it may never have been
+        assigned a group ID. In this case, there is nothing to recover.
+        Do not choose this node for bootstrapping unless all the other nodes also nodes crashed.
 
-1. After determining the `seqno` for all nodes in your cluster, identify the node with the
-highest `seqno`. If all nodes have the same positive integer `seqno`, you can choose any node as the new
-bootstrap node.
+After you determine the `seqno` for all nodes in your cluster, identify the one with the highest `seqno`.
+If multiple nodes share the same highest `seqno`, and it is not `-1`, you can bootstrap from any of them.
 
 <% else %>
 
