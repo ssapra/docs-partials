@@ -9,13 +9,13 @@ You can bootstrap your cluster by using one of two methods:
 ## <a id="when-to-bootstrap"></a> When to Bootstrap
 
 You must bootstrap a cluster that loses quorum. A cluster loses quorum when less than half of the
- nodes can communicate with each other for longer than the configured grace period. If a cluster 
- does not lose quorum, individual unhealthy nodes automatically rejoin the cluster after resolving 
+ nodes can communicate with each other for longer than the configured grace period. If a cluster
+ does not lose quorum, individual unhealthy nodes automatically rejoin the cluster after resolving
  the error, restarting the node, or restoring connectivity.
 
 To check whether your cluster has lost quorum, look for the following symptoms:
 
-- All nodes appear "Unhealthy" on the proxy dashboard, viewable at <%= vars.switchboard_url %>: 
+- All nodes appear "Unhealthy" on the proxy dashboard, viewable at <%= vars.switchboard_url %>:
 ![3 out of 3 nodes are unhealthy.](quorum-lost.png)
 - All responsive nodes report the value of `wsrep_cluster_status` as `non-Primary`:
 
@@ -44,7 +44,7 @@ For more information about checking the state of your cluster, see
 ## <a id="assisted-bootstrap"></a>Run the Bootstrap Errand
 
 MySQL for PCF includes a
-[BOSH errand](http://bosh.io/docs/jobs.html#jobs-vs-errands) that automates the manual 
+[BOSH errand](http://bosh.io/docs/jobs.html#jobs-vs-errands) that automates the manual
 bootstrapping procedure in the [Bootstrap Manually](#manual-bootstrap) section below.
 
 It finds the node with the highest transaction sequence number and asks it to
@@ -110,18 +110,18 @@ To bootstrap in this scenario, follow these steps:
 
 
 <!-- 1. To select the correct deployment, run the following command: -->
-<!-- 
+<!--
     ```
     bosh deployment PATH-TO-DEPLOYMENT-MANIFEST
     ```
  -->
- 
+
 
 <!-- Where `PATH-TO-DEPLOYMENT-MANIFEST` is the path to your deployment -->
 
 <!-- manifest. -->
 
- 
+
 1. To run the bootstrap errand, run the following command:
 
     ```
@@ -355,7 +355,7 @@ following command:
     ```
     bosh -e YOUR-ENV -d YOUR-DEPLOYMENT instances
     ```
-    
+
     Where:
     + `YOUR-ENV` is the name of your environment.
     + `YOUR-DEPLOYMENT` is the name of your deployment.
@@ -403,7 +403,7 @@ For each node in the cluster, do the following to find its `seqno`:
 1. SSH into the node, using the procedure in
    [BOSH SSH](https://docs.pivotal.io/pivotalcf/2-3/customizing/trouble-advanced.html#bosh-ssh).
 
-1. Run the following command to find `seqno` values in the node's Galera state file, `grastate.dat`:    
+1. Run the following command to find `seqno` values in the node's Galera state file, `grastate.dat`:
    ```
    cat /var/vcap/store/pxc-mysql/grastate.dat | grep 'seqno:'
    ```
@@ -418,7 +418,7 @@ For each node in the cluster, do the following to find its `seqno`:
           /var/vcap/packages/pxc/bin/mysqld --defaults-file=/var/vcap/jobs/pxc-mysql/config/my.cnf --wsrep-recover
           ```
        1. Scan the end of the error log `mysql.err.log` for the recovered `seqno`.
-       It appears after the group ID (a UUID) and a colon. 
+       It appears after the group ID (a UUID) and a colon.
        For example, it is `15026` in the following output:
         <pre class="terminal">
         $ grep "Recovered position" /var/vcap/sys/log/pxc-mysql/mysql.err.log | tail -1
@@ -469,6 +469,22 @@ new bootstrap node.
 
 ### <a id="set-bootstrap-node"></a>Bootstrap the First Node ###
 
+<% if vars.product_short == "PAS" %>
+
+After determining the node with the highest `seqno`, do the following
+to bootstrap the node:
+
+<p class="note"><strong>Note:</strong> Only run these bootstrap commands on the
+  node with the highest <code>seqno</code>.
+   Otherwise the node with the highest <code>seqno</code> is unable
+   to join the new cluster unless its data is abandoned.
+   Its <code>mysqld</code> process exits with an error.
+   For more information about intentionally abandoning data,
+   see <a href="https://docs.pivotal.io/p-mysql/1-10/architecture.html">Architecture</a>.
+ </p>
+
+ <% else %>
+
 After determining the node with the highest `sequence_number`, do the following
 to bootstrap the node:
 
@@ -478,7 +494,10 @@ to bootstrap the node:
    to join the new cluster unless its data is abandoned.
    Its <code>mysqld</code> process exits with an error.
    For more information about intentionally abandoning data,
-   see <a href="https://docs.pivotal.io/p-mysql/1-10/architecture.html">Architecture</a>.</p>
+   see <a href="https://docs.pivotal.io/p-mysql/1-10/architecture.html">Architecture</a>.
+ </p>
+
+ <% end %>
 
 1. To update the state file and restart the
 <code>mysqld</code> process on the new bootstrap node, run the following commands:
@@ -513,8 +532,17 @@ After the bootstrapped node is running, to restart the nodes do the following:
        Only do the procedure with the assistance of
        <a href="https://support.pivotal.io">Pivotal Support</a>.</p>
 
+<% if vars.product_short == "PAS" %>
+
+1. If the `monit start` command fails, it might be because the node with
+the highest `seqno` is `mysql/0`. <br><br>
+
+<% else %>
+
 1. If the `monit start` command fails, it might be because the node with
 the highest `sequence_number` is `mysql/0`. <br><br>
+
+<% end %>
 
     In this case, do the following:
 
