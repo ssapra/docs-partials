@@ -20,6 +20,7 @@ bosh -d DEPLOYMENT-NAME run-errand orphan-deployments
 * Provide a detailed error message under a `[stderr]` header
 
 For example:
+
 <pre class="terminal">
 [stdout]
 [{"deployment\_name":"service-instance\_80e3c5a7-80be-49f0-8512-44840f3c4d1b"}]
@@ -31,6 +32,7 @@ Errand 'orphan-deployments' completed with error (exit code 10)
 </pre>
 
 These details will also be available through the BOSH `/tasks/` API endpoint for use in scripting:
+
 <pre class="terminal">
 $ curl 'https<span>:</span>//bosh-user:bosh-password@bosh-url:25555/tasks/task-id/output?type=result' | jq .
 {
@@ -71,7 +73,7 @@ Errand 'orphan-deployments' completed successfully (exit code 0)
 To clean up orphaned instances, run the following command on each instance:
 
 <p class="note warning">
-<strong>WARNING: </strong> Running this command may leave IaaS resources in an unusable state.
+  <strong>WARNING: </strong> Running this command may leave IaaS resources in an unusable state.
 </p>
 
 ```

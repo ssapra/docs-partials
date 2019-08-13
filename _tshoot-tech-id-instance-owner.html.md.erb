@@ -17,8 +17,9 @@ BOSH deployments name, you can run the following steps:
   1. `cf curl ORGANIZATION-URL` to obtain the org, using the `entity.organization_url` from the above curl.
      Record the organization name under `entity.name`.
 
-<p class="note"><strong>Note</strong>:
-  When running <code>cf curl</code> ensure that you query all pages, because
-  the responses are limited to a certain number of bindings per page.
+<p class="note">
+  <strong>Note</strong>: When running <code>cf curl</code> ensure that you query
+  all pages, because the responses are limited to a certain number of bindings per page.
 	The default is 50.
-	To find the next page curl the value under <code>next_url</code>.</p>
+	To find the next page curl the value under <code>next_url</code>.
+</p>
