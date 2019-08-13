@@ -1,7 +1,9 @@
-This errand uses the Cloud Controller API to delete all instances of your broker’s
-service offering in every Cloud Foundry org and space. It only deletes instances
-the Cloud Controller knows about.
-It does not delete orphan BOSH deployments.
+<p>
+  This errand uses the Cloud Controller API to delete all instances of your broker’s
+  service offering in every Cloud Foundry org and space. It only deletes instances
+  the Cloud Controller knows about.
+  It does not delete orphan BOSH deployments.
+</p>
 
 <p class="note">
   <strong>Note</strong>: Orphan BOSH deployments do not correspond to a known service instance.
@@ -9,18 +11,27 @@ It does not delete orphan BOSH deployments.
   errand to identify them.
 </p>
 
-<br>
-The `delete-all-service-instances` errand does the following:
+<p>
+  The <code>delete-all-service-instances</code> errand does the following:
+</p>
 
-1. Unbinds all apps from the service instances.
-1. Deletes all service instances sequentially. Each service instance deletion includes:
-  1. Running any pre-delete errands
-  1. Deleting the BOSH deployment of the service instance
-  1. Removing any ODB-managed secrets from BOSH CredHub
-  1. Checking for instance deletion failure, which results in the errand failing immediately
-1. Determines whether any instances have been created while the errand was running.
-If new instances are detected, the errand returns an error.
-In this case, Pivotal recommends running the errand again.
+<ol>
+  <li>Unbinds all apps from the service instances.</li>
+  <li>
+    Deletes all service instances sequentially. Each service instance deletion includes:
+    <ol>
+      <li>Running any pre-delete errands</li>
+      <li>Deleting the BOSH deployment of the service instance</li>
+      <li>Removing any ODB-managed secrets from BOSH CredHub</li>
+      <li>Checking for instance deletion failure, which results in the errand failing immediately</li>
+    </ol>
+  </li>
+  <li>
+    Determines whether any instances have been created while the errand was running.
+    If new instances are detected, the errand returns an error.
+    In this case, Pivotal recommends running the errand again.
+  </li>
+</ol>
 
 <p class="note warning">
   <strong>Warning:</strong> Use extreme caution when running this errand.
@@ -28,9 +39,8 @@ In this case, Pivotal recommends running the errand again.
   instances in an environment.
 </p>
 
-<br>
-To run the errand, run the following command:
+<p>
+  To run the errand, run the following command:
+</p>
 
-```
-bosh -d service-instance_GUID delete-deployment
-```
+<pre><code>bosh -d service-instance_GUID delete-deployment</code></pre>

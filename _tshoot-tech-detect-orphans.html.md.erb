@@ -1,25 +1,33 @@
-A service instance is defined as "orphaned" when the BOSH deployment for the
-instance is still running, but the service is no longer registered in Cloud Foundry.
+<p>
+  A service instance is defined as "orphaned" when the BOSH deployment for the
+  instance is still running, but the service is no longer registered in Cloud Foundry.
+</p>
 
-The `orphan-deployments` errand collates a list of service deployments that have
-no matching service instances in Cloud Foundry and return the list to the operator.
-It is then up to the operator to remove the orphaned BOSH deployments.
+<p>
+  The <code>orphan-deployments</code> errand collates a list of service deployments that have
+  no matching service instances in Cloud Foundry and return the list to the operator.
+  It is then up to the operator to remove the orphaned BOSH deployments.
+</p>
 
-<br>
-To run the errand, run the following command:
+<p>
+  To run the errand, run the following command:
+</p>
 
-```
-bosh -d DEPLOYMENT-NAME run-errand orphan-deployments
-```
+<pre><code>bosh -d DEPLOYMENT-NAME run-errand orphan-deployments</code></pre>
 
-<br>
-**If orphan deployments exist**---The errand script does the following:
+<p>
+  <strong>If orphan deployments exist</strong>---The errand script does the following:
+</p>
 
-* Exit with exit code 10
-* Output a list of deployment names under a `[stdout]` header
-* Provide a detailed error message under a `[stderr]` header
+<ul>
+  <li>Exit with exit code 10</li>
+  <li>Output a list of deployment names under a <code>[stdout]</code> header</li>
+  <li>Provide a detailed error message under a <code>[stderr]</code> header</li>
+</ul>
 
-For example:
+<p>
+  For example:
+</p>
 
 <pre class="terminal">
 [stdout]
@@ -31,7 +39,9 @@ Orphan BOSH deployments detected with no corresponding service instance in Cloud
 Errand 'orphan-deployments' completed with error (exit code 10)
 </pre>
 
-These details will also be available through the BOSH `/tasks/` API endpoint for use in scripting:
+<p>
+  These details will also be available through the BOSH <code>/tasks/</code> API endpoint for use in scripting:
+</p>
 
 <pre class="terminal">
 $ curl 'https<span>:</span>//bosh-user:bosh-password@bosh-url:25555/tasks/task-id/output?type=result' | jq .
@@ -45,12 +55,15 @@ $ curl 'https<span>:</span>//bosh-user:bosh-password@bosh-url:25555/tasks/task-i
 }
 </pre>
 
-<br>
-**If no orphan deployments exist**---The errand script does the following:
+<p>
+  <strong>If no orphan deployments exist</strong>---The errand script does the following:
+</p>
 
-* Exit with exit code 0
-* Stdout will be an empty list of deployments
-* Stderr will be `None`
+<ul>
+  <li>Exit with exit code 0</li>
+  <li>Stdout will be an empty list of deployments</li>
+  <li>Stderr will be <code>None</code></li>
+</ul>
 
 <pre class="terminal">
 [stdout]
@@ -62,20 +75,22 @@ None
 Errand 'orphan-deployments' completed successfully (exit code 0)
 </pre>
 
-<br>
-**If the errand encounters an error during running**---The errand script does the following:
+<p>
+  <strong>If the errand encounters an error during running</strong>---The errand script does the following:
+</p>
 
-* Exit with exit 1
-* Stdout will be empty
-* Any error messages will be under stderr
+<ul>
+  <li>Exit with exit 1</li>
+  <li>Stdout will be empty</li>
+  <li>Any error messages will be under stderr</li>
+</ul>
 
-<br>
-To clean up orphaned instances, run the following command on each instance:
+<p>
+  To clean up orphaned instances, run the following command on each instance:
+</p>
 
 <p class="note warning">
   <strong>WARNING: </strong> Running this command may leave IaaS resources in an unusable state.
 </p>
 
-```
-bosh delete-deployment service-instance_SERVICE-INSTANCE-GUID
-```
+<pre><code>bosh delete-deployment service-instance_SERVICE-INSTANCE-GUID</code></pre>
