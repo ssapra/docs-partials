@@ -1,20 +1,61 @@
-1. Depending on your IaaS and the number of service instances, the
-[`upgrade-all-service-instances`](#upgrade-all) task takes 15-20 minutes per
-instance if you changed IaaS resources, and 5-10 minutes per instance if you
-reconfigured BOSH releases.
-
-1. To calculate how long the errand should take, multiply the number of instances
-by 20 minutes.
-
-1. If the errand goes on for much longer than this, you might want to:
-   1. `ssh` onto the errand VM
-   1. `cd /var/vcap/sys/log` and look for the errand output log
-   1. `tail -f LOG` and see if the errand is still attempting to upgrade instances.
-   If it is, then allow the errand to continue.
-   1. If the errand appears to be stuck, cancel the errand task:
-
-      1. Identify the errand task by running the following command: <pre>bosh tasks</pre>
-
-      1. Cancel the errand task by running the following command: <pre>bosh cancel-task TASK-ID</pre>
-
-1. Retry [running the errand](#upgrade-all).
+<ol>
+  <li>
+    <p>
+      Depending on your IaaS and the number of service instances, the
+      <a href="#upgrade-all"><code>upgrade-all-service-instances</code></a>
+      task takes 15-20 minutes per instance if you changed IaaS resources, and
+      5-10 minutes per instance if you reconfigured BOSH releases.
+    </p>
+  </li>
+  <li>
+    <p>
+      To calculate how long the errand should take, multiply the number of instances
+      by 20 minutes.
+    </p>
+  </li>
+  <li>
+    <p>
+      If the errand goes on for much longer than this, you might want to:
+    </p>
+    <ol>
+      <li>
+        <p>
+          <code>ssh</code> onto the errand VM
+        </p>
+      </li>
+      <li>
+        <p>
+          <code>cd /var/vcap/sys/log</code> and look for the errand output log
+        </p>
+      </li>
+      <li>
+        <p>
+          <code>tail -f LOG</code> and see if the errand is still attempting to upgrade instances.
+          If it is, then allow the errand to continue.
+        </p>
+      </li>
+      <li>
+        <p>
+          If the errand appears to be stuck, cancel the errand task:
+        </p>
+        <ol>
+          <li>
+            <p>
+              Identify the errand task by running the following command: <pre>bosh tasks</pre>
+            </p>
+          </li>
+          <li>
+            <p>
+              Cancel the errand task by running the following command: <pre>bosh cancel-task TASK-ID</pre>
+            </p>
+          </li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>
+      Retry <a href="#upgrade-all">running the errand</a>.
+    </p>
+  </li>
+</ol>

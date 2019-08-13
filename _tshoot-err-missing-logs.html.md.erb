@@ -1,24 +1,51 @@
-If no logs are being emitted by the on-demand broker, check that your syslog
-forwarding address is correct in Ops Manager.
+<p>
+  If no logs are being emitted by the on-demand broker, check that your syslog
+  forwarding address is correct in Ops Manager.
+</p>
 
-1. Ensure you have configured syslog for the tile.
+<ol>
+  <li>
+    <p>
+      Ensure you have configured syslog for the tile.
+    </p>
+  </li>
+  <li>
+    <p>
+      Ensure that you have network connectivity between the networks that the tile
+      is using and the syslog destination.
+      If the destination is external, you need to use the <a href="https://docs.pivotal.io/svc-sdk/odb/tile.html#public-ip">public ip</a>
+      VM extension feature available in your Ops Manager tile configuration settings.
+    </p>
+  </li>
+  <li>
+    <p>
+      Verify that the Firehose is emitting metrics:
+    </p>
+    <ol>
+      <li>
+        <p>
+          Install the <code>cf nozzle</code> plugin.
+          For instructions, see the <a href="https://github.com/cloudfoundry-community/firehose-plugin">firehose plugin</a>
+          GitHub repository.
+        </p>
+      </li>
+      <li>
+        <p>
+          To find logs from your service in the <code>cf nozzle</code> output, run the following:
+        </p>
+        <p>
+          <pre><code>cf nozzle -f ValueMetric | grep --line-buffered "on-demand-broker/MY-SERVICE"</code></pre>
+        </p>
+      </li>
+    </ol>
+  </li>
+</ol>
 
-1. Ensure that you have network connectivity between the networks that the tile
-is using and the syslog destination.
-If the destination is external, you need to use the [public ip](https://docs.pivotal.io/svc-sdk/odb/tile.html#public-ip)
-VM extension feature available in your Ops Manager tile configuration settings.
+<p>
+  If no metrics appear within five minutes, verify that the broker network has access
+  to the Loggregator system on all required ports.
+</p>
 
-1. Verify that the Firehose is emitting metrics:
-  1. Install the `cf nozzle` plugin.
-  For instructions, see the [firehose plugin](https://github.com/cloudfoundry-community/firehose-plugin)
-  GitHub repository.
-  1. To find logs from your service in the `cf nozzle` output, run the following:
-
-  		```
-  		cf nozzle -f ValueMetric | grep --line-buffered "on-demand-broker/MY-SERVICE"
-  		```
-
-If no metrics appear within five minutes, verify that the broker network has access
-to the Loggregator system on all required ports.
-
-[Contact Pivotal support](#support) if you are unable to resolve the issue.
+<p>
+  <a href="#support">Contact Pivotal support</a> if you are unable to resolve the issue.
+</p>
