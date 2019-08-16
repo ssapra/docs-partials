@@ -1,4 +1,4 @@
-On-demand PCF services rely on the BOSH 2.0 ability to dynamically deploy VMs in
+On-demand <%= vars.product_name  %> services rely on the BOSH 2.0 ability to dynamically deploy VMs in
 a dedicated network.
 The on-demand service broker uses this capability to create single-tenant service
 instances in a dedicated service network.
@@ -19,7 +19,7 @@ An on-demand service splits its operations between the default network and the
 service network.
 Shared components of the service, such as executive controllers and databases,
 run centrally on the default network along with the Cloud Controller, UAA, and
-other PCF components.
+other <%= vars.product_name  %> components.
 The worker pool deployed to specific spaces runs on the service network.
 
 The diagram below shows worker VMs in an on-demand service instance
