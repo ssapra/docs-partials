@@ -1532,3 +1532,11 @@
       </ul>
    </div>
 </div>
+
+<%# Make relative link if book path is in link: %>
+<script>
+$('a[href*="<%= product_info['url_prefix'] %>"]').each(function() {
+   var new_href = $(this).attr("href").replace('https://docs.pivotal.io', '');
+   $(this).attr("href", new_href);
+});
+</script>
