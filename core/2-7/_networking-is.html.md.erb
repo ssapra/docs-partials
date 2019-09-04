@@ -11,7 +11,7 @@ Perform the following steps to configure the <%= vars.product_name %> Isolation 
 1. If you want to use HAProxy for this isolation segment, enter at least one address in the **HAProxy IPs** field. You should specify more than one IP address for high availability. Then configure your load balancer to forward requests for the domains you have set up for your deployment to these IP addresses. For more information, see <a href="../opsguide/ssl-term-haproxy.html">Configuring SSL/TLS Termination at HAProxy</a>.</td>
 	<p class="note"><strong>Note</strong>: If you rely on HAProxy for a feature in Pivotal Application Service (PAS) and you want isolated networking for this isolation segment, you may want to deploy the HAProxy provided by the Isolation Segment tile.</p>
 
-1. <%= partial 'haproxy_router_cert_config' %>
+1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_router_cert_config" %>
 1. <%= partial 'router_haproxy_ca' %>
 1. <%= partial 'min_tls_version' %>
 1. <%= partial 'ip_logging' %>
