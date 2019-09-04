@@ -1,8 +1,8 @@
 In the App Developer Controls pane, you configure restrictions and default settings for your apps.
 
-1. Select **App Developer Controls**. The following image shows the **App Developer Controls** pane.
+To configure app developer controls:
 
-    ![There is a heading at the top of the Application Developer Controls page that begins with the text, Configure restrictions and default settings. There are several fields on the Application Developer Controls page. The first three fields are Maximum File Upload Size, Default App Memory, and Default App Memory. There is a Save button at the bottom of the page.](images/app-dev-controls.png)
+1. Select **App Developer Controls**.
 
 1. Enter the **Maximum file upload size** in MB. This is the maximum size of an app upload.
 
@@ -21,7 +21,8 @@ In the App Developer Controls pane, you configure restrictions and default setti
 
 1. Enter the **Staging timeout** in seconds. When you stage an app droplet with the Cloud Controller, the server times out after the number of seconds you specify in this field.
 
-1. For **Internal domains**, enter a domain that apps use for internal DNS service discovery. If you specify this domain using `cf push -d`, other PAS apps can reach the pushed app at `APP-NAME.INTERNAL-DOMAIN`. This value defaults to `apps.internal`.
+1. For **Internal domains**, enter one or more domains that apps use for internal DNS service discovery. If you enter multiple domains, provide the domains in a comma-separated list. 
+	<p class="note"><b>Note:</b> If you specify domains using `cf push -d`, other PAS apps can reach the pushed app at `APP-NAME.INTERNAL-DOMAIN`. This value defaults to `apps.internal`.</p>
 
 1. Enable the **Allow space developers to manage network policies** checkbox to permit developers to manage their own network policies for their applications. 
 
