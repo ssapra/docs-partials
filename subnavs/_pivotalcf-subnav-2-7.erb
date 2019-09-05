@@ -373,7 +373,7 @@
                            </li>
                         </ul>
                   </ul>
-               </li>              
+               </li>
               <li class="has_submenu">
                 <span><strong>User Accounts and Permissions</strong></span>
                 <ul>
@@ -486,6 +486,9 @@
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/customizing/backup-restore/backup-pcf-bbr.html">Backing Up <%= vars.product_name_full %> with BBR</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/customizing/backup-restore/component-backups.html">File Storage Backup Level</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/customizing/backup-restore/component-backups.html"><%= vars.product_short %> Component Behavior During Backup</a>
@@ -1469,7 +1472,7 @@
                       </li>
                       <li>
                         <a href="https://docs.pivotal.io/partners/vmware-harbor/installing.html">Installing VMware Harbor Registry for <%= vars.pks_product_short %></a>
-                      </li>              
+                      </li>
                       <li>
                         <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-users.html">Setting Up <%= vars.pks_product_short %> Admin Users on vSphere</a>
                       </li>
@@ -1743,7 +1746,7 @@
                           <a href="https://docs.pivotal.io/pks/1-5/vsphere-host-group.html">Using vSphere Host Groups with Enterprise PKS</a>
                         </li>
                       </ul>
-                    </li>            
+                    </li>
                 </ul>
               </li>
               <li class="has_submenu">
@@ -2208,4 +2211,3 @@ $('#sub-nav a[href*="<%= product_info['url_prefix'] %>"]').each(function() {
    $(this).attr("href", new_href);
 });
 </script>
-
