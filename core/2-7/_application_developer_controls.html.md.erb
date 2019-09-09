@@ -19,7 +19,7 @@ In the **App Developer Controls** pane, you configure restrictions and default s
 
 1. Enter the **Staging timeout** in seconds. When you stage an app droplet with the Cloud Controller, the server times out after the number of seconds you specify in this field.
 
-1. For **Internal domains**, enter a domain that apps use for internal DNS service discovery. If you specify this domain using `cf push -d`, other PAS apps can reach the pushed app at `APP-NAME.INTERNAL-DOMAIN`. This value defaults to `apps.internal`.
+1. For **Internal domains**, enter one or more domains that apps use for internal DNS service discovery. If you specify a domain using `cf push -d`, other PAS apps can reach the pushed app at `APP-NAME.INTERNAL-DOMAIN`. This value defaults to `apps.internal`.
 
 1. Enable the **Allow space developers to manage network policies** checkbox to permit developers to manage their own network policies for their apps. 
 
