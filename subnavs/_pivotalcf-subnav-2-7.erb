@@ -9,6 +9,9 @@
             <span role="button"><strong><%= vars.product_name %> Release Notes</strong></span>
             <ul>
                <li class="">
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/pcf-release-notes/index.html">PCF Release Notes</a>
+               </li>
+               <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/pcf-release-notes/highlights.html"><%= vars.product_name %> v2.7 Feature Highlights</a>
                </li>
                <li class="">
@@ -321,6 +324,9 @@
          <li class="has_submenu">
             <span role="button"><strong>Operating <%= vars.product_name %></strong></span>
             <ul>
+               <li class="">
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/opsguide/index.html">Operating <%= vars.product_name %></a>
+               </li>
                <li class="has_submenu">
                   <span role="button"><strong>Ops Manager</strong></span>
                   <ul>
@@ -508,6 +514,9 @@
               <li class="has_submenu">
                  <span role="button"><strong><%= vars.product_short %> Concepts</strong></span>
                 <ul>
+                  <li>
+                    <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/concepts/index.html"><%= vars.product_short %> Concepts</a>
+                  </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/concepts/overview.html"><%= vars.product_short %> Overview</a>
                    </li>
@@ -515,6 +524,9 @@
                     <li class="has_submenu">
                        <span role="button"><strong>Security and Networking</strong></span>
                       <ul>
+                        <li>
+                          <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/concepts/security-index.html">Security and Networking</a>
+                        </li>
                          <li class="">
                             <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/concepts/security.html"><%= vars.product_short %> Security</a>
                          </li>
@@ -553,6 +565,9 @@
                     <li class="has_submenu">
                        <span role="button"><strong>How <%= vars.product_short %> Manages Apps</strong></span>
                       <ul>
+                        <li>
+                          <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/concepts/apps-index.html">How <%= vars.product_short %> Manages Apps</a>
+                        </li>
                          <li class="">
                             <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/concepts/how-applications-are-staged.html">How Apps Are Staged</a>
                          </li>
@@ -611,6 +626,9 @@
              <li class="has_submenu">
                 <span role="button"><strong>Administering <%= vars.product_short %></strong></span>
                 <ul>
+									<li class="">
+										<a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/adminguide/index.html">Administering <%= vars.product_short %>
+									</li>
                   <li class="has_submenu">
                      <span role="button"><strong>Traffic and Security</strong></span>
                      <ul>
@@ -638,6 +656,9 @@
                      <span role="button"><strong>Routing</strong></span>
                      <ul>
                        <li class="">
+                        <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/adminguide/routing-index.html">Routing</a>
+                       </li>
+                       <li class="">
                           <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/opsguide/switching-domains.html">Switching Application Domains</a>
                        </li>
                        <li class="">
@@ -660,6 +681,9 @@
                   <li class="has_submenu">
                      <span role="button"><strong>User Accounts and Communications</strong></span>
                      <ul>
+												<li class="">
+													<a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/adminguide/user-accounts-index.html">User Accounts and Communications</a>
+												</li>
                         <li class="">
                            <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/adminguide/cli-user-management.html">Creating and Managing Users with the cf CLI</a>
                         </li>
@@ -697,6 +721,9 @@
                   <li class="has_submenu">
                      <span role="button"><strong>Managing the Runtime</strong></span>
                      <ul>
+												<li class="">
+													<a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/adminguide/platform-index.html">Managing the Runtime</a>
+												</li>
                         <li class="">
                            <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/opsguide/api-endpoint.html">Identifying the API Endpoint for Your <%= vars.product_short %> Instance</a>
                         </li>
@@ -838,6 +865,9 @@
              <li class="has_submenu">
                 <span role="button"><strong>Isolation Segment</strong></span>
                 <ul>
+                  <li class="">
+                    <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/adminguide/isolation-segment-index.html">Isolation Segments</a>
+                  </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/adminguide/isolation-segments.html">Managing Isolation Segments</a>
                    </li>
@@ -850,6 +880,9 @@
              <li class="has_submenu">
                 <span role="button"><strong>Using Apps Manager</strong></span>
                 <ul>
+                  <li class="">
+                    <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/console/index.html">Using Apps Manager</a>
+                  </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/console/dev-console.html">Getting Started with Apps Manager</a>
                    </li>
@@ -888,6 +921,9 @@
              <li class="has_submenu">
                 <span role="button"><strong>Using the Cloud Foundry Command Line Interface (cf CLI)</strong></span>
                 <ul>
+                  <li class="">
+                    <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/cf-cli/index.html">Using the Cloud Foundry Command Line Interface (cf CLI)</a>
+                  </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/cf-cli/install-go-cli.html">Installing the cf CLI</a>
                    </li>
@@ -918,6 +954,9 @@
                 <span role="button"><strong>Developer Guide</strong></span>
                 <ul>
                     <li class="">
+                      <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/index.html">Developer Guide</a>
+                    </li>
+                    <li class="">
                        <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/deploy-apps/prepare-to-deploy.html">Considerations for Designing and Running an App in the Cloud</a>
                     </li>
                     <li class="">
@@ -926,6 +965,9 @@
                     <li class="has_submenu">
                       <span role="button"><strong>cf push</strong></span>
                       <ul>
+                        <li>
+                          <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/push.html">cf push</a>
+                        </li>
                         <li>
                           <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/deploy-apps/deploy-app.html">Pushing an App</a>
                         </li>
@@ -967,6 +1009,9 @@
                     <li class="has_submenu">
                        <span role="button"><strong>Routes and Domains</strong></span>
                       <ul>
+                        <li>
+                          <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/routing-index.html">Routes and Domains</a>
+                        </li>
                          <li>
                          <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/deploy-apps/routes-domains.html">Configuring Routes and Domains</a>
                          </li>
@@ -981,6 +1026,9 @@
                     <li class="has_submenu">
                        <span role="button"><strong>Managing Apps with the cf CLI</strong></span>
                        <ul>
+                          <li>
+                            <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/managing-apps-index.html">Managing Apps with the cf CLI</a>
+                          </li>
                           <li class="">
                              <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/using-tasks.html">Running Tasks</a>
                           </li>
@@ -1004,6 +1052,9 @@
                  <li class="has_submenu">
                     <span role="button"><strong>Managing Services</strong></span>
                     <ul>
+                      <li class="">
+                        <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/services-index.html">Managing Services</a>
+                      </li>
                        <li class="">
                           <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/services/">Services Overview</a>
                        </li>
@@ -1033,6 +1084,9 @@
                  <li class="has_submenu">
                     <span role="button"><strong>Streaming App Logs</strong></span>
                     <ul>
+                        <li>
+                          <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/streaming-logs-index.html">Streaming App Logs</a>
+                        </li>
                        <li class="">
                           <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/services/log-management.html">Streaming App Logs to Log Management Services</a>
                        </li>
@@ -1053,6 +1107,9 @@
                     <li class="has_submenu">
                        <span role="button"><strong>SSH for Apps and Services</strong></span>
                         <ul>
+                          <li>
+                            <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/ssh-index.html">SSH for Apps and Services</a>
+                          </li>
                           <li>
                             <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/devguide/deploy-apps/app-ssh-overview.html">App SSH Overview</a>
                           </li>
@@ -1081,6 +1138,9 @@
                    <li class="has_submenu">
                       <span role="button"><strong>Using Buildpacks</strong></span>
                       <ul>
+                        <li>
+                          <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/using-buildpacks.html">Using Buildpacks</a>
+                        </li>
 
                          <li class="">
                             <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/understand-buildpacks.html">How Buildpacks Work in Cloud Foundry</a>
@@ -1140,6 +1200,9 @@
                              <li class="has_submenu">
                                 <span role="button"><strong>Getting Started Deploying Apps</strong></span>
                                 <ul>
+                                  <li>
+                                    <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/java/getting-started-deploying-apps/index.html">Getting Started Deploying Apps</a>
+                                  </li>
                                    <li class="">
                                       <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/java/getting-started-deploying-apps/gsg-grails.html">Grails</a>
                                    </li>
@@ -1154,6 +1217,9 @@
                              <li class="has_submenu">
                                 <span role="button"><strong>Configuring Service Connections</strong></span>
                                 <ul>
+                                  <li>
+                                    <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/java/configuring-service-connections/index.html">Configuring Service Connections</a>
+                                  </li>
                                    <li class="">
                                       <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/java/configuring-service-connections/grails-service-bindings.html">Grails</a>
                                    </li>
@@ -1238,6 +1304,9 @@
                          <li class="has_submenu">
                             <span role="button"><strong>Getting Started Deploying Apps</strong></span>
                             <ul>
+                              <li>
+                                <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/java/getting-started-deploying-apps/index.html">Getting Started Deploying Apps</a>
+                              </li>
                                <li class="">
                                   <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/ruby/gsg-ruby.html">Ruby</a>
                                </li>
@@ -1285,6 +1354,9 @@
                          <li class="has_submenu">
                             <span role="button"><strong>Using CI for Buildpacks</strong></span>
                             <ul>
+                              <li>
+                                <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/buildpack-ci-index.html">Using CI for Buildpacks</a>s
+                              </li>
                                <li class="">
                                   <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/buildpacks/releasing_a_new_buildpack_version.html">Releasing a New Buildpack Version</a>
                                </li>
@@ -1942,6 +2014,9 @@
          <li class="has_submenu">
             <span role="button"><strong>Logging and Metrics</strong></span>
             <ul>
+              <li>
+                <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/loggregator/index.html">Logging and Metrics</a>
+              </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/loggregator/data-sources.html">Overview of Logging and Metrics</a>
                </li>
@@ -2000,6 +2075,9 @@
             <li class="has_submenu">
                <span role="button"><strong><%= vars.product_name %> Security Processes</strong></span>
               <ul>
+                <li>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/process/index.html"><%= vars.product_name %> Security Processes</a>
+                </li>
                <li class=""><a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/process/pcf-security.html"><%= vars.product_name %> Security Overview and Policy</a>
                </li>
                <li class=""><a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/process/security-lifecycle.html"><%= vars.product_name %> Testing, Release, and Security Lifecycle</a>
@@ -2012,9 +2090,15 @@
                <li class="has_submenu">
                   <span role="button"><strong><%= vars.product_name %> Infrastructure Security</strong></span>
                   <ul>
+                    <li>
+                      <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/index.html"><%= vars.product_name %> Infrastructure Security</a>
+                    </li>
                  <li class="has_submenu">
                     <span role="button"><strong>Stemcell Security</strong></span>
                   <ul>
+                    <li>
+                      <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/stemcell-index.html">Stemcell Security</a>
+                    </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/stemcell-hardening.html">Linux Stemcell Hardening</a>
                      </li>
@@ -2026,6 +2110,9 @@
                <li class="has_submenu">
                   <span role="button"><strong>Certificates and TLS in <%= vars.product_name %></strong></span>
                   <ul>
+                    <li>
+                      <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/certificates-index.html">Certificates and TLS in <%= vars.product_name %></a>
+                    </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/networking/tls-info.html">TLS Connections in <%= vars.product_name %></a>
                      </li>
@@ -2057,6 +2144,9 @@
                <li class="has_submenu">
                   <span role="button"><strong>Network Security</strong></span>
                   <ul>
+                    <li>
+                      <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/networking/index.html">Network Security</a>s
+                    </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/networking/bosh-dns-network-paths.html">BOSH DNS Network Communications</a>
                      </li>
@@ -2135,8 +2225,11 @@
                <li class="has_submenu">
                   <span role="button"><strong>Compliance and Other Security-Related Topics</strong></span>
                   <ul>
+                    <li class="">
+                      <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/security/security-adjacent/index.html">Compliance and Other Security-Related Topics</a>
+                    </li>
                    <li class="">
-                  <a href="https://docs.pivotal.io/nist/index.html">NIST Controls and <%= vars.product_name %></a>
+                  <a href="shttps://docs.pivotal.io/nist/index.html">NIST Controls and <%= vars.product_name %></a>
                    </li>
                    <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= vars.current_major_version.sub('.', '-') %>/opsguide/gdpr.html">General Data Protection Regulation</a>
