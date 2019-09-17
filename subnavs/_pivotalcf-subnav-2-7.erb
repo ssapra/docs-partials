@@ -413,31 +413,37 @@
               </li>
 
               <li class="has_submenu">
-                <span><strong>Internal Network Security</strong></span>
+                <span role="button"><strong>Certificates and Credentials</strong></span>
                 <ul>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/rotate-ccdb-key.html">Rotating the Cloud Controller Database Encryption Key</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/app-sec-groups.html">Restricting App Access to Internal <%= vars.product_name %> Components</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/notifications-asg.html">Configuring Application Security Groups for Email Notifications</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/securing-endpoints.html">Securing System and App Endpoints</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/config-ssh.html">Configuring SSH Access for <%= vars.product_name %></a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/secure-si-creds.html">Securing Service Instance Credentials with Runtime CredHub</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/credential-rotation.html">Rotating Runtime CredHub Encryption Keys</a>
-                   </li>
+                  <li class="">
+                    <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/certificate-types.html">Certificate Types</a>
+                  </li>
+                  <li class="">
+                    <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/managing-certificates.html">Managing Certificates with the Ops Manager API</a>
+                  </li>
+                  <li class="">
+                    <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/api-cert-rotation.html">Rotating Certificates</a>
+                  </li>
+                  <li class="">
+                    <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/custom-ca-cert.html">Custom Certificate Authorities</a>
+                  </li>
+                  <li class="">
+                    <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/credentials.html">Retrieving Credentials from Your Deployment</a>
+                  </li>
+                  <li class="has_submenu">
+                    <span role="button"><strong>Component: CredHub</strong></span>
+                    <ul>
+                      <li class="">
+                        <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/credhub/index.html">CredHub Overview</a>
+                      </li>
+                      <li class="">
+                        <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/credhub/credential-types.html">CredHub Credential Types</a>
+                      </li>
+                    </ul>
+                  </li>
                 </ul>
-              </li>
+               </li>
+
               <li class="has_submenu">
                 <span><strong>Platform Performance</strong></span>
                 <ul>
@@ -543,32 +549,13 @@
                    </li>
 
                     <li class="has_submenu">
-                       <span role="button"><strong>Security and Networking</strong></span>
+                       <span role="button"><strong>Orgs, Spaces, and Roles</strong></span>
                       <ul>
-                        <li>
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/security-index.html">Security and Networking</a>
-                        </li>
                          <li class="">
-                            <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/security.html"><%= vars.product_short %> Security</a>
-                         </li>
-                         <li class="">
-                            <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/container-security.html">Container Security</a>
-                         </li>
-                         <li class="">
-                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/understand-cf-networking.html">Container-to-Container Networking</a>
-                      </li>
-                            <li class="">
                             <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/roles.html">Orgs, Spaces, Roles, and Permissions</a>
                          </li>
                          <li class="">
                             <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/orgs-and-spaces.html">Planning <%=vars.product_short %> Orgs and Spaces</a>
-
-                         </li>
-                         <li class="">
-                            <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/asg.html">Application Security Groups</a>
-                         </li>
-                         <li class="">
-                            <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/diego/ssh-conceptual.html">Application SSH Components and Processes</a>
                          </li>
                       </ul>
                     </li>
@@ -651,98 +638,6 @@
 										<a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/index.html">Administering <%= vars.product_short %></a>
 									</li>
                   <li class="has_submenu">
-                     <span role="button"><strong>Traffic and Security</strong></span>
-                     <ul>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/custom-load-balancer.html">Using Your Own Load Balancer</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/ssl-term-haproxy.html">Configuring SSL/TLS Termination at HAProxy</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/securing-traffic.html">Securing Traffic into Cloud Foundry</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/security_config.html">Providing a Certificate for your SSL Termination Point</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/config-proxy.html">Configuring Proxy Settings for All Applications</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/enabling_ipv6.html">Enabling IPv6 for Hosted Applications</a>
-                       </li>
-                     </ul>
-                  </li>
-                  <li class="has_submenu">
-                     <span role="button"><strong>Routing</strong></span>
-                     <ul>
-                       <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/routing-index.html">Routing</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/switching-domains.html">Switching Application Domains</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/configure-lb-healthcheck.html">Configuring Load Balancer Healthchecks for Routers</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/frontend-idle-timeout.html">Configuring Frontend Idle Timeout for Gorouter and HAProxy</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/route-service-lookup.html">Configuring Route Service Lookup</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/service-mesh.html">Service Mesh (Beta)</a>
-                       </li>
-                       <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/deploying-service-mesh.html">Deploying Service Mesh (Beta)</a>
-                       </li>
-                    </ul>
-                  </li>
-                  <li class="has_submenu">
-                     <span role="button"><strong>User Accounts and Communications</strong></span>
-                     <ul>
-												<li class="">
-													<a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/user-accounts-index.html">User Accounts and Communications</a>
-												</li>
-                        <li class="">
-                           <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/cli-user-management.html">Creating and Managing Users with the cf CLI</a>
-                        </li>
-                        <li class="">
-                           <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/uaa/uaa-user-management.html">Creating and Managing Users with the UAA CLI (UAAC)</a>
-                        </li>
-                        <li class="">
-                           <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/creating-account.html">Creating New <%= vars.product_short %> User Accounts</a>
-                        </li>
-                        <li class="">
-                           <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/pw-policy.html">Configuring UAA Password Policy</a>
-                        </li>
-                        <li class="">
-                           <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/external-user-management.html">Adding Existing SAML or LDAP Users to a <%= vars.product_name %> Deployment</a>
-                        </li>
-                        <li class="">
-                           <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/notifications.html">Getting Started with the Notifications Service</a>
-                        </li>
-                        <li class="has_submenu">
-                           <span role="button"><strong>Configuring Authentication and Enterprise SSO for <%= vars.product_short %></strong></span>
-                           <ul>
-                             <li class="">
-                                <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/auth-sso.html">Configuring Authentication and Enterprise SSO for <%= vars.product_short %></a>
-                             </li>
-                             <li class="">
-                                <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/adfs-sso-configuration.html">Configuring ADFS as an Identity Provider</a>
-                             </li>
-                             <li class="">
-                                <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/ca-sso-config.html">Configuring CA as an Identity Provider</a>
-                             </li>
-                             <li class="">
-                                <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/ping-federate-sso-configuration.html">Configuring PingFederate as an Identity Provider</a>
-                             </li>
-                           </ul>
-                        </li>
-                     </ul>
-                  </li>
-                  <li class="has_submenu">
                      <span role="button"><strong>Managing the Runtime</strong></span>
                      <ul>
 												<li class="">
@@ -771,9 +666,6 @@
                   <li class="has_submenu">
                     <span><strong>Enabling Developers</strong></span>
                     <ul>
-                       <li class="">
-                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/enabling-tcp-routing.html">Enabling TCP Routing</a>
-                       </li>
                        <li class="">
                           <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/docker.html">Using Docker in Cloud Foundry</a>
                        </li>
@@ -811,6 +703,213 @@
                </ul>
              </li>
 
+              <li class="has_submenu">
+                 <span role="button"><strong>User Accounts and Communications</strong></span>
+                 <ul>
+  									<li class="">
+  										<a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/user-accounts-index.html">User Accounts and Communications</a>
+  									</li>
+                    <li class="">
+                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/user-types.html"><%= vars.product_name %> User Types</a>
+                    </li>                    
+                    <li class="">
+                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/cli-user-management.html">Creating and Managing Users with the cf CLI</a>
+                    </li>
+                    <li class="">
+                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/uaa/uaa-user-management.html">Creating and Managing Users with the UAA CLI (UAAC)</a>
+                    </li>
+                    <li class="">
+                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/creating-account.html">Creating New <%= vars.product_short %> User Accounts</a>
+                    </li>
+                    <li class="">
+                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/external-user-management.html">Adding Existing SAML or LDAP Users to a <%= vars.product_short %> Deployment</a>
+                    </li>
+                    <li class="">
+                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/pw-policy.html">Configuring UAA Password Policy</a>
+                    </li>
+                    <li class="">
+                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/notifications-asg.html">Configuring Application Security Groups for Email Notifications</a>
+                    </li>
+                    <li class="">
+                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/notifications.html">Getting Started with the Notifications Service</a>
+                    </li>
+                    <li class="has_submenu">
+                       <span role="button"><strong>Configuring Authentication and Enterprise SSO for <%= vars.product_short %></strong></span>
+                       <ul>
+                         <li class="">
+                            <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/auth-sso.html">Configuring Authentication and Enterprise SSO for <%= vars.product_short %></a>
+                         </li>
+                         <li class="">
+                            <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/adfs-sso-configuration.html">Configuring ADFS as an Identity Provider</a>
+                         </li>
+                         <li class="">
+                            <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/ca-sso-config.html">Configuring CA as an Identity Provider</a>
+                         </li>
+                         <li class="">
+                            <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/ping-federate-sso-configuration.html">Configuring PingFederate as an Identity Provider</a>
+                         </li>
+                       </ul>
+                    </li>
+                 </ul>
+              </li>
+
+              <li class="has_submenu">
+                 <span role="button"><strong>Traffic and Security</strong></span>
+                 <ul>
+                   <li class="">
+                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/security.html"><%= vars.product_runtime %> Security</a>
+                   </li>
+                   <li class="has_submenu">
+                     <span role="button"><strong>Front End</strong></span>
+                     <ul>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/securing-traffic.html">Securing Traffic into Cloud Foundry</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/ssl-term-haproxy.html">Configuring SSL/TLS Termination at HAProxy</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/tls-info.html">TLS Connections in <%= vars.product_runtime %></a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/security_config.html">Providing a Certificate for Your TLS Termination Point</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/securing-endpoints.html">Securing System and App Endpoints</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/config-ssh.html">Configuring SSH Access for <%= vars.product_name %></a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/diego/ssh-conceptual.html">Application SSH Components and Processes</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/frontend-idle-timeout.html">Configuring Frontend Idle Timeout for Gorouter and HAProxy</a>
+                       </li>
+                     </ul>
+                   </li>
+                   <li class="has_submenu">
+                     <span role="button"><strong>Load Balancing and Routing</strong></span>
+                     <ul>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>//customizing/custom-load-balancer.html">Using Your Own Load Balancer</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/enabling-tcp-routing.html">Enabling TCP Routing</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/enabling_ipv6.html">Enabling IPv6 for Hosted Applications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/config-proxy.html">Configuring Proxy Settings for All Applications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/switching-domains.html">Switching Application Domains</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/configure-lb-healthcheck.html">Configuring Load Balancer Healthchecks for Routers</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/route-service-lookup.html">Configuring Route Service Lookup</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/service-mesh.html">Service Mesh (Beta)</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/deploying-service-mesh.html">Deploying Service Mesh (Beta)</a>
+                       </li>
+                     </ul>
+                   </li>
+                   <li class="has_submenu">
+                     <span role="button"><strong>Internal App Security</strong></span>
+                     <ul>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/container-security.html">Container Security</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/understand-cf-networking.html">Container-to-Container Networking</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/asg.html">Application Security Groups</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/app-sec-groups.html">Restricting App Access to Internal <%= vars.product_runtime %> Components</a>
+                       </li>
+                     </ul>
+                   </li>
+                   <li class="has_submenu">
+                     <span role="button"><strong>Certificates and Credentials</strong></span>
+                     <ul>
+
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/credential-rotation.html">Rotating Runtime CredHub Encryption Keys</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/rotate-ccdb-key.html">Rotating the Cloud Controller Database Encryption Key</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/secure-si-creds.html">Securing Service Instance Credentials with Runtime CredHub</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/security_config.html">Providing a Certificate for your SSL Termination Point</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/devguide/deploy-apps/trusted-system-certificates.html">Trusted System Certificates</a>
+                       </li>
+                     </ul>
+                   </li>
+                   <li class="has_submenu">
+                     <span role="button"><strong>Logging, Auditing, and Compliance</strong></span>
+                     <ul>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/loggregator/cc-uaa-logging.html">Security Event Logging</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/gdpr.html">General Data Protection Regulation and <%= vars.product_runtime %></a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/nist/index.html">NIST Controls and <%= vars.product_runtime %></a>
+                       </li>
+                     </ul>
+                   </li>
+                   <li class="has_submenu">
+                     <span role="button"><strong>Component Communications</strong></span>
+                     <ul>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/bosh-dns-network-paths.html">BOSH DNS Network Communications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/cc-network-paths.html">Cloud Controller Network Communications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/c2c-network-paths.html">Container-to-Container Networking Communications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/credhub-network-paths.html">CredHub Network Communications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/diego-network-paths.html">Diego Network Communications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/loggregator-network-paths.html">Loggregator Network Communications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/mysql-network-paths.html">MySQL Network Communications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/nats-network-paths.html">NATS Network Communications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/routing-network-paths.html">Routing Network Communications</a>
+                       </li>
+                       <li class="">
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/uaa-network-paths.html">UAA Network Communications</a>
+                       </li>
+                     </ul>
+                   </li>
+                 </ul>
+               </li>
+                   
              <li class="has_submenu">
                 <span role="button"><strong>Monitoring <%= vars.product_short %></strong></span>
                 <ul>
@@ -838,8 +937,8 @@
                 </ul>
              </li>
 
-            <li class="">
-                <strong><a href="https://docs.pivotal.io/platform/application-service-windows/<%= vars.current_major_version.sub('.', '-') %>/"><%= vars.product_short %> for Windows</a></strong>
+             <li class="">
+                <strong><a href="https://docs.pivotal.io/platform/application-service-windows/<%= vars.current_major_version.sub('.', '-') %>/index.html"><%= vars.product_short %> for Windows</a></strong>
              </li>
 
              <li class="has_submenu">
@@ -856,6 +955,8 @@
                    </li>
                 </ul>
               </li>
+           </ul>
+           </li>
 
              <li class="has_submenu">
                 <span role="button"><strong>Using Apps Manager</strong></span>
@@ -2053,7 +2154,7 @@
                   <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/index.html"><%= vars.product_name %> Security and Compliance Guide</a>
                 </li>
                 <li class="has_submenu">
-                  <span role="button"><strong><%= vars.product_name %> Security Policy and Processes</strong></span>
+                  <span role="button"><strong>Security Policy and Processes</strong></span>
                   <ul>
                     <li class="">
                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/process/pcf-security.html">Security Overview and Policy</a>
@@ -2064,13 +2165,10 @@
                     <li class="">
                       <a href="https://docs.pivotal.io/pks/1-5/security-process.html">Enterprise PKS Security Disclosure and Release Process</a>
                     </li>
-                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/gdpr.html">Application Service General Data Protection Regulation</a>
-                    </li>
                   </ul>
                  </li>
                 <li class="has_submenu">
-                  <span role="button"><strong>IaaS-Level Security</strong></span>
+                  <span role="button"><strong>IaaS Security</strong></span>
                   <ul>
                     <li class="">
                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/disk-encrypt.html">Disk Encryption</a>
@@ -2094,39 +2192,8 @@
                     </li>
                   </ul>
                  </li>
-                <li class="has_submenu">
-                  <span role="button"><strong>Certificates and Credentials</strong></span>
-                  <ul>
-                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/certificate-types.html">Certificate Types</a>
-                    </li>
-                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/managing-certificates.html">Managing Certificates with the Ops Manager API</a>
-                    </li>
-                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/api-cert-rotation.html">Rotating Certificates</a>
-                    </li>
-                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/pcf-infrastructure/custom-ca-cert.html">Custom Certificate Authorities</a>
-                    </li>
-                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/credentials.html">Retrieving Credentials from Your Deployment</a>
-                    </li>
-                    <li class="has_submenu">
-                      <span role="button"><strong>Component: CredHub</strong></span>
-                      <ul>
-                        <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/credhub/index.html">CredHub Overview</a>
-                        </li>
-                        <li class="">
-                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/credhub/credential-types.html">CredHub Credential Types</a>
-                        </li>
-                      </ul>
-                    </li>
-                  </ul>
-                 </li>
                 <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/index.html"><%= vars.product_name %> Security and Compliance Guide</a>
+                  <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/tiles/index.html">Security-Related <%= vars.product_name %> Tiles and Add-ons</a>
                 </li>
               </ul>
             </li>
