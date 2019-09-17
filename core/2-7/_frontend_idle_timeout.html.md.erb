@@ -1,5 +1,5 @@
 (Optional) Use the **Front end idle timeout for Router and HAProxy** field to help prevent connections from your load balancer to the Gorouter or HAProxy from being closed prematurely. The value you enter sets the duration, in seconds, that the Gorouter or HAProxy maintains an idle open connection from a load balancer that supports keep-alive connections. <br/><br/>
-  In general, set the value higher than the back end idle timeout for your load balancer to avoid the race condition where the load balancer sends a request before it discovers that the Gorouter or HAProxy has closed the connection.<br/><br/>
+  Set the value higher than the back end idle timeout for your load balancer to avoid the race condition where the load balancer sends a request before it discovers that the Gorouter or HAProxy has closed the connection.<br/><br/>
   See the following table for specific guidance and exceptions to this rule:
 	<table>
 		<tr>
