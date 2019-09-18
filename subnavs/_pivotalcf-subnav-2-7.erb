@@ -21,10 +21,10 @@
                   <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/pcf-release-notes/opsmanager-rn.html">Pivotal Operations Manager v2.7 Release Notes</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/pcf-release-notes/runtime-rn.html"><%= vars.product_runtime %> v2.7 Release Notes</a>
+                  <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/pcf-release-notes/runtime-rn.html"><%= vars.app_runtime_full %> v2.7 Release Notes</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/pcf-release-notes/windows-rn.html"><%= vars.product_windows_full %> v2.7 Release Notes</a>
+                  <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/pcf-release-notes/windows-rn.html"><%= vars.windows_runtime_full %> v2.7 Release Notes</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pks/1-4/release-notes.html">Enterprise Pivotal Container Service v1.4 Release Notes</a>
@@ -711,7 +711,7 @@
   									</li>
                     <li class="">
                        <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/user-types.html"><%= vars.product_name %> User Types</a>
-                    </li>                    
+                    </li>
                     <li class="">
                        <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/adminguide/cli-user-management.html">Creating and Managing Users with the cf CLI</a>
                     </li>
@@ -757,7 +757,7 @@
                  <span role="button"><strong>Traffic and Security</strong></span>
                  <ul>
                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/security.html"><%= vars.product_runtime %> Security</a>
+                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/security.html"><%= vars.app_runtime_full %> Security</a>
                    </li>
                    <li class="has_submenu">
                      <span role="button"><strong>Front End</strong></span>
@@ -769,7 +769,7 @@
                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/ssl-term-haproxy.html">Configuring SSL/TLS Termination at HAProxy</a>
                        </li>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/tls-info.html">TLS Connections in <%= vars.product_runtime %></a>
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/networking/tls-info.html">TLS Connections in <%= vars.app_runtime_full %></a>
                        </li>
                        <li class="">
                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/security_config.html">Providing a Certificate for Your TLS Termination Point</a>
@@ -833,7 +833,7 @@
                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/asg.html">Application Security Groups</a>
                        </li>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/app-sec-groups.html">Restricting App Access to Internal <%= vars.product_runtime %> Components</a>
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/app-sec-groups.html">Restricting App Access to Internal <%= vars.app_runtime_full %> Components</a>
                        </li>
                      </ul>
                    </li>
@@ -865,10 +865,10 @@
                          <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/loggregator/cc-uaa-logging.html">Security Event Logging</a>
                        </li>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/gdpr.html">General Data Protection Regulation and <%= vars.product_runtime %></a>
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/gdpr.html">General Data Protection Regulation and <%= vars.app_runtime_full %></a>
                        </li>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/nist/index.html">NIST Controls and <%= vars.product_runtime %></a>
+                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/nist/index.html">NIST Controls and <%= vars.app_runtime_full %></a>
                        </li>
                      </ul>
                    </li>
@@ -909,7 +909,7 @@
                    </li>
                  </ul>
                </li>
-                   
+
              <li class="has_submenu">
                 <span role="button"><strong>Monitoring <%= vars.product_short %></strong></span>
                 <ul>
