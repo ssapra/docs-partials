@@ -4,8 +4,8 @@ make sure the partial makes sense in both contexts.
 The if statements in this partial change the scopes needed depending on the topic title.
 -->
 
-To use the UAAC with your SSO service plan, you need an identity zone admin client. To create
-the identity zone admin client, you need to create a UAA admin client that corresponds to your SSO
+To use the UAAC with your <%= vars.product_name %> service plan, you need an identity zone admin client. To create
+the identity zone admin client, you need to create a UAA admin client that corresponds to your <%= vars.product_name %>
 service plan.
 
 ### <a id="admin"></a> Create an Admin Client
@@ -123,7 +123,7 @@ under the scope section.
 
     Record the values you provide for `ZONE-ADMIN-CLIENT-ID` and `New client secret`.<br><br>
 
-    You can delete the original admin client created through the SSO UI after you create the identity zone client.
+    You can delete the original admin client created through the <%= vars.operator_dash %> after you create the identity zone client.
 
 1. Run the following command to authenticate and obtain an access token for the
 identity zone admin client for your service plan.
@@ -161,6 +161,6 @@ under the scope section.
         jti: 123908dkl1-23298
     </pre>
     <p>
-    You can now do operator level API configurations for the SSO service plan.
-    You do not have permissions for any other SSO service plan.
+    You can now do operator level API configurations for the <%= vars.product_name %> service plan.
+    You do not have permissions for any other <%= vars.product_name %> service plan.
     </p>
