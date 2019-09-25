@@ -1,4 +1,4 @@
-This topic discusses how to use the `mysql-diag` tool in  MySQL for <%= vars.product_name  %>.
+This topic discusses how to use the `mysql-diag` tool in  <%= vars.product_name  %>.
 `mysql-diag` prints the state of your MySQL highly available (HA) cluster and
 suggests solutions if your node fails. Pivotal recommends running this tool against
 your HA cluster before all deployments.
@@ -74,7 +74,9 @@ The `mysql-diag` command returns the following message if your canary status is 
 
 <pre class="terminal">Checking canary status...unhealthy</pre>
 
-In the event of a broken HA cluster, running `mysql-diag` outputs actionable steps meant to expedite the recovery of that HA cluster. Below is a sample `mysql-diag` output after the tool identified an unhealthy HA cluster:
+In the event of a broken HA cluster, running `mysql-diag` outputs actionable steps meant
+to expedite the recovery of that HA cluster.
+Below is a sample `mysql-diag` output after the tool identified an unhealthy HA cluster:
 
 <%= image_tag('mysql-diag-unhealthy-screen-shot.png') %>
 <a href="images/mysql-diag-unhealthy-screen-shot.png" target="_blank">View a larger version of this image.</a>

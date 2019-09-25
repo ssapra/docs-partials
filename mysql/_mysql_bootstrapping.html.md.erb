@@ -43,7 +43,7 @@ For more information about checking the state of your cluster, see
 
 ## <a id="assisted-bootstrap"></a>Run the Bootstrap Errand
 
-MySQL for <%= vars.product_name %> includes a
+<%= vars.product_name %> includes a
 [BOSH errand](http://bosh.io/docs/jobs.html#jobs-vs-errands) that automates the manual
 bootstrapping procedure in the [Bootstrap Manually](#manual-bootstrap) section below.
 
@@ -393,7 +393,7 @@ Re-bootstrapping the cluster is not successful unless you shut down the
 
 ### <a id="choose-node"></a> Choose Node to Bootstrap
 
-<% if vars.product_short == "PAS" %>
+<% if vars.app_runtime == "Application Service" %>
 
 To avoid losing data, you must bootstrap from a node in the cluster that has
 the highest transaction sequence number (`seqno`).
@@ -469,7 +469,7 @@ new bootstrap node.
 
 ### <a id="set-bootstrap-node"></a>Bootstrap the First Node ###
 
-<% if vars.product_short == "PAS" %>
+<% if vars.app_runtime == "Application Service" %>
 
 After determining the node with the highest `seqno`, do the following
 to bootstrap the node:
@@ -538,7 +538,7 @@ After the bootstrapped node is running, to restart the nodes do the following:
        Only do the procedure with the assistance of
        <a href="https://support.pivotal.io">Pivotal Support</a>.</p>
 
-<% if vars.product_short == "PAS" %>
+<% if vars.app_runtime == "Application Service" %>
 
 1. If the `monit start` command fails, it might be because the node with
 the highest `seqno` is `mysql/0`. <br><br>

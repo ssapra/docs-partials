@@ -40,7 +40,7 @@ A service may offer one or more plans.
 You can set a separate quota per plan so that instances of that plan cannot exceed the plan quota.
 For a service with multiple plans, the total number of instances created for all
 plans combined cannot exceed the [global quota](#global) for the service.
-<% if vars.service_name == "MySQL for PCF" %>
+<% if vars.service_name == "MySQL for Pivotal Platform" %>
 If the plan quota field is blank, the plan quota is set to the global quota by default.
 <%end%>
 
@@ -206,7 +206,7 @@ For example, **On Demand Instance (RMQ 3.7): Plan 1**.
 <% if vars.service_name == 'Redis for PCF' %>
 For example, **On-Demand Plan 1**.
 <% end %>
-<% if vars.service_name == 'MySQL for PCF' %>
+<% if vars.service_name == 'MySQL for Pivotal Platform' %>
 For example, **Plan 1**.
 <% end %>
 <% if vars.service_name == 'Pivotal Cloud Cache' %>

@@ -12,16 +12,16 @@ To access metrics for on-demand service instances, do the following:
 
 1. To access metrics for a service instance, run the following command:
 
-<% case vars.service_name 
-   when "MySQL for PCF" %> 
+<% case vars.service_name
+when "MySQL for Pivotal Platform" %>
     ```
     cf tail SERVICE-INSTANCE-NAME
     ```
     Two useful flags to append to this command are:
       - `-f`, `--follow`: Append metrics logs to stdout as they are generated, rather than returning a fixed number of metrics or metrics over a fixed interval.
-      - `--json`: Output metrics logs as envelopes in JSON format.  
+      - `--json`: Output metrics logs as envelopes in JSON format.
       For a complete list of `cf tail` options, see the [Log Cache CLI repository](https://github.com/cloudfoundry/log-cache-cli#usage).
-    
+
   <% when "Redis for PCF" %>
     ```
     cf tail SERVICE-INSTANCE-NAME
@@ -31,14 +31,14 @@ To access metrics for on-demand service instances, do the following:
     cf tail SERVICE-INSTANCE-NAME
     ```
   <% end %>
-    Where `SERVICE-INSTANCE-NAME` is the name of your service instance. 
+    Where `SERVICE-INSTANCE-NAME` is the name of your service instance.
     <br><br>
   For example:
 
     <pre class="terminal">
     <%# Switch output for different services %>
     <% case vars.service_name
-      when "MySQL for PCF" %>
+    when "MySQL for Pivotal Platform" %>
      $ cf tail -f my-instance | egrep 'connected|available|persistent_disk_used_percent'
      2019-05-17T11:25:59.48-0700 [my-instance] GAUGE /p.mysql/available:1.000000 boolean
      2019-05-17T11:26:29.49-0700 [my-instance] GAUGE /p.mysql/system/persistent_disk_used_percent:17.000000 percentage
@@ -59,7 +59,7 @@ To access metrics for on-demand service instances, do the following:
   For more information about the metrics output, see
 <%# Switch links for different services %>
 <% case vars.service_name
-  when "MySQL for PCF" %>
+when "MySQL for Pivotal Platform" %>
   the [Key Performance Indicators](#kpi) and [Component Metrics](#component-metrics) sections below.
 <% when "Redis for PCF" %>
 [Redis KPIs](./monitoring.html#Redis-KPIs).
