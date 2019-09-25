@@ -759,9 +759,6 @@
               <li class="has_submenu">
                  <span role="button"><strong>Traffic and Security</strong></span>
                  <ul>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/security.html"><%= vars.app_runtime_full %> Security</a>
-                   </li>
                    <li class="has_submenu">
                      <span role="button"><strong>Front End</strong></span>
                      <ul>
@@ -862,20 +859,6 @@
                      </ul>
                    </li>
                    <li class="has_submenu">
-                     <span role="button"><strong>Logging, Auditing, and Compliance</strong></span>
-                     <ul>
-                       <li class="">
-                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/loggregator/cc-uaa-logging.html">Security Event Logging</a>
-                       </li>
-                       <li class="">
-                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/gdpr.html">General Data Protection Regulation and <%= vars.app_runtime_full %></a>
-                       </li>
-                       <li class="">
-                         <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/nist/index.html">NIST Controls and <%= vars.app_runtime_full %></a>
-                       </li>
-                     </ul>
-                   </li>
-                   <li class="has_submenu">
                      <span role="button"><strong>Component Communications</strong></span>
                      <ul>
                        <li class="">
@@ -914,13 +897,16 @@
                </li>
 
              <li class="has_submenu">
-                <span role="button"><strong>Monitoring <%= vars.product_short %></strong></span>
+                <span role="button"><strong><%= vars.product_short %> Observability</strong></span>
                 <ul>
                    <li class="">
                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/monitoring/index.html">Monitoring <%= vars.product_short %></a>
                    </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/logging-config-opsman.html">Configuring Logging in <%= vars.product_short %></a>
+                   </li>
+                   <li class="">
+                     <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/loggregator/cc-uaa-logging.html">Security Event Logging</a>
                    </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/monitoring/kpi.html">Key Performance Indicators</a>
@@ -1457,39 +1443,39 @@
          </li>
 
          <li class="has_submenu">
-            <span role="button"><strong><%= vars.pks_product_short %> Runtime</strong></span>
+            <span role="button"><strong><%= vars.k8s_runtime_abbr %> Runtime</strong></span>
             <ul>
               <li>
-                <a href="https://docs.pivotal.io/pks/1-5/index.html"><%= vars.pks_product_full %></a>
+                <a href="https://docs.pivotal.io/pks/1-5/index.html"><%= vars.k8s_runtime_full %> (<%= vars.k8s_runtime %>)</a>
               </li>
               <li>
                 <a href="https://docs.pivotal.io/pks/1-5/release-notes.html">Release Notes</a>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/concepts.html"><%= vars.pks_product_short %> Concepts</a>
+                <a href="https://docs.pivotal.io/pks/1-5/concepts.html"><%= vars.k8s_runtime %> Concepts</a>
                 <ul>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/control-plane.html"><%= vars.pks_product_short %> Cluster Management</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/control-plane.html"><%= vars.k8s_runtime %> Cluster Management</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/pks-api-auth.html"><%= vars.pks_product_short %> API Authentication</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/pks-api-auth.html"><%= vars.k8s_runtime %> API Authentication</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/about-lb.html">Load Balancers in <%= vars.pks_product_short %></a>
+                    <a href="https://docs.pivotal.io/pks/1-5/about-lb.html">Load Balancers in <%= vars.k8s_runtime %></a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/vm-sizing.html">VM Sizing for <%= vars.pks_product_short %> Clusters</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/vm-sizing.html">VM Sizing for <%= vars.k8s_runtime %> Clusters</a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/telemetry.html">Telemetry</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/sink-architecture.html">Sink Architecture in <%= vars.pks_product_short %></a>
+                    <a href="https://docs.pivotal.io/pks/1-5/sink-architecture.html">Sink Architecture in <%= vars.k8s_runtime %></a>
                   </li>
                 </ul>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/installing.html">Installing <%= vars.pks_product_short %></a>
+                <a href="https://docs.pivotal.io/pks/1-5/installing.html">Installing <%= vars.k8s_runtime %></a>
                 <ul>
                   <li class="has_submenu">
                     <a href="https://docs.pivotal.io/pks/1-5/vsphere-index.html">vSphere</a>
@@ -1507,13 +1493,13 @@
                         <a href="https://docs.pivotal.io/pks/1-5/vsphere-om-install-config.html">Installing and Configuring Ops Manager on vSphere</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-vsphere.html">Installing <%= vars.pks_product_short %> on vSphere</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-vsphere.html">Installing <%= vars.k8s_runtime %> on vSphere</a>
                       </li>
                       <li>
                         <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-api.html">Configuring PKS API Load Balancer</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-users.html">Setting Up <%= vars.pks_product_short %> Admin Users on vSphere</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-users.html">Setting Up <%= vars.k8s_runtime %> Admin Users on vSphere</a>
                       </li>
                     </ul>
                   </li>
@@ -1521,30 +1507,30 @@
                     <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index.html">vSphere with NSX-T</a>
                     <ul>
                       <li class="has_submenu">
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index-prepare.html">Preparing to Install <%= vars.pks_product_short %> on vSphere with NSX-T</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index-prepare.html">Preparing to Install <%= vars.k8s_runtime %> on vSphere with NSX-T</a>
                         <ul>
                           <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-requirements.html">Version Requirements for <%= vars.pks_product_short %></a>
+                            <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-requirements.html">Version Requirements for <%= vars.k8s_runtime %></a>
                           </li>
                           <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-rpd-mpd.html">Hardware Requirements for <%= vars.pks_product_short %></a>
+                            <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-rpd-mpd.html">Hardware Requirements for <%= vars.k8s_runtime %></a>
                           </li>
                           <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/ports-protocols-nsx-t.html">Firewall Ports and Protocols Requirements for <%= vars.pks_product_short %></a>
+                            <a href="https://docs.pivotal.io/pks/1-5/ports-protocols-nsx-t.html">Firewall Ports and Protocols Requirements for <%= vars.k8s_runtime %></a>
                           </li>
                           <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-topologies.html">Deployment Topologies for <%= vars.pks_product_short %></a>
+                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-topologies.html">Deployment Topologies for <%= vars.k8s_runtime %></a>
                           </li>
                           <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-cluster-objects.html">NSX-T Objects Created for <%= vars.pks_product_short %></a>
+                            <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-cluster-objects.html">NSX-T Objects Created for <%= vars.k8s_runtime %></a>
                           </li>
                           <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-env.html">Network Planning for <%= vars.pks_product_short %></a>
+                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-env.html">Network Planning for <%= vars.k8s_runtime %></a>
                           </li>
                         </ul>
                       </li>
                       <li class="has_submenu">
-                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-config-steps.html">Installing and Configuring NSX-T for <%= vars.pks_product_short %></a>
+                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-config-steps.html">Installing and Configuring NSX-T for <%= vars.k8s_runtime %></a>
                         <ul>
                           <li>
                             <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-prereqs.html">Prerequisites for Installing NSX-T Data Center</a>
@@ -1600,37 +1586,37 @@
                         </ul>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-mgmt-plane.html">Creating the <%= vars.pks_product_short %> Management Plane</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-mgmt-plane.html">Creating the <%= vars.k8s_runtime %> Management Plane</a>
                       </li>
                        <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-compute-plane.html">Creating the <%= vars.pks_product_short %> Compute Plane</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-compute-plane.html">Creating the <%= vars.k8s_runtime %> Compute Plane</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-om-deploy.html">Deploying Ops Manager with NSX-T for <%= vars.pks_product_short %></a>
+                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-om-deploy.html">Deploying Ops Manager with NSX-T for <%= vars.k8s_runtime %></a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-generate-ca-cert.html">Generating and Registering the NSX-T Management Cluster Certificate for <%= vars.pks_product_short %></a>
+                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-generate-ca-cert.html">Generating and Registering the NSX-T Management Cluster Certificate for <%= vars.k8s_runtime %></a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-om-config.html">Configuring BOSH Director with NSX-T for <%= vars.pks_product_short %></a>
+                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-om-config.html">Configuring BOSH Director with NSX-T for <%= vars.k8s_runtime %></a>
                       </li>
                       <li>
                         <a href="https://docs.pivotal.io/pks/1-5/nsxt-generate-pi-cert.html">Generating and Registering the NSX-T Superuser Principal Identity Certificate and Key</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-nsx-t.html">Installing <%= vars.pks_product_short %> on vSphere with NSX-T</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/installing-nsx-t.html">Installing <%= vars.k8s_runtime %> on vSphere with NSX-T</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/partners/vmware-harbor/installing.html">Installing VMware Harbor Registry for <%= vars.pks_product_short %></a>
+                        <a href="https://docs.pivotal.io/partners/vmware-harbor/installing.html">Installing VMware Harbor Registry for <%= vars.k8s_runtime %></a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-users.html">Setting Up <%= vars.pks_product_short %> Admin Users on vSphere</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-users.html">Setting Up <%= vars.k8s_runtime %> Admin Users on vSphere</a>
                       </li>
                       <li class="has_submenu">
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index-adv.html">Post Installation Configurations for <%= vars.pks_product_short %> on vSphere with NSX-T</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index-adv.html">Post Installation Configurations for <%= vars.k8s_runtime %> on vSphere with NSX-T</a>
                         <ul>
                           <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/proxies.html">Using Proxies with <%= vars.pks_product_short %> on NSX-T</a>
+                            <a href="https://docs.pivotal.io/pks/1-5/proxies.html">Using Proxies with <%= vars.k8s_runtime %> on NSX-T</a>
                           </li>
                           <li>
                             <a href="https://docs.pivotal.io/pks/1-5/nsxt-ingress-srvc-lb.html">Configuring Ingress Resources and Load Balancer Services</a>
@@ -1639,7 +1625,7 @@
                             <a href="https://docs.pivotal.io/pks/1-5/nsxt-multi-t0.html">Configuring Multiple Tier-0 Routers for Tenant Isolation</a>
                           </li>
                           <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-multi-pks.html">Implementing a Multi-Foundation <%= vars.pks_product_short %> Deployment on NSX-T</a>
+                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-multi-pks.html">Implementing a Multi-Foundation <%= vars.k8s_runtime %> Deployment on NSX-T</a>
                           </li>
                         </ul>
                       </li>
@@ -1655,16 +1641,16 @@
                         <a href="https://docs.pivotal.io/pks/1-5/gcp-om-install-config.html">Installing and Configuring Ops Manager on GCP</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/gcp-service-accounts.html">Creating Service Accounts in GCP for <%= vars.pks_product_short %></a>
+                        <a href="https://docs.pivotal.io/pks/1-5/gcp-service-accounts.html">Creating Service Accounts in GCP for <%= vars.k8s_runtime %></a>
                       </li>
                       <li>
                         <a href="https://docs.pivotal.io/pks/1-5/gcp-api-load-balancer.html">Creating a GCP Load Balancer for the PKS API</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-gcp.html">Installing <%= vars.pks_product_short %> on GCP</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-gcp.html">Installing <%= vars.k8s_runtime %> on GCP</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/gcp-configure-pks-users.html">Setting Up <%= vars.pks_product_short %> Admin Users on GCP</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/gcp-configure-pks-users.html">Setting Up <%= vars.k8s_runtime %> Admin Users on GCP</a>
                       </li>
                     </ul>
                   </li>
@@ -1678,10 +1664,10 @@
                         <a href="https://docs.pivotal.io/pks/1-5/aws-om-install-config.html">Installing and Configuring Ops Manager on AWS</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-aws.html">Installing <%= vars.pks_product_short %> on AWS</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-aws.html">Installing <%= vars.k8s_runtime %> on AWS</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/aws-configure-pks-users.html">Setting Up <%= vars.pks_product_short %> Admin Users on AWS</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/aws-configure-pks-users.html">Setting Up <%= vars.k8s_runtime %> Admin Users on AWS</a>
                       </li>
                     </ul>
                   </li>
@@ -1696,16 +1682,16 @@
                       </li>
                       <li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/azure-managed-identities.html">Creating Managed Identities in Azure for <%= vars.pks_product_short %></a>
+                        <a href="https://docs.pivotal.io/pks/1-5/azure-managed-identities.html">Creating Managed Identities in Azure for <%= vars.k8s_runtime %></a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-azure.html">Installing <%= vars.pks_product_short %> on Azure</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-azure.html">Installing <%= vars.k8s_runtime %> on Azure</a>
                       </li>
                       <li>
                         <a href="https://docs.pivotal.io/pks/1-5/azure-api-load-balancer.html">Configuring an Azure Load Balancer for the PKS API</a>
                       </li>
                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/azure-configure-pks-users.html">Setting Up <%= vars.pks_product_short %> Admin Users on Azure</a>
+                        <a href="https://docs.pivotal.io/pks/1-5/azure-configure-pks-users.html">Setting Up <%= vars.k8s_runtime %> Admin Users on Azure</a>
                       </li>
                     </ul>
                     </li>
@@ -1721,19 +1707,19 @@
                 </ul>
               </li><!--end of installing section-->
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/upgrading.html">Upgrading <%= vars.pks_product_short %></a>
+                <a href="https://docs.pivotal.io/pks/1-5/upgrading.html">Upgrading <%= vars.k8s_runtime %></a>
                 <ul>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/understanding-upgrades.html">What Happens During <%= vars.pks_product_short %> Upgrades</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/understanding-upgrades.html">What Happens During <%= vars.k8s_runtime %> Upgrades</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/checklist.html">Upgrade Preparation Checklist for <%= vars.pks_product_short %> v1.5</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/checklist.html">Upgrade Preparation Checklist for <%= vars.k8s_runtime %> v1.5</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/upgrade-pks.html">Upgrading <%= vars.pks_product_short %></a>
+                    <a href="https://docs.pivotal.io/pks/1-5/upgrade-pks.html">Upgrading <%= vars.k8s_runtime %></a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/upgrade-pks-nsxt.html">Upgrading <%= vars.pks_product_short %> with NSX-T</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/upgrade-pks-nsxt.html">Upgrading <%= vars.k8s_runtime %> with NSX-T</a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/maintain-uptime.html">Maintaining Workload Uptime</a>
@@ -1744,36 +1730,36 @@
                 </ul>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/managing.html">Managing <%= vars.pks_product_short %></a>
+                <a href="https://docs.pivotal.io/pks/1-5/managing.html">Managing <%= vars.k8s_runtime %></a>
                 <ul>
                 <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/create-config-cluster-lb.html">Creating and Configuring Load Balancers for <%= vars.pks_product_short %> Clusters</a>
+                <a href="https://docs.pivotal.io/pks/1-5/create-config-cluster-lb.html">Creating and Configuring Load Balancers for <%= vars.k8s_runtime %> Clusters</a>
                 <ul>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/gcp-cluster-load-balancer.html">Creating and Configuring a GCP Load Balancer for <%= vars.pks_product_short %> Clusters</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/gcp-cluster-load-balancer.html">Creating and Configuring a GCP Load Balancer for <%= vars.k8s_runtime %> Clusters</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/aws-cluster-load-balancer.html">Creating and Configuring an AWS Load Balancer for <%= vars.pks_product_short %> Clusters</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/aws-cluster-load-balancer.html">Creating and Configuring an AWS Load Balancer for <%= vars.k8s_runtime %> Clusters</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/azure-cluster-load-balancer.html">Creating and Configuring an Azure Load Balancer for <%= vars.pks_product_short %> Clusters</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/azure-cluster-load-balancer.html">Creating and Configuring an Azure Load Balancer for <%= vars.k8s_runtime %> Clusters</a>
                   </li>
                 </ul>
                 </li>
                 <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/admission-plugins.html">Enabling, Disabling, and Using Admission Plugins for <%= vars.pks_product_short %> Clusters</a>
+                <a href="https://docs.pivotal.io/pks/1-5/admission-plugins.html">Enabling, Disabling, and Using Admission Plugins for <%= vars.k8s_runtime %> Clusters</a>
                 <ul>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/pod-security-policy.html">Configuring and Using PodSecurityPolicy for <%= vars.pks_product_short %> Clusters</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/pod-security-policy.html">Configuring and Using PodSecurityPolicy for <%= vars.k8s_runtime %> Clusters</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/security-context-deny.html">Enabling and Using SecurityContextDeny for <%= vars.pks_product_short %> Clusters</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/security-context-deny.html">Enabling and Using SecurityContextDeny for <%= vars.k8s_runtime %> Clusters</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/deny-escalating-execution.html">Enabling and Using DenyEscalatingExec for <%= vars.pks_product_short %> Clusters</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/deny-escalating-execution.html">Enabling and Using DenyEscalatingExec for <%= vars.k8s_runtime %> Clusters</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/admission-plugins-disable.html">Disabling Admission Plugins for <%= vars.pks_product_short %> Clusters</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/admission-plugins-disable.html">Disabling Admission Plugins for <%= vars.k8s_runtime %> Clusters</a>
                   </li>
                 </ul>
                 </li>
@@ -1784,10 +1770,10 @@
                     <a href="https://docs.pivotal.io/pks/1-5/azure-ad-sso-config.html">Configuring Azure Active Directory as a SAML Identity Provider</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/manage-users.html">Managing <%= vars.pks_product_short %> Admin Users with UAA</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/manage-users.html">Managing <%= vars.k8s_runtime %> Admin Users with UAA</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/manage-deployments-bosh.html">Managing <%= vars.pks_product_short %> Deployments with BOSH</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/manage-deployments-bosh.html">Managing <%= vars.k8s_runtime %> Deployments with BOSH</a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/vsphere-persistent-storage.html">PersistentVolume Storage Options on vSphere</a>
@@ -1799,13 +1785,13 @@
                     <a href="https://docs.pivotal.io/pks/1-5/configure-ingress.html">Configuring Ingress Routing</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/delete.html">Deleting <%= vars.pks_product_short %></a>
+                    <a href="https://docs.pivotal.io/pks/1-5/delete.html">Deleting <%= vars.k8s_runtime %></a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/resource-usage.html">Managing Resource Usage</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/shutdown-startup.html">Shutting Down and Starting Up <%= vars.pks_product_short %></a>
+                    <a href="https://docs.pivotal.io/pks/1-5/shutdown-startup.html">Shutting Down and Starting Up <%= vars.k8s_runtime %></a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/password-management.html">Managing Infrastructure Password Changes</a>
@@ -1900,10 +1886,10 @@
                 </ul>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/using.html">Using <%= vars.pks_product_short %></a>
+                <a href="https://docs.pivotal.io/pks/1-5/using.html">Using <%= vars.k8s_runtime %></a>
                 <ul>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/login.html">Logging in to <%= vars.pks_product_short %></a>
+                    <a href="https://docs.pivotal.io/pks/1-5/login.html">Logging in to <%= vars.k8s_runtime %></a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/access-dashboard.html">Accessing Dashboard</a>
@@ -1918,7 +1904,7 @@
                     <a href="https://docs.pivotal.io/pks/1-5/harbor.html">Getting Started with VMware Harbor Registry</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/helm.html">Using Helm with <%= vars.pks_product_short %></a>
+                    <a href="https://docs.pivotal.io/pks/1-5/helm.html">Using Helm with <%= vars.k8s_runtime %></a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/volumes.html">Configuring and Using Dynamic PersistentVolumes</a>
@@ -1932,7 +1918,7 @@
                 </ul>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/console/console-index.html">Using the <%= vars.pks_product_short %> Management Console</a>
+                <a href="https://docs.pivotal.io/pks/1-5/console/console-index.html">Using the <%= vars.k8s_runtime %> Management Console</a>
                  <ul>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/console/ova-deployment-prereqs.html">Prerequisites for Appliance Deployment</a>
@@ -1941,13 +1927,13 @@
                     <a href="https://docs.pivotal.io/pks/1-5/console/deploy-console-ova.html">Deploy the Management Console Appliance</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/deploy-ent-pks-wizard.html">Deploy <%= vars.pks_product_short %> by Using the Configuration Wizard</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/console/deploy-ent-pks-wizard.html">Deploy <%= vars.k8s_runtime %> by Using the Configuration Wizard</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/deploy-ent-pks-yaml.html">Deploy <%= vars.pks_product_short %> by Using a YAML Configuration File</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/console/deploy-ent-pks-yaml.html">Deploy <%= vars.k8s_runtime %> by Using a YAML Configuration File</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/monitor-manage-console.html">Monitor and Manage <%= vars.pks_product_short %> in the Management Console</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/console/monitor-manage-console.html">Monitor and Manage <%= vars.k8s_runtime %> in the Management Console</a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/console/console-identity-management.html">Identity Management in the Management Console</a>
@@ -1956,24 +1942,24 @@
                     <a href="https://docs.pivotal.io/pks/1-5/console/console-login-opsmanager.html">Connect to Operations Manager</a>
                   </li>
                    <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/reconfigure-console.html">Reconfigure Your <%= vars.pks_product_short %> Deployment</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/console/reconfigure-console.html">Reconfigure Your <%= vars.k8s_runtime %> Deployment</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/upgrade-console.html">Upgrade <%= vars.pks_product_short %> Management Console</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/console/upgrade-console.html">Upgrade <%= vars.k8s_runtime %> Management Console</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/patch-console-components.html">Patch <%= vars.pks_product_short %> Management Console Components</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/console/patch-console-components.html">Patch <%= vars.k8s_runtime %> Management Console Components</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/console-troubleshooting.html">Troubleshooting <%= vars.pks_product_short %> Management Console</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/console/console-troubleshooting.html">Troubleshooting <%= vars.k8s_runtime %> Management Console</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/delete-console-deployment.html">Delete Your <%= vars.pks_product_short %> Deployment</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/console/delete-console-deployment.html">Delete Your <%= vars.k8s_runtime %> Deployment</a>
                   </li>
                 </ul>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/monitor.html">Logging and Monitoring <%= vars.pks_product_short %></a>
+                <a href="https://docs.pivotal.io/pks/1-5/monitor.html">Logging and Monitoring <%= vars.k8s_runtime %></a>
                  <ul>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/view-usage-data.html">Viewing Usage Data</a>
@@ -1982,7 +1968,7 @@
                     <a href="https://docs.pivotal.io/pks/1-5/download-logs.html">Downloading Cluster Logs</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/monitor-sinks.html">Monitoring <%= vars.pks_product_short %> with Sinks</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/monitor-sinks.html">Monitoring <%= vars.k8s_runtime %> with Sinks</a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/monitor-etcd.html">Monitoring Master/etcd Node VMs</a>
@@ -1990,16 +1976,16 @@
                 </ul>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/backup-and-restore.html">Backing Up and Restoring <%= vars.pks_product_short %></a>
+                <a href="https://docs.pivotal.io/pks/1-5/backup-and-restore.html">Backing Up and Restoring <%= vars.k8s_runtime %></a>
                 <ul>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/bbr-install.html">Installing BOSH Backup and Restore</a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/bbr-backup.html">Backing Up <%= vars.pks_product_short %></a>
+                    <a href="https://docs.pivotal.io/pks/1-5/bbr-backup.html">Backing Up <%= vars.k8s_runtime %></a>
                   </li>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/bbr-restore.html">Restoring <%= vars.pks_product_short %></a>
+                    <a href="https://docs.pivotal.io/pks/1-5/bbr-restore.html">Restoring <%= vars.k8s_runtime %></a>
                   </li>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/bbr-logging.html">BBR Logging</a>
@@ -2007,15 +1993,15 @@
                 </ul>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/security.html"><%= vars.pks_product_short %> Security</a>
+                <a href="https://docs.pivotal.io/pks/1-5/security.html"><%= vars.k8s_runtime %> Security</a>
                 <ul>
                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/security-process.html"><%= vars.pks_product_short %> Security Disclosure and Release Process</a>
+                    <a href="https://docs.pivotal.io/pks/1-5/security-process.html"><%= vars.k8s_runtime %> Security Disclosure and Release Process</a>
                   </li>
                 </ul>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/troubleshoot.html">Diagnosing and Troubleshooting <%= vars.pks_product_short %></a>
+                <a href="https://docs.pivotal.io/pks/1-5/troubleshoot.html">Diagnosing and Troubleshooting <%= vars.k8s_runtime %></a>
                 <ul>
                   <li>
                     <a href="https://docs.pivotal.io/pks/1-5/diagnostic-tools.html">Diagnostic Tools</a>
@@ -2160,6 +2146,9 @@
                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/process/pcf-security.html">Security Overview and Policy</a>
                     </li>
                     <li class="">
+                      <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/concepts/security.html"><%= vars.app_runtime_full %> Security</a>
+                    </li>
+                    <li class="">
                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/process/security-lifecycle.html">Testing, Release, and Security Lifecycle</a>
                     </li>
                     <li class="">
@@ -2191,6 +2180,12 @@
                       <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/understanding-stemcells.html">Floating Stemcells</a>
                     </li>
                   </ul>
+                 </li>
+                 <li class="">
+                   <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/gdpr.html">General Data Protection Regulation and <%= vars.app_runtime_full %></a>
+                 </li>
+                 <li class="">
+                   <a href="https://docs.pivotal.io/nist/index.html">NIST Controls and <%= vars.app_runtime_full %></a>
                  </li>
                 <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/security/tiles/index.html">Security-Related <%= vars.product_name %> Tiles and Add-ons</a>
