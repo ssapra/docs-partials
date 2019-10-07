@@ -50,7 +50,7 @@ The following table describes the logging tags used in this template:
   </tr>
   <tr>
     <td><strong>JOB_ID</strong></td>
-    <td>BOSH VM GUID. This is distinct from the CID displayed in the Ops Manager Status tab, which corresponds to the VM ID assigned by the infrastructure provider.</td>
+    <td>BOSH VM GUID. This is distinct from the CID displayed in the <%= vars.ops_manager_full %> Status tab, which corresponds to the VM ID assigned by the infrastructure provider.</td>
   </tr>
   <tr>
     <td><strong>MESSAGE</strong></td>
@@ -76,11 +76,11 @@ The following table describes the logging tags used in this template:
     </tr>
     <tr>
       <td><strong>rabbitmq_route_registrar_stderr</strong></td>
-      <td>Registers the route for the management API with the Gorouter in your Pivotal Application Service (PAS) deployment.</td>
+      <td>Registers the route for the management API with the Gorouter in your <%= vars.app_runtime_full %> deployment.</td>
     </tr>
     <tr>
       <td><strong>rabbitmq_route_registrar_stdout</strong></td>
-      <td>Registers the route for the management API with the Gorouter in your PAS deployment.</td>
+      <td>Registers the route for the management API with the Gorouter in your <%= vars.app_runtime_full %> deployment.</td>
     </tr>
     <tr>
       <td><strong>rabbitmq_server</strong></td>
