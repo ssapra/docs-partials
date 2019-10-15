@@ -8,7 +8,7 @@ Under **HAProxy forwards requests to Router over TLS**, select **Enable** or **D
       <li>Make sure that the Gorouter and HAProxy have TLS cipher suites in common in the **TLS cipher suites for Router** and **TLS cipher suites for HAProxy** fields.</li>
     </ol>
   </ul>
-  For more information, see [Terminating SSL/TLS at the Load Balancer and Gorouter](../adminguide/securing-traffic.html#lb_and_gorouter_term), [Providing a Certificate for Your SSL/TLS Termination Point](../opsguide/security_config.html#config), and [Using the Ops Manager API](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/ops-man-api.html). 
+  For more information, see the [Terminating TLS at the Load Balancer and Gorouter](../adminguide/securing-traffic.html#lb_and_gorouter_term) section of the _Securing Traffic into Cloud Foundry_ topic, [Providing a Certificate for Your TLS Termination Point](../opsguide/security_config.html), and [Using the Ops Manager API](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/ops-man-api.html). 
   <ul>
    <li>To use non-encrypted communication between HAProxy and the Gorouter:</li>
    <ol>
@@ -16,4 +16,4 @@ Under **HAProxy forwards requests to Router over TLS**, select **Enable** or **D
      <li>If you are not using HAProxy, set the number of HAProxy job instances to `0` in the **Resource Config** pane. For more information, see [Disable Unused Resources](#disable-resources).</li>
    </ol>
   </ul>
-  For more information, see [Terminating SSL/TLS at the Gorouter Only](../adminguide/securing-traffic.html#gorouter_term) and [Terminating SSL/TLS at the Load Balancer Only](../adminguide/securing-traffic.html#lb_term).
+  For more information, see the [Terminating TLS at the Gorouter Only](../adminguide/securing-traffic.html#gorouter_term) and [Terminating TLS at the Load Balancer Only](../adminguide/securing-traffic.html#lb_term) sections of the _Securing Traffic into Cloud Foundry_ topic.
