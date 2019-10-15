@@ -1,5 +1,7 @@
 In the **Networking** pane, you configure security and routing services for your IaaS.
 
+To configure the **Networking** pane:
+
 1. For **Router IPs** and **HAProxy IPs**, see the following guidance:
 	* For **AWS**, **Azure**, and **GCP**, leave these fields blank. You do not need to complete these fields when deploying <%= vars.product_name %> on these infrastructures.
 	* For **OpenStack** and **vSphere**, the values you enter in the **Router IPs** and **HAProxy IPs** fields depend on whether you are using HAProxy in your deployment. Use the table below to determine how to complete these fields.
@@ -48,7 +50,7 @@ In the **Networking** pane, you configure security and routing services for your
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_client_cert_validation" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/gorouter_client_cert_validation" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/tls_cipher_suites_router" %>
-	 <p class='note'><strong>Note:</strong> AWS Classic Load Balancers do not support <%= vars.product_name %>'s default cipher suites. For more information about configuring your AWS load balancers and Gorouter, see <a href="../adminguide/securing-traffic.html#default">TLS Cipher Suite Support by AWS Load Balancers</a>.</p>
+	 <p class='note'><strong>Note:</strong> AWS Classic Load Balancers do not support <%= vars.product_name %>'s default cipher suites. For more information about configuring your AWS load balancers and Gorouter, see the <a href="../adminguide/securing-traffic.html#aws_elbs">TLS Cipher Suite Support by AWS Load Balancers</a> section of the <em>Securing Traffic into Cloud Foundry</em> topic.</p>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/tls_cipher_suites_haproxy" %>  
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_router_tls_forward" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_hsts_config_cloudform" %>
@@ -57,7 +59,7 @@ In the **Networking** pane, you configure security and routing services for your
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/insecure_cookies" %> 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/zipkin_enable" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/enable_router_local_logs" %>
-1. By default, PAS routers handle traffic for apps deployed to an isolation segment created by the <%= vars.product_name %> Isolation Segment tile. To configure PAS routers to reject requests for apps within isolation segments, select the **Routers reject requests for Isolation Segments** checkbox. Do not enable this option without deploying routers for each isolation segment. For more information, see [Installing <%= vars.product_name %> Isolation Segment](../customizing/installing-pcf-is.html) and [Sharding Routers for Isolation Segments](../adminguide/routing-is.html#sharding-routers-isolation-segment).
+1. By default, PAS routers handle traffic for apps deployed to an isolation segment created by the <%= vars.product_name %> Isolation Segment tile. To configure PAS routers to reject requests for apps within isolation segments, select the **Routers reject requests for Isolation Segments** checkbox. Do not enable this option without deploying routers for each isolation segment. FFor more information, see [Installing <%= vars.product_name %> Isolation Segment](../customizing/installing-pcf-is.html) and the [Sharding Routers for Isolation Segments](../adminguide/routing-is.html#sharding-routers-isolation-segment) section of the _Routing for Isolation Segments_ topic.
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/enable-proxy-support" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/route_services" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/max_connections_backend" %>
@@ -73,7 +75,7 @@ In the **Networking** pane, you configure security and routing services for your
 1. For **Container network interface plugin**, select one of the following:
   * **Silk**: This option is the default container network interface (CNI) for PAS.
   * **External**: Select this if you are deploying the [VMware NSX-T Container Plug-in for <%= vars.product_name %>](https://network.pivotal.io/products/vmware-nsx-t).
-      - If you select **External**, follow the instructions in [Deploying PAS with NSX-T Networking](https://network.pivotal.io/products/vmware-nsx-t) in addition to the PAS configuration instructions in this topic.
+      - If you select **External**, follow the instructions in [Deploying PAS with NSX-T Networking](vsphere-nsx-t.html) in addition to the PAS configuration instructions in this topic.
 <p class='note warning'><strong>Warning:</strong> The NSX-T integration only works for fresh installs of <%= vars.product_name %>. If your PAS is already deployed and running with Silk as its CNI, you cannot change the CNI plugin to NSX-T.</p>
 
 1. If you selected **Silk** in the previous step, review the following fields:

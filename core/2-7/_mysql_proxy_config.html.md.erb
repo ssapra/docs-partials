@@ -2,6 +2,8 @@ In the **Internal MySQL** pane, you configure the internal MySQL clusters for PA
 
 <p class="note"><strong>Note:</strong> You only need to configure this section if you have selected one of the <strong>Internal Databases - MySQL</strong> options in the <strong>Databases</strong> section.</p>
 
+To configure the **Internal MySQL** pane:
+
 1. Select **Internal MySQL**.
 
 1. In the **Replication canary time period** field, specify how frequently the canary checks for replication failure. Leave the default of 30 seconds or modify the value based on the needs of your deployment. Lower numbers cause the canary to run more frequently, which means that the canary reacts more quickly to replication failure but adds load to the database.
@@ -23,7 +25,7 @@ In the **Internal MySQL** pane, you configure the internal MySQL clusters for PA
 	* In the **Event types** field, you can enter the events you want the MySQL service to log. By default, this field includes `connect` and `query`, which tracks who connects to the system and what queries are processed.  
 	For more information about which events the Percona MySQL server can log, see [Audit Log Plugin](https://www.percona.com/doc/percona-server/5.7/management/audit_log_plugin.html) in the Percona documentation.
 	<p class='note'><strong>Note:</strong> Internal MySQL audit logs are not forwarded to the syslog server because they can contain personally identifying information (PII) and secrets.<br />
-	You can use the <a href="https://community.pivotal.io/s/article/script-to-download-mysql-logs-for-pas-tile-ha-clusters"<code>download-logs</code></a> script to retrieve the logs, which each MySQL cluster node VM stores in <code>/var/vcap/store/mysql\_audit\_logs/</code>.</p>
+	You can use the <code>download-logs</code> script to retrieve the logs, which each MySQL cluster node VM stores in <code>/var/vcap/store/mysql\_audit\_logs/</code>. For more information, see <a href="https://community.pivotal.io/s/article/script-to-download-mysql-logs-for-pas-tile-ha-clusters">Script to download MySQL logs for PAS or Tile HA Clusters</a> in the Pivotal Knowledge Base.</p>
 
 1. In the **Load balancer healthy threshold** field, enter the amount of time, in seconds, to wait until reporting that the MySQL Proxy instance has started. This allows an external load balancer time to register the instance as healthy.	
 
