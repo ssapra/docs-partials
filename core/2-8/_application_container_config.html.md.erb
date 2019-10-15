@@ -14,7 +14,7 @@ To configure the **App Containers** pane:
 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_app_identity_verification" %>
 
-1. You can configure PAS to run app instances in Docker containers by provided a comma-separated list of their IP address ranges in the **Private Docker insecure registry allow list** field. For more information, see [Using Docker Registries](../opsguide/docker-registry.html).
+1. You can configure PAS to run app instances in Docker containers by providing a comma-separated list of their IP address ranges in the **Private Docker insecure registry allow list** field. For more information, see [Using Docker Registries](../opsguide/docker-registry.html).
 
 1. Select your preference for **Docker images disk cleanup scheduling on Diego Cell VMs**. If you choose **Clean up disk space once usage fills disk**, enter a value in MB for **Reserved disk space for other jobs**. This is the amount of space the garbage collection algorithm should keep free for other jobs. For more information about the configuration options and how to configure a reserved amount, see [Configuring Cell Disk Cleanup Scheduling](../opsguide/config-cell-cleanup.html).
 
