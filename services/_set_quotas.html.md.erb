@@ -21,13 +21,13 @@ After you set quotas, you can:
 
 ## <a id="global"></a> Create Global-level Quotas
 
-Each <%= vars.platform_name %> service has a separate service broker.
+Each <%= vars.product_name  %> service has a separate service broker.
 A global quota at the service level sets the maximum number of service instances
 that can be created by a given service broker. If a service has more than one plan,
 then the number of service instances for all plans combined cannot exceed the global
 quota for the service.
 
-The operator sets a global quota for each <%= vars.platform_name %> service independently.
+The operator sets a global quota for each <%= vars.product_name %> service independently.
 For example, if you have Redis for <%= vars.platform_name %> and RabbitMQ for <%= vars.platform_name %>, you must set a separate
 global service quota for each of them.
 
@@ -49,10 +49,10 @@ unless the plan quota is increased or some instances of that plan are deleted.
 
 ## <a id="org"></a> Create and Set Org-level Quotas
 
-An org-level quota applies to all <%= vars.platform_name %> services and sets the maximum number of
-service instances an organization can create within <%= vars.platform_name %>.
+An org-level quota applies to all <%= vars.product_name %> services and sets the maximum number of
+service instances an organization can create within <%= vars.product_name %>.
 For example, if you set your org-level quota to 100, developers can create up to
-100 service instances in that org using any combination of <%= vars.platform_name %> services.
+100 service instances in that org using any combination of <%= vars.product_name %> services.
 
 When this quota is met, no more service instances of any kind can be created in
 the org unless the quota is increased or some service instances are deleted.
@@ -90,12 +90,12 @@ see [Creating and Modifying Quota Plans](https://docs.pivotal.io/pivotalcf/1-12/
 
 ## <a id="space"></a> Create and Set Space-level Quotas
 
-A space-level service quota applies to all <%= vars.platform_name %> services and sets the maximum
+A space-level service quota applies to all <%= vars.product_name %> services and sets the maximum
 number of service instances
-that can be created within a given space in <%= vars.platform_name %>.
+that can be created within a given space in <%= vars.product_name %>.
 For example, if you set your space-level quota to 100,
 developers can create up to 100 service instances in that space using any
-combination of <%= vars.platform_name %> services.
+combination of <%= vars.product_name %> services.
 
 When this quota is met, no more service instances of any kind can be created in
 the space unless the quota is updated
