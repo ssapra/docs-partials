@@ -12,11 +12,11 @@
 		</tr>
 		<tr>
 			<td>Azure</td>
-			<td>By default, Azure load balancer times out at 240 seconds without sending a TCP RST to clients, so as an exception, Pivotal recommends a value lower than <code>240</code> to force the load balancer to send the TCP RST.</td>
+			<td>By default, Azure load balancer times out at 240 seconds without sending a TCP RST to clients, so Pivotal recommends a value lower than <code>240</code> to force the load balancer to send the TCP RST.</td>
 		</tr>
 		<tr>
 			<td>GCP</td>
-			<td>GCP has a default timeout of 600 seconds. For GCP HTTP load balancers, Pivotal recommends a value greater than <code>600</code>. For GCP TCP load balancers, pivotal recommends a value less than <code>600</code> to force the load balancer to send a TCP RST.</td>
+			<td>GCP has a default timeout of 600 seconds. For GCP HTTP load balancers, Pivotal recommends a value greater than <code>600</code>. For GCP TCP load balancers, Pivotal recommends a value less than <code>600</code> to force the load balancer to send a TCP RST.</td>
 		</tr>
 		<tr>
 			<td>Other</td>
