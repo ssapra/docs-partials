@@ -59,7 +59,7 @@ To configure the **Networking** pane:
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/insecure_cookies" %> 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/zipkin_enable" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/enable_router_local_logs" %>
-1. By default, PAS routers handle traffic for apps deployed to an isolation segment created by the <%= vars.product_name %> Isolation Segment tile. To configure PAS routers to reject requests for apps within isolation segments, select the **Routers reject requests for Isolation Segments** checkbox. Do not enable this option without deploying routers for each isolation segment. For more information, see [Installing <%= vars.product_name %> Isolation Segment](../customizing/installing-pcf-is.html) and the [Sharding Routers for Isolation Segments](../adminguide/routing-is.html#sharding-routers-isolation-segment) section of the _Routing for Isolation Segments_ topic.
+1. By default, PAS routers handle traffic for apps deployed to an isolation segment created by the <%= vars.product_name %> Isolation Segment tile. To configure PAS routers to reject requests for apps within isolation segments, enable the **Routers reject requests for Isolation Segments** checkbox. Do not enable this option without deploying routers for each isolation segment. For more information, see [Installing <%= vars.product_name %> Isolation Segment](../customizing/installing-pcf-is.html) and the [Sharding Routers for Isolation Segments](../adminguide/routing-is.html#sharding-routers-isolation-segment) section of the _Routing for Isolation Segments_ topic.
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/enable-proxy-support" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/route_services" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/max_connections_backend" %>
@@ -95,11 +95,11 @@ To configure the **Networking** pane:
 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/tcp_routing_enable" %><a id='tcp-routing-enable'></a>
 	* For GCP, you must also specify the name of a GCP TCP load balancer in the **LOAD BALANCER** column of the TCP Router job in the **Resource Config** pane. You configure this later on in PAS. For more information, see [Configure Resources](#resources).
-	* For AWS, you must also specify the name of a TCP ELB in the **LOAD BALANCER** column of the TCP Router job in the **Resource Config** pane. You configure this later on in PAS. For more information, see the [Configure Resources](#resources) section of this topic.
+	* For AWS, you must also specify the name of a TCP ELB in the **LOAD BALANCER** column of the TCP Router job in the **Resource Config** pane. You configure this later on in PAS. For more information, see [Configure Resources](#resources).
 	* For Azure, you must also specify the name of Azure load balancer in the LOAD BALANCER column of the TCP Router job in the **Resource Config** pane. You configure this later on in PAS. For more information, see [Configure Resources](#resources).
 	* For OpenStack and vSphere:
 		1. Return to the top of the **Networking** pane.
-		1. In the **TCP router IPs** field, ensure that you have entered IP addresses that are within your subnet CIDR block. These are be the same IP addresses you configured your load balancer with in the [Pre-Deployment Steps](../adminguide/enabling-tcp-routing.html#pre-deploy) section of the _Enabling TCP Routing_ topic, unless you configured DNS to resolve the TCP domain name directly to an IP you have chosen for the TCP router.
+		1. In the **TCP router IPs** field, ensure that you have entered IP addresses that are within your subnet CIDR block. These are the same IP addresses you configured your load balancer with in the [Pre-Deployment Steps](../adminguide/enabling-tcp-routing.html#pre-deploy) section of the _Enabling TCP Routing_ topic, unless you configured DNS to resolve the TCP domain name directly to an IP you have chosen for the TCP router.
 	<br/>
 	For more information, see [Configuring TCP Routing in PAS](../opsguide/tcp-routing-ert-config.html).
 
