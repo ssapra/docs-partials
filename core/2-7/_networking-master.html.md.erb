@@ -84,7 +84,7 @@ To configure the **Networking** pane:
       <li><%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/c2c-overlay" %></li>
       <li><%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/c2c-vxlan" %></li>
       <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/log-app-traffic-enable" %>
-      <li> The **Enable Silk network policy enforcement** checkbox is enabled by default. To disable Silk network policy enforcement between apps, disable the checkbox. Disabling network policy enforcement allows all apps to send network traffic to all other apps in the foundation despite no policy specifically allowing it.</li>
+      <li> The **Enable Silk network policy enforcement** checkbox is selected by default. To disable Silk network policy enforcement between apps, disable the checkbox. Disabling network policy enforcement allows all apps to send network traffic to all other apps in the foundation despite no policy specifically allowing it.</li>
       <p class='note warning'><strong>Warning:</strong> Disabling this feature allows all app containers to access any other app container with no restrictions.</p>
     </ol>
   </li>
