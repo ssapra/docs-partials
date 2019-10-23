@@ -1,6 +1,8 @@
-To configure the <%= vars.product_name %> Isolation Segment tile:
+In the **Networking** pane, you configure security and routing services for your IaaS.
 
-1. Click **Networking**.
+To configure the **Networking** pane:
+
+1. Select **Networking**.
 
 1. (Optional): Under **Router IPs**, enter one or more static IP addresses for the routers that handle this isolation segment. These IP addresses must be within the subnet CIDR block that you defined in the Ops Manager network configuration for your Isolation Segment. If you have a load balancer, configure it to point to these IP addresses.
     <p class="note"><strong>Note</strong>: Entering the static IP addresses is not necessary for deployments running on a public IaaS such as AWS, GCP, or Azure because <%= vars.product_name %> users specify the IaaS load balancer in the <strong>Resource Config</strong> section of the <strong><%= vars.product_name %> Isolation Segment</strong> tile.</p>
