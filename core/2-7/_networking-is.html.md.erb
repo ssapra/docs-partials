@@ -3,7 +3,6 @@ To configure the <%= vars.product_name %> Isolation Segment tile:
 1. Click **Networking**.
 
 1. (Optional): Under **Router IPs**, enter one or more static IP addresses for the routers that handle this isolation segment. These IP addresses must be within the subnet CIDR block that you defined in the Ops Manager network configuration for your Isolation Segment. If you have a load balancer, configure it to point to these IP addresses.
-
     <p class="note"><strong>Note</strong>: Entering the static IP addresses is not necessary for deployments running on a public IaaS such as AWS, GCP, or Azure because <%= vars.product_name %> users specify the IaaS load balancer in the <strong>Resource Config</strong> section of the <strong><%= vars.product_name %> Isolation Segment</strong> tile.</p>
 
 1. If you want to use HAProxy for this isolation segment, enter at least one address in the **HAProxy IPs** field. You should specify more than one IP address for high availability. Then configure your load balancer to forward requests for the domains you have set up for your deployment to these IP addresses. For more information, see <a href="../opsguide/ssl-term-haproxy.html">Configuring SSL/TLS Termination at HAProxy</a>.</td>
@@ -34,12 +33,12 @@ To configure the <%= vars.product_name %> Isolation Segment tile:
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/http_headers_to_log" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_request_max_buffer" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/protected_domains" %>
-1. For **DNS Search Domains**, enter DNS search domains as a comma-separated list. Your containers append these search domains to hostnames to resolve them into full domain names.
+1. For **DNS search domains**, enter DNS search domains as a comma-separated list. Your containers append these search domains to hostnames to resolve them into full domain names.
 
-1. The **Enable Silk Policy Enforcement** checkbox is selected by default. To disable Silk network policy enforcement between apps, disable the checkbox. Disabling network policy enforcement allows all apps to send network traffic to all other apps in the foundation despite no policy specifically allowing it.
+1. The **Enable Silk policy enforcement** checkbox is selected by default. To disable Silk network policy enforcement between apps, disable the checkbox. Disabling network policy enforcement allows all apps to send network traffic to all other apps in the foundation despite no policy specifically allowing it.
 
-1. Select a sharding mode in the **Router Sharding Mode** field. The options are explained below. For more information, see [Sharding Routers for Isolation Segments](../adminguide/routing-is.html#sharding-routers-isolation-segment).
-	* **Isolation Segment Only**: The routers for the tile acknowledge requests only from apps deployed within the cells of the tile. All other requests fail.
+1. Select a sharding mode in the **Router sharding mode** field. The options are explained below. For more information, see [Sharding Routers for Isolation Segments](../adminguide/routing-is.html#sharding-routers-isolation-segment).
+	* **Isolation Segment only**: The routers for the tile acknowledge requests only from apps deployed within the cells of the tile. All other requests fail.
 	* **No Isolation Segment**: The routers for the tile reject requests for any isolation segment. Choose this option to add a group of routers for the PAS tile, such as when you want a private point of entry for the system domain.
 
 1. Click **Save**.
