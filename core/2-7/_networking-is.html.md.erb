@@ -39,7 +39,7 @@ To configure the **Networking** pane:
 
 1. The **Enable Silk policy enforcement** checkbox is selected by default. To disable Silk network policy enforcement between apps, disable the checkbox. Disabling network policy enforcement allows all apps to send network traffic to all other apps in the foundation despite no policy specifically allowing it.
 
-1. Select a sharding mode in the **Router sharding mode** field. The options are explained below. For more information, see [Sharding Routers for Isolation Segments](../adminguide/routing-is.html#sharding-routers-isolation-segment).
+1. Select a sharding mode in the **Router sharding mode** field. For more information, see the [Sharding Routers for Isolation Segments](../adminguide/routing-is.html#sharding-routers-isolation-segment) section of the _Routing for Isolation Segments_ topic.
 	* **Isolation Segment only**: The routers for the tile acknowledge requests only from apps deployed within the cells of the tile. All other requests fail.
 	* **No Isolation Segment**: The routers for the tile reject requests for any isolation segment. Choose this option to add a group of routers for the PAS tile, such as when you want a private point of entry for the system domain.
 
