@@ -45,7 +45,6 @@ To configure the **Networking** pane:
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_router_cert_config" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_haproxy_ca" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/min_tls_version" %>
-1. For the **Balancing algorithm used by Router** field, select a load balancing algorithm. This determines how the Router balances traffic across app instances. By default, the Router uses round robin load balancing, which distributes an equal amount of traffic to each app instance. The least connection algorithm favors the app instances with the least amount of connections. For example, select **Least connections** to help distribute traffic to newer app instances when you scale up.
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/ip_logging" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/xforwarded_client_cert_xfcc" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_client_cert_validation" %>
