@@ -1631,10 +1631,25 @@
    </div>
 </div>
 
+
 <%# Make relative link if book path is in link: %>
 <script>
-$('#sub-nav a[href*="<%= product_info['url_prefix'] %>"]').each(function() {
-   var new_href = $(this).attr("href").replace('https://docs.pivotal.io', '');
-   $(this).attr("href", new_href);
+
+var domain = window.location.protocol + "//" + window.location.hostname;
+
+if (window.location.hostname == "localhost") {
+   var domain = domain + ":" + window.location.port;
+}
+
+$('#sub-nav a[href]').each(function() {
+   if ($(this).attr("href").includes("<%= product_info['url_prefix'] %>")) {
+      var new_href = $(this).attr("href").replace("https://docs.pivotal.io", '');
+      $(this).attr("href", new_href);
+   }
+   else {
+      var new_href = $(this).attr("href").replace("https://docs.pivotal.io", domain);
+      $(this).attr("href", new_href);
+   }
 });
+
 </script>
