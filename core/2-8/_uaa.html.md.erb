@@ -31,7 +31,7 @@ To configure the **UAA** pane:
 1. Under **SAML service provider credentials**, enter a certificate and private key to be used by UAA as a SAML service provider for signing outgoing SAML authentication requests. You can provide an existing certificate and private key from your trusted Certificate Authority or generate a certificate. The following domain must be associated with the certificate: `*.login.YOUR-SYSTEM-DOMAIN`.
   <p class="note"><strong>Note:</strong> The Pivotal Single Sign-On Service and Pivotal Spring Cloud Services tiles require the <code>*.login.YOUR-SYSTEM-DOMAIN</code>.</p>
 
-1. If the private key specified under **Service provider credentials** is password-protected, enter the password under **SAML service provider key password**.
+1. If the private key specified under **SAML service provider credentials** is password-protected, enter the password under **SAML service provider key password**.
 
 1. (Optional) To override the default value, enter a custom SAML Entity ID in the **SAML Entity ID override** field. By default, the SAML Entity ID is `http://login.YOUR-SYSTEM-DOMAIN` where `YOUR-SYSTEM-DOMAIN` is set in the **System domain** field in the **Domains** pane.
 
@@ -40,11 +40,18 @@ To configure the **UAA** pane:
 1. (Optional) In the **Apps Manager access token lifetime**, **Apps Manager refresh token lifetime**, **Cloud Foundry CLI access token lifetime**, and **Cloud Foundry CLI refresh token lifetime** fields, change the lifetimes of tokens granted for Apps Manager and cf CLI login access and refresh. Most deployments use the defaults.
 
 1. (Optional) In the **Global login session maximum timeout** and **Global login session idle timeout** fields, change the maximum number of seconds before a global login times out. These fields apply to the following:
-  * **Default zone sessions**:  Sessions in Apps Manager, <%= vars.product_name %> Metrics, and other web UIs that use the UAA default zones
-  * **Identity zone sessions**: Sessions in apps that use a UAA identity zone, such as a Single Sign-On service plan
+  * **Default zone sessions**:  Sessions in Apps Manager, <%= vars.product_name %> Metrics, and other web UIs that use the UAA default zones.
+  * **Identity zone sessions**: Sessions in apps that use a UAA identity zone, such as a Single Sign-On service plan.
 
 1. (Optional) Customize the text prompts used for username and password from the cf CLI and Apps Manager login popup by entering values for **Customize username label** and **Customize password label**.
 
 1. (Optional) The **Proxy IPs regular expression** field contains a pipe-separated set of regular expressions that UAA considers to be reverse proxy IP addresses. UAA respects the `x-forwarded-for` and `x-forwarded-proto` headers coming from IP addresses that match these regular expressions. To configure UAA to respond properly to Gorouter or HAProxy requests coming from a public IP address, append a regular expression or regular expressions to match the public IP address.
+
+1. (Optional) The **Client basic auth compatibility mode** checkbox governs how UAA processes client IDs and secrets when they are sent to UAA in a basic authentication header.
+  * If **selected**, UAA does not require a URL-encoded client ID and secret. This is the default.
+    * This represents the behavior of the UAA prior to [v74.0.0](https://github.com/cloudfoundry/uaa-release/releases/tag/v74.0.0).
+    * Clients may choose to provide a URL-encoded client ID and secret by sending header `X-CF-ENCODED-CREDENTIALS=true`.
+  * If **not checked**, UAA requires client IDs and secrets to be URL-encoded as defined by [RFC6749](https://tools.ietf.org/html/rfc6749#section-2.3.1).
+  * Pivotal recommends that clients URL encode basic authentication credentials and send the `X-CF-ENCODED-CREDENTIALS=true` header to be compatible with either mode.
 
 1. Click **Save**.

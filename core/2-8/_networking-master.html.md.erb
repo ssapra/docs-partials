@@ -45,6 +45,7 @@ To configure the **Networking** pane:
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_router_cert_config" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_haproxy_ca" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/min_tls_version" %>
+1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_balancing_algorithm" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/ip_logging" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/xforwarded_client_cert_xfcc" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_client_cert_validation" %>
@@ -84,7 +85,7 @@ To configure the **Networking** pane:
       <li><%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/c2c-overlay" %></li>
       <li><%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/c2c-vxlan" %></li>
       <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/log-app-traffic-enable" %>
-      <li> The **Enable Silk network policy enforcement** checkbox is enabled by default. To disable Silk network policy enforcement between apps, disable the checkbox. Disabling network policy enforcement allows all apps to send network traffic to all other apps in the foundation despite no policy specifically allowing it.</li>
+      <li> The **Enable Silk network policy enforcement** checkbox is selected by default. To disable Silk network policy enforcement between apps, disable the checkbox. Disabling network policy enforcement allows all apps to send network traffic to all other apps in the foundation despite no policy specifically allowing it.</li>
       <p class='note warning'><strong>Warning:</strong> Disabling this feature allows all app containers to access any other app container with no restrictions.</p>
     </ol>
   </li>
@@ -94,14 +95,7 @@ To configure the **Networking** pane:
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/networking_database_timeout" %>
 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/tcp_routing_enable" %><a id='tcp-routing-enable'></a>
-	* For GCP, you must also specify the name of a GCP TCP load balancer in the **LOAD BALANCER** column of the TCP Router job in the **Resource Config** pane. You configure this later on in PAS. For more information, see [Configure Resources](#resources).
-	* For AWS, you must also specify the name of a TCP ELB in the **LOAD BALANCER** column of the TCP Router job in the **Resource Config** pane. You configure this later on in PAS. For more information, see [Configure Resources](#resources).
-	* For Azure, you must also specify the name of Azure load balancer in the LOAD BALANCER column of the TCP Router job in the **Resource Config** pane. You configure this later on in PAS. For more information, see [Configure Resources](#resources).
-	* For OpenStack and vSphere:
-		1. Return to the top of the **Networking** pane.
-		1. In the **TCP router IPs** field, ensure that you have entered IP addresses that are within your subnet CIDR block. These are the same IP addresses you configured your load balancer with in the [Pre-Deployment Steps](../adminguide/enabling-tcp-routing.html#pre-deploy) section of the _Enabling TCP Routing_ topic, unless you configured DNS to resolve the TCP domain name directly to an IP you have chosen for the TCP router.
-	<br/>
-	For more information, see [Configuring TCP Routing in PAS](../opsguide/tcp-routing-ert-config.html).
+	
 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/dynamic-egress" %>
 

@@ -17,18 +17,18 @@ To configure the **System Logging** pane:
   1. For **Permitted peer**, enter either the name or SHA1 fingerprint of the remote peer.
   1. For **TLS CA certificate**, enter the TLS CA certificate for the remote server.
 
-1. Enable the **Enable Cloud Controller security event logging** checkbox to include security events in the log stream. This feature logs all API requests, including the endpoint, user, source IP address, and request result, in the Common Event Format (CEF).
+1. Select the **Enable Cloud Controller security event logging** checkbox to include security events in the log stream. This feature logs all API requests, including the endpoint, user, source IP address, and request result, in the Common Event Format (CEF).
 
 1. Enable the **Use TCP for file forwarding local transport** checkbox to transmit logs over TCP. This prevents log truncation, but may cause performance issues.
 
-1. The **Do not forward debug logs** checkbox is enabled by default. To forward DEBUG syslog messages to an external service, disable the checkbox.
-  <p class="note"><strong>Note:</strong> Some PAS components generate a high volume of DEBUG syslog messages. Enabling the <strong>Do not forward debug logs</strong> checkbox prevents PAS components from forwarding the DEBUG syslog messages to external services. However, PAS still writes the messages to the local disk.</p>
+1. The **Do not forward debug logs** checkbox is enabled by default. To forward `DEBUG` syslog messages to an external service, disable the checkbox.
+  <p class="note"><strong>Note:</strong> Some PAS components generate a high volume of <code>DEBUG</code> syslog messages. Enabling the <strong>Do not forward debug logs</strong> checkbox prevents PAS components from forwarding the <code>DEBUG</code> syslog messages to external services. However, PAS still writes the messages to the local disk.</p>
 
 1. For **Custom rsyslog configuration**, enter a custom syslog rule. For more information about adding custom syslog rules, see [Customizing Platform Log Forwarding](../customizing/custom-syslog-rules.html).
 
-1. Enable the **Enable system metrics** checkbox to emit system-level metrics about all VMs in the deployment. For a list of the VM metrics that the System Metric Agent emits, see the [loggregator-agent-release](https://github.com/cloudfoundry/loggregator-agent-release#vm-metrics) repository on GitHub.
+1. Select the **Enable system metrics** checkbox to emit system-level metrics about all VMs in the deployment. For a list of the VM metrics that the System Metric Agent emits, see the [loggregator-agent-release](https://github.com/cloudfoundry/loggregator-agent-release#vm-metrics) repository on GitHub.
 
-1. Enable the **Enable V1 firehose** to allow logs and metrics to flow to the V1 firehose.
+1. Select the **Enable V1 firehose** checkbox to allow logs and metrics to flow to the V1 firehose.
 
 1. Click **Save**.
 
