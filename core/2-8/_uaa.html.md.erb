@@ -47,11 +47,7 @@ To configure the **UAA** pane:
 
 1. (Optional) The **Proxy IPs regular expression** field contains a pipe-separated set of regular expressions that UAA considers to be reverse proxy IP addresses. UAA respects the `x-forwarded-for` and `x-forwarded-proto` headers coming from IP addresses that match these regular expressions. To configure UAA to respond properly to Gorouter or HAProxy requests coming from a public IP address, append a regular expression or regular expressions to match the public IP address.
 
-1. (Optional) The **Client basic auth compatibility mode** checkbox governs how UAA processes client IDs and secrets when they are sent to UAA in a basic authentication header.
-  * If **selected**, UAA does not require a URL-encoded client ID and secret. This is the default.
-    * This represents the behavior of the UAA prior to [v74.0.0](https://github.com/cloudfoundry/uaa-release/releases/tag/v74.0.0).
-    * Clients may choose to provide a URL-encoded client ID and secret by sending header `X-CF-ENCODED-CREDENTIALS=true`.
-  * If **not checked**, UAA requires client IDs and secrets to be URL-encoded as defined by [RFC6749](https://tools.ietf.org/html/rfc6749#section-2.3.1).
-  * Pivotal recommends that clients URL encode basic authentication credentials and send the `X-CF-ENCODED-CREDENTIALS=true` header to be compatible with either mode.
+1. (Optional) Disable the **Client basic auth compatibility mode** checkbox to require URL encoding for UAA client basic authentication credentials. By default, the checkbox is enabled and URL encoding is not required. This represents the default behavior of UAA prior to v74.0.0. URL encoding is defined by RFC6749. See [RFC6749](https://tools.ietf.org/html/rfc6749#section-2.3.1).
+  <p class="note"><strong>Note:</strong>Pivotal recommends that you disable the checkbox to allow the use of special characters in UAA client secrets. Alternatively, you can enbale the checkbox and use the `X-CF-ENCODED-CREDENTIALS=true` HTTP header to use client secrets with special characters.</p>
 
 1. Click **Save**.
