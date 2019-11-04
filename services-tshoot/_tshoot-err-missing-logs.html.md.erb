@@ -31,17 +31,20 @@
       </li>
       <li>
         <p>
-          To find logs from your service instance with service guid <SERVICE-GUID>, run the following:
+          Find the GUID for your service instance by running:
         </p>
         <p>
-          <pre><code>cf log-stream | grep <SERVICE-GUID>"</code></pre>
+          <pre><code>cf service SERVICE-INSTANCE --guid</code></pre>
+        </p>
+      </li>
+      <li>
+        <p>
+          Find logs from your service instance by running:
         </p>
         <p>
-          The service guid can be found by running the command:
+          <pre><code>cf log-stream | grep "SERVICE-GUID"</code></pre>
         </p>
-        <p>
-          <pre><code>cf service <SERVICE-NAME> --guid</code></pre>
-        </p>
+  
       </li>
     </ol>
   </li>
