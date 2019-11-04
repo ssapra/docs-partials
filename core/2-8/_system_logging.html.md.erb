@@ -28,9 +28,12 @@ To configure the **System Logging** pane:
 
 1. Select the **Enable system metrics** checkbox to emit system-level metrics about all VMs in the deployment. For a list of the VM metrics that the System Metric Agent emits, see the [system-metrics-release](https://github.com/cloudfoundry/system-metrics-release/blob/develop/docs/system-metrics-agent.md#vm-metrics) repository on GitHub.
 
-1. Select the **Enable V1 firehose** checkbox to allow logs and metrics to flow to the V1 firehose.
+1. Select the **Enable V1 firehose** checkbox to allow logs and metrics to flow to the Loggregator V1 Firehose.
 
-1. Select the **Enable V2 firehose** checkbox to allow logs and metrics to flow to the V2 firehose. If you disable the V2 firehose by deselecting this checkbox, you must also disable the V1 firehose.
+1. Select the **Enable V2 firehose** checkbox to allow logs and metrics to flow to the Loggregator V2 Firehose. 
+	<p class="note"><strong>Note:</strong> If you deselect this checkbox to disable the V2 firehose, you must also disable the V1 firehose. If you do not also disable the V1 Firehose, V1 Firehose VMs continue to be active </p>
+
+1. For **Aggregate log/metric drain destinations**, enter a comma-separated list of syslog endpoints. Syslog Agents forward all app logs, app metrics, and PAS component VM metrics on your foundation to the endpoints that you provide in this list. 
 
 1. Click **Save**.
 
