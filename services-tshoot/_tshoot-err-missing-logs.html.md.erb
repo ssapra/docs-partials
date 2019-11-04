@@ -19,22 +19,28 @@
   </li>
   <li>
     <p>
-      Verify that the Firehose is emitting metrics:
+      Verify that Loggregator is emitting metrics:
     </p>
     <ol>
       <li>
         <p>
-          Install the <code>cf nozzle</code> plugin.
-          For instructions, see the <a href="https://github.com/cloudfoundry-community/firehose-plugin">firehose plugin</a>
+          Install the <code>cf log-stream</code> plugin.
+          For instructions, see the <a href="https://github.com/cloudfoundry/log-stream-cli">Log Stream CLI Plugin</a>
           GitHub repository.
         </p>
       </li>
       <li>
         <p>
-          To find logs from your service in the <code>cf nozzle</code> output, run the following:
+          To find logs from your service instance with service guid <SERVICE-GUID>, run the following:
         </p>
         <p>
-          <pre><code>cf nozzle -f ValueMetric | grep --line-buffered "on-demand-broker/MY-SERVICE"</code></pre>
+          <pre><code>cf log-stream | grep <SERVICE-GUID>"</code></pre>
+        </p>
+        <p>
+          The service guid can be found by running the command:
+        </p>
+        <p>
+          <pre><code>cf service <SERVICE-NAME> --guid</code></pre>
         </p>
       </li>
     </ol>
