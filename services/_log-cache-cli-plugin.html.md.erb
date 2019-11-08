@@ -22,7 +22,7 @@ when "MySQL for Pivotal Platform" %>
       - `--json`: Output metrics logs as envelopes in JSON format.
       For a complete list of `cf tail` options, see the [Log Cache CLI repository](https://github.com/cloudfoundry/log-cache-cli#usage).
 
-  <% when "Redis for PCF" %>
+  <% when "Redis for Pivotal Platform" %>
     ```
     cf tail SERVICE-INSTANCE-NAME
     ```
@@ -46,7 +46,7 @@ when "MySQL for Pivotal Platform" %>
      2019-05-17T11:26:59.50-0700 [my-instance] GAUGE /p.mysql/available:1.000000 boolean
      2019-05-17T11:27:29.50-0700 [my-instance] GAUGE /p.mysql/system/persistent_disk_used_percent:17.000000 percentage
      2019-05-17T11:27:29.50-0700 [my-instance] GAUGE /p.mysql/performance/threads_connected:**7**.000000 connection
-    <% when "Redis for PCF" %>
+    <% when "Redis for Pivotal Platform" %>
      $ cf tail my-instance
      Retrieving logs for service my-instance in org system / space pivotal-services as admin...
      2018-07-03T09:54:14.84+0100 [my-instance] GAUGE info.clients.blocked_clients:0.000000 metric info.clients.client_biggest_input_buf:0.000000 metric ...
@@ -61,7 +61,7 @@ when "MySQL for Pivotal Platform" %>
 <% case vars.service_name
 when "MySQL for Pivotal Platform" %>
   the [Key Performance Indicators](#kpi) and [Component Metrics](#component-metrics) sections below.
-<% when "Redis for PCF" %>
+<% when "Redis for Pivotal Platform" %>
 [Redis KPIs](./monitoring.html#Redis-KPIs).
 <% when "RabbitMQ for Pivotal Platform" %>
 [Monitoring and KPIs for On-Demand RabbitMQ for <%= vars.product_name %>](./monitor.html).
