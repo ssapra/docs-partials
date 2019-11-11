@@ -1,26 +1,24 @@
-On-demand <%= vars.product_name %> services rely on the BOSH 2.0 ability to dynamically deploy VMs in
-a dedicated network.
-The on-demand service broker uses this capability to create single-tenant service
-instances in a dedicated service network.
+On-demand <%= vars.product_name %> services use BOSH to dynamically deploy VMs and create single-tenant
+service instances in a dedicated network.
+On-demand services use the dynamically-provisioned service network to host single-tenant worker VMs.
+These worker VMs run as service instances within development spaces.
 
-On-demand services use the dynamically-provisioned service network to host the
-single-tenant worker VMs that run as service instances within development spaces.
-This architecture lets developers provision IaaS resources for their service
-instances at creation time, rather than the operator pre-provisioning a fixed
-quantity of IaaS resources when they deploy the service broker.
+This on-demand architecture has the following advantages:
 
-By making services single-tenant, where each instance runs on a dedicated VM
-rather than sharing VMs with unrelated processes, on-demand services eliminate
-the "noisy neighbor" problem when one app hogs resources on a shared cluster.
-Single-tenant services can also support regulatory compliance where
-sensitive data must be compartmentalized across separate machines.
++ Developers can provision IaaS resources for their services instances when the instances are created.
+This removes the need for operators to pre-provision a fixed amount of IaaS resources
+when they deploy the service broker.
++ Service instances run on a dedicated VM and do not share VMs with unrelated processes. This removes
+the "nosy neighbor" problem, where an app monopolizes resources on a shared cluster.
++ Single-tenant services can support regulatory compliances where
+sensitive data must be separated across different machines.
 
-An on-demand service splits its operations between the default network and the
-service network.
-Shared components of the service, such as executive controllers and databases,
-run centrally on the default network along with the Cloud Controller, UAA, and
+An on-demand service separates operations between the default network and the
+service network. Shared service components, such as executive controllers and databases,
+run on the default network along with the Cloud Controller, UAA, and
 other <%= vars.product_name %> components.
-The worker pool deployed to specific spaces runs on the service network.
+Worker pools deployed to specific spaces runs on the service network.
+
 
 The diagram below shows worker VMs in an on-demand service instance
 running on a separate services network, while other components run on the default
