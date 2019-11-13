@@ -3,19 +3,19 @@
    <div class="nav-content">
       <ul>
          <li class="">
-            <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/installing/pcf-docs.html"><%= vars.product_name %> Documentation</a>
+            <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/installing/pcf-docs.html"><%= vars.platform_name %> Documentation</a>
          </li>
          <li class="has_submenu">
-            <span role="button"><strong><%= vars.product_name %> Release Notes</strong></span>
+            <span role="button"><strong><%= vars.platform_name %> Release Notes</strong></span>
             <ul>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/index.html"><%= vars.product_name %> Release Notes</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/index.html"><%= vars.platform_name %> Release Notes</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/highlights.html"><%= vars.product_name %> v2.8 Feature Highlights</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/highlights.html"><%= vars.platform_name %> v2.8 Feature Highlights</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/breaking-changes.html"><%= vars.product_name %> v2.8 Breaking Changes</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/breaking-changes.html"><%= vars.platform_name %> v2.8 Breaking Changes</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/opsmanager-rn.html">Pivotal Operations Manager v2.8 Release Notes</a>
@@ -41,7 +41,7 @@
                      <li><a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/stemcells/index.html">Stemcell Release Notes</a></li>
                      <li><a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/stemcells/stemcells.html">Stemcell (Linux) Release Notes</a></li>
                      <li><a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/stemcells/windows-stemcell-v2019x.html">Stemcell v2019.x (Windows Server version 2019) Release Notes</a></li>
-                     <li><a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/stemcells/xenial-tiles.html">Tiles Using Xenial Stemcells in <%= vars.product_name %></a></li>
+                     <li><a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/stemcells/xenial-tiles.html">Tiles Using Xenial Stemcells in <%= vars.platform_name %></a></li>
                   </ul>
                </li>
             </ul>
@@ -69,13 +69,13 @@
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_ref_arch.html">vSphere Reference Architecture</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_nsx_cookbook.html">Cookbook for Using Edge Services Gateway on <%= vars.product_name %> and VMware NSX</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_nsx_cookbook.html">Cookbook for Using Edge Services Gateway on <%= vars.platform_name %> and VMware NSX</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_upgrade.html">How to Upgrade vSphere without <%= vars.product_name %> Downtime</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_upgrade.html">How to Upgrade vSphere without <%= vars.platform_name %> Downtime</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_migrate_datastore.html">How to Migrate <%= vars.product_name %> to a New Datastore in vSphere</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_migrate_datastore.html">How to Migrate <%= vars.platform_name %> to a New Datastore in vSphere</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/control.html">Control Plane Reference Architectures</a>
@@ -90,34 +90,34 @@
          </li>
 
          <li class="has_submenu">
-            <span role="button"><strong>Installing <%= vars.product_name %></strong></span>
+            <span role="button"><strong>Installing <%= vars.platform_name %></strong></span>
             <ul>
                <li class="">
                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/index.html">Installation Overview</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/config_firewall.html">Preparing Your Firewall for Deploying <%= vars.product_name %></a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/config_firewall.html">Preparing Your Firewall for Deploying <%= vars.platform_name %></a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/iaas-user-roles.html"><%= vars.product_name %> IaaS User Role Guidelines</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/iaas-user-roles.html"><%= vars.platform_name %> IaaS User Role Guidelines</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/offline_installation.html">Installing <%= vars.product_name %> in Air-Gapped Environments</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/offline_installation.html">Installing <%= vars.platform_name %> in Air-Gapped Environments</a>
                </li>
                <li class="has_submenu">
-                  <span role="button"><strong>Installing <%= vars.product_name %> on AWS</strong></span>
+                  <span role="button"><strong>Installing <%= vars.platform_name %> on AWS</strong></span>
                   <ul>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/aws.html">Installing <%= vars.product_name %> on AWS</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/aws.html">Installing <%= vars.platform_name %> on AWS</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/aws-iaas-user-roles.html">Guidelines for Creating User Roles for <%= vars.product_name %> on AWS</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/aws-iaas-user-roles.html">Guidelines for Creating User Roles for <%= vars.platform_name %> on AWS</a>
                      </li>
                      <li class="has_submenu">
-                        <span role="button"><strong>Installing <%= vars.product_name %> on AWS Manually</strong></span>
+                        <span role="button"><strong>Installing <%= vars.platform_name %> on AWS Manually</strong></span>
                         <ul>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/prepare-env-manual.html">Installing <%= vars.product_name %> on AWS Manually</a>
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/prepare-env-manual.html">Installing <%= vars.platform_name %> on AWS Manually</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/config-manual.html">Configuring BOSH Director on AWS</a>
@@ -125,10 +125,10 @@
                         </ul>
                      </li>
                      <li class="has_submenu">
-                        <span role="button"><strong>Installing <%= vars.product_name %> on AWS Using Terraform</strong></span>
+                        <span role="button"><strong>Installing <%= vars.platform_name %> on AWS Using Terraform</strong></span>
                         <ul>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/aws-terraform.html">Installing <%= vars.product_name %> on AWS Using Terraform</a>
+                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/aws-terraform.html">Installing <%= vars.platform_name %> on AWS Using Terraform</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/prepare-env-terraform.html">Deploying Ops Manager on AWS Using Terraform</a>
@@ -150,13 +150,13 @@
                   </ul>
                </li>
                <li class="has_submenu">
-                  <span role="button"><strong>Installing <%= vars.product_name %> on Azure</strong></span>
+                  <span role="button"><strong>Installing <%= vars.platform_name %> on Azure</strong></span>
                   <ul>
                      <li class="has_submenu">
-                        <span role="button"><strong>Installing <%= vars.product_name %> on Azure Manually</strong></span>
+                        <span role="button"><strong>Installing <%= vars.platform_name %> on Azure Manually</strong></span>
                         <ul>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/pcf-azure-manual-config.html">Installing <%= vars.product_name %> on Azure Manually</a>
+                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/pcf-azure-manual-config.html">Installing <%= vars.platform_name %> on Azure Manually</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/prepare-env-manual.html">Preparing to Deploy Ops Manager on Azure Manually</a>
@@ -170,10 +170,10 @@
                         </ul>
                      </li>
                      <li class="has_submenu">
-                        <span role="button"><strong>Installing <%= vars.product_name %> on Azure Using Terraform</strong></span>
+                        <span role="button"><strong>Installing <%= vars.platform_name %> on Azure Using Terraform</strong></span>
                         <ul>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-terraform.html">Installing <%= vars.product_name %> on Azure Using Terraform</a>
+                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-terraform.html">Installing <%= vars.platform_name %> on Azure Using Terraform</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/prepare-env-terraform.html">Deploying Ops Manager on Azure Using Terraform</a>
@@ -184,10 +184,10 @@
                         </ul>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-troubleshooting.html">Troubleshooting <%= vars.product_name %> on Azure</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-troubleshooting.html">Troubleshooting <%= vars.platform_name %> on Azure</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/deleting-azure-install.html">Deleting a <%= vars.product_name %> on Azure Installation</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/deleting-azure-install.html">Deleting a <%= vars.platform_name %> on Azure Installation</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-om-upgrade.html">Upgrading BOSH Director on Azure</a>
@@ -195,19 +195,19 @@
                   </ul>
                </li>
                <li class="has_submenu">
-                  <span role="button"><strong>Installing <%= vars.product_name %> on GCP</strong></span>
+                  <span role="button"><strong>Installing <%= vars.platform_name %> on GCP</strong></span>
                   <ul>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp.html">Installing <%= vars.product_name %> on GCP</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp.html">Installing <%= vars.platform_name %> on GCP</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-quotas.html">Recommended GCP Quotas</a>
                      </li>
                      <li class="has_submenu">
-                        <span role="button"><strong>Installing <%= vars.product_name %> on GCP Manually</strong></span>
+                        <span role="button"><strong>Installing <%= vars.platform_name %> on GCP Manually</strong></span>
                         <ul>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-manual.html">Installing <%= vars.product_name %> on GCP Manually</a>
+                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-manual.html">Installing <%= vars.platform_name %> on GCP Manually</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/prepare-env-manual.html">Preparing to Deploy Ops Manager on GCP Manually</a>
@@ -221,10 +221,10 @@
                         </ul>
                      </li>
                      <li class="has_submenu">
-                        <span role="button"><strong>Installing <%= vars.product_name %> on GCP Using Terraform</strong></span>
+                        <span role="button"><strong>Installing <%= vars.platform_name %> on GCP Using Terraform</strong></span>
                         <ul>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-terraform.html">Installing <%= vars.product_name %> on GCP Using Terraform</a>
+                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-terraform.html">Installing <%= vars.platform_name %> on GCP Using Terraform</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/prepare-env-terraform.html">Deploying Ops Manager on GCP Using Terraform</a>
@@ -241,7 +241,7 @@
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/deleting-gcp-install.html">Deleting a GCP Installation from the Console</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-troubleshooting.html">Troubleshooting <%= vars.product_name %> on GCP</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-troubleshooting.html">Troubleshooting <%= vars.platform_name %> on GCP</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-om-upgrade.html">Upgrading a BOSH Director Instance on GCP</a>
@@ -249,10 +249,10 @@
                   </ul>
                </li>
                <li class="has_submenu">
-                  <span role="button"><strong>Installing <%= vars.product_name %> on OpenStack</strong></span>
+                  <span role="button"><strong>Installing <%= vars.platform_name %> on OpenStack</strong></span>
                   <ul>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/openstack.html">Installing <%= vars.product_name %> on OpenStack</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/openstack.html">Installing <%= vars.platform_name %> on OpenStack</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/openstack/setup.html">Deploying Ops Manager on OpenStack</a>
@@ -263,10 +263,10 @@
                   </ul>
                </li>
                <li class="has_submenu">
-                  <span role="button"><strong>Installing <%= vars.product_name %> on vSphere</strong></span>
+                  <span role="button"><strong>Installing <%= vars.platform_name %> on vSphere</strong></span>
                   <ul>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/vsphere.html">Installing <%= vars.product_name %> on vSphere</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/vsphere.html">Installing <%= vars.platform_name %> on vSphere</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/vsphere/vsphere-service-account.html">vSphere Service Account Requirements</a>
@@ -322,10 +322,10 @@
          </li>
 
          <li class="has_submenu">
-            <span role="button"><strong>Operating <%= vars.product_name %></strong></span>
+            <span role="button"><strong>Operating <%= vars.platform_name %></strong></span>
             <ul>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/index.html">Operating <%= vars.product_name %></a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/index.html">Operating <%= vars.platform_name %></a>
                </li>
                <li class="has_submenu">
                   <span role="button"><strong>Ops Manager</strong></span>
@@ -390,7 +390,7 @@
                       <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/config-rbac.html">Configuring RBAC in Ops Manager</a>
                    </li>
                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/external-user-management.html">Adding Existing SAML or LDAP Users to a <%= vars.product_name %> Deployment</a>
+                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/external-user-management.html">Adding Existing SAML or LDAP Users to a <%= vars.platform_name %> Deployment</a>
                    </li>
                     <li class="has_submenu">
                       <span role="button"><strong>Component: UAA</strong></span>
@@ -474,16 +474,16 @@
          </li>
 
          <li class="has_submenu">
-            <span role="button"><strong>Upgrading <%= vars.product_name %></strong></span>
+            <span role="button"><strong>Upgrading <%= vars.platform_name %></strong></span>
             <ul>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/upgrading-pcf.html">Upgrading <%= vars.product_name %></a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/upgrading-pcf.html">Upgrading <%= vars.platform_name %></a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/upgrading/understanding-pas.html">What Happens During <%= vars.product_short %> Upgrades</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/upgrading/checklist.html">Upgrade Preparation Checklist for <%= vars.product_name %> 2.8</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/upgrading/checklist.html">Upgrade Preparation Checklist for <%= vars.platform_name %> 2.8</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/upgrading/configuring.html">Configuring <%= vars.product_short %> for Upgrades</a>
@@ -492,7 +492,7 @@
                   <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/pws_upgrade_load.html">Upgrade Load Example: Pivotal Web Services</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/upgrading-products.html">Upgrading <%= vars.product_short %> and Other <%= vars.product_name %> Products</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/upgrading-products.html">Upgrading <%= vars.product_short %> and Other <%= vars.platform_name %> Products</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/cfpush-availability-during-upgrade.html">cf push Availability During Pivotal Application Service Upgrades</a>
@@ -501,10 +501,10 @@
          </li>
 
          <li class="has_submenu">
-            <span role="button"><strong>Backing Up and Restoring <%= vars.product_name %></strong></span>
+            <span role="button"><strong>Backing Up and Restoring <%= vars.platform_name %></strong></span>
             <ul>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/index.html">Backing Up and Restoring <%= vars.product_name %></a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/index.html">Backing Up and Restoring <%= vars.platform_name %></a>
                </li>
                <li class="has_submenu">
                   <span role="button"><strong>Incident Response Guides</strong></span>
@@ -521,10 +521,10 @@
                   </ul>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/disaster-recovery.html">Disaster Recovery in <%= vars.product_name %></a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/disaster-recovery.html">Disaster Recovery in <%= vars.platform_name %></a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/backup-pcf-bbr.html">Backing Up <%= vars.product_name %> with BBR</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/backup-pcf-bbr.html">Backing Up <%= vars.platform_name %> with BBR</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/file-storage-backup-level.html">File Storage Backup Level</a>
@@ -533,7 +533,7 @@
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/component-backups.html"><%= vars.product_short %> Component Availability During Backup</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/restore-pcf-bbr.html">Restoring <%= vars.product_name %> from Backup with BBR</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/restore-pcf-bbr.html">Restoring <%= vars.platform_name %> from Backup with BBR</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/enabling-external-blobstore-backups.html">Enabling External Blobstore Backups</a>
@@ -733,7 +733,7 @@
   										<a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/user-accounts-index.html">User Accounts and Communications</a>
   									</li>
                     <li class="">
-                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/user-types.html"><%= vars.product_name %> User Types</a>
+                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/user-types.html"><%= vars.platform_name %> User Types</a>
                     </li>
                     <li class="">
                        <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/cli-user-management.html">Creating and Managing Users with the cf CLI</a>
@@ -783,7 +783,7 @@
                      <span role="button"><strong>Front End</strong></span>
                      <ul>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/securing-traffic.html">Securing Traffic into Cloud Foundry</a>
+                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/securing-traffic.html">Securing Traffic into <%= vars.app_runtime_full %></a>
                        </li>
                        <li class="">
                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/ssl-term-haproxy.html">Configuring SSL/TLS Termination at HAProxy</a>
@@ -798,13 +798,13 @@
                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/securing-endpoints.html">Securing System and App Endpoints</a>
                        </li>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/config-ssh.html">Configuring SSH Access for <%= vars.product_name %></a>
+                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/config-ssh.html">Configuring SSH Access for <%= vars.platform_name %></a>
                        </li>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/diego/ssh-conceptual.html">Application SSH Components and Processes</a>
+                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/diego/ssh-conceptual.html">App SSH Components and Processes</a>
                        </li>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/frontend-idle-timeout.html">Configuring Frontend Idle Timeout for Gorouter and HAProxy</a>
+                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/frontend-idle-timeout.html">Configuring Front End Idle Timeout for Gorouter and HAProxy</a>
                        </li>
                      </ul>
                    </li>
@@ -874,7 +874,7 @@
                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/secure-si-creds.html">Securing Service Instance Credentials with Runtime CredHub</a>
                        </li>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/security_config.html">Providing a Certificate for Your SSL Termination Point</a>
+                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/security_config.html">Providing a Certificate for Your TLS Termination Point</a>
                        </li>
                        <li class="">
                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/trusted-system-certificates.html">Trusted System Certificates</a>
@@ -941,7 +941,7 @@
                       <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/monitoring/metrics.html">Selecting and Configuring a Monitoring System</a>
                    </li>
                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/monitoring.html">Monitoring <%= vars.product_name_short %> VMs in Ops Manager</a>
+                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/monitoring.html">Monitoring <%= vars.platform_name_short %> VMs in Ops Manager</a>
                    </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/id-jobs.html">Identifying <%= vars.product_short %> Jobs Using vCenter</a>
@@ -1054,7 +1054,7 @@
                        <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/prepare-to-deploy.html">Considerations for Designing and Running an App in the Cloud</a>
                     </li>
                     <li class="">
-                       <a href="https://docs.pivotal.io/pcf-dev/index.html"><%= vars.product_name %> Dev</a>
+                       <a href="https://docs.pivotal.io/pcf-dev/index.html"><%= vars.platform_name %> Dev</a>
                     </li>
                     <li class="has_submenu">
                       <span role="button"><strong>cf push</strong></span>
@@ -2203,7 +2203,7 @@
                    <a href="https://docs.pivotal.io/nist/index.html">NIST Controls and <%= vars.app_runtime_full %></a>
                  </li>
                 <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/tiles/index.html">Security-Related <%= vars.product_name %> Tiles and Add-ons</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/tiles/index.html">Security-Related <%= vars.platform_name %> Tiles and Add-ons</a>
                 </li>
               </ul>
             </li>
@@ -2212,10 +2212,10 @@
             <span role="button"><strong>Troubleshooting and Diagnostics</strong></span>
             <ul>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/diagnostics.html">Diagnosing Problems in <%= vars.product_name %></a>
+                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/diagnostics.html">Diagnosing Problems in <%= vars.platform_name %></a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/troubleshooting.html">Troubleshooting Problems in <%= vars.product_name %></a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/troubleshooting.html">Troubleshooting Problems in <%= vars.platform_name %></a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/trouble-advanced.html">Advanced Troubleshooting with the BOSH CLI</a>
@@ -2233,16 +2233,16 @@
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/backup-restore/troubleshooting-bbr.html">Troubleshooting BBR</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-troubleshooting.html">Troubleshooting <%= vars.product_name %> on Azure</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-troubleshooting.html">Troubleshooting <%= vars.platform_name %> on Azure</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/gcp-troubleshooting.html">Troubleshooting <%= vars.product_name %> on GCP</a>
+                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/gcp-troubleshooting.html">Troubleshooting <%= vars.platform_name %> on GCP</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/troubleshooting-vsphere.html">Troubleshooting Ops Manager for VMware vSphere</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/power-failure.html">Checking <%= vars.product_name %> State after a Power Failure on vSphere</a>
+                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/power-failure.html">Checking <%= vars.platform_name %> State after a Power Failure on vSphere</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/windows/troubleshooting.html">Troubleshooting Windows Diego Cells</a>
