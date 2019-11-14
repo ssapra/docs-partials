@@ -47,8 +47,8 @@ To configure the **UAA** pane:
 
 1. (Optional) The **Proxy IPs regular expression** field contains a pipe-separated set of regular expressions that UAA considers to be reverse proxy IP addresses. UAA respects the `x-forwarded-for` and `x-forwarded-proto` headers coming from IP addresses that match these regular expressions. To configure UAA to respond properly to Gorouter or HAProxy requests coming from a public IP address, append a regular expression or regular expressions to match the public IP address.
 
-1. (Optional) Disable the **Client basic auth compatibility mode** checkbox to require URL encoding for UAA client basic authentication credentials. This allows for the use of special characters in UAA client secrets. By default, the checkbox is enabled and URL encoding is not required, which represents the default behavior of UAA prior to v74.0.0. URL encoding is defined by RFC6749. See [RFC6749](https://tools.ietf.org/html/rfc6749#section-2.3.1).
-  <p class="note"><strong>Note:</strong>To support special characters in client secrets without disabling compatability mode, use the `X-CF-ENCODED-CREDENTIALS=true` HTTP header.</p>
+1. (Optional) Disable the **Client basic auth compatibility mode** checkbox to require URL encoding for UAA client basic authentication credentials. By default, the checkbox is enabled and URL encoding is not required. This represents the default behavior of UAA prior to v74.0.0. URL encoding is defined by RFC6749. See [RFC6749](https://tools.ietf.org/html/rfc6749#section-2.3.1).
+  <p class="note"><strong>Note:</strong>To require URL encoding for certain UAA clients without disabling compatability mode, use the `X-CF-ENCODED-CREDENTIALS=true` HTTP header.</p>
   <p class="note warning"><strong>Warning:</strong> If you disable the <b>Client basic auth compatibility mode</b> checkbox, URL encoding is required for all UAA client apps in your deployment. To avoid breaking changes, ensure that all client apps support URL encoding before you disable the checkbox.</p>
 
 1. Click **Save**.
