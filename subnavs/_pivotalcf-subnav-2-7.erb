@@ -116,9 +116,18 @@
                      <li class="has_submenu">
                         <span role="button"><strong>Installing <%= vars.platform_name %> on AWS Manually</strong></span>
                         <ul>
-                           <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/prepare-env-manual.html">Installing <%= vars.platform_name %> on AWS Manually</a>
-                           </li>
+                          <li class="">
+                             <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/aws-manual.html">Installing <%= vars.platform_name %> on AWS Manually</a>
+                          </li>
+                          <li class="">
+                             <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/required-objects.html">Required AWS Objects</a>
+                          </li>
+                          <li class="">
+                             <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/prepare-env-manual.html">Preparing to Deploy Ops Manager on AWS Manually</a>
+                          </li>
+                          <li class="">
+                             <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/deploy-manual.html">Deploying Ops Manager on AWS Manually</a>
+                          </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/config-manual.html">Configuring BOSH Director on AWS</a>
                            </li>
