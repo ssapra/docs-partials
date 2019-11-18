@@ -1,21 +1,17 @@
 <style>
-main table pre.terminal {
-  display: table-cell;
+main table pre {
+  width:555px;
+  overflow:auto;
 }
 
-table {
-  width: 350;
-  overflow: auto;
-}
 </style>
-
-
 
 
 <% if defined?(id) %>
 <a name="<%= id %>"></a>
 <% end %>
 
+<div style="overflow:auto;">
 
 <table class="nice">
   <tr>
@@ -36,3 +32,4 @@ table {
     <td><%= solution %></td>
   </tr>
 </table>
+</div>
