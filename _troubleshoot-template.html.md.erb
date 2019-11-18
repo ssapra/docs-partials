@@ -1,7 +1,9 @@
 <style>
-main table pre.terminal {
-  display: table-cell;
+main table pre {
+  width:555px;
+  overflow:auto;
 }
+
 </style>
 
 
@@ -9,6 +11,7 @@ main table pre.terminal {
 <a name="<%= id %>"></a>
 <% end %>
 
+<div style="overflow:auto;">
 
 <table class="nice">
   <tr>
@@ -29,3 +32,4 @@ main table pre.terminal {
     <td><%= solution %></td>
   </tr>
 </table>
+</div>
