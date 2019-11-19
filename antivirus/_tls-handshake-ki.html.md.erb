@@ -1,3 +1,4 @@
-* <%= vars.product_short_mirror %> sends an error log to syslog about the TLS handshake process,
-even though the process is not failing. The error looks similar to the following:
+* <%= vars.product_short_mirror %> sends a TLS handshake error to syslog
+  even though the process is not failing.
+  The error looks similar to the following:
       <pre class="terminal">http: TLS handshake error from 127.0.0.1:RANDOM-PORT: EOF</pre>
