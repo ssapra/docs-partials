@@ -1,26 +1,25 @@
 <p>
-	If you have made changes to the plan definition or uploaded a new tile into Ops
-	Manager, you might want to upgrade all <%=vars.service_name_article_full%>
-	instances to the latest software or plan definition.
+	When you make changes to the plan configuration, you should
+	upgrade all <%=vars.service_name_article_full%> instances to the latest version of the plan.
 </p>
 
 <p>
 	The <code>upgrade-all-service-instances</code> errand does the following:
 </p>
 
-<ul>
-	<li>Collects all of the service instances the on-demand broker has registered</li>
-	<li>For each instance the errand does the following serially
-		<ul>
+<ol>
+	<li>Collects all of the service instances that the on-demand broker has registered</li>
+	<li>For each instance the errand does the following:
+		<ol>
 			<li>Issues an upgrade command to the on-demand broker</li>
-			<li>Regenerates the service instance manifest based on its latest configuration from the tile</li>
+			<li>Regenerates the service instance manifest based on the latest configuration from the tile</li>
 			<li>Deploys the new manifest for the service instance</li>
 			<li>Waits for this operation to complete, then proceeds to the next instance</li>
-		</ul>
+		</ol>
 	</li>
 	<li>Adds to a retry list any instances that have ongoing BOSH tasks at the time of upgrade</li>
-	<li>Retries any instances in the retry list until all are upgraded</li>
-</ul>
+	<li>Retries any instances in the retry list until all instances are upgraded</li>
+</ol>
 
 <p>
 	If any instance fails to upgrade, the errand fails immediately.
@@ -33,8 +32,9 @@
 
 <ul>
 	<li>
-		Select the errand through the Ops Manager UI and have it run when you click
-		<strong>Apply Changes</strong>.
+		Select the errand in the <strong>Ops Manager Installation Dashboard</strong>
+		on the <strong>Review Pending Changes</strong> page and
+		then click <strong>Apply Changes</strong>.
 	</li>
 	<li>
 		<p>
