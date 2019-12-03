@@ -1,21 +1,21 @@
 <p>
-  The <code>register-broker</code> errand registers the broker with Cloud Foundry and enables
+  The <code>register-broker</code> errand registers the broker with Pivotal Platform and enables
   access to plans in the service catalog.
-  Run this errand whenever the broker is re-deployed with new catalog metadata to
+  You should run this errand whenever the broker is re-deployed with new catalog metadata to
   update the Cloud Foundry catalog.
 </p>
 
 <p>
-  Plans with disabled service access are not visible to non-admin Cloud Foundry
-  users, including Org Managers and Space Managers.
-  Admin Cloud Foundry users can see all plans including those with disabled service access.
+  Plans with disabled service access are only visible to admin Cloud Foundry
+  users. Non-admin Cloud Foundry users, including Org Managers and Space Managers, cannot
+  see these plans.
 </p>
 
 <p>
-  The errand does the following:
+  The <code>register-broker</code> errand does the following:
 </p>
 
-<ul>
+<ol>
   <li>Registers the service broker with Cloud Controller.</li>
   <li>
     Enables service access for any plans that have the radio button set to <code>enabled</code>
@@ -25,7 +25,7 @@
     in the tile plan page.
   </li>
   <li>Does nothing for any for any plans that have the radio button set to <code>manual</code>.</li>
-</ul>
+</ol>
 
 <p>
   To run the errand, run the following command:
