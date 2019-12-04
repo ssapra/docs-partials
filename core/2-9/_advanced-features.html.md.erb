@@ -20,6 +20,22 @@ To enable overcommit:
 
 <p class="note"><strong>Note:</strong> Entries made to each of these two fields set the total amount of resources allocated, not the overage.</p>
 
+### <a id="app-graceful-shutdown-period"></a> App Graceful Shutdown Period
+
+When app instances are shut down during platform updates or app stop/restart/scale-down events, the platform sends a SIGTERM to the processes in the application container. Processes have a graceful shutdown period between the initial signal and the SIGKILL that is initiated to forcefully shutdown the application. This graceful shutdown period can be configured to greater than the default of 10 seconds if applications running on the platform require a longer amount of time to finish their in flight work and shut down safely.
+
+<p class="note"><strong>Note:</strong> Increasing this value significantly may result in slower platform upgrades as each cell will respect this configuration when it is cleaning up evacuated application instances and wait for each to gracefully shut down. It may be advisable to use isolation segments in order to separate classes of applications that have different shut down characteristics in order to ensure cell update times are reliable.</p>
+
+To modify this setting:
+
+1. Select **Advanced Features**.
+
+1. Enter in seconds in the **App Graceful Shutdown Period** field the desired amount of time the platform should wait for an app instance to exit once it has been signalled to gracefully shut down. The default and minimum allowed value is 10 seconds.
+
+1. Click **Save**.
+
+<p class="note"><strong>Note:</strong> It is important to ensure this property is consistent across all environments an application is deployed to in order to avoid unexpected behavior.</p>
+
 <% if current_page.data.deployment != "IST" %>
 
 ### <a id="rfc_allowlist"></a> Non-RFC-1918 Private Network Allow List
