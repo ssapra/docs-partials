@@ -1,4 +1,4 @@
-On-demand <%= vars.product_name %> services use BOSH to dynamically deploy VMs and create single-tenant
+On-demand <%= vars.product_short %> services use BOSH to dynamically deploy VMs and create single-tenant
 service instances in a dedicated network.
 On-demand services use the dynamically-provisioned service network to host single-tenant worker VMs.
 These worker VMs run as service instances within development spaces.
@@ -9,13 +9,13 @@ This on-demand architecture has the following advantages:
 This removes the need for operators to pre-provision a fixed amount of IaaS resources
 when they deploy the service broker.
 + Service instances run on a dedicated VM and do not share VMs with unrelated processes.
-This removes the "nosy neighbor" problem, where an app monopolizes resources on a shared cluster.
+This removes the "noisy neighbor" problem, where an app monopolizes resources on a shared cluster.
 + Single-tenant services can support regulatory compliances where
 sensitive data must be separated across different machines.
 
 An on-demand service separates operations between the default network and the
 service network. Shared service components, such as executive controllers and databases,
-Cloud Controller, UAA, and other <%= vars.product_name %> components run on the default network.
+Cloud Controller, UAA, and other on-demand components, run on the default network.
 Worker pools deployed to specific spaces run on the service network.
 
 

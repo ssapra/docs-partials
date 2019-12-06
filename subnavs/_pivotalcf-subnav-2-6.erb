@@ -35,10 +35,10 @@
                <li class="has_submenu">
                   <span role="button"><strong>Stemcell Release Notes</strong></span>
                   <ul>
-                     <li><a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/stemcells/index.html">Stemcell Release Notes</a></li>
-                     <li><a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/stemcells/stemcells.html">Stemcell (Linux) Release Notes</a></li>
-                     <li><a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/stemcells/windows-stemcell-v2019x.html">Stemcell v2019.x (Windows Server version 2019) Release Notes</a></li>
-                     <li><a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/stemcells/xenial-tiles.html">Tiles Using Xenial Stemcells in <%= vars.product_name %></a></li>
+                     <li><a href="https://docs.pivotal.io/platform/stemcells/index.html">Stemcell Release Notes</a></li>
+                     <li><a href="https://docs.pivotal.io/platform/stemcells/stemcells.html">Stemcell (Linux) Release Notes</a></li>
+                     <li><a href="https://docs.pivotal.io/platform/stemcells/windows-stemcell-v2019x.html">Stemcell v2019.x (Windows Server version 2019) Release Notes</a></li>
+                     <li><a href="https://docs.pivotal.io/platform/stemcells/xenial-tiles.html">Tiles Using Xenial Stemcells in <%= vars.product_name %></a></li>
                   </ul>
                </li>
             </ul>
@@ -112,8 +112,17 @@
                      <li class="has_submenu">
                         <span role="button"><strong>Installing <%= vars.product_name %> on AWS Manually</strong></span>
                         <ul>
+                          <li class="">
+                             <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/aws-manual.html">Installing <%= vars.product_name %> on AWS Manually</a>
+                          </li>
+                          <li class="">
+                             <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/required-objects.html">Required AWS Objects</a>
+                          </li>
+                          <li class="">
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/prepare-env-manual.html">Preparing to Deploy Ops Manager on AWS Manually</a>
+                           </li>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/prepare-env-manual.html">Installing <%= vars.product_name %> on AWS Manually</a>
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/deploy-manual.html">Deploying Ops Manager on AWS Manually</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/config-manual.html">Configuring BOSH Director on AWS</a>
@@ -333,7 +342,7 @@
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/upgrading/understanding-pas.html">What Happens During <%= vars.product_short %> Upgrades</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/upgrading/checklist.html">Upgrade Preparation Checklist for <%= vars.product_name %> 2.6</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/upgrading/checklist.html">Upgrade Preparation Checklist for <%= vars.product_name %> v2.6</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/upgrading/configuring.html">Configuring <%= vars.product_short %> for Upgrades</a>
@@ -414,7 +423,7 @@
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/managing-stemcells.html">Importing and Managing Stemcells</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/console-login.html">Logging in to Apps Manager</a>
+                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/console-login.html">Logging In to Apps Manager</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/managing_errands.html">Managing Errands in Ops Manager</a>
@@ -444,7 +453,7 @@
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/config-rbac.html">Configuring RBAC in Ops Manager</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/console-login.html">Logging in to Apps Manager</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/console-login.html">Logging In to Apps Manager</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/external-user-management.html">Adding Existing SAML or LDAP Users to a Pivotal Cloud Foundry Deployment</a>
@@ -512,7 +521,7 @@
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/asg.html">App Security Groups</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/diego/ssh-conceptual.html">Application SSH Components and Processes</a>
+                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/diego/ssh-conceptual.html">App SSH Components and Processes</a>
                      </li>
                   </ul>
                 </li>
@@ -612,7 +621,7 @@
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/route-service-lookup.html">Configuring Route Service Lookup</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/config-proxy.html">Configuring Proxy Settings for All Applications</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/config-proxy.html">Configuring Proxy Settings for All Apps</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/app-sec-groups.html">Restricting App Access to Internal <%= vars.product_name %> Components</a>
@@ -676,7 +685,7 @@
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/external-user-management.html">Adding Existing SAML or LDAP Users to a Pivotal Cloud Foundry Deployment</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/switching-domains.html">Switching Application Domains</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/switching-domains.html">Switching App Domains</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/scaling-ert-components.html">Scaling <%= vars.product_short %></a>
@@ -778,7 +787,7 @@
                      <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/routing-index.html">Routing</a>
                   </li>
                   <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/enabling_ipv6.html">Enabling IPv6 for Hosted Applications</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/enabling_ipv6.html">Enabling IPv6 for Hosted Apps</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/supporting-websockets.html">Supporting WebSockets</a>
@@ -787,7 +796,7 @@
                      <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/configure-lb-healthcheck.html">Configuring Load Balancer Healthchecks for Cloud Foundry</a>
                   </li>
                   <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/securing-traffic.html">Securing Traffic into <%= vars.product_runtime %></a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/securing-traffic.html">Securing Traffic into <%= vars.product_short %></a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/enabling-tcp-routing.html">Enabling TCP Routing</a>
@@ -904,7 +913,7 @@
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/console/manage-apps.html">Managing Apps and Service Instances Using Apps Manager</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/using-autoscaler.html">Scaling an Application Using App Autoscaler</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/using-autoscaler.html">Scaling an App Using App Autoscaler</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/spring-tutorial.html">Tutorial: Scaling a Spring App on a Custom Metric</a>
@@ -1039,7 +1048,7 @@
                <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/weighted-routing.html">Using Weighted Routing (Beta)</a>
                </li>
                <li>
-               <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/custom-ports.html">Configuring CF to Route Traffic to Apps on Custom Ports</a>
+               <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/custom-ports.html">Configuring <%= vars.product_short %> to Route Traffic to Apps on Custom Ports</a>
                </li>
             </ul>
             </li>
@@ -1112,7 +1121,7 @@
                      <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/cf-scale.html">Scaling an App Using cf scale</a>
                   </li>
                   <li class="">
-                     <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/healthchecks.html">Using Application Health Checks</a>
+                     <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/healthchecks.html">Using App Health Checks</a>
                   </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/cf-networking.html">Configuring Container-to-Container Networking</a>
@@ -1331,7 +1340,7 @@
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/stack-association.html">Stack Association</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/use-multiple-buildpacks.html">Pushing an Application with Multiple Buildpacks</a>
+                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/use-multiple-buildpacks.html">Pushing an App with Multiple Buildpacks</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/proxy-usage.html">Using a Proxy</a>
@@ -1599,7 +1608,7 @@
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/enable-sharing.html">Enabling Service Instance Sharing</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/app-log-streaming.html">Application Log Streaming</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/app-log-streaming.html">App Log Streaming</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/route-services.html">Route Services</a>
