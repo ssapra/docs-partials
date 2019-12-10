@@ -119,9 +119,15 @@ To set the maximum number of envelopes stored per source above the default:
 
 By default, Usage Service deletes granular data after 365 days. 
 
-You can configure this retention period using the **Usage service cutoff age in days** field. To avoid performance or data migration issues, Pivotal recommends that you do not retain data for longer than 365 days. 
+To configure this retention period:
 
-For more information, see [Usage Data Retention](./accounting-report.html#usage-retention).
+1. Select **Advanced Features**.
+
+1. Enter the number of days of granular data you want to retain in the **Usage service cutoff age** field.
+
+To avoid performance or data migration issues, Pivotal recommends that you do not retain data for longer than 365 days. Configuring this field does not affect monthly summary records.
+
+For more information, see the [Usage Data Retention](./accounting-report.html#usage-retention) sectin of the _Reporting App, Task, and Service Instance Usage_ topic.
 
 
 <% end %>
