@@ -6,7 +6,7 @@ To use an external S3-compatible filestore for PAS file storage:
     <br />
     <%= image_tag("images/external-s3-filestore-instance-profile.png", alt: "At the top of the image is an enabled checkbox labeled 'S3 AWS with instance profile'. Below this checkbox are two fields labeled 'Access key' and 'Secret key'. The 'Secret key' field contains the ghost text 'Secret'.") %>
     <% if aws == true %>
-    * If your PAS deployment is on AWS, you can alternatively enter the **Access key** and **Secret key** of the `<%= vars.product_name_lc %>-user` you created when configuring AWS for <%= vars.product_name %>. If you enable the **S3 AWS with instance profile** checkbox and also enter an **Access key** and **Secret key**, the instance profile overrules the access key and secret key.
+    * If your PAS deployment is on AWS, you can alternatively enter the **Access key** and **Secret key** of the `<%= vars.product_name_lc %>-user` you created when configuring AWS for <%= vars.product_full %>. If you enable the **S3 AWS with instance profile** checkbox and also enter an **Access key** and **Secret key**, the instance profile overrules the access key and secret key.
     <% end %>
     * From the **S3 signature version** dropdown, select **V4 signature**. For more information about S3 signatures, see [Signing AWS API Requests](https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html) in the AWS documentation.
     * For **Region**, enter the region in which your S3 buckets are located. For example, `us-west-2`.
