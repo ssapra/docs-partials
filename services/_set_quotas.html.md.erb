@@ -201,34 +201,37 @@ To view configurations for your <%= vars.service_name %> on-demand plan, do the 
 1. Navigate to **Ops Manager Installation Dashboard** > **<%= vars.tile_name %>** > **Settings**.
 
 <% if vars.service_name == 'Redis for Pivotal Platform' %>
+<% if product_info['local_product_version'] == '2.1' || product_info['local_product_version'] == '2.2' %>
+
+1. Click the section for the plan you want to view. For example, **On-Demand Plan 1**.
+
+<% else %>
+
 1. Click **On-Demand Plans**.
+1. Click the section for the plan you want to view. For example, **on-demand-cache**.
+
+<% end %>
 <% end %>
 
-1. Click the section for the plan you want to view.
+
 <% if vars.service_name == 'RabbitMQ for Pivotal Platform' %>
-For example, **On Demand Instance (RMQ 3.7): Plan 1**.
+1. Click the section for the plan you want to view. For example, **On Demand Instance (RMQ 3.7): Plan 1**.
 <% end %>
-<% if vars.service_name == 'Redis for Pivotal Platform' %>
-For example, **on-demand-cache**.
-<% end %>
+
 <% if vars.service_name == 'MySQL for Pivotal Platform' %>
-For example, **Plan 1**.
-<% end %>
-<% if vars.service_name == 'Pivotal Cloud Cache' %>
-For example, **Plan 1**.
+1. Click the section for the plan you want to view. For example, **Plan 1**.
 <% end %>
 
 <% if vars.service_name == 'Pivotal Cloud Cache' %>
+1. Click the section for the plan you want to view. For example, **Plan 1**.
 
 The image below shows an example that includes the VM type and persistent disk
 selected for the server VMs, as well as the quota for this plan.
 The quota is shown in the **Maximum service instances** field.
-
-<% else %>
+<% end %>
 
 The image below shows an example that includes the VM type and persistent disk
 selected for the server VMs, as well as the quota for this plan.
-<% end %>
 
 <% if current_page.data.galera %>
 Click the tabs below to show an example of each plan:
