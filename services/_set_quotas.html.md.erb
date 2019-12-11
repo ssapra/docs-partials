@@ -228,10 +228,13 @@ To view configurations for your <%= vars.service_name %> on-demand plan, do the 
 The image below shows an example that includes the VM type and persistent disk
 selected for the server VMs, as well as the quota for this plan.
 The quota is shown in the **Maximum service instances** field.
-<% end %>
+
+<% else %>
 
 The image below shows an example that includes the VM type and persistent disk
 selected for the server VMs, as well as the quota for this plan.
+
+<% end %>
 
 <% if current_page.data.galera %>
 Click the tabs below to show an example of each plan:
