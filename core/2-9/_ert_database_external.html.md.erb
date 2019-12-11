@@ -26,9 +26,9 @@ To configure external databases for your deployment:
 
 1. For **TCP port**, enter the port of the database server. 
   * If you are using GCP CloudSQL, enter `3306`. 
-  * If you are installing <%= vars.product_name %> on AWS using Terraform, enter the value for `rds_port`. 
+  * If you are installing <%= vars.product_short %> on AWS using Terraform, enter the value for `rds_port`. 
 
-1. Each component that requires a relational database has two corresponding fields: one for the database username and one for the database password. For each set of fields, specify a unique username that can access this specific database on the database server and a password for the provided username. If you are installing <%= vars.product_name %> using Terraform, these values correspond to the following variables:
+1. Each component that requires a relational database has two corresponding fields: one for the database username and one for the database password. For each set of fields, specify a unique username that can access this specific database on the database server and a password for the provided username. If you are installing <%= vars.product_short %> using Terraform, these values correspond to the following variables:
   * **AWS Terraform:** `rds_username` and `rds_password`
   * **GCP Terraform:** `pas_sql_username` and `pas_sql_password`
     <p class='note'><strong>Note:</strong> Ensure that the networkpolicyserver database user has the <code>ALL PRIVILEGES</code> permission.</p>
