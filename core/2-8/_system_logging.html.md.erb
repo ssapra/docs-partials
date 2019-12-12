@@ -26,12 +26,16 @@ To configure the **System Logging** pane:
 
 1. For **Custom rsyslog configuration**, enter a custom syslog rule. For more information about adding custom syslog rules, see [Customizing Platform Log Forwarding](../customizing/custom-syslog-rules.html).
 
-1. Select the **Enable V1 firehose** checkbox to allow logs and metrics to flow to the Loggregator V1 Firehose.
+1. Select the **Enable V1 Firehose** checkbox to allow logs and metrics to flow to the Loggregator V1 Firehose.
 
-1. Select the **Enable V2 firehose** checkbox to allow logs and metrics to flow to the Loggregator V2 Firehose. 
-	<p class="note"><strong>Note:</strong> If you deselect this checkbox to disable the V2 firehose, you must also disable the V1 firehose.</p>
+1. Select the **Enable V2 Firehose** checkbox to allow logs and metrics to flow to the Loggregator V2 Firehose.
+	<p class="note"><strong>Note:</strong> If you disable the V2 Firehose, you must also disable the V1 Firehose.</p>
+	<p class='note'><strong>Note:</strong> If you disable V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox for logs and metrics to appear in Log Cache.</p>
 
-1. For **Aggregate log/metric drain destinations**, enter a comma-separated list of syslog endpoints for an aggregate log and metric drain. Aggregate drains forward all app logs, app metrics, and PAS component VM metrics on your foundation to the endpoints that you provide in this list. 
+1. Select the **Enable Log Cache syslog ingestion** checkbox to configure Log Cache to ingest logs and metrics through the syslog server instead of the Reverse Log Proxy. You must select this checkbox if you disable the V2 Firehose.
+	<p class ='note warning'><strong>Warning:</strong> Log Cache syslog ingestion does not include service tile metrics, healthwatch metrics, app metrics, or partner log or metric integrations. Ensure that your deployment does not depend on these metrics before disabling the V2 Firehose and enabling Log Cache syslog ingestion.</p>
+
+1. For **Aggregate log and metric drain destinations**, enter a comma-separated list of syslog endpoints for an aggregate log and metric drain. Aggregate drains forward all app logs, app metrics, and PAS component VM metrics on your foundation to the endpoints that you provide in this list. 
 
 1. Click **Save**.
 
