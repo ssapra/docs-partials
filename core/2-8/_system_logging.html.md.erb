@@ -22,18 +22,23 @@ To configure the **System Logging** pane:
 1. Enable the **Use TCP for file forwarding local transport** checkbox to transmit logs over TCP. This prevents log truncation, but may cause performance issues.
 
 1. The **Do not forward debug logs** checkbox is enabled by default. To forward `DEBUG` syslog messages to an external service, disable the checkbox.
-  <p class="note"><strong>Note:</strong> Some PAS components generate a high volume of <code>DEBUG</code> syslog messages. Enabling the <strong>Do not forward debug logs</strong> checkbox prevents PAS components from forwarding the <code>DEBUG</code> syslog messages to external services. However, PAS still writes the messages to the local disk.</p>
+  <p class='note'><strong>Note:</strong> Some PAS components generate a high volume of <code>DEBUG</code> syslog messages. Enabling the <strong>Do not forward debug logs</strong> checkbox prevents PAS components from forwarding the <code>DEBUG</code> syslog messages to external services. However, PAS still writes the messages to the local disk.</p>
 
 1. For **Custom rsyslog configuration**, enter a custom syslog rule. For more information about adding custom syslog rules, see [Customizing Platform Log Forwarding](../customizing/custom-syslog-rules.html).
 
-1. Select the **Enable V1 Firehose** checkbox to allow logs and metrics to flow to the Loggregator V1 Firehose.
+1. The **Enable V1 Firehose** checkbox is enabled by default. Clear this checkbox to prevent logs and metrics from flowing to the Loggregator V1 Firehose.
 
-1. Select the **Enable V2 Firehose** checkbox to allow logs and metrics to flow to the Loggregator V2 Firehose.
-	<p class="note"><strong>Note:</strong> If you disable the V2 Firehose, you must also disable the V1 Firehose.</p>
-	<p class='note'><strong>Note:</strong> If you disable V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox for logs and metrics to appear in Log Cache.</p>
+1. The **Enable V2 Firehose** checkbox is enabled by default. Clear this checkbox to prevent logs and metrics from flowing to the Loggregator V2 Firehose.
+	<p class='note'><strong>Note:</strong> If you disable the V2 Firehose, you must also disable the V1 Firehose.</p>
+	<div class='note warning'><strong>Warning:</strong> If you disable V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. Pivotal recommends that you do not disable the Firehose if you are dependent on any of the following: 
+	<ul>
+		<li>Service tile metrics</li>
+		<li>Pivotal Healthwatch or Pivotal App Metrics</li>
+		<li>Partner log or metric integrations</li>
+	</ul>
+	</div>
 
 1. Select the **Enable Log Cache syslog ingestion** checkbox to configure Log Cache to ingest logs and metrics through the syslog server instead of the Reverse Log Proxy. You must select this checkbox if you disable the V2 Firehose.
-	<p class ='note warning'><strong>Warning:</strong> Log Cache syslog ingestion does not include service tile metrics, healthwatch metrics, app metrics, or partner log or metric integrations. Ensure that your deployment does not depend on these metrics before disabling the V2 Firehose and enabling Log Cache syslog ingestion.</p>
 
 1. For **Aggregate log and metric drain destinations**, enter a comma-separated list of syslog endpoints for an aggregate log and metric drain. Aggregate drains forward all app logs, app metrics, and PAS component VM metrics on your foundation to the endpoints that you provide in this list. 
 
