@@ -32,8 +32,11 @@ To configure external databases for your deployment:
   * **AWS Terraform:** `rds_username` and `rds_password`
   * **GCP Terraform:** `pas_sql_username` and `pas_sql_password`
     <p class='note'><strong>Note:</strong> Ensure that the networkpolicyserver database user has the <code>ALL PRIVILEGES</code> permission.</p>
+    <div class="note"><strong>Note:</strong> If you are configuring an external database on GCP or Azure and want to use this database for CredHub, ignore the <b>CredHub database username</b> and <b>CredHub database password</b> fields. Enter the credentials in the <b>CredHub</b> configuration pane instead.
+    </div>
 
 1. (Optional) To enable TLS for your external databases, paste your CA certificate in the **Database CA certificate** field.
-  <p class='note'><strong>Note:</strong> TLS is not currently supported for databases that do not include a matching hostname in their server certificate, such as Azure and GCP. For more information, see <a href="https://cloud.google.com/sql/docs/mysql/external-connection-methods?hl=en_US&_ga=2.66322158.-1313814630.1518122831">Connection Options for External Applications</a> in the GCP documentation.</p>
+  <p class='note'><strong>Note:</strong> TLS is not currently supported for databases that do not include a matching hostname in their server certificate, such as Azure and GCP, unless you disable hostname verification in PAS. You can disable hostname verification for external GCP and Azure databases in the <b><a href="#credhub">CredHub</a></b> configuration pane of PAS. For more information, see <a href="https://cloud.google.com/sql/docs/mysql/external-connection-methods?hl=en_US&_ga=2.66322158.-1313814630.1518122831">Connection Options for External Applications</a> in the GCP documentation.</p>
+
 
 1. Click **Save**.
