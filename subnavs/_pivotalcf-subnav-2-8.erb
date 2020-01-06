@@ -1043,15 +1043,23 @@
                    <li class="">
                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/console/manage-apps.html">Managing Apps and Service Instances Using Apps Manager</a>
                    </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/using-autoscaler.html">Scaling an App Using App Autoscaler</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/spring-tutorial.html">Tutorial: Scaling a Spring App on a Custom Metric</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/using-autoscaler-cli.html">Using the App Autoscaler CLI</a>
-                   </li>
+                   <li class="has_submenu">
+                  <span role="button"><strong>Scaling an App Using App Autoscaler</strong></span>
+                     <ul>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/about-app-autoscaler.html">About App Autoscaler</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/using-autoscaler.html">Scaling an App Using App Autoscaler</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/spring-tutorial.html">Tutorial: Scaling a Spring App on a Custom Metric</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/appsman-services/autoscaler/using-autoscaler-cli.html">Using the App Autoscaler CLI</a>
+                        </li>
+                     </ul>
+                  </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/console/space-asgs.html">Viewing ASGs in Apps Manager</a>
                    </li>
