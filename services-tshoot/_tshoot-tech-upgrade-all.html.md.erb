@@ -10,17 +10,17 @@
 </p>
 
 <ol>
-	<li>Collects all of the service instances that the on-demand broker has registered</li>
+	<li>Collects all of the service instances that the on-demand broker has registered.</li>
 	<li>For each instance the errand does the following:
 		<ol>
-			<li>Issues an upgrade command to the on-demand broker</li>
-			<li>Regenerates the service instance manifest based on the latest configuration from the tile</li>
-			<li>Deploys the new manifest for the service instance</li>
-			<li>Waits for this operation to complete, then proceeds to the next instance</li>
+			<li>Issues an upgrade command to the on-demand broker.</li>
+			<li>Regenerates the service instance manifest based on the latest configuration from the tile.</li>
+			<li>Deploys the new manifest for the service instance.</li>
+			<li>Waits for this operation to complete, then proceeds to the next instance.</li>
 		</ol>
 	</li>
-	<li>Adds to a retry list any instances that have ongoing BOSH tasks at the time of upgrade</li>
-	<li>Retries any instances in the retry list until all instances are upgraded</li>
+	<li>Adds to a retry list any instances that have ongoing BOSH tasks at the time of upgrade.</li>
+	<li>Retries any instances in the retry list until all instances are upgraded.</li>
 </ol>
 
 <p>
@@ -34,7 +34,7 @@
 	To run the errand:
 </p>
 <ol>
-	<li>Do one of the following</li>
+	<li>Do one of the following:</li>
 
 	<ul>
 		<li>
