@@ -27,6 +27,7 @@ For more information about how Ops Manager manages errands, see [Managing Errand
 * **App Autoscaler Smoke Test Errand** runs smoke tests against App Autoscaler.
 
 * **NFS Broker Errand** pushes the NFS Broker app, which supports NFS Volume Services for PAS. For more information, see the [Enable NFS Volume Services](../opsguide/enable-vol-services.html#nfs-enable) section of the _Enabling Volume Services_ topic.
+    <p class='note warning'><strong>Warning:</strong> If you are using NFS Volume Services, you must run the **NFS Broker Errand** errand in PAS v2.8. Running this errand migrates service instances for NFS Volume Services from MySQL to CredHub.</p>
 
 * **Metric Registrar Smoke Test Errand** verifies the Metric Registrar can access custom metrics emitted by an app and convert them into Loggregator metrics.
 	<p class='note'><strong>Note:</strong> The Metric Registrar Smoke Test errand runs only if the Metric Registrar is enabled. For more information about configuring the Metric Registrar, see <a href ="../metric-registrar/index.html">Configuring the Metric Registrar</a>.</p>
