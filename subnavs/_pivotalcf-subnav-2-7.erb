@@ -27,10 +27,10 @@
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/release-notes/windows-rn.html"><%= vars.windows_runtime_full %> v2.7 Release Notes</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pks/1-4/release-notes.html">Enterprise Pivotal Container Service v1.4 Release Notes</a>
+                  <a href="https://docs.pivotal.io/pks/1-4/release-notes.html">Enterprise PKS v1.4 Release Notes</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pks/1-5/release-notes.html">Enterprise Pivotal Container Service v1.5 Release Notes</a>
+                  <a href="https://docs.pivotal.io/pks/1-5/release-notes.html">Enterprise PKS v1.5 Release Notes</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/release-notes/segment-rn.html"> Pivotal Isolation Segment v2.7 Release Notes</a>
@@ -63,7 +63,7 @@
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_ref_arch.html">vSphere Reference Architecture</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_nsx_cookbook.html">Cookbook for Using Edge Services Gateway on <%= vars.platform_name %> and VMware NSX</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_nsx_cookbook.html">Using Edge Services Gateway on VMware NSX</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/vsphere/vsphere_upgrade.html">Upgrading vSphere without <%= vars.platform_name %> Downtime</a>
@@ -75,7 +75,7 @@
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/control.html">Control Plane Reference Architectures</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pks/1-4/nsxt-multi-pks.html">Implementing a Multi-Foundation PKS Deployment</a>
+                  <a href="https://docs.pivotal.io/pks/1-4/nsxt-multi-pks.html">Implementing a Multi-Foundation Enterprise PKS Deployment</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/plan/global-dns-lb.html">Global DNS Load Balancers for Multi-Foundation Environments</a>
@@ -89,13 +89,13 @@
                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/index.html">Installation Overview</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/config_firewall.html">Preparing Your Firewall for Deploying <%= vars.platform_name %></a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/config_firewall.html">Preparing Your Firewall</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/iaas-user-roles.html"><%= vars.platform_name %> IaaS User Role Guidelines</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/iaas-user-roles.html">IaaS Permissions Guidelines</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/offline_installation.html">Installing <%= vars.platform_name %> in Air-Gapped Environments</a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/offline_installation.html">Installing <%= vars.platform_name %> in Air-gapped Environments</a>
                </li>
                <li class="has_submenu">
                   <span role="button"><strong>Installing <%= vars.platform_name %> on AWS</strong></span>
@@ -141,7 +141,7 @@
                         </ul>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/deleting-aws-install.html">Deleting an AWS Installation from the Console</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/deleting-aws-install.html">Deleting <%= vars.platform_name %> from AWS</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/elb-ssh-proxy.html">Creating a Proxy ELB for Diego SSH</a>
@@ -189,7 +189,7 @@
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-troubleshooting.html">Troubleshooting <%= vars.platform_name %> on Azure</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/deleting-azure-install.html">Deleting a <%= vars.platform_name %> on Azure Installation</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/deleting-azure-install.html">Deleting <%= vars.platform_name %> from Azure</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-om-upgrade.html">Upgrading BOSH Director on Azure</a>
@@ -240,13 +240,13 @@
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-shared-vpc.html">Configuring a Shared VPC on GCP</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/deleting-gcp-install.html">Deleting a GCP Installation from the Console</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/deleting-gcp-install.html">Deleting <%= vars.platform_name %> from GCP</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-troubleshooting.html">Troubleshooting <%= vars.platform_name %> on GCP</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-om-upgrade.html">Upgrading a BOSH Director Instance on GCP</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-om-upgrade.html">Upgrading BOSH Director on GCP</a>
                      </li>
                   </ul>
                </li>
@@ -274,7 +274,7 @@
                         <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/vsphere/vsphere-service-account.html">vSphere Service Account Requirements</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/pas-vsphere-requirements.html"><%= vars.app_runtime_abbr %> vSphere Requirements</a>
+                        <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/pas-vsphere-requirements.html"><%= vars.app_runtime_abbr %> on vSphere Requirements</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/vsphere/deploy.html">Deploying Ops Manager on vSphere</a>
@@ -286,7 +286,7 @@
                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/vsphere-nsx-t.html">Deploying <%= vars.app_runtime_abbr %> with NSX-T Networking</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/disk-format.html">Provisioning a Virtual Disk in vSphere</a>
+                        <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/disk-format.html">vSphere Virtual Disk Types</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/nexus-switch.html">Using the Cisco Nexus 1000v Switch with Ops Manager</a>
@@ -295,10 +295,10 @@
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/resurrector.html">Using the BOSH Resurrector</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/ssl-term.html">Configuring SSL Termination for vSphere Deployments</a>
+                        <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/ssl-term.html">Configuring <%= vars.platform_name %> SSL Termination for vSphere</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/understand-az.html">Availability Zones in VMware Installations</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/understand-az.html">Availability Zones in vSphere</a>
                      </li>
                   </ul>
                </li>
@@ -315,7 +315,7 @@
                   <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/configure-lb.html">Configuring Load Balancing for <%= vars.app_runtime_abbr %></a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/installing-pcf-is.html">Installing Pivotal Isolation Segment</a>
+                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/installing-pcf-is.html">Installing <%= vars.platform_name %> Isolation Segment</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/small-footprint.html">Getting Started with Small Footprint <%= vars.app_runtime_abbr %></a>
@@ -326,13 +326,13 @@
             <span role="button"><strong>Operating <%= vars.platform_name %></strong></span>
             <ul>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/index.html">Operating <%= vars.platform_name %></a>
+                  <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/index.html"><%= vars.platform_name %> Operator Guide</a>
                </li>
                <li class="has_submenu">
                   <span role="button"><strong>Ops Manager</strong></span>
                   <ul>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/pcf-interface.html">Using the Ops Manager Interface</a>
+                        <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-interface.html">Using the Ops Manager Interface</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/review-pending-changes.html">Reviewing Pending Product Changes</a>
@@ -385,7 +385,7 @@
                       <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/opsmanager-create-bosh-client.html">Creating UAA Clients for BOSH Director</a>
                    </li>
                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/opsman-users.html">Creating and Managing Ops Manager User Accounts</a>
+                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/opsman-users.html">Creating and Managing Ops Manager User and Client Accounts</a>
                    </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/config-rbac.html">Configuring RBAC in Ops Manager</a>
@@ -437,7 +437,7 @@
                     <span role="button"><strong>Component: CredHub</strong></span>
                     <ul>
                       <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/credhub/index.html">CredHub Overview</a>
+                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/credhub/index.html">CredHub</a>
                       </li>
                       <li class="">
                         <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/credhub/credential-types.html">CredHub Credential Types</a>
@@ -587,7 +587,7 @@
                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/app-lifecycle.html">App Container Lifecycle</a>
                       </li>
                       <li class="">
-                            <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/diego/diego-auction.html">How the Diego Auction Allocates Jobs</a>
+                            <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/diego/diego-auction.html">How Diego Balances App Processes</a>
                          </li>
                       </ul>
                     </li>
@@ -598,7 +598,7 @@
                             <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/architecture/index.html"><%= vars.app_runtime_abbr %> Components</a>
                          </li>
                          <li class="">
-                            <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/diego/diego-architecture.html">Diego Architecture</a>
+                            <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/diego/diego-architecture.html">Diego Components and Architecture</a>
                          </li>
                          <li class="">
                             <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/cf-routing-architecture.html"><%= vars.app_runtime_abbr %> Routing Architecture</a>
@@ -662,7 +662,7 @@
                            <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/metadata.html">Using Metadata</a>
                         </li>
                         <li class="">
-                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/custom-branding.html">Custom Branding Apps Manager</a>
+                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/custom-branding.html">Custom-Branding Apps Manager</a>
                         </li>
                      </ul>
                   </li>
@@ -682,7 +682,7 @@
                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/managing-service-brokers.html">Managing Service Brokers</a>
                        </li>
                        <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/access-control.html">Access Control</a>
+                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/access-control.html">Managing Access to Service Plans</a>
                        </li>
                        <li class="">
                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/dashboard-sso.html">Dashboard Single Sign-On</a>
@@ -1061,7 +1061,7 @@
                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/console/spring-boot-actuators.html">Configuring Spring Boot Actuator Endpoints for Apps Manager</a>
                    </li>
                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/console/using-actuators.html">Using Spring Boot Actuator Endpoints with Apps Manager</a>
+                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/console/using-actuators.html">Using Spring Boot Actuators with Apps Manager</a>
                    </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/configure-multi-foundation.html">Configuring Multi-Foundation Support in Apps Manager</a>
@@ -1081,7 +1081,7 @@
                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/cf-cli/getting-started.html">Getting Started with the cf CLI</a>
                    </li>
                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/cf-cli/http-proxy.html">Using the cf CLI with an HTTP Proxy Server</a>
+                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/cf-cli/http-proxy.html">Using the cf CLI with a Proxy Server</a>
                    </li>
                    <li class="">
                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/cf-cli/self-signed.html">Using the cf CLI with a Self-Signed Certificate</a>
@@ -1110,7 +1110,7 @@
                        <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/prepare-to-deploy.html">Considerations for Designing and Running an App in the Cloud</a>
                     </li>
                     <li class="">
-                       <a href="https://docs.pivotal.io/pcf-dev/index.html"><%= vars.platform_name %> Dev</a>
+                       <a href="https://docs.pivotal.io/pcf-dev/index.html"><strong><%= vars.platform_name %> Dev</strong></a>
                     </li>
                     <li class="has_submenu">
                       <span role="button"><strong>cf push</strong></span>
@@ -1189,7 +1189,7 @@
                              <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/healthchecks.html">Using App Health Checks</a>
                           </li>
                          <li class="">
-                            <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/revisions.html">Revisions</a>
+                            <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/revisions.html">App Revisions</a>
                          </li>
                          <li class="">
                             <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/cf-networking.html">Configuring Container-to-Container Networking</a>
@@ -1209,7 +1209,7 @@
                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/">Services Overview</a>
                        </li>
                        <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/managing-services.html">Managing Service Instances</a>
+                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/managing-services.html">Managing Service Instances with the cf CLI</a>
                        </li>
                        <li class="">
                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/sharing-instances.html">Sharing Service Instances</a>
@@ -1250,7 +1250,7 @@
                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/fluentd.html">Streaming App Logs with Fluentd</a>
                        </li>
                        <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/oms-nozzle.html">Streaming App Logs to Azure OMS Log Analytics</a>
+                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/oms-nozzle.html">Streaming App Logs to Azure OMS Log Analytics (Beta)</a>
                        </li>
                      </ul>
                     </li>
@@ -1302,7 +1302,7 @@
                             <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/use-multiple-buildpacks.html">Pushing an App with Multiple Buildpacks</a>
                          </li>
                          <li class="">
-                            <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/proxy-usage.html">Using a Proxy</a>
+                            <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/proxy-usage.html">Using a Proxy Server</a>
                          </li>
                          <li class="">
                             <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/supported-binary-dependencies.html">Supported Binary Dependencies</a>
@@ -1319,10 +1319,10 @@
                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/system-buildpacks.html">System Buildpacks</a>
                       </li>
                        <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/binary/index.html">Binary</a>
+                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/binary/index.html">Binary Buildpack</a>
                        </li>
                        <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/go/index.html">Go</a>
+                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/go/index.html">Go Buildpack</a>
                        </li>
                        <li class="has_submenu">
                           <span role="button"><strong>HWC (.NET Framework)</strong></span>
@@ -1334,7 +1334,7 @@
                                <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/hwc/extension-buildpack.html">Creating an Extension Buildpack for .NET Apps</a>
                              </li>
                              <li class="">
-                                <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/windows/using.html">Tips for .NET Developers</a>
+                                <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/windows/using.html">Tips for .NET Framework Developers</a>
                              </li>
                           </ul>
                        </li>
@@ -1354,13 +1354,13 @@
                                     <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/getting-started-deploying-apps/index.html">Getting Started Deploying Apps</a>
                                   </li>
                                    <li class="">
-                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/getting-started-deploying-apps/gsg-grails.html">Grails</a>
+                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/getting-started-deploying-apps/gsg-grails.html">Getting Started Deploying Grails Apps</a>
                                    </li>
                                    <li class="">
-                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/getting-started-deploying-apps/gsg-ratpack.html">Ratpack</a>
+                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/getting-started-deploying-apps/gsg-ratpack.html">Getting Started Deploying Ratpack Apps</a>
                                    </li>
                                    <li class="">
-                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/getting-started-deploying-apps/gsg-spring.html">Spring</a>
+                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/getting-started-deploying-apps/gsg-spring.html">Getting Started Deploying Spring Apps</a>
                                    </li>
                                 </ul>
                              </li>
@@ -1371,13 +1371,13 @@
                                     <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/configuring-service-connections/index.html">Configuring Service Connections</a>
                                   </li>
                                    <li class="">
-                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/configuring-service-connections/grails-service-bindings.html">Grails</a>
+                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/configuring-service-connections/grails-service-bindings.html">Configuring Service Connections for Grails</a>
                                    </li>
                                    <li class="">
-                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/configuring-service-connections/play-service-bindings.html">Play</a>
+                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/configuring-service-connections/play-service-bindings.html">Configuring Service Connections for Play Framework</a>
                                    </li>
                                    <li class="">
-                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/configuring-service-connections/spring-service-bindings.html">Spring</a>
+                                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/configuring-service-connections/spring-service-bindings.html">Configuring Service Connections for Spring</a>
                                    </li>
                                 </ul>
                              </li>
@@ -1387,10 +1387,10 @@
                           </ul>
                        </li>
                        <li class="">
-                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/dotnet-core/index.html">.NET Core</a>
+                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/dotnet-core/index.html">.NET Core Buildpack</a>
                        </li>
                        <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/nginx/index.html">NGINX</a>
+                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/nginx/index.html">NGINX Buildpack</a>
                        </li>
                        <li class="has_submenu">
                           <span role="button"><strong>Node.js</strong></span>
@@ -1405,7 +1405,7 @@
                                 <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/node/node-environment.html">Environment Variables Defined by the Node Buildpack</a>
                              </li>
                              <li class="">
-                                <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/node/node-service-bindings.html">Configuring Service Connections for Node</a>
+                                <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/node/node-service-bindings.html">Configuring Service Connections for Node.js</a>
                              </li>
                           </ul>
                        </li>
@@ -1437,10 +1437,10 @@
                       </ul>
                    </li>
                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/python/index.html">Python</a>
+                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/python/index.html">Python Buildpack</a>
                    </li>
                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/r/index.html">R</a>
+                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/r/index.html">R Buildpack</a>
                    </li>
                    <li class="has_submenu">
                       <span role="button"><strong>Ruby</strong></span>
@@ -1454,14 +1454,11 @@
                          <li class="has_submenu">
                             <span role="button"><strong>Getting Started Deploying Apps</strong></span>
                             <ul>
-                              <li>
-                                <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/java/getting-started-deploying-apps/index.html">Getting Started Deploying Apps</a>
-                              </li>
                                <li class="">
-                                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/ruby/gsg-ruby.html">Ruby</a>
+                                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/ruby/gsg-ruby.html">Getting Started Deploying Ruby Apps</a>
                                </li>
                                <li class="">
-                                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/ruby/gsg-ror.html">Ruby on Rails</a>
+                                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/ruby/gsg-ror.html">Getting Started Deploying Ruby on Rails Apps</a>
                                </li>
                             </ul>
                          </li>
@@ -1480,7 +1477,7 @@
                       </ul>
                    </li>
                    <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/staticfile/index.html">Staticfile</a>
+                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/buildpacks/staticfile/index.html">Staticfile Buildpack</a>
                    </li>
                  </ul>
                    <li class="has_submenu">
@@ -1521,611 +1518,660 @@
              </li>
            </ul>
          </li>
+
          <li class="has_submenu">
-            <span role="button"><strong>PKS Runtime</strong></span>
-            <ul>
+         <span role="button"><strong>PKS Runtime</strong></span>
+           <ul>
               <li>
-                <a href="https://docs.pivotal.io/pks/1-5/index.html">Enterprise Pivotal Container Service (Enterprise PKS)</a>
+                 <a href="https://docs.pivotal.io/pks/1-5/index.html">Enterprise Pivotal Container Service (Enterprise PKS)</a>
               </li>
               <li>
-                <a href="https://docs.pivotal.io/pks/1-5/release-notes.html">Release Notes</a>
+                 <a href="https://docs.pivotal.io/pks/1-5/release-notes.html">Release Notes</a>
               </li>
               <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/concepts.html">Enterprise PKS Concepts</a>
-                <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/control-plane.html">Enterprise PKS Cluster Management</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/pks-api-auth.html">Enterprise PKS API Authentication</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/about-lb.html">Load Balancers in Enterprise PKS</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/vm-sizing.html">VM Sizing for Enterprise PKS Clusters</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/telemetry.html">Telemetry</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/sink-architecture.html">Sink Architecture in Enterprise PKS</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/installing.html">Installing Enterprise PKS</a>
-                <ul>
-                  <li class="has_submenu">
-                    <a href="https://docs.pivotal.io/pks/1-5/vsphere-index.html">vSphere</a>
+                 <a href="https://docs.pivotal.io/pks/1-5/concepts.html">Enterprise PKS Concepts</a>
                     <ul>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-requirements.html">Prerequisites and Resource Requirements</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/ports-protocols-wo-nsx-t.html">Firewall Ports and Protocols Requirements for vSphere without NSX-T</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-prepare-env.html">Creating Dedicated Users and Roles for vSphere (Optional)</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-om-install-config.html">Installing and Configuring Ops Manager on vSphere</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-vsphere.html">Installing Enterprise PKS on vSphere</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-api.html">Configuring PKS API Load Balancer</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on vSphere</a>
-                      </li>
+                       <li>
+                          <a href="https://docs.pivotal.io/pks/1-5/control-plane.html">Enterprise PKS Cluster Management</a>
+                       </li>
+                       <li>
+                          <a href="https://docs.pivotal.io/pks/1-5/pks-api-auth.html">Enterprise PKS API Authentication</a>
+                       </li>
+                       <li>
+                          <a href="https://docs.pivotal.io/pks/1-5/about-lb.html">Load Balancers in Enterprise PKS</a>
+                       </li>
+                       <li>
+                          <a href="https://docs.pivotal.io/pks/1-5/vm-sizing.html">VM Sizing for Enterprise PKS Clusters</a>
+                       </li>
+                       <li>
+                          <a href="https://docs.pivotal.io/pks/1-5/telemetry.html">Telemetry</a>
+                       </li>
+                       <li>
+                          <a href="https://docs.pivotal.io/pks/1-5/sink-architecture.html">Sink Architecture in Enterprise PKS</a>
+                       </li>
                     </ul>
-                  </li>
-                  <li class="has_submenu">
-                    <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index.html">vSphere with NSX-T</a>
+                 </li>
+                 <li class="has_submenu">
+                    <a href="https://docs.pivotal.io/pks/1-5/installing.html">Installing Enterprise PKS</a>
+                       <ul>
+                          <li class="has_submenu">
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-index.html">vSphere</a>
+                       <ul>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-requirements.html">Prerequisites and Resource Requirements</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/ports-protocols-wo-nsx-t.html">Firewall Ports and Protocols Requirements for vSphere without NSX-T</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-prepare-env.html">Creating Dedicated Users and Roles for vSphere (Optional)</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-om-install-config.html">Installing and Configuring Ops Manager on vSphere</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/installing-pks-vsphere.html">Installing Enterprise PKS on vSphere</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-api.html">Configuring PKS API Load Balancer</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on vSphere</a>
+                          </li>
+                       </ul>
+                    </li>
+                    <li class="has_submenu">
+                       <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index.html">vSphere with NSX-T</a>
+                          <ul>
+                             <li class="has_submenu">
+                                <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index-prepare.html">Preparing to Install Enterprise PKS on vSphere with NSX-T</a>
+                          <ul>
+                             <li>
+                                <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-requirements.html">Version Requirements for Enterprise PKS</a>
+                             </li>
+                             <li>
+                                <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-rpd-mpd.html">Hardware Requirements for Enterprise PKS</a>
+                             </li>
+                             <li>
+                                <a href="https://docs.pivotal.io/pks/1-5/ports-protocols-nsx-t.html">Firewall Ports and Protocols Requirements for Enterprise PKS</a>
+                             </li>
+                             <li>
+                                <a href="https://docs.pivotal.io/pks/1-5/nsxt-topologies.html">Deployment Topologies for Enterprise PKS</a>
+                             </li>
+                             <li>
+                                <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-cluster-objects.html">NSX-T Objects Created for Enterprise PKS</a>
+                             </li>
+                             <li>
+                                <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-env.html">Network Planning for Enterprise PKS</a>
+                             </li>
+                          </ul>
+                       </li>
+                       <li class="has_submenu">
+                          <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-config-steps.html">Installing and Configuring NSX-T for Enterprise PKS</a>
+                             <ul>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-prereqs.html">Prerequisites for Installing NSX-T Data Center</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-nsx-manager.html">Install the NSX-T Manager Unified Appliance</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-nsx-mgmt-cluster.html">Deploy Two Additional NSX-T Manager Nodes and Form an NSX-T Management Cluster</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-mgmt-vip.html">Configure a VIP Address for the NSX-T Management Cluster</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-edge-node-install.html">Install a Pair of NSX-T Edge Nodes</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-edge-node-join.html">Join Each Edge Node with the NSX-T Management Plane</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-enable-vib.html">Enable the Repository Service on Each NSX-T Manager Node</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-tep.html">Create an IP Pool for Tunnel Endpoint IP Addresses</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-tzs.html">Create Overlay and VLAN Transport Zones</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-uplink-profile.html">Create Edge Node Uplink Profile</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-tns.html">Create Edge Transport Nodes</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-edge-cluster.html">Create an Edge Cluster</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-t0.html">Create a Tier-0 Logical Router</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-configure-edge-ha.html">Configure Edge Node High Availability (HA)</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-prep-esxi-hosts.html">Configure ESXi Hosts as Transport Nodes</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-update-password.html">Update the NSX-T Admin Password Interval</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-mgmt-lb.html">Provision a Load Balancer for the NSX-T Management Cluster</a>
+                                </li>
+                             </ul>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-mgmt-plane.html">Creating the Enterprise PKS Management Plane</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-compute-plane.html">Creating the Enterprise PKS Compute Plane</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-om-deploy.html">Deploying Ops Manager with NSX-T for Enterprise PKS</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/nsxt-generate-ca-cert.html">Generating and Registering the NSX-T Management Cluster Certificate for Enterprise PKS</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-om-config.html">Configuring BOSH Director with NSX-T for Enterprise PKS</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/nsxt-generate-pi-cert.html">Generating and Registering the NSX-T Superuser Principal Identity Certificate and Key</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/installing-nsx-t.html">Installing Enterprise PKS on vSphere with NSX-T</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/partners/vmware-harbor/installing.html">Installing VMware Harbor Registry for Enterprise PKS</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on vSphere</a>
+                          </li>
+                          <li class="has_submenu">
+                             <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index-adv.html">Post Installation Configurations for Enterprise PKS on vSphere with NSX-T</a>
+                                <ul>
+                                   <li>
+                                      <a href="https://docs.pivotal.io/pks/1-5/proxies.html">Using Proxies with Enterprise PKS on NSX-T</a>
+                                   </li>
+                                   <li>
+                                      <a href="https://docs.pivotal.io/pks/1-5/nsxt-multi-t0.html">Configuring Multiple Tier-0 Routers for Tenant Isolation</a>
+                                   </li>
+                                   <li>
+                                      <a href="https://docs.pivotal.io/pks/1-5/nsxt-multi-pks.html">Implementing a Multi-Foundation Enterprise PKS Deployment on NSX-T</a>
+                                   </li>
+                                   <li>
+                                      <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-verify-pks.html">Verifying Enterprise PKS Installation on vSphere with NSX-T</a>
+                                   </li>
+                                </ul>
+                             </li>
+                          </ul>
+                       </li>
+                       <li class="has_submenu">
+                          <a href="https://docs.pivotal.io/pks/1-5/gcp-index.html">Google Cloud Platform</a>
+                             <ul>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/gcp-requirements.html">Prerequisites and Resource Requirements</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/gcp-om-install-config.html">Installing and Configuring Ops Manager on GCP</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/gcp-service-accounts.html">Creating Service Accounts in GCP for Enterprise PKS</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/gcp-api-load-balancer.html">Creating a GCP Load Balancer for the PKS API</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/installing-pks-gcp.html">Installing Enterprise PKS on GCP</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/gcp-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on GCP</a>
+                                </li>
+                             </ul>
+                       </li>
+                       <li class="has_submenu">
+                          <a href="https://docs.pivotal.io/pks/1-5/aws-index.html">Amazon Web Services</a>
+                             <ul>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/aws-requirements.html">Prerequisites and Resource Requirements</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/aws-om-install-config.html">Installing and Configuring Ops Manager on AWS</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/installing-pks-aws.html">Installing Enterprise PKS on AWS</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/aws-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on AWS</a>
+                                </li>
+                             </ul>
+                       </li>
+                       <li class="has_submenu">
+                          <a href="https://docs.pivotal.io/pks/1-5/azure-index.html">Azure</a>
+                             <ul>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/azure-requirements.html">Prerequisites and Resource Requirements</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/azure-om-install-config.html">Installing and Configuring Ops Manager on Azure</a>
+                                </li>
+                                <li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/azure-managed-identities.html">Creating Managed Identities in Azure for Enterprise PKS</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/installing-pks-azure.html">Installing Enterprise PKS on Azure</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/azure-api-load-balancer.html">Configuring an Azure Load Balancer for the PKS API</a>
+                                </li>
+                                <li>
+                                   <a href="https://docs.pivotal.io/pks/1-5/azure-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on Azure</a>
+                                </li>
+                             </ul>
+                       </li>
+                       <li>
+                          <a href="https://docs.pivotal.io/pks/1-5/installing-pks-cli.html">Installing the PKS CLI</a>
+                       </li>
+                       <li>
+                          <a href="https://docs.pivotal.io/pks/1-5/installing-kubectl-cli.html">Installing the Kubernetes CLI</a>
+                       </li>
+                       <li>
+                          <a href="https://docs.pivotal.io/pks/1-5/windows-pks-beta.html">Configuring Windows Worker-based Clusters (Beta)</a>
+                       </li>
+                    </ul>
+                 </li><!--end of installing section-->
+                 <li class="has_submenu">
+                    <a href="https://docs.pivotal.io/pks/1-5/upgrading.html">Upgrading Enterprise PKS</a>
+                       <ul>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/understanding-upgrades.html">What Happens During Enterprise PKS Upgrades</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/checklist.html">Upgrade Preparation Checklist for Enterprise PKS v1.5</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/upgrade-pks.html">Upgrading Enterprise PKS</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/upgrade-pks-nsxt.html">Upgrading Enterprise PKS with NSX-T</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/maintain-uptime.html">Maintaining Workload Uptime</a>
+                          </li>
+                          <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/upgrade-pipeline.html">Configuring the Upgrade Pipeline</a>
+                          </li>
+                       </ul>
+                 </li>
+                 <li class="has_submenu">
+                    <a href="https://docs.pivotal.io/pks/1-5/managing.html">Managing Enterprise PKS</a>
                     <ul>
                       <li class="has_submenu">
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index-prepare.html">Preparing to Install Enterprise PKS on vSphere with NSX-T</a>
-                        <ul>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-requirements.html">Version Requirements for Enterprise PKS</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-rpd-mpd.html">Hardware Requirements for Enterprise PKS</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/ports-protocols-nsx-t.html">Firewall Ports and Protocols Requirements for Enterprise PKS</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-topologies.html">Deployment Topologies for Enterprise PKS</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-cluster-objects.html">NSX-T Objects Created for Enterprise PKS</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-env.html">Network Planning for Enterprise PKS</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li class="has_submenu">
-                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-config-steps.html">Installing and Configuring NSX-T for Enterprise PKS</a>
-                        <ul>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-prereqs.html">Prerequisites for Installing NSX-T Data Center</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-nsx-manager.html">Install the NSX-T Manager Unified Appliance</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-nsx-mgmt-cluster.html">Deploy Two Additional NSX-T Manager Nodes and Form an NSX-T Management Cluster</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-mgmt-vip.html">Configure a VIP Address for the NSX-T Management Cluster</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-edge-node-install.html">Install a Pair of NSX-T Edge Nodes</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-edge-node-join.html">Join Each Edge Node with the NSX-T Management Plane</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-enable-vib.html">Enable the Repository Service on Each NSX-T Manager Node</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-tep.html">Create an IP Pool for Tunnel Endpoint IP Addresses</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-tzs.html">Create Overlay and VLAN Transport Zones</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-uplink-profile.html">Create Edge Node Uplink Profile</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-tns.html">Create Edge Transport Nodes</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-edge-cluster.html">Create an Edge Cluster</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-create-t0.html">Create a Tier-0 Logical Router</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-configure-edge-ha.html">Configure Edge Node High Availability (HA)</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-prep-esxi-hosts.html">Configure ESXi Hosts as Transport Nodes</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-update-password.html">Update the NSX-T Admin Password Interval</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-install-mgmt-lb.html">Provision a Load Balancer for the NSX-T Management Cluster</a>
-                          </li>
-                        </ul>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-mgmt-plane.html">Creating the Enterprise PKS Management Plane</a>
-                      </li>
-                       <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-prepare-compute-plane.html">Creating the Enterprise PKS Compute Plane</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-om-deploy.html">Deploying Ops Manager with NSX-T for Enterprise PKS</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-generate-ca-cert.html">Generating and Registering the NSX-T Management Cluster Certificate for Enterprise PKS</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-om-config.html">Configuring BOSH Director with NSX-T for Enterprise PKS</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/nsxt-generate-pi-cert.html">Generating and Registering the NSX-T Superuser Principal Identity Certificate and Key</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-nsx-t.html">Installing Enterprise PKS on vSphere with NSX-T</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/partners/vmware-harbor/installing.html">Installing VMware Harbor Registry for Enterprise PKS</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on vSphere</a>
-                      </li>
-                      <li class="has_submenu">
-                        <a href="https://docs.pivotal.io/pks/1-5/vsphere-nsxt-index-adv.html">Post Installation Configurations for Enterprise PKS on vSphere with NSX-T</a>
-                        <ul>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/proxies.html">Using Proxies with Enterprise PKS on NSX-T</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-ingress-srvc-lb.html">Configuring Ingress Resources and Load Balancer Services</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-multi-t0.html">Configuring Multiple Tier-0 Routers for Tenant Isolation</a>
-                          </li>
-                          <li>
-                            <a href="https://docs.pivotal.io/pks/1-5/nsxt-multi-pks.html">Implementing a Multi-Foundation Enterprise PKS Deployment on NSX-T</a>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="has_submenu">
-                    <a href="https://docs.pivotal.io/pks/1-5/gcp-index.html">Google Cloud Platform</a>
-                    <ul>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/gcp-requirements.html">Prerequisites and Resource Requirements</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/gcp-om-install-config.html">Installing and Configuring Ops Manager on GCP</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/gcp-service-accounts.html">Creating Service Accounts in GCP for Enterprise PKS</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/gcp-api-load-balancer.html">Creating a GCP Load Balancer for the PKS API</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-gcp.html">Installing Enterprise PKS on GCP</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/gcp-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on GCP</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="has_submenu">
-                    <a href="https://docs.pivotal.io/pks/1-5/aws-index.html">Amazon Web Services</a>
-                    <ul>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/aws-requirements.html">Prerequisites and Resource Requirements</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/aws-om-install-config.html">Installing and Configuring Ops Manager on AWS</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-aws.html">Installing Enterprise PKS on AWS</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/aws-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on AWS</a>
-                      </li>
-                    </ul>
-                  </li>
-                  <li class="has_submenu">
-                    <a href="https://docs.pivotal.io/pks/1-5/azure-index.html">Azure</a>
-                    <ul>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/azure-requirements.html">Prerequisites and Resource Requirements</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/azure-om-install-config.html">Installing and Configuring Ops Manager on Azure</a>
-                      </li>
-                      <li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/azure-managed-identities.html">Creating Managed Identities in Azure for Enterprise PKS</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/installing-pks-azure.html">Installing Enterprise PKS on Azure</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/azure-api-load-balancer.html">Configuring an Azure Load Balancer for the PKS API</a>
-                      </li>
-                      <li>
-                        <a href="https://docs.pivotal.io/pks/1-5/azure-configure-pks-users.html">Setting Up Enterprise PKS Admin Users on Azure</a>
-                      </li>
-                    </ul>
-                    </li>
-                    <li>
-                      <a href="https://docs.pivotal.io/pks/1-5/installing-pks-cli.html">Installing the PKS CLI</a>
-                    </li>
-                    <li>
-                      <a href="https://docs.pivotal.io/pks/1-5/installing-kubectl-cli.html">Installing the Kubernetes CLI</a>
-                    </li>
-                    <li>
-                      <a href="https://docs.pivotal.io/pks/1-5/windows-pks-beta.html">Configuring Windows Worker-based Clusters (Beta)</a>
-                    </li>
-                </ul>
-              </li><!--end of installing section-->
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/upgrading.html">Upgrading Enterprise PKS</a>
-                <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/understanding-upgrades.html">What Happens During Enterprise PKS Upgrades</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/checklist.html">Upgrade Preparation Checklist for Enterprise PKS v1.5</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/upgrade-pks.html">Upgrading Enterprise PKS</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/upgrade-pks-nsxt.html">Upgrading Enterprise PKS with NSX-T</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/maintain-uptime.html">Maintaining Workload Uptime</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/upgrade-pipeline.html">Configuring the Upgrade Pipeline</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/managing.html">Managing Enterprise PKS</a>
-                <ul>
-                <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/create-config-cluster-lb.html">Creating and Configuring Load Balancers for Enterprise PKS Clusters</a>
-                <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/gcp-cluster-load-balancer.html">Creating and Configuring a GCP Load Balancer for Enterprise PKS Clusters</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/aws-cluster-load-balancer.html">Creating and Configuring an AWS Load Balancer for Enterprise PKS Clusters</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/azure-cluster-load-balancer.html">Creating and Configuring an Azure Load Balancer for Enterprise PKS Clusters</a>
-                  </li>
-                </ul>
-                </li>
-                <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/admission-plugins.html">Enabling, Disabling, and Using Admission Plugins for Enterprise PKS Clusters</a>
-                <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/pod-security-policy.html">Configuring and Using PodSecurityPolicy for Enterprise PKS Clusters</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/security-context-deny.html">Enabling and Using SecurityContextDeny for Enterprise PKS Clusters</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/deny-escalating-execution.html">Enabling and Using DenyEscalatingExec for Enterprise PKS Clusters</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/admission-plugins-disable.html">Disabling Admission Plugins for Enterprise PKS Clusters</a>
-                  </li>
-                </ul>
-                </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/okta-sso-config.html">Configuring Okta as a SAML Identity Provider</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/azure-ad-sso-config.html">Configuring Azure Active Directory as a SAML Identity Provider</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/manage-users.html">Managing Enterprise PKS Admin Users with UAA</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/manage-deployments-bosh.html">Managing Enterprise PKS Deployments with BOSH</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/vsphere-persistent-storage.html">PersistentVolume Storage Options on vSphere</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/custom-workloads.html">Adding Custom Workloads</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/configure-ingress.html">Configuring Ingress Routing</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/delete.html">Deleting Enterprise PKS</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/resource-usage.html">Managing Resource Usage</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/shutdown-startup.html">Shutting Down and Starting Up Enterprise PKS</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/password-management.html">Managing Infrastructure Password Changes</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/managing-clusters.html">Managing Clusters</a>
-                <ul>
-                    <li>
-                      <a href="https://docs.pivotal.io/pks/1-5/create-cluster.html">Creating Clusters</a>
-                    </li>
-                    <li>
-                      <a href="https://docs.pivotal.io/pks/1-5/manage-cluster-permissions.html">Managing Cluster Access and Permissions</a>
-                    </li>
-                    <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/cluster-credentials.html">Retrieving Cluster Credentials and Configuration</a>
-                    </li>
-                    <li>
-                      <a href="https://docs.pivotal.io/pks/1-5/view-cluster-list.html">Viewing Cluster Lists</a>
-                    </li>
-                    <li>
-                      <a href="https://docs.pivotal.io/pks/1-5/view-cluster-details.html">Viewing Cluster Details</a>
-                    </li>
-                    <li>
-                      <a href="https://docs.pivotal.io/pks/1-5/view-cluster-plans.html">Viewing Cluster Plans</a>
-                    </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/scale-clusters.html">Scaling Existing Clusters</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/upgrade-clusters.html">Upgrading Clusters</a>
-                    </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/delete-cluster.html">Deleting Clusters</a>
-                  </li>
-                  <li class="has_submenu">
-                    <a href="https://docs.pivotal.io/pks/1-5/network-profiles-index.html">Defining and Using Network Profiles (NSX-T Only)</a>
-                      <ul>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-define.html">Defining Network Profiles</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles.html">Using Network Profiles</a>
-                        </li>
-                       <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-lb-size.html">Sizing the Kubernetes API Load Balancer</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-pods.html">Customizing Pod Networks</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-fip.html">Creating Floating IP Pools</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-edge.html">Configuring Edge Router Selection for Multi-T0</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ns-groups.html">Configuring Security Groups</a>
-                        </li>
-                       <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-nodes.html">Customizing Node Networks</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-dns.html">Configuring DNS Lookup of the API Load Balancer and Ingress Controller IP Addresses</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ncp-lb.html">Configuring the NSX-T Load Balancer</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ncp-ingress.html">Configuring the NCP Ingress Controller</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ncp-logerr.html">Configuring NCP Logging</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ncp-dfw.html">Defining DFW Section Markers</a>
-                        </li>
-                      </ul>
-                    </li>
-                  <li class="has_submenu">
-                    <a href="https://docs.pivotal.io/pks/1-5/managing-clusters-vsphere.html">Defining and Using Compute Profiles and Host Groups (vSphere Only)</a>
-                      <ul>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/compute-profiles.html">Using Compute Profiles</a>
-                        </li>
-                        <li>
-                          <a href="https://docs.pivotal.io/pks/1-5/vsphere-host-group.html">Using vSphere Host Groups with Enterprise PKS</a>
-                        </li>
-                      </ul>
-                    </li>
-                </ul>
-              </li>
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/using.html">Using Enterprise PKS</a>
-                <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/login.html">Logging In to Enterprise PKS</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/access-dashboard.html">Accessing Dashboard</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/deploy-workloads.html">Deploying and Exposing Basic Workloads</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/deploy-windows-workloads-beta.html">Deploying and Exposing Windows Workloads (Beta)</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/harbor.html">Getting Started with VMware Harbor Registry</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/helm.html">Using Helm with Enterprise PKS</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/volumes.html">Configuring and Using Dynamic PersistentVolumes</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/create-sinks.html">Creating Sink Resources</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/resource-review.html">Viewing Usage Quotas</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/console/console-index.html">Using the Enterprise PKS Management Console</a>
-                 <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/ova-deployment-prereqs.html">Prerequisites for Appliance Deployment</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/deploy-console-ova.html">Deploy the Management Console Appliance</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/deploy-ent-pks-wizard.html">Deploy Enterprise PKS by Using the Configuration Wizard</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/deploy-ent-pks-yaml.html">Deploy Enterprise PKS by Using a YAML Configuration File</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/monitor-manage-console.html">Monitor and Manage Enterprise PKS in the Management Console</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/console-identity-management.html">Identity Management in the Management Console</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/console-login-opsmanager.html">Connect to Operations Manager</a>
-                  </li>
-                   <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/reconfigure-console.html">Reconfigure Your Enterprise PKS Deployment</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/upgrade-console.html">Upgrade Enterprise PKS Management Console</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/patch-console-components.html">Patch Enterprise PKS Management Console Components</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/console-troubleshooting.html">Troubleshooting Enterprise PKS Management Console</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/console/delete-console-deployment.html">Delete Your Enterprise PKS Deployment</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/monitor.html">Logging and Monitoring Enterprise PKS</a>
-                 <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/view-usage-data.html">Viewing Usage Data</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/download-logs.html">Downloading Cluster Logs</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/monitor-sinks.html">Monitoring Enterprise PKS with Sinks</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/monitor-etcd.html">Monitoring Master/etcd Node VMs</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/backup-and-restore.html">Backing Up and Restoring Enterprise PKS</a>
-                <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/bbr-install.html">Installing BOSH Backup and Restore</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/bbr-backup.html">Backing Up Enterprise PKS</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/bbr-restore.html">Restoring Enterprise PKS</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/bbr-logging.html">BBR Logging</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/security.html">Enterprise PKS Security</a>
-                <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/security-process.html">Enterprise PKS Security Disclosure and Release Process</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="has_submenu">
-                <a href="https://docs.pivotal.io/pks/1-5/troubleshoot.html">Diagnosing and Troubleshooting Enterprise PKS</a>
-                <ul>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/diagnostic-tools.html">Diagnostic Tools</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/verify-health.html">Verifying Deployment Health</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/interruptions.html">Service Interruptions</a>
-                  </li>
-                  <li>
-                    <a href="https://docs.pivotal.io/pks/1-5/troubleshoot-issues.html">Troubleshooting</a>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="https://docs.pivotal.io/pks/1-5/cli/index.html">PKS CLI</a>
-              </li>
-            </ul>
-         </li>
-         <li class="has_submenu">
-            <span role="button"><strong>Service Brokers</strong></span>
-            <ul>
+                         <a href="https://docs.pivotal.io/pks/1-5/managing.html">Managing Enterprise PKS</a>
+                         <ul>
+                           <li class="has_submenu">
+                             <span role="button"><strong>Managing Enterprise PKS Users</strong></span>
+                             <ul>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/okta-sso-config.html">Configuring Okta as a SAML Identity Provider</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/azure-ad-sso-config.html">Configuring Azure Active Directory as a SAML Identity Provider</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/manage-users.html">Managing Enterprise PKS Admin Users with UAA</a>
+                               </li>
+                             </ul>
+                           </li>
+                           <li class="has_submenu">
+                             <span role="button"><strong>Managing Kubernetes Cluster Resources</strong></span>
+                             <ul>
+                               <li class="has_submenu">
+                                 <a href="https://docs.pivotal.io/pks/1-5/create-config-cluster-lb.html">Load Balancing</a>
+                                 <ul>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/gcp-cluster-load-balancer.html">Creating and Configuring a GCP Load Balancer for Enterprise PKS Clusters</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/aws-cluster-load-balancer.html">Creating and Configuring an AWS Load Balancer for Enterprise PKS Clusters</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/azure-cluster-load-balancer.html">Creating and Configuring an Azure Load Balancer for Enterprise PKS Clusters</a>
+                                   </li>
+                                 </ul>
+                               </li>
+                               <li class="has_submenu">
+                                 <a href="https://docs.pivotal.io/pks/1-5/quotas.html">CPU and Memory</a>
+                                 <ul>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/resource-usage.html">Managing Resource Usage</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/resource-review.html">Viewing Usage Quotas</a>
+                                   </li>
+                                 </ul>
+                               </li>
+                               <li class="has_submenu">
+                                 <a href="https://docs.pivotal.io/pks/1-5/network-profiles-index.html">Network Profiles (NSX-T Only)</a>
+                                 <ul>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-define.html">Defining Network Profiles</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles.html">Using Network Profiles</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-lb-size.html">Sizing the Kubernetes API Load Balancer</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-pods.html">Customizing Pod Networks</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-nodes.html">Customizing Node Networks</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-fip.html">Creating Floating IP Pools</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ns-groups.html">Configuring Security Group Namespace</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-edge.html">Configuring Edge Router Selection for Multi-T0</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-nodes-dns.html">Configuring DNS Lookup of Kubernetes Nodes</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-dns.html">Configuring DNS Lookup of the API Load Balancer and Ingress Controller</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ncp-lb.html">Configuring the NSX-T Load Balancer</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ncp-ingress.html">Configuring the NCP Ingress Controller</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ncp-dfw.html">Defining DFW Section Markers</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-ncp-logerr.html">Configuring NCP Logging</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/network-profiles-shared-t1.html">Configuring a Shared Tier-1 Router</a>
+                                   </li>
+                                 </ul>
+                               </li>
+                               <li class="has_submenu">
+                                 <a href="https://docs.pivotal.io/pks/1-5/managing-clusters-vsphere.html">Compute Profiles and Host Groups (vSphere Only)</a>
+                                 <ul>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/compute-profiles.html">Using Compute Profiles</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/vsphere-host-group.html">Using vSphere Host Groups with Enterprise PKS</a>
+                                   </li>
+                                 </ul>
+                               </li>
+                             </ul>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/password-management.html">Adding Infrastructure Password Changes to the Enterprise PKS Tile</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/shutdown-startup.html">Shutting Down and Restarting Enterprise PKS</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/delete.html">Deleting Enterprise PKS</a>
+                           </li>
+                         </ul>
+                         </li>
+                         <li class="has_submenu">
+                         <a href="https://docs.pivotal.io/pks/1-5/managing-clusters.html">Managing Kubernetes Clusters and Workloads</a>
+                         <ul>
+                           <li class="has_submenu">
+                             <span role="button"><strong>Managing Clusters in Enterprise PKS</strong></span>
+                             <ul>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/login.html">Logging in to Enterprise PKS</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/create-cluster.html">Creating Clusters</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/view-cluster-list.html">Viewing Cluster Lists</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/view-cluster-details.html">Viewing Cluster Details</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/view-cluster-plans.html">Viewing Cluster Plans</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/scale-clusters.html">Scaling Existing Clusters</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/upgrade-clusters.html">Upgrading Clusters</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/delete-cluster.html">Deleting Clusters</a>
+                               </li>
+                             </ul>
+                           </li>
+                           <li class="has_submenu">
+                             <span role="button"><strong>Supporting Clusters</strong></span>
+                             <ul>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/cluster-credentials.html">Retrieving Cluster Credentials and Configuration</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/manage-cluster-permissions.html">Managing Cluster Access and Permissions</a>
+                               </li>
+                               <li class="has_submenu">
+                                 <a href="https://docs.pivotal.io/pks/1-5/admission-plugins.html">Enabling, Disabling, and Using Admission Plugins for Enterprise PKS Clusters</a>
+                                 <ul>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/pod-security-policy.html">Configuring and Using PodSecurityPolicy for Enterprise PKS Clusters</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/security-context-deny.html">Enabling and Using SecurityContextDeny for Enterprise PKS Clusters</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/deny-escalating-execution.html">Enabling and Using DenyEscalatingExec for Enterprise PKS Clusters</a>
+                                   </li>
+                                   <li>
+                                     <a href="https://docs.pivotal.io/pks/1-5/admission-plugins-disable.html">Disabling Admission Plugins for Enterprise PKS Clusters</a>
+                                   </li>
+                                 </ul>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/configure-ingress.html">Configuring Ingress Routing</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/nsxt-ingress-srvc-lb.html">Configuring Ingress Resources and Load Balancer Services (NSX-T Only)</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/harbor.html">Getting Started with VMware Harbor Registry</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/vsphere-persistent-storage.html">PersistentVolume Storage Options on vSphere</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/volumes.html">Configuring and Using Dynamic PersistentVolumes</a>
+                               </li>
+                             </ul>
+                           </li>
+                           <li class="has_submenu">
+                             <span role="button"><strong>Deploying Workloads</strong></span>
+                             <ul>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/deploy-workloads.html">Deploying and Exposing Basic Linux Workloads</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/deploy-windows-workloads-beta.html">Deploying and Exposing Basic Windows Workloads (Beta)</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/custom-workloads.html">Adding Custom Linux Workloads</a>
+                               </li>
+                               <li>
+                                 <a href="https://docs.pivotal.io/pks/1-5/helm.html">Using Helm with Enterprise PKS</a>
+                               </li>
+                             </ul>
+                           </li>
+                         </ul>
+                         </li>
+                         <li class="has_submenu">
+                         <a href="https://docs.pivotal.io/pks/1-5/console/console-index.html">Using the Enterprise PKS Management Console</a>
+                          <ul>
+                           <li class="has_submenu">
+                             <a href="https://docs.pivotal.io/pks/1-5/console/ova-deployment-prereqs.html">Prerequisites for Appliance Deployment</a>
+                             <ul>
+                           <li><a href="https://docs.pivotal.io/pks/1-5/console/prereqs-vsphere.html">Virtual Infrastructure Prerequisites</a></li>
+                           <li><a href="https://docs.pivotal.io/pks/1-5/console/prereqs-nsxt-byot.html">Prerequisites for a BYOT Deployment to NSX-T Data Center</a></li>
+                           <li><a href="https://docs.pivotal.io/pks/1-5/console/prereqs-nsxt-automatednat.html">Prerequisites for an Automated NAT Deployment to NSX-T Data Center</a></li>
+                           <li><a href="https://docs.pivotal.io/pks/1-5/console/prereqs-flannel.html">Prerequisites for a Flannel Network</a></li>
+                           </ul>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/deploy-console-ova.html">Deploy the Management Console Appliance</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/deploy-ent-pks-wizard.html">Deploy Enterprise PKS by Using the Configuration Wizard</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/deploy-ent-pks-yaml.html">Deploy Enterprise PKS by Using a YAML Configuration File</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/monitor-manage-console.html">Monitor and Manage Enterprise PKS in the Management Console</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/console-identity-management.html">Identity Management in the Management Console</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/console-login-opsmanager.html">Connect to Operations Manager</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/console-bosh-cli.html">Using the BOSH CLI</a>
+                           </li>
+                            <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/reconfigure-console.html">Reconfigure Your Enterprise PKS Deployment</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/upgrade-console.html">Upgrade Enterprise PKS Management Console</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/patch-console-components.html">Patch Enterprise PKS Management Console Components</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/console-troubleshooting.html">Troubleshooting Enterprise PKS Management Console</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/console/delete-console-deployment.html">Delete Your Enterprise PKS Deployment</a>
+                           </li>
+                         </ul>
+                         </li>
+                         <li class="has_submenu">
+                         <a href="https://docs.pivotal.io/pks/1-5/monitor.html">Logging and Monitoring Enterprise PKS</a>
+                          <ul>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/view-usage-data.html">Viewing Usage Data</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/download-logs.html">Downloading Cluster Logs</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/monitor-audit-logs.html">Auditing Enterprise PKS Logs</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/monitor-etcd.html">Monitoring Master/etcd Node VMs</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/create-sinks.html">Creating Sink Resources</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/monitor-sinks.html">Monitoring Clusters with Log Sinks</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/access-dashboard.html">Accessing Dashboard</a>
+                           </li>
+                         </ul>
+                         </li>
+                         <li class="has_submenu">
+                         <a href="https://docs.pivotal.io/pks/1-5/backup-and-restore.html">Backing Up and Restoring Enterprise PKS</a>
+                         <ul>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/bbr-install.html">Installing BOSH Backup and Restore</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/bbr-backup.html">Backing Up Enterprise PKS</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/bbr-restore.html">Restoring Enterprise PKS</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/bbr-logging.html">BBR Logging</a>
+                           </li>
+                         </ul>
+                         </li>
+                         <li class="has_submenu">
+                         <a href="https://docs.pivotal.io/pks/1-5/security.html">Enterprise PKS Security</a>
+                         <ul>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/security-process.html">Enterprise PKS Security Disclosure and Release Process</a>
+                           </li>
+                         </ul>
+                         </li>
+                         <li class="has_submenu">
+                         <a href="https://docs.pivotal.io/pks/1-5/troubleshoot.html">Diagnosing and Troubleshooting Enterprise PKS</a>
+                         <ul>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/diagnostic-tools.html">Using BOSH Diagnostic Commands in Enterprise PKS</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/verify-health.html">Verifying Deployment Health</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/interruptions.html">Service Interruptions</a>
+                           </li>
+                           <li>
+                             <a href="https://docs.pivotal.io/pks/1-5/troubleshoot-issues.html">Troubleshooting</a>
+                           </li>
+                         </ul>
+                         </li>
+                         <li><a href="https://docs.pivotal.io/pks/1-5/cli/index.html">PKS CLI</a>
+                         </li>
+                       </ul>
+                   </li>
+                  </ul>
+
+          <li class="has_submenu">
+             <span role="button"><strong>Service Brokers</strong></span>
+             <ul>
                <li class="">
-                  <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/index.html">Services</a>
+                   <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/index.html">Services</a>
                </li>
                <li class="has_submenu">
-                  <span role="button"><strong>Service Broker API</strong></span>
-                  <ul>
+                 <span role="button"><strong>Service Broker API</strong></span>
+                   <ul>
                      <li>
-                        <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/spec.md">Open Service Broker API</a>
+                       <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/spec.md">Open Service Broker API</a>
                      </li>
                      <li>
-                        <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/profile.md">Platform Profiles</a>
+                       <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/profile.md">Open Service Broker API Profile</a>
                      </li>
                      <li>
-                        <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/profile.md#service-metadata">Catalog Metadata</a>
+                       <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/profile.md#service-metadata">Service Metadata</a>
                      </li>
                      <li>
-                        <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/spec.md#volume-mounts-object">Volume Services</a>
+                       <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/spec.md#volume-services">Volume Services</a>
                      </li>
                      <li>
-                        <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/release-notes.md">Release Notes</a>
+                       <a href="https://github.com/openservicebrokerapi/servicebroker/blob/v2.15/release-notes.md">Service Broker API Release Notes</a>
                      </li>
-                  </ul>
-               </li>
+                   </ul>
+                 </li>
                <li class="">
                   <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/examples.html">Example Service Brokers</a>
                </li>
@@ -2145,7 +2191,7 @@
                   <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/services/supporting-multiple-cf-instances.html">Supporting Multiple <%= vars.app_runtime_abbr %> Instances</a>
                </li>
             </ul>
-         </li>
+
          <li class="has_submenu">
            <span role="button"><strong>Logging and Metrics</strong></span>
            <ul>
@@ -2161,7 +2207,7 @@
                   <span role="button"><strong>Security Policy and Processes</strong></span>
                   <ul>
                     <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/process/pcf-security.html">Security Overview and Policy</a>
+                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/process/pcf-security.html"><%= vars.platform_name %> Security Overview and Policy</a>
                     </li>
                     <li class="">
                       <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/security.html"><%= vars.app_runtime_abbr %> Security</a>
