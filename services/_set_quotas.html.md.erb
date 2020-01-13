@@ -21,14 +21,15 @@ After you set quotas, you can:
 
 ## <a id="global"></a> Create Global-level Quotas
 
-Each <%= vars.product_full  %> service has a separate service broker.
+Each <%= product_full %> service has a separate service broker.
 A global quota at the service level sets the maximum number of service instances
 that can be created by a given service broker. If a service has more than one plan,
 then the number of service instances for all plans combined cannot exceed the global
 quota for the service.
 
-The operator sets a global quota for each <%= vars.product_short %> service independently.
-For example, if you have Redis for <%= vars.platform_name %> and RabbitMQ for <%= vars.platform_name %>, you must set a separate
+The operator sets a global quota for each <%= product_short %> service independently.
+For example, if you have Redis for <%= platform_name %> and RabbitMQ for <%= platform_name %>,
+you must set a separate
 global service quota for each of them.
 
 When the global quota is reached for a service, no more instances of that service
@@ -40,7 +41,7 @@ A service may offer one or more plans.
 You can set a separate quota per plan so that instances of that plan cannot exceed the plan quota.
 For a service with multiple plans, the total number of instances created for all
 plans combined cannot exceed the [global quota](#global) for the service.
-<% if vars.service_name == "MySQL for Pivotal Platform" %>
+<% if service_name == "MySQL for Pivotal Platform" %>
 If the plan quota field is blank, the plan quota is set to the global quota by default.
 <%end%>
 
@@ -49,10 +50,10 @@ unless the plan quota is increased or some instances of that plan are deleted.
 
 ## <a id="org"></a> Create and Set Org-level Quotas
 
-An org-level quota applies to all <%= vars.product_short %> services and sets the maximum number of
-service instances an organization can create within <%= vars.product_short %>.
+An org-level quota applies to all <%= product_short %> services and sets the maximum number of
+service instances an organization can create within <%= product_short %>.
 For example, if you set your org-level quota to 100, developers can create up to
-100 service instances in that org using any combination of <%= vars.product_short %> services.
+100 service instances in that org using any combination of <%= product_short %> services.
 
 When this quota is met, no more service instances of any kind can be created in
 the org unless the quota is increased or some service instances are deleted.
@@ -90,12 +91,12 @@ see [Creating and Modifying Quota Plans](https://docs.pivotal.io/pivotalcf/1-12/
 
 ## <a id="space"></a> Create and Set Space-level Quotas
 
-A space-level service quota applies to all <%= vars.product_short %> services and sets the maximum
+A space-level service quota applies to all <%= product_short %> services and sets the maximum
 number of service instances
-that can be created within a given space in <%= vars.product_short %>.
+that can be created within a given space in <%= product_short %>.
 For example, if you set your space-level quota to 100,
 developers can create up to 100 service instances in that space using any
-combination of <%= vars.product_short %> services.
+combination of <%= product_short %> services.
 
 When this quota is met, no more service instances of any kind can be created in
 the space unless the quota is updated
@@ -196,12 +197,12 @@ configuration(s).
 The specific costs depend on your IaaS.
 
 
-To view configurations for your <%= vars.service_name %> on-demand plan, do the following:
+To view configurations for your <%= service_name %> on-demand plan, do the following:
 
-1. Navigate to **Ops Manager Installation Dashboard** > **<%= vars.tile_name %>** > **Settings**.
+1. Navigate to **Ops Manager Installation Dashboard** > **<%= tile_name %>** > **Settings**.
 
 <%# Case statement to change the instructions to satisfy each service %>
-<% case vars.service_name
+<% case service_name
 when 'RabbitMQ for Pivotal Platform' %>
 1. Click the section for the plan you want to view. For example, **On Demand Instance (RMQ 3.7): Plan 1**.
 
@@ -224,7 +225,7 @@ when 'RabbitMQ for Pivotal Platform' %>
 
 The image below shows an example that includes the VM type and persistent disk
 selected for the server VMs, as well as the quota for this plan.
-<% if vars.service_name == 'Pivotal Cloud Cache' %>
+<% if service_name == 'Pivotal Cloud Cache' %>
 The quota is shown in the **Maximum service instances** field.
 <% end %>
 
