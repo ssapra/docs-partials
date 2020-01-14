@@ -1,39 +1,48 @@
-<p>
-  If developers report that their app cannot use service instances that they have
-  successfully created and bound:
-</p>
+<%= partial "../troubleshoot-template", locals: {
 
-<p>
-  Ask the user to send application logs that show the connection error.
-  If the error is originating from the service, then follow <%=vars.service_name%>-specific instructions.
-  If the issue appears to be network-related, then:
-</p>
+    id: 'cannot-connect',
 
-<ol>
-  <li>
+    description: 'Cannot Connect to a Service Instance',
+
+    symptom:<<~DESC,
+    Developers report that their app cannot use service instances that they have
+    successfully created and bound.
+    DESC
+
+    cause: 'The error might originate from the service or might be network related.',
+
+    solution:<<~DESC,
+    To solve this issue, ask the user to send application logs that show the connection error.
+    If the error originates from the service, then follow <%=vars.service_name%>-specific instructions.
+    If the issue appears to be network-related, then:
+    <ol>
+    <li>
     <p>
-      Check that <a href="https://docs.pivotal.io/pivotalcf/adminguide/app-sec-groups.html">application security groups</a>
-      are configured correctly.
-      Access should be configured for the service network that the tile is deployed to.
+    Check that <a href="https://docs.pivotal.io/pivotalcf/adminguide/app-sec-groups.html">application security groups</a>
+    are configured correctly.
+    Access should be configured for the service network that the tile is deployed to.
     </p>
-  </li>
-  <li>
+    </li>
+    <li>
     <p>
-      Ensure that the network the <%= vars.app_runtime_full %> tile is deployed
-      to has network access to the service network. You can find the network definition
-      for this service network in the BOSH Director tile.
+    Ensure that the network the <%= vars.app_runtime_full %> tile is deployed
+    to has network access to the service network. You can find the network definition
+    for this service network in the BOSH Director tile.
     </p>
-  </li>
-  <li>
+    </li>
+    <li>
     <p>
-      In Ops Manager go into the service tile and see the service network that is
-      configured in the networks tab.
+    In Ops Manager go into the service tile and see the service network that is
+    configured in the networks tab.
     </p>
-  </li>
-  <li>
+    </li>
+    <li>
     <p>
-      In Ops Manager go into the <%= vars.app_runtime %> tile and see the network it is assigned to.
-      Make sure that these networks can access each other.
+    In Ops Manager go into the <%= vars.app_runtime %> tile and see the network it is assigned to.
+    Make sure that these networks can access each other.
     </p>
-  </li>
-</ol>
+    </li>
+    </ol>
+    DESC
+}
+%>
