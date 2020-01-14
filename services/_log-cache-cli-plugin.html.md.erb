@@ -2,6 +2,13 @@ To access metrics for <%= service_name %> service instances, you can use Loggreg
 Cache feature with the Log Cache CLI plugin.
 Log Cache is enabled by default in  <%= vars.app_runtime_full %> v2.2 and later.
 
+<p class='note'>
+  <strong>Note:</strong> To use this feature the <strong>V2 Firehose</strong> must be enabled
+  and <strong>Enable Log Cache syslog ingestion</strong> must be disabled in the PAS tile.
+  For more information about configuring these checkboxes, see
+  <a href="https://docs.pivotal.io/platform/application-service/operating/logging-config-opsman.html#syslog-forward">Enable Syslog Forwarding</a>.
+</p>
+
 To access metrics for on-demand service instances, do the following:
 
 1. To install the cf CLI plugin, run the following command:
