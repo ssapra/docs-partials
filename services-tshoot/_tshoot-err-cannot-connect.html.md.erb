@@ -1,4 +1,4 @@
-<%= partial "../troubleshoot-template", locals: {
+<%= partial vars.path_to_partials + "/troubleshoot-template", locals: {
 
     id: 'cannot-connect',
 
@@ -11,9 +11,9 @@
 
     cause: 'The error might originate from the service or might be network related.',
 
-    solution:<<~DESC,
+    solution:'
     To solve this issue, ask the user to send application logs that show the connection error.
-    If the error originates from the service, then follow <%=vars.service_name%>-specific instructions.
+    If the error originates from the service, then follow ' + vars.service_name + '-specific instructions.
     If the issue appears to be network-related, then:
     <ol>
     <li>
@@ -25,7 +25,7 @@
     </li>
     <li>
     <p>
-    Ensure that the network the <%= vars.app_runtime_full %> tile is deployed
+    Ensure that the network the' +  vars.app_runtime_full  + 'tile is deployed
     to has network access to the service network. You can find the network definition
     for this service network in the BOSH Director tile.
     </p>
@@ -38,11 +38,10 @@
     </li>
     <li>
     <p>
-    In Ops Manager go into the <%= vars.app_runtime %> tile and see the network it is assigned to.
+    In Ops Manager go into the' + vars.app_runtime  + ' tile and see the network it is assigned to.
     Make sure that these networks can access each other.
     </p>
     </li>
-    </ol>
-    DESC
+    </ol>'
 }
 %>
