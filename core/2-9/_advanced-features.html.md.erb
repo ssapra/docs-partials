@@ -22,27 +22,51 @@ To enable overcommit:
 
 ### <a id="app-graceful-shutdown-period"></a> App Graceful Shutdown Period
 
-When app instances are shut down during platform updates or app stop/restart/scale-down events, the platform sends a SIGTERM to the processes in the application container. Processes have a graceful shutdown period between the initial signal and the SIGKILL that is initiated to forcefully shutdown the application. This graceful shutdown period can be configured to greater than the default of 10 seconds if applications running on the platform require a longer amount of time to finish their in flight work and shut down safely.
+When <%= vars.product_short %> requests a shutdown of app instances, the
+processes in app containers have a period of time to gracefully shut down before the
+processes are forcefully terminated. By default, this graceful shutdown period is set to 10 seconds.
+For more information about app shutdowns,
+see [Shutdown](https://docs.pivotal.io/platform/application-service/devguide/deploy-apps/app-lifecycle.html#shutdown).
 
-<p class="note"><strong>Note:</strong> Increasing this value significantly may result in slower platform upgrades as each cell will respect this configuration when it is cleaning up evacuated application instances and wait for each to gracefully shut down. It may be advisable to use isolation segments in order to separate classes of applications that have different shut down characteristics in order to ensure cell update times are reliable.</p>
+If your apps require a longer period of time to finish in-flight jobs and gracefully shutdown,
+you can increase the graceful shutdown period.
 
-To modify this setting:
+
+<p class="note"><strong>Note:</strong>
+  If you significantly increase the value of the graceful shutdown period, platform upgrades and updates
+  might become slower. This is because each cell uses the graceful shutdown period when it
+  is cleaning up evacuated app instances and waits for each app to gracefully shut down.<br><br>
+  Pivotal recommends using isolation segments to separate apps that have
+  different shut down requirements to ensure cell update times are reliable.
+  <% if current_page.data.deployment != "IST" %>
+  For instructions, see <a href="https://docs.pivotal.io/platform/application-service/operating/installing-pcf-is.html">
+    Installing Pivotal Platform Isolation Segment</a>.
+  <%end%>
+</p>
+
+To increase the app graceful shutdown period:
 
 1. Select **Advanced Features**.
 
-1. Enter in seconds in the **App Graceful Shutdown Period** field the desired amount of time the platform should wait for an app instance to exit once it has been signalled to gracefully shut down. The default and minimum allowed value is 10 seconds.
+1. Enter an integer, in seconds, in the **App Graceful Shutdown Period** field.
+This value is the period of time the
+platform should wait for an app instance to exit after it has been signaled to gracefully shut down.
+The default and minimum value is `10`.
 
 1. Click **Save**.
 
-<p class="note"><strong>Note:</strong> It is important to ensure this property is consistent across all environments an application is deployed to in order to avoid unexpected behavior.</p>
+<p class="note"><strong>Note:</strong> You must ensure this property is configured
+  consistently in all
+  environments that have deployed apps. This is to avoid unexpected behavior.
+</p>
 
 <% if current_page.data.deployment != "IST" %>
 
 ### <a id="rfc_allowlist"></a> Non-RFC-1918 Private Network Allow List
 
-Some private networks require extra configuration so that internal file storage (WebDAV) can communicate with other <%= vars.product_full %> processes. 
+Some private networks require extra configuration so that internal file storage (WebDAV) can communicate with other <%= vars.product_full %> processes.
 
-The **Non-RFC-1918 private network allow list** field is provided for deployments that use a non-RFC 1918 private network. This is typically a private network other than `10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`. 
+The **Non-RFC-1918 private network allow list** field is provided for deployments that use a non-RFC 1918 private network. This is typically a private network other than `10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`.
 
 Most <%= vars.product_short %> deployments do not require any modifications to this field.
 
@@ -50,12 +74,12 @@ To add your private network to the allow list:
 
 1. Select **Advanced Features**.
 
-1. Append a new `allow` rule to the existing contents of the **Non-RFC-1918 private network allow list** field. 
+1. Append a new `allow` rule to the existing contents of the **Non-RFC-1918 private network allow list** field.
   Include the word `allow`, the network CIDR range to allow, and a semi-colon (`;`) at the end. For example:
   ```
   allow 172.99.0.0/24;
   ```
-   
+
 1. Click **Save**.
 
 ### <a id="cf_cli_timeout"></a> CF CLI Connection Timeout
@@ -68,7 +92,7 @@ To modify the value of the CF CLI connection timeout:
 
 1. Select **Advanced Features**.
 
-1. Enter a value, in seconds, to the **CF CLI connection timeout** field. 
+1. Enter a value, in seconds, to the **CF CLI connection timeout** field.
 
 1. Click **Save**.
 
@@ -100,9 +124,9 @@ To configure the maximum number of concurrent database connections:
 
 1. Click **Save**.
 
-When there are not enough connections available, such as during a time of heavy load, components may experience degraded performance and sometimes failure. To resolve or prevent this, you can increase and fine-tune database connection limits for the component.   
+When there are not enough connections available, such as during a time of heavy load, components may experience degraded performance and sometimes failure. To resolve or prevent this, you can increase and fine-tune database connection limits for the component.
 
-When there are not enough connections available, such as during a time of heavy load, components may experience degraded performance and sometimes failure. To resolve or prevent this, you can increase and fine-tune database connection limits for the component.  
+When there are not enough connections available, such as during a time of heavy load, components may experience degraded performance and sometimes failure. To resolve or prevent this, you can increase and fine-tune database connection limits for the component.
 
 <p class="note warning"><strong>Warning:</strong> Decreasing the value of this field for a component may affect the amount of time it takes for it to respond to requests.</p>
 
@@ -133,9 +157,9 @@ To set the maximum number of envelopes stored per source above the default:
 
 ### <a id='usage-service-data-retention'></a> Usage Service Data Retention Period
 
-By default, Usage Service deletes granular data after 365 days. 
+By default, Usage Service deletes granular data after 365 days.
 
-You can configure this retention period using the **Usage service cutoff age in days** field. To avoid performance or data migration issues, Pivotal recommends that you do not retain data for longer than 365 days. 
+You can configure this retention period using the **Usage service cutoff age in days** field. To avoid performance or data migration issues, Pivotal recommends that you do not retain data for longer than 365 days.
 
 For more information, see [Usage Data Retention](./accounting-report.html#usage-retention).
 
