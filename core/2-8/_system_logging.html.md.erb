@@ -1,4 +1,4 @@
-In the **System Logging** pane, you can configure system logging in PAS to forward log messages from PAS component VMs to an external service. Pivotal recommends forwarding logs to an external service for use in troubleshooting. If you do not fill these fields, platform logs are not forwarded but remain available on the component VMs and for download through Ops Manager.
+In the **System Logging** pane, you can configure system logging in PAS to forward log messages from PAS component VMs to an external service. Pivotal recommends forwarding logs to an external service for use in troubleshooting. If you do not fill these fields, platform logs are not forwarded but remain available on the component VMs and for download through <%= vars.ops_manager %>.
 
 <p class="note"><strong>Note:</strong> The following instructions explain how to configure system logging for PAS component VMs. To forward logs from <%= vars.product_full %> tiles to an external service, you must also configure system logging in each tile. See the documentation for the given tiles for information about configuring system logging.</p>
 
@@ -45,4 +45,4 @@ To configure the **System Logging** pane:
 
 1. Click **Save**.
 
-To configure Ops Manager for system logging, see the [Settings Page](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/pcf-interface.html#settings) section in the _Using the Ops Manager Interface_ topic.
+To configure <%= vars.ops_manager %> for system logging, see the [Settings Page](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/pcf-interface.html#settings) section in the _Using the <%= vars.ops_manager %> Interface_ topic.

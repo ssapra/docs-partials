@@ -1,10 +1,10 @@
-Errands are scripts that Ops Manager runs automatically when it installs or uninstalls a product, such as a new version of PAS. There are two types of errands: _post-deploy errands_ run after the product is installed, and _pre-delete errands_ run before the product in uninstalled.
+Errands are scripts that <%= vars.ops_manager %> runs automatically when it installs or uninstalls a product, such as a new version of PAS. There are two types of errands: _post-deploy errands_ run after the product is installed, and _pre-delete errands_ run before the product in uninstalled.
 
-By default, Ops Manager always runs all errands.
+By default, <%= vars.ops_manager %> always runs all errands.
 
 In the **Errands** pane, you can change these run rules. For each errand, you can select **On** to run it always or **Off** to never run it.
 
-For more information about how Ops Manager manages errands, see [Managing Errands in Ops Manager](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/managing_errands.html).
+For more information about how <%= vars.ops_manager %> manages errands, see [Managing Errands in <%= vars.ops_manager %>](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/managing_errands.html).
 
 <p class='note'><strong>Note:</strong> Several errands, such as App Autoscaler and Notifications, deploy apps that provide services for your deployment. When one of these apps is running, selecting <strong>Off</strong> for the corresponding errand on a subsequent installation does not stop the app.</p>
 
