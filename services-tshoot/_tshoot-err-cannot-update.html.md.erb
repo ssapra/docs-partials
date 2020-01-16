@@ -1,25 +1,37 @@
-<p>
-  If developers report errors such as the following when trying to run <code>cf-update-service</code>:
-</p>
+  <%= partial vars.path_to_partials + "/troubleshoot-template", locals: {
 
-<pre class="terminal">
-FAILED
-Server error, status code: 502, error code: 10001, message:
-Service broker error: Service cannot be updated at this time,
-please try again later or contact your operator for more information.
-</pre>
+      id: 'cannot-create-delete',
 
-<p>
-  Their service instance might not be running the latest service offering.
-</p>
+      description: 'Cannot Create or Delete Service Instances',
 
-<p>
-  Operators must run the <code>upgrade-all-service-instances</code> errand after upgrading
-  to ensure all existing service instances are upgraded to the latest service offering.
-  See <a href="#upgrade-all">Upgrade All Service Instances</a>.
-</p>
+      symptom:'If developers report errors such as:
+  		<pre class="terminal">Instance provisioning failed: There was a problem completing your request. Please contact your operations team providing the following information: service: redis-acceptance, service-instance-guid: ae9e232c-0bd5-4684-af27-1b08b0c70089, broker-request-id: 63da3a35-24aa-4183-aec6-db8294506bac, task-id: 442, operation: create</pre>',
 
-<p>
-  App developers cannot upgrade individual service instances to the latest service offering.
-  They cannot set parameters or change plan until you upgrade their service instances.
-</p>
+      cause: 'The error might originate from the service or might be network related.',
+
+      solution:'
+      <p>
+      If developers report errors such as the following when trying to run <code>cf-update-service</code>:
+      </p>
+
+      <pre class="terminal">
+      FAILED
+      Server error, status code: 502, error code: 10001, message:
+      Service broker error: Service cannot be updated at this time,
+      please try again later or contact your operator for more information.
+      </pre>
+
+      <p>
+      Their service instance might not be running the latest service offering.
+      </p>
+
+      <p>
+      Operators must run the <code>upgrade-all-service-instances</code> errand after upgrading
+      to ensure all existing service instances are upgraded to the latest service offering.
+      See <a href="#upgrade-all">Upgrade All Service Instances</a>.
+      </p>
+
+      <p>
+      App developers cannot upgrade individual service instances to the latest service offering.
+      They cannot set parameters or change plan until you upgrade their service instances.
+      </p>

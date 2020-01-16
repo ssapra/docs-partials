@@ -25,20 +25,20 @@
     </li>
     <li>
     <p>
-    Ensure that the network the' +  vars.app_runtime_full  + 'tile is deployed
+    Ensure that the network the ' +  vars.app_runtime_full  + ' tile is deployed
     to has network access to the service network. You can find the network definition
     for this service network in the BOSH Director tile.
     </p>
     </li>
     <li>
     <p>
-    In Ops Manager go into the service tile and see the service network that is
+    In ' + vars.ops_manager + ' go into the service tile and see the service network that is
     configured in the networks tab.
     </p>
     </li>
     <li>
     <p>
-    In Ops Manager go into the' + vars.app_runtime  + ' tile and see the network it is assigned to.
+    In ' + vars.ops_manager + ' go into the ' + vars.app_runtime  + ' tile and see the network it is assigned to.
     Make sure that these networks can access each other.
     </p>
     </li>
