@@ -7,7 +7,7 @@
 <h3><a id="download-logs"></a>download-logs</h3>
 
 <p>
-  <code>download-logs</code> is a script that you can run from your Ops Manager VM to aggregate logs
+  <code>download-logs</code> is a script that you can run from your <%= vars.ops_manager %> VM to aggregate logs
   from your MySQL cluster nodes, MySQL proxies, and, with highly available clusters, the jumpbox VM.
 </p>
 
@@ -24,7 +24,7 @@
   </li>
   <li>
     <p>
-      From Ops Manager, open your <strong>BOSH Director</strong> tile > <strong>Credentials</strong> tab.
+      From <%= vars.ops_manager %>, open your <strong>BOSH Director</strong> tile > <strong>Credentials</strong> tab.
     </p>
   </li>
   <li>
@@ -56,15 +56,15 @@
   </li>
   <li>
     <p>
-      SSH into your Ops Manager VM. For information on how to do this,
+      SSH into your <%= vars.ops_manager %> VM. For information on how to do this,
       see <a href="https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#gather">Gather Credential and IP Address Information</a>
-      and <a href="https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#ssh">SSH into Ops Manager</a>.
+      and <a href="https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#ssh">SSH into <%= vars.ops_manager %></a>.
     </p>
   </li>
   <li>
     <p>
       File transfer or copy-paste the <code>download-logs</code> script to a
-      working directory on the Ops Manager VM.
+      working directory on the <%= vars.ops_manager %> VM.
     </p>
   </li>
   <li>

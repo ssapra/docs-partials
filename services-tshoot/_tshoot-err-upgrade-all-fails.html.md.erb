@@ -1,6 +1,6 @@
 <p>
   If the <a href="#upgrade-all"><code>upgrade-all-service-instances</code></a> errand fails,
-  look at the errand output in the Ops Manager log.
+  look at the errand output in the <%= vars.ops_manager %> log.
 </p>
 
 <p>
@@ -9,6 +9,6 @@
 </p>
 
 <p>
-  Once the Ops Manager log no longer lists the deployment as <code>failing</code>,
+  Once the <%= vars.ops_manager %> log no longer lists the deployment as <code>failing</code>,
   <a href="#upgrade-all">re-run the errand</a> to upgrade the rest of the instances.
 </p>
