@@ -14,22 +14,31 @@ main table pre {
 <div style="overflow:auto;">
 
 <table class="nice">
+
   <tr>
   <th colspan="2" style="text-align: left;"> <br>
     <%= description %>
   <br><br></th>
   </tr>
+
+<% if defined?(symptom) %>
   <tr>
     <th>Symptom</th>
     <td><%= symptom %></td>
   </tr>
+<% end %>
+
+<% if defined?(cause) %>
   <tr>
     <th>Cause</th>
     <td><%= cause %></td>
   </tr>
+<% end%>
+
   <tr>
     <th style="vertical-align: top; padding-top: 20px;">Solution</th>
     <td><%= solution %></td>
   </tr>
+
 </table>
 </div>
