@@ -9,7 +9,7 @@
 
     cause: 'Cloud Foundry might not be connected to the service broker, or there might be a large number of queued tasks.',
 
-    solution: 'Follow these steps:
+    solution: 'To troubleshoot:
 		<ol>
 		<li>
 		Confirm that Cloud Foundry (CF) is <a href="#network">connected to the service broker</a>.
@@ -18,14 +18,14 @@
 		Check the BOSH queue size:
 		<ol>
 		<li>Log into BOSH as an admin.</li>
-		<li>Run <code>bosh tasks</code>.</li>
+		<li>Run <pre><code>bosh tasks</code></pre></li>
 		</ol>
+    If there are a large number of queued tasks, the system may be under too much load.
+		BOSH is configured with two workers and one status worker, which might not be
+		sufficient resources for the level of load.
 		</li>
 		<li>
-		If there are a large number of queued tasks, the system may be under too much load.
-		BOSH is configured with two workers and one status worker, which may not be
-		sufficient resources for the level of load.
-		Advise app developers to try again once the system is under less load.
+		If the task queue is long, advise app developers to try again once the system is under less load.
 		</li>
 		</ol>'
   }
