@@ -15,7 +15,7 @@
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/breaking-changes.html">PCF v2.4 Breaking Changes</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/opsmanager-rn.html">PCF Ops Manager v2.4 Release Notes</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/opsmanager-rn.html">PCF <%= vars.ops_manager %> v2.4 Release Notes</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-release-notes/runtime-rn.html">Pivotal Application Service v2.4 Release Notes</a>
@@ -125,7 +125,7 @@
                               <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/aws-terraform.html">Installing PCF on AWS Using Terraform</a>
                            </li>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/prepare-env-terraform.html">Deploying Ops Manager on AWS Using Terraform</a>
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/prepare-env-terraform.html">Deploying <%= vars.ops_manager %> on AWS Using Terraform</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/aws/config-terraform.html">Configuring BOSH Director on AWS Using Terraform</a>
@@ -156,10 +156,10 @@
                               <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/pcf-azure-manual-config.html">Installing PCF on Azure Manually</a>
                            </li>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/prepare-env-manual.html">Preparing to Deploy Ops Manager on Azure Manually</a>
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/prepare-env-manual.html">Preparing to Deploy <%= vars.ops_manager %> on Azure Manually</a>
                            </li>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/deploy-manual.html">Deploying Ops Manager on Azure Manually</a>
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/deploy-manual.html">Deploying <%= vars.ops_manager %> on Azure Manually</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/config-manual.html">Configuring BOSH Director on Azure Manually</a>
@@ -176,7 +176,7 @@
                               <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/azure-terraform.html">Installing PCF on Azure Using Terraform</a>
                            </li>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/prepare-env-terraform.html">Deploying Ops Manager on Azure Using Terraform</a>
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/prepare-env-terraform.html">Deploying <%= vars.ops_manager %> on Azure Using Terraform</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/azure/config-terraform.html">Configuring BOSH Director on Azure Using Terraform</a>
@@ -213,10 +213,10 @@
                               <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-manual.html">Installing PCF on GCP Manually</a>
                            </li>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/prepare-env-manual.html">Preparing to Deploy Ops Manager on GCP Manually</a>
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/prepare-env-manual.html">Preparing to Deploy <%= vars.ops_manager %> on GCP Manually</a>
                            </li>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/deploy-manual.html">Deploying Ops Manager on GCP Manually</a>
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/deploy-manual.html">Deploying <%= vars.ops_manager %> on GCP Manually</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/config-manual.html">Configuring BOSH Director on GCP Manually</a>
@@ -233,7 +233,7 @@
                               <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-terraform.html">Installing PCF on GCP Using Terraform</a>
                            </li>
                            <li class="">
-                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/prepare-env-terraform.html">Deploying Ops Manager on GCP Using Terraform</a>
+                              <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/prepare-env-terraform.html">Deploying <%= vars.ops_manager %> on GCP Using Terraform</a>
                            </li>
                            <li class="">
                               <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/config-terraform.html">Configuring BOSH Director on GCP Using Terraform</a>
@@ -264,7 +264,7 @@
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/openstack.html">Installing PCF on OpenStack</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/openstack/setup.html">Deploying Ops Manager on OpenStack</a>
+                        <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/openstack/setup.html">Deploying <%= vars.ops_manager %> on OpenStack</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/openstack/config.html">Configuring BOSH Director on OpenStack</a>
@@ -284,7 +284,7 @@
                         <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/vsphere/vsphere-service-account.html">vSphere Service Account Requirements</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/vsphere/deploy.html">Deploying Ops Manager on vSphere</a>
+                        <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/vsphere/deploy.html">Deploying <%= vars.ops_manager %> on vSphere</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/vsphere/config.html">Configuring BOSH Director on vSphere</a>
@@ -299,7 +299,7 @@
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/disk-format.html">Provisioning a Virtual Disk in vSphere</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/nexus-switch.html">Using the Cisco Nexus 1000v Switch with Ops Manager</a>
+                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/nexus-switch.html">Using the Cisco Nexus 1000v Switch with <%= vars.ops_manager %></a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/resurrector.html">Using the BOSH Resurrector</a>
@@ -383,13 +383,13 @@
             </ul>
          </li>
          <li class="has_submenu">
-            <span role="button"><strong>Using Ops Manager</strong></span>
+            <span role="button"><strong>Using <%= vars.ops_manager %></strong></span>
             <ul>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/ops-man-api.html">Using Ops Manager API</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/ops-man-api.html">Using <%= vars.ops_manager %> API</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/pcf-interface.html">Using the Ops Manager Interface</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/pcf-interface.html">Using the <%= vars.ops_manager %> Interface</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/review-pending-changes.html">Reviewing Pending Product Changes</a>
@@ -407,37 +407,37 @@
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/custom-load-balancer.html">Using Your Own Load Balancer</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/opsman-users.html">Creating and Managing Ops Manager User and Client Accounts</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/opsman-users.html">Creating and Managing <%= vars.ops_manager %> User and Client Accounts</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/config-rbac.html">Configuring RBAC in Ops Manager</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/config-rbac.html">Configuring RBAC in <%= vars.ops_manager %></a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/console-login.html">Logging In to Apps Manager</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/modify-ops-man.html">Modifying Your Ops Manager Installation and Product Template Files</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/modify-ops-man.html">Modifying Your <%= vars.ops_manager %> Installation and Product Template Files</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/managing_errands.html">Managing Errands in Ops Manager</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/managing_errands.html">Managing Errands in <%= vars.ops_manager %></a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/monitoring.html">Monitoring Virtual Machines in PCF</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/auditing-ops-man.html">Auditing User Activity in Ops Manager</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/auditing-ops-man.html">Auditing User Activity in <%= vars.ops_manager %></a>
                </li>
                <li class="has_submenu">
-                  <span role="button"><strong>Advanced Features in Ops Manager</strong></span>
+                  <span role="button"><strong>Advanced Features in <%= vars.ops_manager %></strong></span>
                   <ul>
                      <li class="">
-                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/granular-verifier-control.html">Managing Ops Manager Verifiers</a>
+                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/granular-verifier-control.html">Managing <%= vars.ops_manager %> Verifiers</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/custom-vm-extensions.html">Managing Custom VM Extensions</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/lock-on-deploy.html">Ops Manager Fields That Lock On Deploy</a>
+                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/lock-on-deploy.html"><%= vars.ops_manager %> Fields That Lock On Deploy</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/tiledev/<%= product_info['local_product_version'].to_s.sub('.','-') %>/property-template-references.html">Property and Template References</a>
@@ -1108,7 +1108,7 @@
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/trusted-system-certificates.html">Trusted System Certificates</a>
                      </li>
                      <li class="">
-                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/managing-certificates.html">Managing Certificates with the Ops Manager API</a>
+                        <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/managing-certificates.html">Managing Certificates with the <%= vars.ops_manager %> API</a>
                      </li>
                      <li class="">
                         <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/api-cert-rotation.html">Rotating Certificates</a>
@@ -1602,7 +1602,7 @@
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/gcp-troubleshooting.html">Troubleshooting PCF on GCP</a>
                </li>
                <li class="">
-                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/troubleshooting-vsphere.html">Troubleshooting Ops Manager for VMware vSphere</a>
+                  <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/troubleshooting-vsphere.html">Troubleshooting <%= vars.ops_manager %> for VMware vSphere</a>
                </li>
                <li class="">
                   <a href="https://docs.pivotal.io/pivotalcf/<%= product_info['local_product_version'].to_s.sub('.','-') %>/windows/troubleshooting.html">Troubleshooting Windows Cells</a>

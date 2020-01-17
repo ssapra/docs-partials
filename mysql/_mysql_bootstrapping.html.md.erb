@@ -563,9 +563,9 @@ the highest `sequence_number` is `mysql/0`. <br><br>
         + `YOUR-DEPLOYMENT` is the name of your deployment.
 
 
-    1. Navigate to Ops Manager in a browser, log in, and click **Apply Changes**.
+    1. Navigate to <%= vars.ops_manager %> in a browser, log in, and click **Apply Changes**.
 
-    1. When the deploy finishes, run the following command from the Ops Manager VM:
+    1. When the deploy finishes, run the following command from the <%= vars.ops_manager %> VM:
 
         ```
         bosh -e YOUR-ENV -d YOUR-DEPLOYMENT unignore mysql/0

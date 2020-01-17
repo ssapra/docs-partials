@@ -1,7 +1,7 @@
 ## <a id='build-tile'></a> Build and Install a Tile
 
-To use the KMS plugin with CredHub deployed with Ops Manager or Pivotal Application Service (PAS),
-you must wrap your BOSH release in a tile and install it on the Ops Manager Installation Dashboard.
+To use the KMS plugin with CredHub deployed with <%= vars.ops_manager %> or Pivotal Application Service (PAS),
+you must wrap your BOSH release in a tile and install it on the <%= vars.ops_manager %> Installation Dashboard.
 
 Perform the following steps:
 
@@ -88,8 +88,8 @@ your tile.
 
 1. In the directory that contains the `tile.yml` file, run `tile build` to build the tile. The tile generator wraps the BOSH release of the KMS plugin into a tile, then places the tile file in the `product` subdirectory.
 
-1. Navigate to Ops Manager, log in, and add the tile to the Ops Manager Installation Dashboard. For more information, see [Adding and Deleting Products](https://docs.pivotal.io/pivotalcf/customizing/add-delete.html). 
+1. Navigate to <%= vars.ops_manager %>, log in, and add the tile to the <%= vars.ops_manager %> Installation Dashboard. For more information, see [Adding and Deleting Products](https://docs.pivotal.io/pivotalcf/customizing/add-delete.html). 
 
 1. Click the tile and complete the configuration.
 
-1. Return to the Ops Manager Installation Dashboard. Click **Review Pending Changes**, then **Apply Changes** to complete the installation.
+1. Return to the <%= vars.ops_manager %> Installation Dashboard. Click **Review Pending Changes**, then **Apply Changes** to complete the installation.

@@ -20,10 +20,10 @@ Perform the following steps to create a UAA client for CredHub on your UAA serve
    [Gather Credential and IP Address Information](https://docs.pivotal.io/pivotalcf/2-0/customizing/trouble-advanced.html#gather).
    Both the UAA and CredHub servers are colocated on the BOSH Director VM.
 
-1. SSH into the Ops Manager VM by performing the steps in
-   [SSH into Ops Manager of Advanced Troubleshooting with the BOSH CLI](https://docs.pivotal.io/pivotalcf/2-0/customizing/trouble-advanced.html#ssh).
+1. SSH into the <%= vars.ops_manager %> VM by performing the steps in
+   [SSH into <%= vars.ops_manager %> of Advanced Troubleshooting with the BOSH CLI](https://docs.pivotal.io/pivotalcf/2-0/customizing/trouble-advanced.html#ssh).
 
-1. From the Ops Manager VM, use the UAA Command Line Interface (UAAC) to target
+1. From the <%= vars.ops_manager %> VM, use the UAA Command Line Interface (UAAC) to target
    the UAA server on the BOSH Director VM.
     In the UAAC command, specify the IP address for the BOSH Director VM, and
     port 8443.
@@ -52,7 +52,7 @@ Perform the following steps to create a UAA client for CredHub on your UAA serve
 1. Retrieve the **Uaa Admin User Credentials** and record the `identity` and
 `password` values.
 
-1. From the Ops Manager VM, use the UAAC to get a token.
+1. From the <%= vars.ops_manager %> VM, use the UAAC to get a token.
     <br><br>
     Run the following command:
 
@@ -108,16 +108,16 @@ Perform the following steps to create a UAA client for CredHub on your UAA serve
 
 <%# (replace the link in this step with a link to Credhub documentation) %>
 1. If you are using <%= vars.platform_old %> v1.12, perform the steps in [Downloading the CredHub CLI]
-  to download the CredHub CLI on the Ops Manager VM.
-  In <%= vars.platform_old %> v2.0 and later or <%= vars.platform_name %> 2.7 and later the Ops Manager VM ships with the CredHub CLI already
+  to download the CredHub CLI on the <%= vars.ops_manager %> VM.
+  In <%= vars.platform_old %> v2.0 and later or <%= vars.platform_name %> 2.7 and later the <%= vars.ops_manager %> VM ships with the CredHub CLI already
   installed.
 
 ###<a id='add-ca-cert'></a> Add the CA Certificate
 
 Perform the following steps to log in to CredHub, provide or generate a CA
-certificate, and add the certificate to Ops Manager:
+certificate, and add the certificate to <%= vars.ops_manager %>:
 
-1. From the Ops Manager VM, set the API target of the CredHub CLI to your CredHub
+1. From the <%= vars.ops_manager %> VM, set the API target of the CredHub CLI to your CredHub
    server.
     <br><br>
     Run the following command:
@@ -186,7 +186,7 @@ certificate, and add the certificate to Ops Manager:
     ```
 1. Copy the output.
 
-1. Navigate to the Ops Manager **Installation Dashboard** and select the BOSH Director tile.
+1. Navigate to the <%= vars.ops_manager %> **Installation Dashboard** and select the BOSH Director tile.
    Click **Security**.
 
 1. Paste the contents of the CA certificate into **Trusted Certificates** and
@@ -198,7 +198,7 @@ certificate, and add the certificate to Ops Manager:
     * **Existing Installation**: If you have already installed the
             <%= vars.service_name %> tile, perform the procedures in
 			[Configure TLS] to enable TLS in the **Security** section of the tile.
-			Then return to the Ops Manager Installation Dashboard and click **Apply Changes**.
+			Then return to the <%= vars.ops_manager %> Installation Dashboard and click **Apply Changes**.
 			This restarts all the VMs in your <%= vars.platform_name %> deployment and applies your CA certificate.
     * **New Installation**: If you have not yet installed the <%= vars.service_name %>
             tile, perform all of the procedures in [Installing] <%= vars.service_name %>.

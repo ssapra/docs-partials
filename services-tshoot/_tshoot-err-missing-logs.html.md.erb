@@ -1,6 +1,6 @@
 <p>
   If no logs are being emitted by the on-demand broker, check that your syslog
-  forwarding address is correct in Ops Manager.
+  forwarding address is correct in <%= vars.ops_manager %>.
 </p>
 
 <ol>
@@ -14,7 +14,7 @@
       Ensure that you have network connectivity between the networks that the tile
       is using and the syslog destination.
       If the destination is external, you need to use the <a href="https://docs.pivotal.io/svc-sdk/odb/tile.html#public-ip">public ip</a>
-      VM extension feature available in your Ops Manager tile configuration settings.
+      VM extension feature available in your <%= vars.ops_manager %> tile configuration settings.
     </p>
   </li>
   <li>
