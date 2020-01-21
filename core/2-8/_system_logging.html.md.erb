@@ -1,6 +1,6 @@
-In the **System Logging** pane, you can configure system logging in PAS to forward log messages from PAS component VMs to an external service. Pivotal recommends forwarding logs to an external service for use in troubleshooting. If you do not fill these fields, platform logs are not forwarded but remain available on the component VMs and for download through <%= vars.ops_manager %>.
+In the **System Logging** pane, you can configure system logging in <%= vars.product_short %> to forward log messages from <%= vars.product_short %> component VMs to an external service. <%= vars.recommended_by %> recommends forwarding logs to an external service for use in troubleshooting. If you do not fill these fields, platform logs are not forwarded but remain available on the component VMs and for download through <%= vars.ops_manager %>.
 
-<p class="note"><strong>Note:</strong> The following instructions explain how to configure system logging for PAS component VMs. To forward logs from <%= vars.product_full %> tiles to an external service, you must also configure system logging in each tile. See the documentation for the given tiles for information about configuring system logging.</p>
+<p class="note"><strong>Note:</strong> The following instructions explain how to configure system logging for <%= vars.product_short %> component VMs. To forward logs from <%= vars.product_name %> tiles to an external service, you must also configure system logging in each tile. For more information about configuring system logging, see the documentation for the given tiles.</p>
 
 To configure the **System Logging** pane: 
 
@@ -9,7 +9,7 @@ To configure the **System Logging** pane:
 1. For **Address**, enter the hostname or IP address of the syslog server.
 
 1. For **Port**, enter the port of the syslog server. The default port for a syslog server is 514.
-<p class="note"><strong>Note:</strong> The host must be reachable from the PAS network and accept UDP or TCP connections. Ensure the syslog server listens on external interfaces.</p>
+<p class="note"><strong>Note:</strong> The host must be reachable from the <%= vars.product_short %> network and accept UDP or TCP connections. Ensure the syslog server listens on external interfaces.</p>
 
 1. For **Transport protocol**, select a transport protocol for log forwarding.
 
@@ -25,7 +25,7 @@ To configure the **System Logging** pane:
 1. Enable the **Use TCP for file forwarding local transport** checkbox to transmit logs over TCP. This prevents log truncation, but may cause performance issues.
 
 1. The **Do not forward debug logs** checkbox is enabled by default. To forward `DEBUG` syslog messages to an external service, disable the checkbox.
-  <p class='note'><strong>Note:</strong> Some PAS components generate a high volume of <code>DEBUG</code> syslog messages. Enabling the <strong>Do not forward debug logs</strong> checkbox prevents PAS components from forwarding the <code>DEBUG</code> syslog messages to external services. However, PAS still writes the messages to the local disk.</p>
+  <p class='note'><strong>Note:</strong> Some <%= vars.product_short %> components generate a high volume of <code>DEBUG</code> syslog messages. Enabling the <strong>Do not forward debug logs</strong> checkbox prevents <%= vars.product_short %> components from forwarding the <code>DEBUG</code> syslog messages to external services. However, <%= vars.product_short %> still writes the messages to the local disk.</p>
 
 1. For **Custom rsyslog configuration**, enter a custom syslog rule. For more information about adding custom syslog rules, see [Customizing Platform Log Forwarding](../customizing/custom-syslog-rules.html).
 
@@ -33,18 +33,18 @@ To configure the **System Logging** pane:
 
 1. The **Enable V2 Firehose** checkbox is enabled by default. Clear this checkbox to prevent logs and metrics from flowing to the Loggregator V2 Firehose.
 	<p class='note'><strong>Note:</strong> If you disable the V2 Firehose, you must also disable the V1 Firehose.</p>
-	<div class='note warning'><strong>Warning:</strong> If you disable V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. Pivotal recommends that you do not disable the Firehose if you are dependent on any of the following: 
-	<ul>
-		<li>Service tile metrics</li>
-		<li>Pivotal Healthwatch or Pivotal App Metrics</li>
-		<li>Partner log or metric integrations</li>
-	</ul>
+	<div class='note warning'><strong>Warning:</strong> If you disable V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. <%= vars.recommended_by %> recommends that you do not disable the Firehose if you are dependent on any of the following: 
+		<ul>
+			<li>Service tile metrics</li>
+			<li>Pivotal Healthwatch or Pivotal App Metrics</li>
+			<li>Partner log or metric integrations</li>
+		</ul>
 	</div>
-	<p class="note warning"><strong>Warning:</strong> If you disable the v1 or V2 Firehose, you must disable the Smoke Test Errand or the deploy fails. For more information, see <a href="https://docs.pivotal.io/platform/2-8/release-notes/runtime-rn.html#disable-firehose-smoke-test-errand">Disable the Smoke Test Errand If You Disable the Firehose</a>.</p>
+	<p class="note warning"><strong>Warning:</strong> If you disable the V1 or V2 Firehose, you must disable the Smoke Test Errand or the deploy fails. For more information, see <a href="https://docs.pivotal.io/platform/2-8/release-notes/runtime-rn.html#disable-firehose-smoke-test-errand">Disable the Smoke Test Errand If You Disable the Firehose</a>.</p>
 
 1. Select the **Enable Log Cache syslog ingestion** checkbox to configure Log Cache to ingest logs and metrics through the syslog server instead of the Reverse Log Proxy. You must select this checkbox if you disable the V2 Firehose.
 
-1. For **Aggregate log and metric drain destinations**, enter a comma-separated list of syslog endpoints for an aggregate log and metric drain. Aggregate drains forward all app logs, app metrics, and PAS component VM metrics on your foundation to the endpoints that you provide in this list. 
+1. For **Aggregate log and metric drain destinations**, enter a comma-separated list of syslog endpoints for an aggregate log and metric drain. Aggregate drains forward all app logs, app metrics, and <%= vars.product_short %> component VM metrics on your foundation to the endpoints that you provide in this list.
 
 1. Click **Save**.
 
