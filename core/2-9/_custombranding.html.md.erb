@@ -22,11 +22,11 @@ To configure the **Custom Branding** and **Apps Manager** panes:
 
 1. In **Customize secondary navigation links**, enter link text and URLs to configure secondary navigation links in the **Apps Manager** and **Marketplace** pages. You may configure up to 10 links in the Apps Manager secondary navigation.
 
-1. (Optional) In **Apps Manager buildpack**, enter the name of the buildpack you want to use to deploy the Apps Manager app. If you do not specify a custom buildpack, <%= vars.product_short %> uses the detection process to determine a single buildpack to use. For more information about the detection process, see the [Buildpack Detection](../buildpacks/understand-buildpacks.html#buildpack-detection) section of the _How Buildpacks Work in <%= vars.product_short %>_ topic.
+1. (Optional) In **Apps Manager buildpack**, enter the name of the buildpack you want to use to deploy the Apps Manager app. This buildpack must be for static content. If you do not specify a custom buildpack, <%= vars.product_short %> uses the detection process to determine a single buildpack to use. For more information about the detection process, see the [Buildpack Detection](../buildpacks/understand-buildpacks.html#buildpack-detection) section of the _How Buildpacks Work in <%= vars.product_short %>_ topic.
 
-1. (Optional) In **Search Server buildpack**, enter the name of the buildpack you want to use to deploy the Search Server app.
+1. (Optional) In **Search Server buildpack**, enter the name of the buildpack you want to use to deploy the Search Server app. This must be a node-based buildpack. If you do not specify a custom buildpack, <%= vars.product_short %> uses the detection process to determine a single buildpack to use. For more information about the detection process, see the [Buildpack Detection](../buildpacks/understand-buildpacks.html#buildpack-detection) section of the _How Buildpacks Work in <%= vars.product_short %>_ topic.
 
-1. (Optional) In **Invitations buildpack**, enter the name of the buildpack you want to use to deploy the Invitations app.
+1. (Optional) In **Invitations buildpack**, enter the name of the buildpack you want to use to deploy the Invitations app. This must be a node-based buildpack. If you do not specify a custom buildpack, <%= vars.product_short %> uses the detection process to determine a single buildpack to use. For more information about the detection process, see the [Buildpack Detection](../buildpacks/understand-buildpacks.html#buildpack-detection) section of the _How Buildpacks Work in <%= vars.product_short %>_ topic.
 
 1. The **Apps Manager memory usage** field sets the memory limit with which to deploy the Apps Manager app. Use this field to increase the memory limit if the app fails to start with an `out of memory` error. Enter the value in MB. To use the default value of 128&nbsp;MB, leave this field blank.
 
