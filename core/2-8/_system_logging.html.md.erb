@@ -33,7 +33,7 @@ To configure the **System Logging** pane:
 
 1. The **Enable V2 Firehose** checkbox is enabled by default. Clear this checkbox to prevent logs and metrics from flowing to the Loggregator V2 Firehose.
 	<p class='note'><strong>Note:</strong> If you disable the V2 Firehose, you must also disable the V1 Firehose.</p>
-	<div class='note warning'><strong>Warning:</strong> If you disable V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. <%= vars.recommended_by %> recommends that you do not disable the Firehose if you are dependent on any of the following: 
+	<div class='note warning'><strong>Warning:</strong> If you disable the V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. <%= vars.recommended_by %> recommends that you do not disable the Firehose if you are dependent on any of the following: 
 		<ul>
 			<li>Service tile metrics</li>
 			<li>Pivotal Healthwatch or Pivotal App Metrics</li>
