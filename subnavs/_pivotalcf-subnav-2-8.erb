@@ -325,150 +325,152 @@
          <li class="has_submenu">
             <span role="button"><strong>Operating <%= vars.platform_name %></strong></span>
             <ul>
-               <li class="">
+               <li class="has_submenu">
                   <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/index.html"><%= vars.platform_name %> Operator Guide</a>
                </li>
-               <li class="has_submenu">
-                  <span role="button"><strong><%= vars.ops_manager %></strong></span>
-                  <ul>
-                     <li class="">
-                        <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-interface.html">Using the <%= vars.ops_manager %> Interface</a>
-                     </li>
-                     <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/review-pending-changes.html">Reviewing Pending Product Changes</a>
-                     </li>
-                     <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/add-delete.html">Adding and Deleting Products</a>
-                     </li>
-                     <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/managing-stemcells.html">Importing and Managing Stemcells</a>
-                     </li>
-                     <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/managing_errands.html">Managing Errands in <%= vars.ops_manager %></a>
-                     </li>
-                     <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/auditing-ops-man.html">Auditing <%= vars.ops_manager %> User Activity</a>
-                     </li>
-                     <li>
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/ops-man-api-cli.html">Using <%= vars.ops_manager %> Programmatically and from the Command Line</a>
-                     </li>
-                     <li><a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/ops-man-api.html">Using the <%= vars.ops_manager %> API</a>
-                     </li>
-                     <li class="has_submenu">
-                        <span role="button"><strong>Advanced Features in <%= vars.ops_manager %></strong></span>
-                        <ul>
-                           <li class="">
-                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/modify-ops-man.html">Modifying Your <%= vars.ops_manager %> Installation and Product Template Files</a>
-                           </li>
-                           <li class="">
-                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/granular-verifier-control.html">Managing <%= vars.ops_manager %> Verifiers</a>
-                           </li>
-                           <li class="">
-                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/custom-vm-extensions.html">Managing Custom VM Extensions</a>
-                           </li>
-                           <li class="">
-                              <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/lock-on-deploy.html"><%= vars.ops_manager %> Fields That Lock On Deploy</a>
-                           </li>
-                           <li class="">
-                              <a href="https://docs.pivotal.io/tiledev/<%= product_info['local_product_version'].to_s.sub('.','-') %>/property-template-references.html">Property and Template References</a>
-                           </li>
-                        </ul>
-                  </ul>
-               </li>
-              <li class="has_submenu">
-                <span><strong>User Accounts and Permissions</strong></span>
-                <ul>
-                  <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/platform-operators.html">Pivotal Platform Operators</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/opsmanager-create-bosh-client.html">Creating UAA Clients for BOSH Director</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/opsman-users.html">Creating and Managing <%= vars.ops_manager %> User and Client Accounts</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/config-rbac.html">Configuring RBAC in <%= vars.ops_manager %></a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/external-user-management.html">Adding Existing SAML or LDAP Users to a <%= vars.platform_name %> Deployment</a>
-                   </li>
-                    <li class="has_submenu">
-                      <span role="button"><strong>Component: UAA</strong></span>
-                      <ul>
+                  <li class="has_submenu">
+                     <span role="button"><strong><%= vars.ops_manager %></strong></span>
+                     <ul>
                         <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/index.html">User Account and Authentication</a>
+                           <a href="https://docs.pivotal.io/platform/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/pcf-interface.html">Using the <%= vars.ops_manager %> Interface</a>
                         </li>
                         <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/uaa-overview.html">UAA Overview</a>
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/review-pending-changes.html">Reviewing Pending Product Changes</a>
                         </li>
                         <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/uaa-concepts.html">UAA Concepts</a>
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/add-delete.html">Adding and Deleting Products</a>
                         </li>
                         <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/identity-providers.html">Identity Providers in UAA</a>
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/managing-stemcells.html">Importing and Managing Stemcells</a>
                         </li>
                         <li class="">
-                          <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/uaa-metrics.html">UAA Performance Metrics</a>
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/managing_errands.html">Managing Errands in <%= vars.ops_manager %></a>
                         </li>
-                      </ul>
-                    </li>
-                 </ul>
-              </li>
-              <li class="has_submenu">
-                <span role="button"><strong>Certificates and Credentials</strong></span>
-                <ul>
-                  <li class="">
-                    <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/certificate-types.html">Certificate Types</a>
-                  </li>
-                  <li class="">
-                    <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/managing-certificates.html">Managing Certificates with the <%= vars.ops_manager %> API</a>
-                  </li>
-                  <li class="">
-                    <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/api-cert-rotation.html">Rotating Certificates</a>
-                  </li>
-		            <li class="">
-                    <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/getting-started-with-maestro-cli.html">Getting Started with CredHub Maestro</a>
-                  </li>
-                  <li class="">
-                    <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/advanced-certificate-rotation.html">Advanced Certificate Rotation with CredHub Maestro</a>
-                  </li>
-                  <li class="">
-                    <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/custom-ca-cert.html">Custom Certificate Authorities</a>
-                  </li>
-                  <li class="">
-                    <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/credentials.html">Retrieving Credentials from Your Deployment</a>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/auditing-ops-man.html">Auditing <%= vars.ops_manager %> User Activity</a>
+                        </li>
+                        <li>
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/ops-man-api-cli.html">Using <%= vars.ops_manager %> Programmatically and from the Command Line</a>
+                        </li>
+                        <li>
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/ops-man-api.html">Using the <%= vars.ops_manager %> API</a>
+                        </li>
+                        <li class="has_submenu">
+                           <span role="button"><strong>Advanced Features in <%= vars.ops_manager %></strong></span>
+                           <ul>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/modify-ops-man.html">Modifying Your <%= vars.ops_manager %> Installation and Product Template Files</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/granular-verifier-control.html">Managing <%= vars.ops_manager %> Verifiers</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/custom-vm-extensions.html">Managing Custom VM Extensions</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/lock-on-deploy.html"><%= vars.ops_manager %> Fields That Lock On Deploy</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/tiledev/<%= product_info['local_product_version'].to_s.sub('.','-') %>/property-template-references.html">Property and Template References</a>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
                   </li>
                   <li class="has_submenu">
-                    <span role="button"><strong>Component: CredHub</strong></span>
-                    <ul>
-                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/credhub/index.html">CredHub</a>
-                      </li>
-                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/credhub/credential-types.html">CredHub Credential Types</a>
-                      </li>
-                      <li class="">
-                        <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/manual-credhub-certificate.html">Reviewing and Resetting Manually Set Certificates in BOSH CredHub</a>
-                      </li>
-                    </ul>
+                     <span><strong>User Accounts and Permissions</strong></span>
+                     <ul>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/platform-operators.html">Pivotal Platform Operators</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/opsmanager-create-bosh-client.html">Creating UAA Clients for BOSH Director</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/opsman-users.html">Creating and Managing <%= vars.ops_manager %> User and Client Accounts</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/opsguide/config-rbac.html">Configuring RBAC in <%= vars.ops_manager %></a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/external-user-management.html">Adding Existing SAML or LDAP Users to a <%= vars.platform_name %> Deployment</a>
+                        </li>
+                        <li class="has_submenu">
+                           <span role="button"><strong>Component: UAA</strong></span>
+                           <ul>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/index.html">User Account and Authentication</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/uaa-overview.html">UAA Overview</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/uaa-concepts.html">UAA Concepts</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/identity-providers.html">Identity Providers in UAA</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/uaa-metrics.html">UAA Performance Metrics</a>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
                   </li>
-                </ul>
-               </li>
-               <li class="has_submenu">
-                <span><strong>Platform Performance</strong></span>
-                <ul>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/scaling-ert-components.html">Scaling <%= vars.app_runtime_abbr %></a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/scaling-cloud-controller.html">Scaling Cloud Controller</a>
-                   </li>
-                   <li class="">
-                      <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/config-cell-cleanup.html">Configuring Diego Cell Disk Cleanup Scheduling</a>
-                   </li>
-                </ul>
-              </li>
+                  <li class="has_submenu">
+                     <span role="button"><strong>Certificates and Credentials</strong></span>
+                     <ul>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/certificate-types.html">Certificate Types</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/managing-certificates.html">Managing Certificates with the <%= vars.ops_manager %> API</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/api-cert-rotation.html">Rotating Certificates</a>
+                        </li>
+      		            <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/getting-started-with-maestro-cli.html">Getting Started with CredHub Maestro</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/advanced-certificate-rotation.html">Advanced Certificate Rotation with CredHub Maestro</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/custom-ca-cert.html">Custom Certificate Authorities</a>
+                        </li>
+                        <li class="">
+                           <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/customizing/credentials.html">Retrieving Credentials from Your Deployment</a>
+                        </li>
+                        <li class="has_submenu">
+                           <span role="button"><strong>Component: CredHub</strong></span>
+                           <ul>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/credhub/index.html">CredHub</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/credhub/credential-types.html">CredHub Credential Types</a>
+                              </li>
+                              <li class="">
+                                 <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/security/pcf-infrastructure/manual-credhub-certificate.html">Reviewing and Resetting Manually Set Certificates in BOSH CredHub</a>
+                              </li>
+                           </ul>
+                        </li>
+                     </ul>
+                  </li>
+                  <li class="has_submenu">
+                   <span><strong>Platform Performance</strong></span>
+                   <ul>
+                      <li class="">
+                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/scaling-ert-components.html">Scaling <%= vars.app_runtime_abbr %></a>
+                      </li>
+                      <li class="">
+                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/scaling-cloud-controller.html">Scaling Cloud Controller</a>
+                      </li>
+                      <li class="">
+                         <a href="https://docs.pivotal.io/platform/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/config-cell-cleanup.html">Configuring Diego Cell Disk Cleanup Scheduling</a>
+                      </li>
+                   </ul>
+                 </li>
             </ul>
          </li>
          <li class="has_submenu">
