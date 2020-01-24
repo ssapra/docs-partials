@@ -1,20 +1,17 @@
-<style>
-main table pre {
-  width:555px;
-  overflow:auto;
-}
-
-</style>
-
-
 <% if defined?(id) %>
 <a name="<%= id %>"></a>
 <% end %>
 
-<div style="overflow:auto;">
+<div>
 
-<table class="nice">
-
+  <table class="nice">
+    <style>
+      main table {
+        table-layout: fixed;
+      }
+    </style>
+  <col width="15%">
+  <col width="85%">
   <tr>
   <th colspan="2" style="text-align: left;"> <br>
     <%= description %>
@@ -36,7 +33,7 @@ main table pre {
 <% end%>
 
   <tr>
-    <th style="vertical-align: top; padding-top: 20px;">Solution</th>
+    <th style="vertical-align: top; padding-top: 1em;">Solution</th>
     <td><%= solution %></td>
   </tr>
 
