@@ -42,4 +42,6 @@ To configure the **App Containers** pane:
 1. (Optional) Modify the **Default health check timeout**. The value configured for this field is the amount of time allowed between starting up an app and the first healthy response from the app. If the health check does not receive a healthy response within the configured timeout, then the app is declared unhealthy. The default timeout is `60` seconds and the maximum configurable timeout is `600` seconds.
     <p class='note warning'><strong>Warning:</strong> If you decrease the default health check timeout value below its current value, existing apps with startup times greater than the new value may fail to start up.</p>
 
+1. (Optional) Enable application log rate limiting. This feature is disabled by default. The value configured for this field is the maximum log lines allowed per second per app instance. The minimum recommended value is 100. This rate is applied globally across all applications. If only a subset of applications require this setting, please refer to the isolation segment tile configuration for a similar setting. If this value is set, you can monitor `AppInstanceExceededLogRateLimitCount` metric for the number of application instances that exceeded log rate limit and check the application logs.
+
 1. Click **Save**.
