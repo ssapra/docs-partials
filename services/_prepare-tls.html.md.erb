@@ -1,7 +1,3 @@
-<strong><%= modified_date %></strong>
-
-
-
 This topic provides an overview of how to prepare for using Transport Layer Security (TLS)
 with <%= vars.product_full %> to secure communication between apps and service instances.<br>
 
@@ -65,8 +61,39 @@ is trustworthy.
     and use it to establish an encrypted connection with the data service.
 <% end %>
 
-**MYSQL**
+##<a id='workflow'></a> Workflow
 
+The following workflow describes enabling TLS for <%= vars.product_full %>:
 
+1. An operator provides a CA certificate to CredHub by performing the procedures
+	in <a href="#provide-generate-pcf">Provide or Generate a CA Certificate</a> below.
+1. An operator enables TLS in the tile configuration while installing <%= vars.product_short %>.
+			See
+			<% if vars.service_name == "Redis for Pivotal Platform" %>
+					[Configure On-Demand Service Settings](./installing.html#on-demand-config).
+			<% else %>
+					[Configure Security](./install-config.html#security).
+			<% end %>
+<% case vars.service_name
+when "Redis for Pivotal Platform" %>
+1. An app developer modifies their app to communicate securely with the <%= vars.product_short %> server.
+See [Using TLS](./appdevs.html#using-tls).
+<% when "MySQL for Pivotal Platform" %>
+1. A developer enables TLS for an existing service instance.
+    See [Using TLS](./using-tls.html).
+1. A developer modifies their app to communicate securely with the <%= vars.product_short %> server:
+	+ **For Java and Spring apps,** see [Activate TLS for Java and Spring Apps](./using-tls.html#activate-spring).
+	+ **For all other apps,** see [Activate TLS for Non-Spring Apps](./using-tls.html#activate-non-spring).
+<% when "RabbitMQ for Pivotal Platform" %>
+1. A developer enables TLS for an existing service instance.
+		See [Enable TLS for Your Service Instance](./use.html#tls)
+1. A developer modifies their app to communicate securely with the <%= vars.product_short %> server:
+	+ **For Java or Spring apps,** see [Activate TLS for Java and Spring Apps](./use.html#tls-java-spring).
+  + **For all other apps,** see [Modifying Apps for TLS](./modify-apps-tls.html")
+<% end %>
 
-**REDIS**
+<p class="note"><strong>Note</strong>: An operator must also rotate the CA
+	certificate if it expires or if it becomes compromised.
+For information about how to rotate your CA certificate, see
+<a href="rotating-ca.html">Rotating CA Certificates</a>.
+</p>
