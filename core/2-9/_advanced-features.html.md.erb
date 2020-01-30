@@ -1,4 +1,4 @@
-The **Advanced Features** pane includes new functionality that may have certain constraints. Although these features are fully supported, Pivotal recommends caution when using them in production environments.
+The **Advanced Features** pane includes new functionality that may have certain constraints. Although these features are fully supported, <%= vars.recommended_by %> recommends caution when using them in production environments.
 
 ### <a id="disk-memory-overcommit"></a> Diego Cell Memory and Disk Overcommit
 
@@ -6,7 +6,7 @@ If your apps do not use the full allocation of disk space and memory set in the 
 
 For example, you might want to use the overcommit if your apps use a small amount of disk and memory capacity compared to the amounts set in the **Resource Config** settings for **Diego Cell**.
 
-<p class="note"><strong>Note:</strong> Due to the risk of app failure and the deployment-specific nature of disk and memory use, Pivotal has no recommendation for how much, if any, memory or disk space to overcommit.</p>
+<p class="note"><strong>Note:</strong> Due to the risk of app failure and the deployment-specific nature of disk and memory use, <%= vars.recommended_by %> has no recommendation for how much, if any, memory or disk space to overcommit.</p>
 
 To enable overcommit:
 
@@ -24,8 +24,7 @@ To enable overcommit:
 
 If your apps require a longer period of time to finish in-flight jobs and gracefully shut down, you can increase the graceful shutdown period. By default, this graceful shutdown period is set to 10 seconds.
 
-When <%= vars.app_runtime_abbr %> requests a shutdown of an app, the processes in the container have a period of time to gracefully shut down before the processes are forcefully terminated.
-For more information, see the [Shutdown](https://docs.pivotal.io/platform/application-service/devguide/deploy-apps/app-lifecycle.html#shutdown) section of the _App Container Lifecycle_ topic.
+When <%= vars.app_runtime_abbr %> requests a shutdown of an app, the processes in the container have a period of time to gracefully shut down before the processes are forcefully terminated. For more information, see the [Shutdown](https://docs.pivotal.io/platform/application-service/devguide/deploy-apps/app-lifecycle.html#shutdown) section of the _App Container Lifecycle_ topic.
 
 If you significantly increase the value of the graceful shutdown period, platform upgrades and updates might become slower. This is because each Diego Cell uses the graceful shutdown period when it is cleaning up evacuated app instances and waits for each app to gracefully shut down.
 
@@ -40,8 +39,7 @@ To increase the app graceful shutdown period:
 
 1. Select **Advanced Features**.
 
-1. Enter an integer in the **App graceful shutdown period** field. This value is the period of time
-in seconds the platform should wait for an app instance to exit after it is signaled to gracefully shut down. The default and minimum value is `10`.
+1. Enter an integer in the **App graceful shutdown period** field. This value is the period of time in seconds the platform should wait for an app instance to exit after it is signaled to gracefully shut down. The default and minimum value is `10`.
 
 1. Click **Save**.
 
@@ -49,29 +47,29 @@ in seconds the platform should wait for an app instance to exit after it is sign
 
 ### <a id="rfc_allowlist"></a> Non-RFC-1918 Private Network Allow List
 
-Some private networks require extra configuration so that internal file storage (WebDAV) can communicate with other <%= vars.product_full %> processes.
+Some private networks require extra configuration so that internal file storage (WebDAV) can communicate with other <%= vars.app_runtime_abbr %> processes.
 
 The **Non-RFC-1918 private network allow list** field is provided for deployments that use a non-RFC 1918 private network. This is typically a private network other than `10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`.
 
-Most <%= vars.product_short %> deployments do not require any modifications to this field.
+Most <%= vars.app_runtime_abbr %> deployments do not require any modifications to this field.
 
 To add your private network to the allow list:
 
 1. Select **Advanced Features**.
 
-1. Append a new `allow` rule to the existing contents of the **Non-RFC-1918 private network allow list** field.
-  Include the word `allow`, the network CIDR range to allow, and a semi-colon (`;`) at the end. For example:
-  ```
-  allow 172.99.0.0/24;
-  ```
+1. Append a new `allow` rule to the existing contents of the **Non-RFC-1918 private network allow list** field. Include the word `allow`, the network CIDR range to allow, and a semi-colon (`;`) at the end. For example:
+
+	```
+	allow 172.99.0.0/24;
+	```
 
 1. Click **Save**.
 
 ### <a id="cf_cli_timeout"></a> CF CLI Connection Timeout
 
-The **CF CLI connection timeout** field allows you to override the default five-second timeout of the Cloud Foundry Command Line Interface (cf CLI) used within your <%= vars.product_short %> deployment. This timeout affects the cf CLI command used to push PAS errand apps such as Notifications, Autoscaler, and Apps Manager.
+The **CF CLI connection timeout** field allows you to override the default five-second timeout of the Cloud Foundry Command Line Interface (cf CLI) used within your <%= vars.app_runtime_abbr %> deployment. This timeout affects the cf CLI command used to push <%= vars.app_runtime_abbr %> errand apps such as Notifications, Autoscaler, and Apps Manager.
 
-Set the value of this field to a higher value, in seconds, if you are experiencing domain name resolution timeouts when pushing errands in PAS.
+Set the value of this field to a higher value, in seconds, if you are experiencing domain name resolution timeouts when pushing errands in <%= vars.app_runtime_abbr %>.
 
 To modify the value of the CF CLI connection timeout:
 
@@ -140,8 +138,6 @@ To set the maximum number of envelopes stored per source above the default:
 ### <a id='usage-service-data-retention'></a> Usage Service Data Retention Period
 
 By default, Usage Service deletes granular data after 365 days.
-
-By default, Usage Service deletes granular data after 365 days. 
 
 To configure this retention period:
 
