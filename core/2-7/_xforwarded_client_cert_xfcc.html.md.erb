@@ -1,15 +1,15 @@
 Under **TLS termination point**, configure how <%= vars.product_full %> handles `x-forwarded-client-cert` (XFCC) HTTP headers based on where TLS is terminated for the first time in your deployment.
 <br/>
-<br/> 
+<br/>
 The following table indicates which option to choose based on your deployment configuration.
 <table class="nice">
 <tr>
   <th>Deployment Configuration</th>
   <th>TLS Option</th>
   <th>Additional Notes</th>
-</tr> 
+</tr>
 <tr>
-  <td><ul><li>The load balancer is terminating TLS, and 
+  <td><ul><li>The load balancer is terminating TLS, and
   <li>The load balancer is configured to put the client certificate from a mutual authentication TLS handshake into the X-Forwarded-Client-Cert HTTP header
   </li>
   </ul>
@@ -18,7 +18,7 @@ The following table indicates which option to choose based on your deployment co
   <td>Both HAProxy and the Gorouter forward the XFCC header when included in the request.</td>
 </tr>
 <tr>
-  <td><ul><li>The load balancer is configured to pass through the TLS handshake through TCP to the instances of HAProxy, and 
+  <td><ul><li>The load balancer is configured to pass through the TLS handshake through TCP to the instances of HAProxy, and
   <li>HAProxy instance count is > 0
   </li>
   </ul>
@@ -40,4 +40,4 @@ The following table indicates which option to choose based on your deployment co
 </tr>
 </table>
 <br/>
-For a description of the behavior of each configuration option, see the [Forward Client Certificate to Apps](../concepts/http-routing.html#forward-client-cert) section of the _HTTP Routing_ topic.
+For a description of the behavior of each configuration option, see [Forward Client Certificate to Apps](../concepts/http-routing.html#forward-client-cert) in _HTTP Routing_.
