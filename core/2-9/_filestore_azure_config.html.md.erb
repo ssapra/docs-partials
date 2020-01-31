@@ -4,7 +4,7 @@ To use external Azure file storage for your PAS filestore:
    <%= image_tag("azure/file_storage_azure.png", alt: "At the top of the image is the text 'Configure your Cloud Controller's filesystem:', with a red asterisk to denote that it is a required configuration. Below this text are five radio buttons: four buttons labeled 'Internal WebDAV', 'External S3-compatible file store', 'External Google Cloud Storage with access key and secret key', and 'External Google Cloud Storage with service account'; and one selected radio button labeled 'External Azure Storage'. Below the selected radio button are seven fields with red asterisks labeled, from top to bottom: 'Account name', 'Access key', 'Environment', 'Buildpacks container name', 'Droplets container name', 'Packages container name', and 'Resources container name'. The 'Environment' field contains the text 'AzureCloud'. Next is a disabled checkbox labeled 'Enable backup and restore'. Next are two fields labeled, from top to bottom, 'Restore from storage account' and 'Restore using access key'.") %>
 
 1. To create a new storage account and storage containers for the PAS filestore:
-   * In the Azure Portal, navigate to the **Storage accounts** tab. 
+   * In the Azure Portal, navigate to the **Storage accounts** tab.
    * Click on the plus icon to add a new storage account.
    * In the **Name** field, enter a unique name for the storage account. This name must be all lowercase and contain 3 to 24 alphanumeric characters.
    * For the **Deployment model**, select **Resource manager**.
@@ -17,7 +17,7 @@ To use external Azure file storage for your PAS filestore:
    * From **Location** the dropdown, select the **Location** where you are deploying <%= vars.product_short %>.
    * Click **Create**.
    * After the storage account is created, select the new storage account from the dashboard.
-   * Navigate to the **Blob Service** section of the storage account, and then click on **Containers** to create one or more containers in this storage account for buildpacks, droplets, resources, and packages.
+   * Navigate to the **Blob Service** in storage account, and then click on **Containers** to create one or more containers in this storage account for buildpacks, droplets, resources, and packages.
    * In **Blob Service**, select **Soft Delete**. In **Soft Delete**, click **Enabled** to enable soft delete in your Azure storage account.
    <p class="note"><strong>Note:</strong> BBR requires that you enable soft delete in your Azure storage account before you enable backup and restore for your Azure blobstores in <%= vars.ops_manager %>. You should set a reasonable retention policy to minimize storage costs. For more information on enabling soft delete in your Azure storage account, see the [Azure documentation](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-soft-delete#quickstart).</p>
    * For each container that you create, set the **Access type** to **Private**.

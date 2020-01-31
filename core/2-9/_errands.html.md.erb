@@ -26,12 +26,12 @@ For more information about how <%= vars.ops_manager %> manages errands, see [Man
 
 * **App Autoscaler Smoke Test Errand** runs smoke tests against App Autoscaler.
 
-* **NFS Broker Errand** pushes the NFS Broker app, which supports NFS Volume Services for <%= vars.product_short %>. For more information, see the [Enable NFS Volume Services](../opsguide/enable-vol-services.html#nfs-enable) section of the _Enabling Volume Services_ topic.
-    <p class='note warning'><strong>Warning:</strong> If you are using NFS Volume Services, you must run the **NFS Broker Errand** errand in <%= vars.product_short %> v2.8 before upgrading to <%= vars.product_short %> <%= vars.v_major_version %>. Running this errand migrates service instances for NFS Volume Services from MySQL to CredHub. For more information, see the <a href="https://docs.pivotal.io/platform/2-9/upgrading/checklist.html#run-nfs-broker-errand">Run the NFS Broker Errand</a> section of the <em>Upgrade Preparation Checklist for <%= vars.product_full %> <%= vars.v_major_version %></em> topic.</p>
+* **NFS Broker Errand** pushes the NFS Broker app, which supports NFS Volume Services for <%= vars.product_short %>. For more information, see [Enable NFS Volume Services](../opsguide/enable-vol-services.html#nfs-enable) in _Enabling Volume Services_.
+    <p class='note warning'><strong>Warning:</strong> If you are using NFS Volume Services, you must run the **NFS Broker Errand** errand in <%= vars.product_short %> v2.8 before upgrading to <%= vars.product_short %> <%= vars.v_major_version %>. Running this errand migrates service instances for NFS Volume Services from MySQL to CredHub. For more information, see <a href="https://docs.pivotal.io/platform/2-9/upgrading/checklist.html#run-nfs-broker-errand">Run the NFS Broker Errand</a> in <em>Upgrade Preparation Checklist for <%= vars.product_full %> <%= vars.v_major_version %></em>.</p>
 
 * **Metric Registrar Smoke Test Errand** verifies the Metric Registrar can access custom metrics emitted by an app and convert them into Loggregator metrics.
 	<p class='note'><strong>Note:</strong> The Metric Registrar Smoke Test errand runs only if the Metric Registrar is enabled. For more information about configuring the Metric Registrar, see <a href ="../metric-registrar/index.html">Configuring the Metric Registrar</a>.</p>
 
-* **SMB Broker Application Errand** pushes the SMB Broker app, which supports SMB Volume Services for <%= vars.product_short %>. For more information, see the [Enable SMB Volume Services](../opsguide/enable-vol-services.html#smb-enable) section of the _Enabling Volume Services_ topic.
+* **SMB Broker Application Errand** pushes the SMB Broker app, which supports SMB Volume Services for <%= vars.product_short %>. For more information, see [Enable SMB Volume Services](../opsguide/enable-vol-services.html#smb-enable) in _Enabling Volume Services_.
 
-* **Rotate CC Database Key** translates sensitive data in the Cloud Controller database to the currently specified **Primary** key. You specify this key in the **Encryption key ledger** field of the **Cloud Controller** pane. 
+* **Rotate CC Database Key** translates sensitive data in the Cloud Controller database to the currently specified **Primary** key. You specify this key in the **Encryption key ledger** field of the **Cloud Controller** pane.
