@@ -2,7 +2,7 @@ In the **System Logging** pane, you can configure system logging in <%= vars.pro
 
 <p class="note"><strong>Note:</strong> The following instructions explain how to configure system logging for <%= vars.product_short %> component VMs. To forward logs from <%= vars.product_name %> tiles to an external service, you must also configure system logging in each tile. For more information about configuring system logging, see the documentation for the given tiles.</p>
 
-To configure the **System Logging** pane: 
+To configure the **System Logging** pane:
 
 1. Select **System Logging**.
 
@@ -17,7 +17,7 @@ To configure the **System Logging** pane:
   1. For **Permitted peer**, enter either the name or SHA1 fingerprint of the remote peer.
   1. For **TLS CA certificate**, enter the TLS CA certificate for the remote server.
 
-1. Select the **Enable agent-based syslog egress for app logs** checkbox to use the Syslog Agent for syslog egress. Agent-based syslog provides an alternative to scalable-syslog architecture. For more information about the Syslog Agent, see the [Loggregator Architecture and Components](../loggregator/architecture.html#components) section of the _Loggregator Architecture_ topic. 
+1. Select the **Enable agent-based syslog egress for app logs** checkbox to use the Syslog Agent for syslog egress. Agent-based syslog provides an alternative to scalable-syslog architecture. For more information about the Syslog Agent, see [Loggregator Architecture and Components](../loggregator/architecture.html#components) in _Loggregator Architecture_.
   <p class="note"><strong>Note:</strong> Selecting this checkbox disables the Syslog Adapter and Syslog Scheduler VMs to prevent log duplication.</p>
 
 1. Select the **Enable Cloud Controller security event logging** checkbox to include security events in the log stream. This feature logs all API requests, including the endpoint, user, source IP address, and request result, in the Common Event Format (CEF).
@@ -33,7 +33,7 @@ To configure the **System Logging** pane:
 
 1. The **Enable V2 Firehose** checkbox is enabled by default. Clear this checkbox to prevent logs and metrics from flowing to the Loggregator V2 Firehose.
 	<p class='note'><strong>Note:</strong> If you disable the V2 Firehose, you must also disable the V1 Firehose.</p>
-	<div class='note warning'><strong>Warning:</strong> If you disable the V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. <%= vars.recommended_by %> recommends that you do not disable the Firehose if you are dependent on any of the following: 
+	<div class='note warning'><strong>Warning:</strong> If you disable the V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. <%= vars.recommended_by %> recommends that you do not disable the Firehose if you are dependent on any of the following:
 		<ul>
 			<li>Service tile metrics</li>
 			<li>Pivotal Healthwatch or Pivotal App Metrics</li>
@@ -48,4 +48,4 @@ To configure the **System Logging** pane:
 
 1. Click **Save**.
 
-To configure <%= vars.ops_manager %> for system logging, see the [Settings Page](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/pcf-interface.html#settings) section in the _Using the <%= vars.ops_manager %> Interface_ topic.
+To configure <%= vars.ops_manager %> for system logging, see [Settings Page](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/customizing/pcf-interface.html#settings) in _Using the <%= vars.ops_manager %> Interface_.

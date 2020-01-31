@@ -24,9 +24,9 @@ To enable overcommit:
 
 ### <a id="rfc_allowlist"></a> Non-RFC-1918 Private Network Allow List
 
-Some private networks require extra configuration so that internal file storage (WebDAV) can communicate with other <%= vars.app_runtime_abbr %> processes. 
+Some private networks require extra configuration so that internal file storage (WebDAV) can communicate with other <%= vars.app_runtime_abbr %> processes.
 
-The **Non-RFC-1918 private network allow list** field is provided for deployments that use a non-RFC 1918 private network. This is typically a private network other than `10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`. 
+The **Non-RFC-1918 private network allow list** field is provided for deployments that use a non-RFC 1918 private network. This is typically a private network other than `10.0.0.0/8`, `172.16.0.0/12`, or `192.168.0.0/16`.
 
 Most <%= vars.app_runtime_abbr %> deployments do not require any modifications to this field.
 
@@ -39,7 +39,7 @@ To add your private network to the allow list:
 	```
 	allow 172.99.0.0/24;
 	```
-   
+
 1. Click **Save**.
 
 ### <a id="cf_cli_timeout"></a> CF CLI Connection Timeout
@@ -52,7 +52,7 @@ To modify the value of the CF CLI connection timeout:
 
 1. Select **Advanced Features**.
 
-1. Enter a value, in seconds, to the **CF CLI connection timeout** field. 
+1. Enter a value, in seconds, to the **CF CLI connection timeout** field.
 
 1. Click **Save**.
 
@@ -84,7 +84,7 @@ To configure the maximum number of concurrent database connections:
 
 1. Click **Save**.
 
-When there are not enough connections available, such as during a time of heavy load, components may experience degraded performance and sometimes failure. To resolve or prevent this, you can increase and fine-tune database connection limits for the component. 
+When there are not enough connections available, such as during a time of heavy load, components may experience degraded performance and sometimes failure. To resolve or prevent this, you can increase and fine-tune database connection limits for the component.
 
 <p class="note warning"><strong>Warning:</strong> Decreasing the value of this field for a component may affect the amount of time it takes for it to respond to requests.</p>
 
@@ -114,7 +114,7 @@ To set the maximum number of envelopes stored per source above the default:
 
 ### <a id='usage-service-data-retention'></a> Usage Service Data Retention Period
 
-By default, Usage Service deletes granular data after 365 days. 
+By default, Usage Service deletes granular data after 365 days.
 
 To configure this retention period:
 
@@ -124,6 +124,6 @@ To configure this retention period:
 
 To avoid performance or data migration issues, <%= vars.recommended_by %> recommends that you do not retain data for longer than 365 days. Configuring this field does not affect monthly summary records.
 
-For more information, see the [Usage Data Retention](./accounting-report.html#usage-retention) sectin of the _Reporting App, Task, and Service Instance Usage_ topic.
+For more information, see [Usage Data Retention](./accounting-report.html#usage-retention) in _Reporting App, Task, and Service Instance Usage_.
 
 <% end %>

@@ -8,7 +8,7 @@ To configure the **Internal MySQL** pane:
 
 1. In the **Replication canary read delay** field, specify how long the canary waits, in seconds, before verifying that data is replicating across each MySQL node. Leave the default of 20 seconds or modify the value based on the needs of your deployment. Clusters under heavy load can experience a small replication lag as write-sets are committed across the nodes.
 
-1. In the **Email address** field, enter the email address where the MySQL service sends alerts when the cluster experiences a replication issue or when a node is not allowed to auto-rejoin the cluster. 
+1. In the **Email address** field, enter the email address where the MySQL service sends alerts when the cluster experiences a replication issue or when a node is not allowed to auto-rejoin the cluster.
 
 1. The **Allow command history** checkbox is enabled by default. To prohibit the creation of command line history files on the MySQL nodes, disable this checkbox.
 
@@ -30,7 +30,7 @@ To configure the **Internal MySQL** pane:
 
 1. To enable MySQL Proxy to listen on port 3336, select the **Enable inactive MySQL port** checkbox. When you run MySQL in high availability mode, this feature allows you to connect to a MySQL node that is not currently serving traffic so that you can run auditing and reporting queries without affecting performance.
 
-1. To enable the MySQL interruptor feature, enable the **Prevent node auto re-join** checkbox. This feature stops all writes to the MySQL database if it notices an inconsistency in the dataset between the nodes. For more information, see the [Interruptor](http://docs.pivotal.io/p-mysql/1-10/troubleshooting.html#interruptor) section in the _Troubleshooting and Diagnostics_ topic of the MySQL for <%= vars.product_full %> documentation.
+1. To enable the MySQL interruptor feature, enable the **Prevent node auto re-join** checkbox. This feature stops all writes to the MySQL database if it notices an inconsistency in the dataset between the nodes. For more information, see [Interruptor](http://docs.pivotal.io/p-mysql/1-10/troubleshooting.html#interruptor) in _Troubleshooting and Diagnostics_ of the MySQL for <%= vars.product_full %> documentation.
 
 1. Click **Save**.
 

@@ -26,21 +26,21 @@ To configure SSL termination on the load balancer only in <%= vars.platform_name
 
 1. Click **Networking**.
 
-1. For <%= vars.platform_name %> deployments on OpenStack or vSphere, choose IP addresses for the Gorouters from the subnet configured for <%= vars.ops_manager %> and enter them in the **Router IPs** field. Then configure your load balancer to forward requests for the above domains to these IP addresses. For more information, see the [Configure Networking](../customizing/configure-pas.html#networking) section of the _Configuring PAS_ topic.
+1. For <%= vars.platform_name %> deployments on OpenStack or vSphere, choose IP addresses for the Gorouters from the subnet configured for <%= vars.ops_manager %> and enter them in the **Router IPs** field. Then configure your load balancer to forward requests for the above domains to these IP addresses. For more information, see [Configure Networking](../customizing/configure-pas.html#networking) in _Configuring PAS_.
 
 1. In the **Certificates and private keys for HAProxy and Router** field, click the **Add** button to define one certificate keypair for HAProxy and the Gorouter. Since you have opted for unencrypted traffic behind the load balancer, then you can generate an RSA certificate in PAS.
 
 1. In the **Minimum version of TLS supported by HAProxy and Router**, select the minimum version of TLS to use in HAProxy communications. HAProxy use TLS v1.2 by default. If you need to accommodate clients that use an older version of TLS, select a lower minimum version. For a list of TLS ciphers supported by the HAProxy, see [Cipher Suites](#ciphers).
 
-1. Under **TLS termination point**, select **Infrastructure load balancer**. 
+1. Under **TLS termination point**, select **Infrastructure load balancer**.
 
 1. If you want to use a specific set of TLS ciphers for HAProxy, configure **TLS cipher suites for HAProxy**. Enter an ordered, colon-separated list of TLS cipher suites in the OpenSSL format. For example, if you have selected support for an earlier version of TLS, you can enter cipher suites supported by this version. Otherwise, leave the default values in this field.
 
 1. Under **HAProxy forwards requests to Router over TLS**, select **Disable**.
 
-1. (Optional) If you are not using SSL encryption or if you are using self-signed certificates, you can enable the **Disable SSL certificate verification for this environment** checkbox. Enabling this checkbox also disables SSL verification for route services. 
+1. (Optional) If you are not using SSL encryption or if you are using self-signed certificates, you can enable the **Disable SSL certificate verification for this environment** checkbox. Enabling this checkbox also disables SSL verification for route services.
   <p class="note"><strong>Note:</strong> Enable this checkbox only for development and testing environments. Do not enable it for production environments.</p>
-  
+
 1. (Optional) If you do not want the Gorouter to accept any non-encrypted HTTP traffic, enable the **Disable HTTP on HAProxy and Router** checkbox.
 
 1. Click **Save**.
