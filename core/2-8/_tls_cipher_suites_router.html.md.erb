@@ -4,7 +4,7 @@ In the **TLS cipher suites for Router** field, review the TLS cipher suites for 
 To modify the default configuration, use an ordered, colon-separated list of Golang-supported TLS cipher suites in the OpenSSL format. This field does not apply to TLS v1.3. For TLS v1.3, Gorouter only uses a set of default ciphers and this is not configurable.
 <br/>
 <br/>
-Operators should verify that the ciphers are supported by any clients or front end components that initiate TLS handshakes with the Gorouter. For a list of TLS ciphers supported by the Gorouter, see [TLS Cipher Suite Support](../adminguide/securing-traffic.html#ciphers) in _Securing Traffic into <%= vars.app_runtime_full %>_.
+Operators should verify that the ciphers are supported by any clients or front end components that initiate TLS handshakes with the Gorouter. For a list of TLS ciphers supported by the Gorouter, see [TLS Cipher Suite Support](../adminguide/securing-traffic.html#ciphers) in _Securing Traffic into <%= vars.app_runtime_abbr %>_.
 <br/>
 <br/>
 Verify that every client participating in TLS handshakes with the Gorouter has at least one cipher suite in common with the Gorouter.
