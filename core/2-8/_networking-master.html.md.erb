@@ -51,13 +51,13 @@ To configure the **Networking** pane:
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_client_cert_validation" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/gorouter_client_cert_validation" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/tls_cipher_suites_router" %>
-	 <p class='note'><strong>Note:</strong> AWS Classic Load Balancers do not support <%= vars.product_short %>'s default cipher suites. For more information about configuring your AWS load balancers and Gorouter, see <a href="../adminguide/securing-traffic.html#aws_elbs">TLS Cipher Suite Support by AWS Load Balancers</a> in <em>Securing Traffic into <%= vars.app_runtime_full %></em>.</p>
-1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/tls_cipher_suites_haproxy" %>  
+	 <p class='note'><strong>Note:</strong> AWS Classic Load Balancers do not support <%= vars.product_short %>'s default cipher suites. For more information about configuring your AWS load balancers and Gorouter, see <a href="../adminguide/securing-traffic.html#aws_elbs">TLS Cipher Suite Support by AWS Load Balancers</a> in <em>Securing Traffic into <%= vars.app_runtime_abbr %></em>.</p>
+1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/tls_cipher_suites_haproxy" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_router_tls_forward" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_hsts_config_cloudform" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/ssl_verification" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/http_disable" %>
-1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/insecure_cookies" %> 
+1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/insecure_cookies" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/zipkin_enable" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/enable_router_local_logs" %>
 1. By default, PAS routers handle traffic for apps deployed to an isolation segment created by the <%= vars.product_short %> Isolation Segment tile. To configure PAS routers to reject requests for apps within isolation segments, enable the **Routers reject requests for Isolation Segments** checkbox. Do not enable this option without deploying routers for each isolation segment. For more information, see [Installing <%= vars.product_short %> Isolation Segment](../customizing/installing-pcf-is.html) and the [Sharding Routers for Isolation Segments](../adminguide/routing-is.html#sharding-routers-isolation-segment) in _Routing for Isolation Segments_.
@@ -67,13 +67,13 @@ To configure the **Networking** pane:
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/keepalive_connections" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_timeout_backend" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/frontend_idle_timeout" %>
-1. (Optional) Use **Router Drain Timeout** to specify the amount of time, in seconds, that the Router continues to serve existing connections before shutting down. After the timeout is reached, all remaining connections are terminated so that the Router can restart. The default value is 900. 
-1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/lb_unhealthy_threshold" %>  
+1. (Optional) Use **Router Drain Timeout** to specify the amount of time, in seconds, that the Router continues to serve existing connections before shutting down. After the timeout is reached, all remaining connections are terminated so that the Router can restart. The default value is 900.
+1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/lb_unhealthy_threshold" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/lb_healthy_threshold" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/http_headers_to_log" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_request_max_buffer" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/protected_domains" %>
-1. The **Loggregator port** defaults to 443 if left blank. For AWS environments that are not using an Application Load Balancer, enter `4443`. 
+1. The **Loggregator port** defaults to 443 if left blank. For AWS environments that are not using an Application Load Balancer, enter `4443`.
 1. For **Container network interface plugin**, select one of the following:
   * **Silk**: This option is the default container network interface (CNI) for PAS.
   * **External**: Select this if you are deploying the [VMware NSX-T Container Plug-in for <%= vars.product_short %>](https://network.pivotal.io/products/vmware-nsx-t).
@@ -96,10 +96,10 @@ To configure the **Networking** pane:
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/networking_database_timeout" %>
 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/tcp_routing_enable" %><a id='tcp-routing-enable'></a>
-	
+
 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/dynamic-egress" %>
 
-1. (Optional) For additional security, enter headers that you want the Gorouter to remove from app responses in **Remove specified HTTP response headers**. 
+1. (Optional) For additional security, enter headers that you want the Gorouter to remove from app responses in **Remove specified HTTP response headers**.
 
 1. Click **Save**.
