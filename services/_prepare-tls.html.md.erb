@@ -69,12 +69,7 @@ The following workflow describes enabling TLS for <%= vars.product_full %>:
 	in <a href="#credhub-creds">Find the CredHub Credentials in <%= vars.ops_manager %></a> and
 	in <a href='#add-ca-cert'> Add the CA Certificate</a> below.
 1. An operator enables TLS in the tile configuration while installing <%= vars.product_short %>.
-			See
-			<% if vars.service_name == "Redis for Pivotal Platform" %>
-					[Configure On-Demand Service Settings](./installing.html#on-demand-config).
-			<% else %>
-					[Configure Security](./install-config.html#security).
-			<% end %>
+			See [Enable TLS in <%= vars.product_short %>](#enable) below.
 <% case vars.service_name
 when "Redis for Pivotal Platform" %>
 1. An app developer modifies their app to communicate securely with the <%= vars.product_short %> server.
@@ -196,13 +191,50 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
    --name=/services/tls_ca) \
    --path /value/certificate
    ```
+1. Copy the output.
 
-**Redis**
+1. Navigate to the <%= vars.ops_manager %> **Installation Dashboard** and select
+the BOSH Director tile.
 
+1. Click **Security**.
 
+8. Paste the contents of the CA certificate into **Trusted Certificates**, and then
+ click **Save**.
 
-**MySQL**
+<% if vars.service_name == "Redis for Pivotal Platform" %>
+1. Ensure relevant app security groups are open for port 16379. This can be done through the cf CLI.
+For more information, see [Managing ASGs with the cf CLI](https://docs.pivotal.io/platform/application-service/concepts/asg.html#procedures).
+<% end %>
 
+##<a id='enable'></a> Enable TLS in <%= vars.product_short %>
 
+After preparing your environment for TLS, you must enable TLS in the tile configuration:
 
-**RabbitMQ**
+To enable TLS in the <%= vars.product_short %> tile:
+
+1. Enable TLS by doing one of the following:
+	+ **If you are configuring TLS in an for an existing installation**,
+<% if vars.service_name == "Redis for Pivotal Platform" %>
+follow the procedure in
+	[Upgrade to <%= vars.product_old %> v2.2](./upgrade.html#upgrades).
+<% else %>
+follow the procedure in
+	[Configure Security](./install-config.html#security).
+<% end %>
+	+ **If you are configuring TLS in an for a new installation**,
+<% if vars.service_name == "Redis for Pivotal Platform" %>
+	follow the procedures in
+	[Configure On-Demand Service Settings](./installing.html#on-demand-config),
+	including enabling TLS in the **On-Demand Service Settings** tab.
+	<% else %>
+	follow the procedures in
+	[Installing and Configuring <%= vars.product_short %>](./install-config.html),
+	including enabling TLS in the [Configure Security](./install-config.html#security) section.
+	<% end %>
+1. Navigate to **<%= vars.ops_manager %> Installation Dashboard** > **Review Pending Changes**.
+1. Ensure that the CA certificate is deployed to all VMS by selecting the following:
+	+ <%= vars.app_runtime_full %>
+	+ <%= vars.product_short %>
+	+ The **Upgrade All On-Demand Service Instances** errand
+3. Click **Apply Changes**.
+This restarts all the VMs in your <%= vars.platform_name %> deployment and applies your CA certificate.
