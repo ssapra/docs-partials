@@ -85,13 +85,15 @@ See [Using TLS](./appdevs.html#using-tls).
 		See [Enable TLS for Your Service Instance](./use.html#tls)
 1. A developer modifies their app to communicate securely with the <%= vars.product_short %> server:
 	+ **For Java or Spring apps,** see [Activate TLS for Java and Spring Apps](./use.html#tls-java-spring).
-  + **For all other apps,** see [Modifying Apps for TLS](./modify-apps-tls.html")
+  + **For all other apps,** see [Modifying Apps for TLS](./modify-apps-tls.html)
 <% end %>
 
 <p class="note"><strong>Note</strong>: An operator must also rotate the CA
 	certificate if it expires or if it becomes compromised.
-For information about how to rotate your CA certificate, see
-<a href="rotating-ca.html">Rotating CA Certificates</a>.
+	<% if vars.service_name != "Redis for Pivotal Platform" %>
+		For information about how to rotate your CA certificate, see
+		<a href="./rotating-ca.html">Rotating CA Certificates</a>.
+		<% end %>
 </p>
 
 ##<a id='credhub-creds'></a> Find the CredHub Credentials in <%= vars.ops_manager %>
