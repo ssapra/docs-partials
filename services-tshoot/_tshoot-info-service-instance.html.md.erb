@@ -1,0 +1,42 @@
+<%= partial vars.path_to_partials + "/troubleshoot-template", locals: {
+	id: 'instance',
+    description: 'Find Information About Your Service Instance',
+    cause: 'Failed operations (create, update, bind, unbind, delete) result in an error message.',
+    solution: '<p>You might need to find the name, GUID, or other information about a service instance.</p>
+
+		<p>To find this information, do the following:</p>
+
+		<ol>
+			<li>
+				<p>Log into the space containing the instance or failed instance.</p>
+			    <pre class="terminal">$ cf login</pre>
+			</li>
+
+			<li>
+				<p>
+					If you do not know the name of the service instance, 
+					run <code>cf services</code> to see a listing of all service instances in the space.
+				</p>
+				<p>
+					The service instances are listed in the <code>name</code> column.
+				</p>
+				<pre class="terminal">
+$ cf services
+Getting services in org my-org / space my-space as user<span>@</span>example.com...
+OK
+name          service      plan        bound apps    last operation
+my-instance   p.mysql      db-small                  create succeeded
+				</pre>
+			</li>
+
+			<li>
+				To retrieve more information about a specific instance, run 
+				<code>cf service SERVICE-INSTANCE-NAME</code>
+			</li>
+
+			<li>
+				To retrieve the GUID of the instance, run <code>cf service SERVICE-INSTANCE-NAME --guid</code>
+			</li>
+		</ol>
+		<p>The GUID is useful for debugging.</p>'
+} %>
