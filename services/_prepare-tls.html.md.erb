@@ -4,9 +4,6 @@ with <%= product_full %> to secure communication between apps and service instan
 This topic explains how to provide an existing CA certificate to BOSH CredHub and
 generate a new CA certificate with BOSH CredHub.
 
-<%# If you are using vars.ops_manager  v2.6 or later and you want to use the certificate
-provided by vars.ops_manager, then you can skip this page. %>
-
 <p class="note warning"><strong>Warning:</strong> This procedure involves restarting
 	all of the VMs in your <%= platform_name %> deployment to apply a CA certificate. The
 	operation can take a long time to complete.
@@ -78,7 +75,8 @@ See [Using TLS](./appdevs.html#using-tls).
 1. A developer enables TLS for an existing service instance.
     See [Using TLS](./using-tls.html).
 1. A developer modifies their app to communicate securely with the <%= product_short %> server:
-	+ **For Java and Spring apps,** see [Activate TLS for Java and Spring Apps](./using-tls.html#activate-spring).
+	+ **For Java and Spring apps,**
+	see [Activate TLS for Java and Spring Apps](./using-tls.html#activate-spring).
 	+ **For all other apps,** see [Activate TLS for Non-Spring Apps](./using-tls.html#activate-non-spring).
 <% when "RabbitMQ for Pivotal Platform" %>
 1. A developer enables TLS for an existing service instance.
@@ -126,8 +124,17 @@ To find the BOSH CredHub client name and client secret, do the following:
 
 To generate and add the CA Certificate to <%= vars.ops_manager %>:
 
+1. If the CredHub CLI is not installed on your local machine,
+install the CredHub CLI by following the instructions in
+[credhub-cli](https://github.com/cloudfoundry-incubator/credhub-cli) on GitHub.
 
-1. From the <%= vars.ops_manager %> VM, set the API target of the CredHub CLI as your CredHub server by running:
+1. Record the information needed to log in to the BOSH Director VM by following the procedure in
+[Gather Credential and IP Address Information](https://docs.pivotal.io/pivotalcf/2-4/customizing/trouble-advanced.html#gather).
+
+1. Log in to the <%= vars.ops_manager %> VM by following the procedure in
+[Log in to the <%= vars.ops_manager %> VM with SSH](https://docs.pivotal.io/pivotalcf/2-4/customizing/trouble-advanced.html#ssh).
+
+1. Set the API target of the CredHub CLI as your CredHub server by running:
 
     ```
     credhub api https://BOSH-DIRECTOR:8844 --ca-cert=/var/tempest/workspaces/default/root_ca_certificate
