@@ -31,10 +31,14 @@ To configure the **System Logging** pane:
 
 1. Select the **Enable system metrics** checkbox to emit system-level metrics about all VMs in the deployment. For a list of the VM metrics that the System Metric Agent emits, see the [system-metrics-release](https://github.com/cloudfoundry/system-metrics-release/blob/develop/docs/system-metrics-agent.md#vm-metrics) repository on GitHub.
 
-1. Select the **Enable V1 firehose** checkbox to allow logs and metrics to flow to the Loggregator V1 Firehose.
+1. The **Enable V1 Firehose** checkbox is disabled by default.
+   Select this checkbox to enable logs and metrics to flow to the Loggregator V1 Firehose.
 
-1. Select the **Enable V2 firehose** checkbox to allow logs and metrics to flow to the Loggregator V2 Firehose.
-	<p class="note"><strong>Note:</strong> If you deselect this checkbox to disable the V2 firehose, you must also disable the V1 firehose.</p>
+1. The **Enable V2 Firehose** checkbox is enabled by default.
+   Clear this checkbox to prevent logs and metrics from flowing to the Loggregator V2 Firehose.
+	<p class="note"><strong>Note:</strong> If you deselect this checkbox to disable the V2 Firehose,
+           you must also disable the V1 Firehose.
+        </p>
 	<div class='note warning'><strong>Warning:</strong> If you disable the V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. <%= vars.recommended_by %> recommends that you do not disable the Firehose if you are dependent on any of the following:
 		<ul>
 			<li>Service tile metrics</li>
@@ -42,7 +46,11 @@ To configure the **System Logging** pane:
 			<li>Partner log or metric integrations</li>
 		</ul>
 	</div>
-	<p class="note warning"><strong>Warning:</strong> If you disable the V1 or V2 Firehose, you must disable the Smoke Test Errand or the deploy fails. For more information, see <a href="https://docs.pivotal.io/platform/2-8/release-notes/runtime-rn.html#disable-firehose-smoke-test-errand">Disable the Smoke Test Errand If You Disable the Firehose</a>.</p>
+	<p class="note warning"><strong>Warning:</strong> If both the V2 and V1 Firehoses are disabled,
+           then disable the Smoke Test Errand.
+           Otherwise, the deploy fails.
+           To disable errands, see <a href="#errands">Configure Errands</a>.
+           </p>
 
 1. Select the **Enable Log Cache syslog ingestion** checkbox to configure Log Cache to ingest logs and metrics through the syslog server instead of the Reverse Log Proxy. You must select this checkbox if you disable the V2 Firehose.
 

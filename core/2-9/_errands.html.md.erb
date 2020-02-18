@@ -13,6 +13,11 @@ For more information about how <%= vars.ops_manager %> manages errands, see [Man
     * Push, scale, and delete apps
     * Create and delete orgs and spaces
 
+    <p class="note warning"><strong>Warning:</strong> If both the V2 and V1 Firehoses are disabled,
+             then disable the Smoke Test Errand.
+             Otherwise, the deploy fails.
+    </p>
+
 * **Usage Service Errand** deploys the Pivotal Usage Service app, which Apps Manager depends on.
 
 * **Apps Manager Errand** deploys Apps Manager, a dashboard for managing apps, services, orgs, users, and spaces. Until you deploy Apps Manager, you must perform these functions through the cf CLI. After Apps Manager has been deployed, <%= vars.recommended_by %> recommends setting this errand to **Off** for subsequent <%= vars.product_short %> deployments. For more information about Apps Manager, see [Getting Started with Apps Manager](../console/dev-console.html).
