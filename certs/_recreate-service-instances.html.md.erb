@@ -1,6 +1,8 @@
 After activating a new root CA in Ops Manager, some BOSH VMs report an unresponsive agent. This error occurs if you do not recreate all service instances for a service tile when  rotating the root CA.
 
-You can recreate all service instances by enabling the **Recreate all service instance** errand in the service tile before applying changes. For service tiles that do not have this errand, you must run the following BOSH command manually for each service instance deployment:
+You can recreate all service instances by enabling the **Recreate all service instance** errand in the service tile before applying changes. 
+
+For service tiles that do not have this errand, first apply changes in Ops Manager and then run the following BOSH command manually for each service instance deployment:
 
 <pre>
 bosh -d SERVICE-INSTANCE-DEPLOYMENT recreate
