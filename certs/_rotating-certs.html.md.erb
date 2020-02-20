@@ -16,7 +16,6 @@ To access the BOSH CredHub:
 1. Click the **Credentials** tab.
 
 1. In the **BOSH Director** section, click the link to the **BOSH Commandline Credentials**.
-![CredHub Credentials](credhub-creds.png)
 
 1. Record the values for `BOSH_CLIENT` and `BOSH_CLIENT_SECRET`.<br>
   For example:
@@ -27,7 +26,7 @@ To access the BOSH CredHub:
     BOSH_CA_CERT=/var/tempest/workspaces/default/root_ca_certificate
     BOSH_ENVIRONMENT=10.0.0.5 bosh "}
     ```
-  The `BOSH_CLIENT` is the BOSH CredHub client name ("ops_manager" in this example) and the `BOSH_CLIENT_SECRET` is
+  The `BOSH_CLIENT` is the BOSH CredHub client name and the `BOSH_CLIENT_SECRET` is
   the BOSH CredHub client secret.
 
 1. Following the procedure in
@@ -57,7 +56,7 @@ CredHub server by running the following command:
     credhub login --client-name=CREDHUB-CLIENT-NAME --client-secret=CREDHUB-CLIENT-SECRET
     ```
     Where:<br>
-    * `CREDHUB-CLIENT-NAME` is the value you recorded for `BOSH_CLIENT` earlier in this procedure ("ops_manager" in this example).
+    * `CREDHUB-CLIENT-NAME` is the value you recorded for `BOSH_CLIENT` earlier in this procedure.
     * `CREDHUB-CLIENT-SECRET` is the value you recorded for `BOSH_CLIENT_SECRET` earlier in this procedure.
 
     For example:
@@ -94,7 +93,7 @@ To check certificate expiration dates:
     and finds its `Validity` properties.
     The expiration date for the certificate is the value of `Not After`.<br><br>
 
-<% if local_product_name == "MySQL for Pivotal Platform" || local_product_name == "MySQL for PCF" %>
+<% if local_product_name == "MySQL for " + vars.platform_name %>
 1. If any of your certificates are about to expire or have expired, do one of the following:
   * **If your TLS certificates are about to expire or have expired,**
     do the procedures in [Rotate CA Certificates Manually](#tls) below.
@@ -113,13 +112,13 @@ To manually rotate the CA certificate:
 1. [Obtain or Generate a New CA Certificate](#obtainorgenerate)
 1. [Add New Certificates to <%= vars.ops_manager %>](#addnewandold)
 1. [Apply Changes](#applychanges)
-<% if local_product_name != "Redis for Pivotal Platform" || local_product_name != "RabbitMQ for Pivotal Cloud Foundry" %>
+<% if local_product_name != "RabbitMQ for " + vars.platform_name %>
 1. [Rebind Your Apps](#rebind)
 <% end %>
 1. [Set New CA Certificate to /services/tls_ca](#setnew)
 1. [Remove the Old CA Certificate](#remove)
 1. [Apply Changes](#applychanges2)
-<% if local_product_name != "Redis for Pivotal Platform" || local_product_name != "RabbitMQ for Pivotal Cloud Foundry" %>
+<% if local_product_name != "RabbitMQ for " + vars.platform_name %>
 1. [Rebind Your Apps](#rebind2)
 <% end %>
 
@@ -130,30 +129,22 @@ To obtain or generate a new CA certificate:
 1. Do one of the following:
   * **If you have a TLS cluster,** obtain the CA (certificate authority) that signs its
 certificate. You will add this to the <%= vars.ops_manager %> settings in the following section.
-
   * **If you use self-signed certificates,** generate a new self-signed certificate with a separate name
-in CredHub. In this example we generate the new certificate with the name “/services/new_ca”:
-  <pre class="terminal">
-  $ credhub generate \
-      --name="/services/new_ca" \
-      --type="certificate" \
-      --no-overwrite \
-      --is-ca \
-      --common-name="servicesCA"
-  </pre>
-
+in CredHub. In this example we generate the new certificate with the name “/services/new_ca”:<pre class="terminal">$ credhub generate \
+  --name="/services/new_ca" \
+  --type="certificate" \
+  --no-overwrite \
+  --is-ca \
+  --common-name="servicesCA"</pre>
  * **If you use an intermediate certificate signed by a root CA in credhub,**
-generate a new certificate signed by the CredHub root CA:
-
-  <pre class="terminal">
-  $ credhub generate \
-      --name="/services/new_ca" \
-      --type="certificate" \
-      --no-overwrite \
-      --is-ca \
-      --common-name="servicesCA" \
-      --ca=/path-to-root-ca
-  </pre>
+generate a new certificate signed by the CredHub root CA:  <pre class="terminal">
+$ credhub generate \
+    --name="/services/new_ca" \
+    --type="certificate" \
+    --no-overwrite \
+    --is-ca \
+    --common-name="servicesCA" \
+    --ca=/path-to-root-ca</pre>
 
 1. Add the new certificate to <%= vars.ops_manager %> in the following section.
 
@@ -182,6 +173,7 @@ To apply these changes, do the following:
 1. Select the errand to upgrade all service instances. 
 1. Click **Apply Changes**.
 
+<% if local_product_name != "RabbitMQ for " + vars.platform_name %>
 ### <a id='rebind' class="no-quick-link"></a> Rebind Your Apps
 
 If your apps do not use the trusted store to validate server certificates, you
@@ -222,31 +214,27 @@ To rebind your app:
 	```
 	Where `YOUR-APP` is the name of your app.
 
+<% end %>
+
 
 ### <a id="setnew" class="no-quick-link"></a> Set New CA Certification to /services/tls_ca
 
-To have all instances use the new CA Certificate, do the following:
+To have all instances use the new CA Certificate:
 
-**If you have an existing certificate,** obtain the CA certificate and private key file corresponding
-to the CA that you applied in the previous step. Then, run the following command:
-
-<pre class="terminal">
+1. Do one of the following:
+  * **If you have an existing certificate,** obtain the CA certificate and private key file corresponding
+  to the CA that you applied in the previous step. Then, run the following command:<pre class="terminal">
 credhub set \
     --name="/services/tls_ca" \
     --type="certificate" \
     --certificate=PEM-PATH/root.pem \
     --private=CERT-KEY
 </pre>
-
-Where:
-
-- PEM-PATH is the path to the `root.pem` file.
-- CERT-KEY is the private key for the certificate.
-
-**If you have created a new self-signed or intermediary certificate in /services/new_ca,**
-set `/services/tls_ca` to the new CredHub value `/services/new_ca` that you generated in the previous step:
-
-<pre class="terminal">
+      Where:
+      - PEM-PATH is the path to the `root.pem` file.
+      - CERT-KEY is the private key for the certificate.
+  * **If you have created a new self-signed or intermediary certificate in /services/new_ca,**
+set `/services/tls_ca` to the new CredHub value `/services/new_ca` that you generated in the previous step:<pre class="terminal">
 $ credhub get -n /services/new_ca -k ca > new_ca.ca
 $ credhub get -n /services/new_ca -k certificate > new_ca.certificate
 $ credhub get -n /services/new_ca -k private_key > new_ca.private_key
@@ -293,7 +281,7 @@ To apply these changes, do the following:
 1. Select the errand to upgrade all service instances. 
 1. Click **Apply Changes**.
 
-<% if local_product_name != "Redis for Pivotal Platform" || local_product_name != "RabbitMQ for Pivotal Cloud Foundry" %>
+<% if local_product_name != "RabbitMQ for " + vars.platform_name %>
 
 ### <a id='rebind2' class="no-quick-link"></a> Rebind Your Apps
 
