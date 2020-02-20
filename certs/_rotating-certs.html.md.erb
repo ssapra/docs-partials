@@ -69,7 +69,7 @@ CredHub server by running the following command:
 
 ## <a id="check"></a> Check Expiration Dates
 
-You can check the expiration date for CA and <%= vars.product_name %> certificates.
+You can check the expiration date for CA and <%= local_product_name %> certificates.
 
 To check certificate expiration dates:
 
@@ -94,7 +94,7 @@ To check certificate expiration dates:
     and finds its `Validity` properties.
     The expiration date for the certificate is the value of `Not After`.<br><br>
 
-<% if vars.product_name == "MySQL for Pivotal Platform" || vars.product_name == "MySQL for PCF" %>
+<% if local_product_name == "MySQL for Pivotal Platform" || local_product_name == "MySQL for PCF" %>
 1. If any of your certificates are about to expire or have expired, do one of the following:
   * **If your TLS certificates are about to expire or have expired,**
     do the procedures in [Rotate CA Certificates Manually](#tls) below.
@@ -113,11 +113,15 @@ To manually rotate the CA certificate:
 1. [Obtain or Generate a New CA Certificate](#obtainorgenerate)
 1. [Add New Certificates to <%= vars.ops_manager %>](#addnewandold)
 1. [Apply Changes](#applychanges)
+<% if local_product_name != "Redis for Pivotal Platform" || local_product_name != "RabbitMQ for Pivotal Cloud Foundry" %>
 1. [Rebind Your Apps](#rebind)
+<% end %>
 1. [Set New CA Certificate to /services/tls_ca](#setnew)
 1. [Remove the Old CA Certificate](#remove)
 1. [Apply Changes](#applychanges2)
+<% if local_product_name != "Redis for Pivotal Platform" || local_product_name != "RabbitMQ for Pivotal Cloud Foundry" %>
 1. [Rebind Your Apps](#rebind2)
+<% end %>
 
 ### <a id="obtainorgenerate" class="no-quick-link"></a> Obtain or Generate a New CA Certificate
 
@@ -289,7 +293,11 @@ To apply these changes, do the following:
 1. Select the errand to upgrade all service instances. 
 1. Click **Apply Changes**.
 
+<% if local_product_name != "Redis for Pivotal Platform" || local_product_name != "RabbitMQ for Pivotal Cloud Foundry" %>
+
 ### <a id='rebind2' class="no-quick-link"></a> Rebind Your Apps
 
 Again, if your apps do not use the trusted store to validate server certificates, you must rebind
 your apps to incorporate this last round of changes. See [Rebind Your Apps](#rebind) above.
+
+<% end %>
