@@ -1,15 +1,17 @@
 ## <a id="credhub"></a> Access BOSH CredHub
 
-Pivotal Cloud Foundry (PCF) stores some of its internal CA and non-CA certificates in the BOSH
-CredHub credentials store.  For more information, see [BOSH CredHub](https://docs.pivotal.io/pivotalcf/credhub/#bosh).
+<%= vars.platform_name %> stores some of its internal CA and 
+non-CA certificates in the BOSH CredHub credentials store.  
+For more information, see [BOSH CredHub](https://docs.pivotal.io/platform/credhub/#bosh).
 
-To access the BOSH CredHub credentials store, you must retrieve credentials from BOSH Director
-and then use the credentials to log in to CredHub from the Ops Manager VM.
+To access the BOSH CredHub credentials store, you must retrieve 
+credentials from BOSH Director and then use the credentials 
+to log in to CredHub from the <%= vars.ops_manager_full %> VM.
 
 
 To access the BOSH CredHub:
 
-1. In the Ops Manager Installation Dashboard, click the **BOSH Director** tile.
+1. In the <%= vars.ops_manager %> Installation Dashboard, click the **BOSH Director** tile.
 
 1. Click the **Credentials** tab.
 
@@ -30,18 +32,18 @@ To access the BOSH CredHub:
 
 1. Following the procedure in
 [Gather Credential and IP Address Information](https://docs.pivotal.io/pivotalcf/2-4/customizing/trouble-advanced.html#gather)
-to obtain the information needed to log in to the BOSH Director VM. Record the IP address for the Ops Manager Director and the Director Credentials.
+to obtain the information needed to log in to the BOSH Director VM. Record the IP address for the <%= vars.ops_manager %> Director and the Director Credentials.
 
-1. Log in to the Ops Manager VM by following the procedure in
-[Log in to the Ops Manager VM with SSH](https://docs.pivotal.io/pivotalcf/2-4/customizing/trouble-advanced.html#ssh).
+1. Log in to the <%= vars.ops_manager %> VM by following the procedure in
+[Log in to the <%= vars.ops_manager %> VM with SSH](https://docs.pivotal.io/pivotalcf/2-4/customizing/trouble-advanced.html#ssh).
 
-1. From the Ops Manager VM, set the API target of the CredHub CLI to your BOSH
+1. From the <%= vars.ops_manager %> VM, set the API target of the CredHub CLI to your BOSH
 CredHub server by running the following command:
 
     ```
     credhub api https://BOSH-DIRECTOR:8844 --ca-cert=/var/tempest/workspaces/default/root_ca_certificate
     ```
-  where `BOSH-DIRECTOR` is the IP address of the BOSH Director VM you recorded above.
+  Where `BOSH-DIRECTOR` is the IP address of the BOSH Director VM you recorded above.
   <br><br>
   For example:
   <pre class="terminal">
@@ -67,7 +69,7 @@ CredHub server by running the following command:
 
 ## <a id="check"></a> Check Expiration Dates
 
-You can check the expiration date for CA and PCC certificates.
+You can check the expiration date for CA and <%= vars.product_name %> certificates.
 
 To check certificate expiration dates:
 
@@ -78,7 +80,7 @@ To check certificate expiration dates:
     ```
     credhub get -n CERTIFICATE-NAME -j | jq -r .value.ca | openssl x509 -text -noout | grep -A 2 "Validity"
     ```
-    where `CERTIFICATE-NAME` is the name of the certificate you are checking.<br /><br>
+    Where `CERTIFICATE-NAME` is the name of the certificate you are checking.<br /><br>
     For example:
     <pre class="terminal">
     $ credhub get -n /services/tls_ca -j | jq -r .value.ca | \
@@ -92,6 +94,13 @@ To check certificate expiration dates:
     and finds its `Validity` properties.
     The expiration date for the certificate is the value of `Not After`.<br><br>
 
+<% if vars.product_name == "MySQL for Pivotal Platform" || vars.product_name == "MySQL for PCF" %>
+1. If any of your certificates are about to expire or have expired, do one of the following:
+  * **If your TLS certificates are about to expire or have expired,**
+    do the procedures in [Rotate CA Certificates Manually](#tls) below.
+    This rotates both the TLS certificates and the internal certificates.
+  * **If only your internal certificates are about to expire or have expired,** do the procedure in [Rotate Internal Certificates ](#internal) below.
+<% end %>
 
 ##<a id='tls'></a> Rotate CA Certificates Manually
 
@@ -102,7 +111,7 @@ include SAN and CN entries.</p>
 To manually rotate the CA certificate:
 
 1. [Obtain or Generate a New CA Certificate](#obtainorgenerate)
-1. [Add New Certificates to Ops Manager](#addnewandold)
+1. [Add New Certificates to <%= vars.ops_manager %>](#addnewandold)
 1. [Apply Changes](#applychanges)
 1. [Rebind Your Apps](#rebind)
 1. [Set New CA Certificate to /services/tls_ca](#setnew)
@@ -112,58 +121,61 @@ To manually rotate the CA certificate:
 
 ### <a id="obtainorgenerate" class="no-quick-link"></a> Obtain or Generate a New CA Certificate
 
-**If you have a TLS cluster,** obtain the CA (certificate authority) that signs its
-certificate. You will add this to the Ops Manager settings in the next step.
+To obtain or generate a new CA certificate:
 
-**If you use self-signed certificates,** generate a new self-signed certificate with a separate name
+1. Do one of the following:
+  * **If you have a TLS cluster,** obtain the CA (certificate authority) that signs its
+certificate. You will add this to the <%= vars.ops_manager %> settings in the following section.
+
+  * **If you use self-signed certificates,** generate a new self-signed certificate with a separate name
 in CredHub. In this example we generate the new certificate with the name “/services/new_ca”:
+  <pre class="terminal">
+  $ credhub generate \
+      --name="/services/new_ca" \
+      --type="certificate" \
+      --no-overwrite \
+      --is-ca \
+      --common-name="servicesCA"
+  </pre>
 
-<pre class="terminal">
-$ credhub generate \
-    --name="/services/new_ca" \
-    --type="certificate" \
-    --no-overwrite \
-    --is-ca \
-    --common-name="servicesCA"
-</pre>
-
-**If you use an intermediate certificate signed by a root CA in credhub,**
+ * **If you use an intermediate certificate signed by a root CA in credhub,**
 generate a new certificate signed by the CredHub root CA:
 
-<pre class="terminal">
-$ credhub generate \
-    --name="/services/new_ca" \
-    --type="certificate" \
-    --no-overwrite \
-    --is-ca \
-    --common-name="servicesCA" \
-    --ca=/path-to-root-ca
-</pre>
+  <pre class="terminal">
+  $ credhub generate \
+      --name="/services/new_ca" \
+      --type="certificate" \
+      --no-overwrite \
+      --is-ca \
+      --common-name="servicesCA" \
+      --ca=/path-to-root-ca
+  </pre>
 
-### <a id="addnewandold" class="no-quick-link"></a> Add New Certificates to Ops Manager
+1. Add the new certificate to <%= vars.ops_manager %> in the following section.
 
-To add new and old CA certificates to Ops Manager:
+### <a id="addnewandold" class="no-quick-link"></a> Add New Certificates to <%= vars.ops_manager %>
+
+To add new and old CA certificates to <%= vars.ops_manager %>:
 
 1. Log in to CredHub.
 1. Obtain the current CA with `credhub get --name=/services/tls_ca -k ca`.
 1. Obtain the new CA, either from a pre-existing file, or from your new CredHub location using `credhub get --name=/services/new_ca -k ca`.
-1. Make sure both ca values are pasted into **Ops Manager -> BOSH Director -> Security -> Trusted Certificates**.
+1. Make sure both ca values are pasted into **<%= vars.ops_manager %> -> BOSH Director -> Security -> Trusted Certificates**.
 1. Make sure both ca values are pasted into **PAS tile -> Networking -> Certificate Authorities Trusted by Router and HAProxy**
 1. Click **Save**.
 
 ### <a id="applychanges" class="no-quick-link"></a> Apply Changes
 
 <p class="note warning"><strong>Warning</strong>: This procedure involves restarting
-all of the VMs in your PCF deployment to apply a CA certificate. The
+all of the VMs in your <%= vars.ops_manager %> deployment to apply a CA certificate. The
 operation can take a long time to complete.</p>
 
 To apply these changes, do the following:
  
 1. Navigate back to the **Installation Dashboard**.
 1. Click **Review Pending Changes**.
-1. Click **ERRANDS on PCC**.
-1. Select **Upgrade All Service Instances**. 
-![Upgrade All Service Instances](upgrade-all-service-instances.png)
+1. Expand errands.
+1. Select the errand to upgrade all service instances. 
 1. Click **Apply Changes**.
 
 ### <a id='rebind' class="no-quick-link"></a> Rebind Your Apps
@@ -222,7 +234,7 @@ credhub set \
     --private=CERT-KEY
 </pre>
 
-where:
+Where:
 
 - PEM-PATH is the path to the `root.pem` file.
 - CERT-KEY is the private key for the certificate.
@@ -246,7 +258,7 @@ $ credhub set -n /services/tls_ca \
 After your apps have reconnected to service instances with certificates generated
 by the new CA, remove the old CA certificate:
 
-1. Navigate to the **Installation Dashboard** in Ops Manager and click the **BOSH
+1. Navigate to the **Installation Dashboard** in <%= vars.ops_manager %> and click the **BOSH
 Director** tile.
 
 1. Click **Security**.
@@ -255,7 +267,7 @@ Director** tile.
 
 1. Click **Save**.
 
-1. Navigate to the **Installation Dashboard** in Ops Manager and click the **PAS** tile.
+1. Navigate to the **Installation Dashboard** in <%= vars.ops_manager %> and click the **PAS** tile.
 
 1. Click **Networking**.
 
@@ -266,16 +278,15 @@ Director** tile.
 ### <a id="applychanges2" class="no-quick-link"></a> Apply Changes
 
 <p class="note warning"><strong>Warning: </strong> This procedure involves restarting
-	all of the VMs in your PCF deployment to apply a CA certificate. The
+	all of the VMs in your <%= vars.ops_manager %> deployment to apply a CA certificate. The
 	operation can take a long time to complete.</p>
 
 To apply these changes, do the following:
  
 1. Navigate back to the **Installation Dashboard**.
 1. Click **Review Pending Changes**.
-1. Click **ERRANDS on PCC**.
-1. Select **Upgrade All Service Instances**. 
-![Upgrade All Service Instances](upgrade-all-service-instances.png)
+1. Expand errands.
+1. Select the errand to upgrade all service instances. 
 1. Click **Apply Changes**.
 
 ### <a id='rebind2' class="no-quick-link"></a> Rebind Your Apps
