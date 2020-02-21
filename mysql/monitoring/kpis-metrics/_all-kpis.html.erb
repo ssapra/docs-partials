@@ -75,7 +75,7 @@
           <strong>Frequency</strong>: 30 s (default)<br>
         DESC
 
-        measurement: 	'Maximum ephemeral disk used of all nodes',
+        measurement: 	'Maximum disk used of all nodes',
         alert: <<~DESC,
           <strong>Yellow warning</strong>: > 80% <br>
           <strong>Red critical</strong>: > 95%
@@ -89,7 +89,7 @@
         metric: '/performance/cpu_utilization_percent',
         description:<<~DESC,
         CPU time being consumed by the MySQL service. <br ><br>
-        <strong>Use</strong>: A node that experiences context switching or high CPU usage will become unresponsive. This also affects the ability of the node to report metrics. <br>
+        <strong>Use</strong>: A node that experiences context switching or high CPU usage becomes unresponsive. This also affects the ability of the node to report metrics. <br>
         <strong>Origin</strong>: Doppler/Firehose<br>
         <strong>Type</strong>: Percent<br>
         <strong>Frequency</strong>: 30 s (default)<br>
@@ -133,7 +133,7 @@
       response: 'If this measurement mets or exceeds 80% with linear growth,
           increase the value of <code>max_connections</code>. <br><br> If this measurement mets or exceeds
           80% with exponential growth, monitor app usage to ensure everything
-          is behaving as expected. <br><br>
+          is working. <br><br>
           When approaching 100% of max connections, apps may be experiencing times when they
           cannot connect to the database.
           The connections/second for a service instance vary based on app instances and app utilization.',
@@ -181,11 +181,12 @@
       response: <<~DESC,
         <ul>
           <li> Run <code>mysql-diag</code> and check the MySQL Server logs for errors.</li>
-          <li> Make sure there has been no infrastructure event that affects intra-cluster
+          <li> Ensure no infrastructure event is affecting intra-cluster
             communication.</li>
-          <li> Ensure that <code>wsrep_ready</code> has not been set to off by using the
+          <li> Ensure that <code>wsrep_ready</code> is not set to off by using the
              query:<br>
              <code>SHOW STATUS LIKE 'wsrep_ready';</code>. </li>
+        </ul>
       DESC
       id: 'wsrep-ready',
       header: 'Highly Available Cluster WSREP Ready'
