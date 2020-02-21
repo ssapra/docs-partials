@@ -156,6 +156,7 @@ To add new and old CA certificates to <%= vars.ops_manager %>:
 1. Obtain the current CA with `credhub get --name=/services/tls_ca -k ca`.
 1. Obtain the new CA, either from a pre-existing file, or from your new CredHub location using `credhub get --name=/services/new_ca -k ca`.
 1. Make sure both ca values are pasted into **<%= vars.ops_manager %> -> BOSH Director -> Security -> Trusted Certificates**.
+1. Click **Save**.
 1. Make sure both ca values are pasted into **PAS tile -> Networking -> Certificate Authorities Trusted by Router and HAProxy**
 1. Click **Save**.
 
