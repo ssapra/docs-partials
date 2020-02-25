@@ -174,7 +174,8 @@ To apply these changes, do the following:
 1. Select the errand to upgrade all service instances. 
 1. Click **Apply Changes**.
 
-<% if local_product_name.include?("RabbitMQ") %>
+<% if !local_product_name.include?("RabbitMQ") %>
+
 ### <a id='rebind' class="no-quick-link"></a> Rebind Your Apps
 
 If your apps do not use the trusted store to validate server certificates, you
