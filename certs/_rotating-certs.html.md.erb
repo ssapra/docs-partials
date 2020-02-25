@@ -1,11 +1,11 @@
 ## <a id="credhub"></a> Access BOSH CredHub
 
-<%= vars.platform_name %> stores some of its internal CA and 
-non-CA certificates in the BOSH CredHub credentials store.  
+<%= vars.platform_name %> stores some of its internal CA (certificate authority) and
+non-CA certificates in the BOSH CredHub credentials store.
 For more information, see [BOSH CredHub](https://docs.pivotal.io/platform/credhub/#bosh).
 
-To access the BOSH CredHub credentials store, you must retrieve 
-credentials from BOSH Director and then use the credentials 
+To access the BOSH CredHub credentials store, you must retrieve
+credentials from the BOSH Director and then use the credentials
 to log in to CredHub from the <%= vars.ops_manager_full %> VM.
 
 
@@ -29,20 +29,21 @@ To access the BOSH CredHub:
   The `BOSH_CLIENT` is the BOSH CredHub client name and the `BOSH_CLIENT_SECRET` is
   the BOSH CredHub client secret.
 
-1. Following the procedure in
+1. Follow the procedure in
 [Gather Credential and IP Address Information](https://docs.pivotal.io/pivotalcf/2-4/customizing/trouble-advanced.html#gather)
-to obtain the information needed to log in to the BOSH Director VM. Record the IP address for the <%= vars.ops_manager %> Director and the Director Credentials.
+to obtain the information needed to log in to the BOSH Director VM.
+Record the IP address for the BOSH Director and the Director Credentials.
 
 1. Log in to the <%= vars.ops_manager %> VM by following the procedure in
-[Log in to the <%= vars.ops_manager %> VM with SSH](https://docs.pivotal.io/pivotalcf/2-4/customizing/trouble-advanced.html#ssh).
+[Log in to the <%= vars.ops_manager %> VM with SSH](https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#ssh).
 
 1. From the <%= vars.ops_manager %> VM, set the API target of the CredHub CLI to your BOSH
 CredHub server by running the following command:
 
     ```
-    credhub api https://BOSH-DIRECTOR:8844 --ca-cert=/var/tempest/workspaces/default/root_ca_certificate
+    credhub api https://BOSH-DIRECTOR-IP:8844 --ca-cert=/var/tempest/workspaces/default/root_ca_certificate
     ```
-  Where `BOSH-DIRECTOR` is the IP address of the BOSH Director VM you recorded above.
+  Where `BOSH-DIRECTOR-IP` is the IP address of the BOSH Director VM you recorded above.
   <br><br>
   For example:
   <pre class="terminal">
@@ -74,7 +75,7 @@ To check certificate expiration dates:
 
 1. Log in to CredHub by following the procedure in [Access BOSH CredHub](#credhub) above.
 
-1. Run the following command:
+1. Run:
 
     ```
     credhub get -n CERTIFICATE-NAME -j | jq -r .value.ca | openssl x509 -text -noout | grep -A 2 "Validity"
@@ -98,13 +99,13 @@ To check certificate expiration dates:
   * **If your TLS certificates are about to expire or have expired,**
     do the procedures in [Rotate CA Certificates Manually](#tls) below.
     This rotates both the TLS certificates and the internal certificates.
-  * **If only your internal certificates are about to expire or have expired,** do the procedure in [Rotate Internal Certificates ](#internal) below.
+  * **If only your internal certificates are about to expire or have expired,** follow the procedure in [Rotate Internal Certificates ](#internal) below.
 <% end %>
 
 ##<a id='tls'></a> Rotate CA Certificates Manually
 
-<p class="note warning"><strong>Warning</strong>: This procedure assumes that you use only one foundation and do not have a WAN setup. 
-For WAN setup, all of the <code>apply changes</code> steps will need to be applied to your entire WAN. Also, all certificates must
+<p class="note warning"><strong>Warning</strong>: This procedure assumes that you use only one foundation and do not have a WAN setup.
+For a WAN setup, all of the <code>apply changes</code> steps need to be applied to your entire WAN. Also, all certificates must
 include SAN and CN entries.</p>
 
 To manually rotate the CA certificate:
@@ -127,17 +128,17 @@ To manually rotate the CA certificate:
 To obtain or generate a new CA certificate:
 
 1. Do one of the following:
-  * **If you have a TLS cluster,** obtain the CA (certificate authority) that signs its
+  * **If you have a TLS cluster:** Obtain the CA (certificate authority) that signs its
 certificate. You will add this to the <%= vars.ops_manager %> settings in the following section.
-  * **If you use self-signed certificates,** generate a new self-signed certificate with a separate name
+  * **If you use self-signed certificates:** Generate a new self-signed certificate with a separate name
 in CredHub. In this example we generate the new certificate with the name “/services/new_ca”:<pre class="terminal">$ credhub generate \
   --name="/services/new_ca" \
   --type="certificate" \
   --no-overwrite \
   --is-ca \
   --common-name="servicesCA"</pre>
- * **If you use an intermediate certificate signed by a root CA in credhub,**
-generate a new certificate signed by the CredHub root CA:  <pre class="terminal">
+ * **If you use an intermediate certificate signed by a root CA in credhub:**
+Generate a new certificate signed by the CredHub root CA:  <pre class="terminal">
 $ credhub generate \
     --name="/services/new_ca" \
     --type="certificate" \
@@ -152,12 +153,23 @@ $ credhub generate \
 
 To add new and old CA certificates to <%= vars.ops_manager %>:
 
-1. Log in to CredHub.
-1. Obtain the current CA with `credhub get --name=/services/tls_ca -k ca`.
-1. Obtain the new CA, either from a pre-existing file, or from your new CredHub location using `credhub get --name=/services/new_ca -k ca`.
-1. Make sure both ca values are pasted into **<%= vars.ops_manager %> -> BOSH Director -> Security -> Trusted Certificates**.
+1. Log in to CredHub by following the procedure in Access BOSH CredHub above.
+
+1. Obtain the current CA by running:
+
+    ```
+    credhub get --name=/services/tls_ca -k ca
+    ```
+
+1. Obtain the new CA, either from a pre-existing file, or from your new CredHub location by running:
+
+    ```
+    credhub get --name=/services/new_ca -k ca
+    ```
+
+1. Paste both CA values into **<%= vars.ops_manager %> > BOSH Director > Security > Trusted Certificates**.
 1. Click **Save**.
-1. Make sure both ca values are pasted into **PAS tile -> Networking -> Certificate Authorities Trusted by Router and HAProxy**
+1. Paste both CA values into **<%= vars.app_runtime_abbr %> tile > Networking > Certificate Authorities Trusted by Router and HAProxy**.
 1. Click **Save**.
 
 ### <a id="applychanges" class="no-quick-link"></a> Apply Changes
@@ -166,12 +178,12 @@ To add new and old CA certificates to <%= vars.ops_manager %>:
 all of the VMs in your <%= vars.ops_manager %> deployment to apply a CA certificate. The
 operation can take a long time to complete.</p>
 
-To apply these changes, do the following:
- 
+To apply these changes:
+
 1. Navigate back to the **Installation Dashboard**.
 1. Click **Review Pending Changes**.
 1. Expand errands.
-1. Select the errand to upgrade all service instances. 
+1. Select the errand to upgrade all service instances.
 1. Click **Apply Changes**.
 
 <% if !local_product_name.include?("RabbitMQ") %>
@@ -187,34 +199,34 @@ To rebind your app:
 1. Stop your app by running the following command:
 
 	```
-	cf stop YOUR-APP
+	cf stop APP-NAME
 	```
-	Where `YOUR-APP` is the name of your app.
+	Where `APP-NAME` is the name of your app.
 
 1. Unbind your app from the service instance by running the following command:
 
 	```
-	cf unbind-service YOUR-APP YOUR-SERVICE-INSTANCE
+	cf unbind-service APP-NAME SERVICE-INSTANCE-NAME
 	```
 	Where:
-	+ `YOUR-APP` is the name of your app.
-	+ `YOUR-SERVICE-INSTANCE` is the name of your service instance.
+	+ `APP-NAME` is the name of your app.
+	+ `SERVICE-INSTANCE-NAME` is the name of your service instance.
 
 1. Rebind your app to the service instance by running the following command:
 
 	```
-	cf bind-service YOUR-APP YOUR-SERVICE-INSTANCE
+	cf bind-service APP-NAME SERVICE-INSTANCE-NAME
 	```
 	Where:
-	+ `YOUR-APP` is the name of your app.
-	+ `YOUR-SERVICE-INSTANCE` is the name of your service instance.
+	+ `APP-NAME` is the name of your app.
+	+ `SERVICE-INSTANCE-NAME` is the name of your service instance.
 
 1. Restage your app by running the following command:
 
 	```
-	cf restage YOUR-APP
+	cf restage APP-NAME
 	```
-	Where `YOUR-APP` is the name of your app.
+	Where `APP-NAME` is the name of your app.
 
 <% end %>
 
@@ -224,8 +236,8 @@ To rebind your app:
 To have all instances use the new CA Certificate:
 
 1. Do one of the following:
-  * **If you have an existing certificate,** obtain the CA certificate and private key file corresponding
-  to the CA that you applied in the previous step. Then, run the following command:<pre class="terminal">
+  * **If you have an existing certificate:** Obtain the CA certificate and private key file corresponding
+  to the CA that you applied in the previous step. Then, run:<pre class="terminal">
 credhub set \
     --name="/services/tls_ca" \
     --type="certificate" \
@@ -235,8 +247,8 @@ credhub set \
       Where:
       - PEM-PATH is the path to the `root.pem` file.
       - CERT-KEY is the private key for the certificate.
-  * **If you have created a new self-signed or intermediary certificate in /services/new_ca,**
-set `/services/tls_ca` to the new CredHub value `/services/new_ca` that you generated in the previous step:<pre class="terminal">
+  * **If you have created a new self-signed or intermediary certificate in /services/new_ca:**
+Set `/services/tls_ca` to the new CredHub value `/services/new_ca` that you generated in the previous step:<pre class="terminal">
 $ credhub get -n /services/new_ca -k ca > new_ca.ca
 $ credhub get -n /services/new_ca -k certificate > new_ca.certificate
 $ credhub get -n /services/new_ca -k private_key > new_ca.private_key
@@ -261,7 +273,7 @@ Director** tile.
 
 1. Click **Save**.
 
-1. Navigate to the **Installation Dashboard** in <%= vars.ops_manager %> and click the **PAS** tile.
+1. Navigate to the **Installation Dashboard** in <%= vars.ops_manager %> and click the **<%= vars.app_runtime_abbr %>** tile.
 
 1. Click **Networking**.
 
@@ -275,12 +287,12 @@ Director** tile.
 	all of the VMs in your <%= vars.ops_manager %> deployment to apply a CA certificate. The
 	operation can take a long time to complete.</p>
 
-To apply these changes, do the following:
- 
+To apply these changes:
+
 1. Navigate back to the **Installation Dashboard**.
 1. Click **Review Pending Changes**.
 1. Expand errands.
-1. Select the errand to upgrade all service instances. 
+1. Select the errand to upgrade all service instances.
 1. Click **Apply Changes**.
 
 <% if !local_product_name.include?("RabbitMQ") %>
