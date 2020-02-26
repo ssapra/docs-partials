@@ -128,8 +128,7 @@ To manually rotate the CA certificate:
 To obtain or generate a new CA certificate:
 
 1. Do one of the following:
-  * **If you have a TLS cluster:** Obtain the CA (certificate authority) that signs its
-certificate. You will add this to the <%= vars.ops_manager %> settings in the following section.
+  * **If you can obtain a CA (certificate authority):** Obtain the CA that signs its certificate. You will add this to the <%= vars.ops_manager %> settings in the following section.
   * **If you use self-signed certificates:** Generate a new self-signed certificate with a separate name
 in CredHub. In this example we generate the new certificate with the name “/services/new_ca”:<pre class="terminal">$ credhub generate \
   --name="/services/new_ca" \
@@ -147,7 +146,6 @@ $ credhub generate \
     --common-name="servicesCA" \
     --ca=/path-to-root-ca</pre>
 
-1. Add the new certificate to <%= vars.ops_manager %> in the following section.
 
 ### <a id="addnewandold" class="no-quick-link"></a> Add New Certificates to <%= vars.ops_manager %>
 
