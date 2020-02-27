@@ -147,19 +147,19 @@ $ credhub generate \
     --ca=/path-to-root-ca</pre>
 
 
-### <a id="addnewandold" class="no-quick-link"></a> Add New Certificates to <%= vars.ops_manager %>
+### <a id="addnewandold" class="no-quick-link"></a> Add Certificates to <%= vars.ops_manager %>
 
-To add new and old CA certificates to <%= vars.ops_manager %>:
+To add your new and current CA certificates to <%= vars.ops_manager %>:
 
 1. Log in to CredHub by following the procedure in Access BOSH CredHub above.
 
-1. Obtain the current CA by running:
+1. Get the current CA by running:
 
     ```
     credhub get --name=/services/tls_ca -k ca
     ```
 
-1. Obtain the new CA, either from a pre-existing file, or from your new CredHub location by running:
+1. Get the new CA, either from a pre-existing file, or from your new CredHub location by running:
 
     ```
     credhub get --name=/services/new_ca -k ca
