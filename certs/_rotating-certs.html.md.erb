@@ -140,7 +140,7 @@ in CredHub:<pre class="terminal">$ credhub generate \
  * **If you use an intermediate certificate signed by a root CA in credhub:**
 Generate a new certificate signed by the CredHub root CA:  <pre class="terminal">
 $ credhub generate \
-    --name="/services/NEW-CERT" \
+    --name="NEW-CERT" \
     --type="certificate" \
     --no-overwrite \
     --is-ca \
@@ -165,7 +165,7 @@ To add your new and current CA certificates to <%= vars.ops_manager %>:
 1. Get the new CA, either from a pre-existing file, or from your new CredHub location by running:
 
     ```
-    credhub get --name=/services/NEW-CERT -k ca
+    credhub get --name=NEW-CERT -k ca
     ```
     Where `NEW-CERT` is the CredHub certificate generated in the previous section.
 
@@ -241,7 +241,7 @@ To have all instances use the new CA Certificate:
   * **If you have an existing certificate:** Obtain the CA certificate and private key file corresponding
   to the CA that you applied in the previous step. Then, run:<pre class="terminal">
 credhub set \
-    --name="/services/OLD-CERT" \
+    --name="OLD-CERT" \
     --type="certificate" \
     --certificate=PEM-PATH/root.pem \
     --private=CERT-KEY
@@ -249,7 +249,7 @@ credhub set \
       Where:
       - `PEM-PATH` is the path to the `root.pem` file.
       - `CERT-KEY` is the private key for the certificate.
-  * **If you have created a new self-signed or intermediary certificate in /services/NEW-CERT:**
+  * **If you have created a new self-signed or intermediary certificate:**
 Set `OLD-CERT` to the new CredHub value `NEW-CERT` that you generated in the previous step:<pre class="terminal">
 $ credhub get -n NEW-CERT -k ca > new_ca.ca
 $ credhub get -n NEW-CERT -k certificate > new_ca.certificate
