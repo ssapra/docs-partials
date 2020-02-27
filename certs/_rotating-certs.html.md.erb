@@ -96,10 +96,10 @@ To check certificate expiration dates:
 
 <% if local_product_name.include?("MySQL") %>
 1. If any of your certificates are about to expire or have expired, do one of the following:
-  * **If your TLS certificates are about to expire or have expired,**
-    do the procedures in [Rotate CA Certificates Manually](#tls) below.
+  * **If your TLS certificates are about to expire or have expired:**
+    Do the procedures in [Rotate CA Certificates Manually](#tls) below.
     This rotates both the TLS certificates and the internal certificates.
-  * **If only your internal certificates are about to expire or have expired,** follow the procedure in [Rotate Internal Certificates ](#internal) below.
+  * **If only your internal certificates are about to expire or have expired:** Follow the procedure in [Rotate Internal Certificates ](#internal) below.
 <% end %>
 
 ##<a id='tls'></a> Rotate CA Certificates Manually
@@ -116,7 +116,7 @@ To manually rotate the CA certificate:
 <% if !local_product_name.include?("RabbitMQ") %>
 1. [Rebind Your Apps](#rebind)
 <% end %>
-1. [Set New CA Certificate(#setnew)
+1. [Set New CA Certificate](#setnew)
 1. [Remove the Old CA Certificate](#remove)
 1. [Apply Changes](#applychanges2)
 <% if !local_product_name.include?("RabbitMQ") %>
@@ -129,46 +129,75 @@ To obtain or generate a new CA certificate:
 
 1. Do one of the following:
   * **If you can obtain a CA (certificate authority):** Obtain the CA that signs its certificate. You add this to the <%= vars.ops_manager %> settings in the following section.
-  * **If you use self-signed certificates:** Generate a new self-signed certificate with a separate name or path 
-in CredHub:<pre class="terminal">$ credhub generate \
-  --name="NEW-CERT" \
-  --type="certificate" \
-  --no-overwrite \
-  --is-ca \
-  --common-name="servicesCA"</pre>
-  Where `NEW-CERT` is your chosen CredHub path or name to the new certificate.
- * **If you use an intermediate certificate signed by a root CA in credhub:**
-Generate a new certificate signed by the CredHub root CA:  <pre class="terminal">
-$ credhub generate \
-    --name="NEW-CERT" \
-    --type="certificate" \
-    --no-overwrite \
-    --is-ca \
-    --common-name="servicesCA" \
-    --ca=/path-to-root-ca</pre>
-    Where `NEW-CERT` is your chosen CredHub path or name to the new certificate.
+  * **If you use self-signed certificates:** Generate a new self-signed certificate with a separate name or path
+in CredHub:
 
+        ```
+        credhub generate \
+        --name="NEW-CERT" \
+        --type="certificate" \
+        --no-overwrite \
+        --is-ca \
+        --common-name="servicesCA"
+        ```
+        Where `NEW-CERT` is your chosen CredHub path or name to the new certificate.<br><br>
+        For example:
+        <pre class="terminal">$ credhub generate \
+          --name="/services/new_ca" \
+          --type="certificate" \
+          --no-overwrite \
+          --is-ca \
+          --common-name="servicesCA"</pre>
+  * **If you use an intermediate certificate signed by a root CA in credhub:**
+Generate a new certificate signed by the CredHub root CA:
+
+        ```
+        credhub generate \
+        --name="NEW-CERT" \
+        --type="certificate" \
+        --no-overwrite \
+        --is-ca \
+        --common-name="servicesCA" \
+        --ca=/path-to-root-ca
+        ```
+        Where `NEW-CERT` is your chosen CredHub path or name to the new certificate.<br><br>
+        For example:
+        <pre class="terminal">
+        $ credhub generate \
+          --name="/services/new_ca" \
+          --type="certificate" \
+          --no-overwrite \
+          --is-ca \
+          --common-name="servicesCA" \
+          --ca=/path-to-root-ca</pre>
 
 ### <a id="addnewandold" class="no-quick-link"></a> Add Certificates to <%= vars.ops_manager %>
 
 To add your new and current CA certificates to <%= vars.ops_manager %>:
 
-1. Log in to CredHub by following the procedure in Access BOSH CredHub above.
+1. Log in to CredHub by following the procedure in [Access BOSH CredHub](#credhub) above.
 
 1. Get the current CA by running:
 
     ```
     credhub get --name=OLD-CERT -k ca
     ```
-    Where `OLD-CERT` is the CredHub name or path to the certificate to later replace.
+    Where `OLD-CERT` is the CredHub name or path to the certificate to later replace.<br><br>
+    For example:
+    <pre class="terminal">
+    credhub get --name=/services/tls_ca -k ca
+    </pre>
 
 1. Get the new CA, either from a pre-existing file, or from your new CredHub location by running:
 
     ```
     credhub get --name=NEW-CERT -k ca
     ```
-    Where `NEW-CERT` is the CredHub generated or pre-existing certificate created in the previous section.
-
+    Where `NEW-CERT` is the CredHub generated or pre-existing certificate created in the previous section.<br><br>
+    For example:
+    <pre class="terminal">
+    credhub get --name=/services/new_ca -k ca
+    </pre>
 1. Paste both CA values into **<%= vars.ops_manager %> > BOSH Director > Security > Trusted Certificates**.
 1. Click **Save**.
 1. Paste both CA values into **<%= vars.app_runtime_abbr %> tile > Networking > Certificate Authorities Trusted by Router and HAProxy**.
@@ -239,27 +268,52 @@ To have all instances use the new CA Certificate:
 
 1. Do one of the following:
   * **If you have an existing certificate:** Obtain the CA certificate and private key file corresponding
-  to the CA that you applied in the previous step. Then, run:<pre class="terminal">
-credhub set \
-    --name="OLD-CERT" \
-    --type="certificate" \
-    --certificate=PEM-PATH/root.pem \
-    --private=CERT-KEY
-</pre>
-      Where:
-      - `PEM-PATH` is the path to the `root.pem` file.
-      - `CERT-KEY` is the private key for the certificate.
+  to the CA that you applied in the previous step. Then, run:
+
+        ```
+        credhub set \
+        --name="OLD-CERT" \
+        --type="certificate" \
+        --certificate=PEM-PATH/root.pem \
+        --private=CERT-KEY
+        ```
+        Where:
+        - `OLD-CERT` is the CredHub name or path to the certificate to replace.
+        - `PEM-PATH` is the path to the `root.pem` file.
+        - `CERT-KEY` is the private key for the new certificate.
+
+        For example:
+        <pre class="terminal">
+        $ credhub set \
+          --name="/services/tls_ca" \
+          --type="certificate" \
+          --certificate=PEM-PATH/root.pem \
+          --private=CERT-KEY
+        </pre>
   * **If you have created a new self-signed or intermediary certificate:**
-Set `OLD-CERT` to the new CredHub value `NEW-CERT` that you generated in the previous step:<pre class="terminal">
-$ credhub get -n NEW-CERT -k ca > new_ca.ca
-$ credhub get -n NEW-CERT -k certificate > new_ca.certificate
-$ credhub get -n NEW-CERT -k private_key > new_ca.private_key
-$ credhub set -n OLD-CERT \
-    --type=certificate \
-    --root=new_ca.ca \
-    --certificate=new_ca.certificate \
-    --private=new_ca.private_key
-</pre>
+Set `OLD-CERT` to the new CredHub value `NEW-CERT` that you generated in the previous step:
+
+        ```
+        credhub get -n NEW-CERT -k ca > new_ca.ca
+        credhub get -n NEW-CERT -k certificate > new_ca.certificate
+        credhub get -n NEW-CERT -k private_key > new_ca.private_key
+        credhub set -n OLD-CERT \
+        --type=certificate \
+        --root=new_ca.ca \
+        --certificate=new_ca.certificate \
+        --private=new_ca.private_key
+        ```
+        For example:
+        <pre class="terminal">
+        $ credhub get -n /services/new\_ca -k ca > new\_ca.ca
+        $ credhub get -n /services/new\_ca -k certificate > new\_ca.certificate
+        $ credhub get -n /services/new\_ca -k private_key > new\_ca.private\_key
+        $ credhub set -n /services/tls\_ca \
+          --type=certificate \
+          --root=new\_ca.ca \
+          --certificate=new\_ca.certificate \
+          --private=new\_ca.private\_key
+        </pre>
 
 ### <a id="remove" class="no-quick-link"></a> Remove the Old CA Certificate
 
