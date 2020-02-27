@@ -167,7 +167,7 @@ To add your new and current CA certificates to <%= vars.ops_manager %>:
     ```
     credhub get --name=NEW-CERT -k ca
     ```
-    Where `NEW-CERT` is the CredHub certificate generated in the previous section.
+    Where `NEW-CERT` is the CredHub generated or pre-existing certificate created in the previous section.
 
 1. Paste both CA values into **<%= vars.ops_manager %> > BOSH Director > Security > Trusted Certificates**.
 1. Click **Save**.
