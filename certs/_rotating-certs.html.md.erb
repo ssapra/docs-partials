@@ -138,9 +138,11 @@ in CredHub:
         --type="certificate" \
         --no-overwrite \
         --is-ca \
-        --common-name="servicesCA"
+        --common-name="COMMON-NAME"
         ```
-        Where `NEW-CERT` is your chosen CredHub path or name to the new certificate.<br><br>
+        Where:
+        - `NEW-CERT` is your chosen CredHub path or name to the new certificate.
+        - `COMMON-NAME` is the common name of the generated certificate.<br><br>
         For example:
         <pre class="terminal">$ credhub generate \
           --name="/services/new_ca" \
@@ -157,10 +159,13 @@ Generate a new certificate signed by the CredHub root CA:
         --type="certificate" \
         --no-overwrite \
         --is-ca \
-        --common-name="servicesCA" \
-        --ca=/path-to-root-ca
+        --common-name="COMMON-NAME" \
+        --ca=PATH-TO-ROOT-CA
         ```
-        Where `NEW-CERT` is your chosen CredHub path or name to the new certificate.<br><br>
+        Where:
+        - `NEW-CERT` is your chosen CredHub path or name to the new certificate.
+        - `COMMON-NAME` is the common name of the generated certificate.
+        - `PATH-TO-ROOT-CA` is the name of CA used to sign the generated certificate.<br><br>
         For example:
         <pre class="terminal">
         $ credhub generate \
