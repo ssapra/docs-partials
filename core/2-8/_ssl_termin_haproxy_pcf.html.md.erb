@@ -61,7 +61,7 @@ To configure SSL termination on HAProxy in <%= vars.app_runtime_abbr %>:
     * Select the **Enable preload** checkbox to force instances of Google Chrome, Firefox, and Safari that access your HAProxy to refer to their built-in lists of known hosts that require HTTPS, of which HAProxy is one. This ensures that the first contact a browser has with your HAProxy is an HTTPS request, even if the browser has not yet received an HSTS header from HAProxy.
 
 1. (Optional) If you are not using SSL encryption or if you are using self-signed certificates, you can select the **Disable SSL certificate verification for this environment** checkbox. This also disables SSL verification for route services.
-  <p class="note"><p class='note'><strong>Note:</strong> Select this checkbox only for development and testing environments. Do not select it for production environments.</p>
+    <p class="note"><strong>Note:</strong> Select this checkbox only for development and testing environments. Do not select it for production environments.</p>
 
 1. (Optional) If you do not want the Gorouter to accept any non-encrypted HTTP traffic, select the **Disable HTTP on the Gorouter and HAProxy** checkbox.
 
