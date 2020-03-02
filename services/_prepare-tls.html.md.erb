@@ -207,13 +207,12 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
 1. Click **Save**.
 
 <% if vars.product_full.include?("Redis") %>
-1. Ensure relevant app security groups are open for port 16379. This can be done through the cf CLI.
+1. Ensure relevant app security groups are open for port 16379.
+This can be done through the Cloud Foundry Command Line Interface (cf CLI).
 For more information, see [Managing ASGs with the cf CLI](https://docs.pivotal.io/platform/application-service/concepts/asg.html#procedures).
 <% end %>
 
 ##<a id='enable'></a> Enable TLS in <%= product_short %>
-
-After preparing your environment for TLS, you must enable TLS in the tile configuration:
 
 To enable TLS in the <%= product_short %> tile:
 
@@ -237,9 +236,9 @@ Follow the procedure in
 	including enabling TLS in the [Configure Security](./install-config.html#security) section.
 	<% end %>
 1. Navigate to **<%= vars.ops_manager %> Installation Dashboard** > **Review Pending Changes**.
-1. Ensure that the CA certificate is deployed to all VMS by selecting:
+1. Ensure that the CA certificate is deployed to all VMs by selecting:
 	+ <%= vars.app_runtime_full %>
-	+ <%= product_short %>
+	+ <%= product_full %>
 	+ The **Upgrade All On-Demand Service Instances** errand
 3. Click **Apply Changes**.
 This restarts all the VMs in your deployment and applies your CA certificate.
