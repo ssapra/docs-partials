@@ -66,7 +66,7 @@
         In the output, the password appears under
         <code>value</code>.
       </li>
-      <% if vars.service_name == "MySQL for Pivotal Platform" %>
+      <% if vars.product_short.include?("MySQL") %>
       <li>
         Retrieve the password for the read-only admin user by running:
         <pre><code>credhub get -n /p-bosh/service-instance_GUID/read_only_admin_password</code></pre>

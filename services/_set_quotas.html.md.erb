@@ -41,7 +41,7 @@ A service may offer one or more plans.
 You can set a separate quota per plan so that instances of that plan cannot exceed the plan quota.
 For a service with multiple plans, the total number of instances created for all
 plans combined cannot exceed the [global quota](#global) for the service.
-<% if service_name == "MySQL for Pivotal Platform" %>
+<% if product_short.include?("MySQL") %>
 If the plan quota field is blank, the plan quota is set to the global quota by default.
 <%end%>
 
@@ -202,17 +202,18 @@ To view configurations for your <%= product_short %> on-demand plan, do the foll
 1. Navigate to **<%= vars.ops_manager %> Installation Dashboard** > **<%= tile_name %>** > **Settings**.
 
 <%# Case statement to change the instructions to satisfy each service %>
-<% case service_name
-when 'RabbitMQ for Pivotal Platform' %>
+<% if product_short.include?("RabbitMQ") %>
+
 1. Click the section for the plan you want to view. For example, **On Demand Instance: Plan 1**.
 
-<% when 'MySQL for Pivotal Platform' %>
+<% elsif product_short.include?("MySQL")%>
+
 1. Click the section for the plan you want to view. For example, **Plan 1**.
 
-<% when  'Pivotal Cloud Cache' %>
+<% elsif product_short.include?("Cloud Cache")%>
 1. Click the section for the plan you want to view. For example, **Plan 1**.
 
-<% when 'Redis for Pivotal Platform' %>
+<% elsif product_short.include?("Redis")%>
 <%# Redis has different instructions in v2.3 and later %>
 <% if product_info['local_product_version'] == '2.1' || product_info['local_product_version'] == '2.2' %>
 1. Click the section for the plan you want to view. For example, **On-Demand Plan 1**.
@@ -225,7 +226,7 @@ when 'RabbitMQ for Pivotal Platform' %>
 
 The image below shows an example that includes the VM type and persistent disk
 selected for the server VMs, as well as the quota for this plan.
-<% if service_name == 'Pivotal Cloud Cache' %>
+<% if product_short.include?("Cloud Cache")%>
 The quota is shown in the **Maximum service instances** field.
 <% end %>
 

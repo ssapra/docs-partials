@@ -393,7 +393,7 @@ Re-bootstrapping the cluster is not successful unless you shut down the
 
 ### <a id="choose-node"></a> Choose Node to Bootstrap
 
-<% if current_page.data.tile == "Recovering From MySQL Cluster Downtime" %>
+<% if current_page.data.title == "Recovering From MySQL Cluster Downtime" %>
 
 To avoid losing data, you must bootstrap from a node in the cluster that has
 the highest transaction sequence number (`seqno`).
@@ -469,7 +469,7 @@ new bootstrap node.
 
 ### <a id="set-bootstrap-node"></a>Bootstrap the First Node ###
 
-<% if current_page.data.tile == "Recovering From MySQL Cluster Downtime" %>
+<% if current_page.data.title == "Recovering From MySQL Cluster Downtime" %>
 
 After determining the node with the highest `seqno`, do the following
 to bootstrap the node:
@@ -538,7 +538,7 @@ After the bootstrapped node is running, to restart the nodes do the following:
        Only do the procedure with the assistance of
        <a href="https://support.pivotal.io">Pivotal Support</a>.</p>
 
-<% if current_page.data.tile == "Recovering From MySQL Cluster Downtime" %>
+<% if current_page.data.title == "Recovering From MySQL Cluster Downtime" %>
 
 1. If the `monit start` command fails, it might be because the node with
 the highest `seqno` is `mysql/0`. <br><br>
