@@ -9,7 +9,7 @@ The proxy used in <%= vars.product_short %> is Switchboard.
 Switchboard was developed to replace HAProxy as the proxy tier for the high
 availability cluster for MySQL databases in <%= vars.product_short %>.
 
-<% if vars.product_short == "MySQL for Pivotal Platform" %>
+<% if current_page.data.tile %>
 
 <%= image_tag "switchboard-all-healthy.png" %>
 
@@ -26,7 +26,7 @@ Switchboard offers the following features:
 
     Operators can connect to Switchboard to view the state of the nodes.
 
-    <% if vars.product_short == "MySQL for Pivotal Platform" %>
+    <% if current_page.data.tile %>
     For more information about monitoring proxy health status, see
     [Monitoring Node Health](./monitor-health.html).
     <%end%>
