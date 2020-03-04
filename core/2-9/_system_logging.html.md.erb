@@ -15,9 +15,9 @@ To configure the **System Logging** pane:
 
 1. For **Encrypt syslog using TLS?**, select **Yes** to use TLS encryption when forwarding logs to a remote server.
   1. For **Permitted peer**, enter either the name or SHA1 fingerprint of the remote peer.
-  1. For **TLS CA certificate**, enter the TLS CA certificate for the remote server.
+  1. For **Destination certificate**, enter the TLS CA certificate for the remote server.
 
-1. Select the **Enable agent-based syslog egress for app logs** checkbox to use the Syslog Agent for syslog egress. Agent-based syslog provides an alternative to scalable-syslog architecture. For more information about the Syslog Agent, see [Loggregator Architecture and Components](../loggregator/architecture.html#components) in _Loggregator Architecture_.
+1. Select the **Enable syslog egress through Syslog Agents** checkbox to use the Syslog Agent for syslog egress. Agent-based syslog provides an alternative to scalable-syslog architecture. For more information about the Syslog Agent, see [Loggregator Architecture and Components](../loggregator/architecture.html#components) in _Loggregator Architecture_.
   <p class="note"><strong>Note:</strong> Selecting this checkbox disables the Syslog Adapter and Syslog Scheduler VMs to prevent log duplication.</p>
 
 1. Select the **Enable Cloud Controller security event logging** checkbox to include security events in the log stream. This feature logs all API requests, including the endpoint, user, source IP address, and request result, in the Common Event Format (CEF).
