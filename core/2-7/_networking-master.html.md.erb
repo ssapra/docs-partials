@@ -66,8 +66,8 @@ To configure the **Networking** pane:
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/max_connections_backend" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/keepalive_connections" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_timeout_backend" %>
-1. (Optional) Use **Gorouter drain timeout** to specify the amount of time, in seconds, that the Gorouter continues to serve existing connections before shutting down. After the timeout is reached, all remaining connections are terminated so the Gorouter can restart. The default value is `900`.
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/frontend_idle_timeout" %>
+1. (Optional) Use **Gorouter drain timeout** to specify the amount of time, in seconds, that the Gorouter continues to serve existing connections before shutting down. After the timeout is reached, all remaining connections are terminated so the Gorouter can restart. The default value is `900`.
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/lb_unhealthy_threshold" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/lb_healthy_threshold" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/http_headers_to_log" %>
