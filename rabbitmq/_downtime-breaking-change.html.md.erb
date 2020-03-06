@@ -1,9 +1,9 @@
 <p class="note breaking"><strong>Breaking Change: </strong>
-Upgrading to this RabbitMQ for PCF release causes cluster <strong>downtime</strong>.
+Upgrading to this RabbitMQ for VMware Tanzu [VMs] release causes cluster <strong>downtime</strong>.
 This is because the RabbitMQ cluster is taken offline when nodes are upgraded to Erlang v21.
 <br><br>
-Instead of upgrading to this release, Pivotal recommends upgrading to RabbitMQ for PCF v1.17.3 or later.
-Upgrading to RabbitMQ for PCF v1.17.3 or later uses rolling upgrades.
+Instead of upgrading to this release, <%= vars.recommended_by %> recommends upgrading to RabbitMQ for VMware Tanzu [VMs] v1.17.3 or later.
+Upgrading to RabbitMQ for VMware Tanzu [VMs] v1.17.3 or later uses rolling upgrades.
 This does not take the cluster offline when nodes are upgraded to Erlang v21.
 <br><br>
 For more information about downtime during upgrades, see <a href="./upgrade.html#about">About the Upgrade</a>.

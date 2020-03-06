@@ -19,7 +19,7 @@ To configure SSL termination on HAProxy in <%= vars.app_runtime_abbr %>:
         <ul>
           <li>If you need highly available HAProxy:
             <ol>
-              <li>Choose an IP address for each HAProxy instance on the subnet where you deployed PAS.</li>
+              <li>Choose an IP address for each HAProxy instance on the subnet where you deployed <%= vars.app_runtime_abbr %>.</li>
               <li>In the **HAProxy IPs** field of the **Networking** pane, enter the IP addresses you have selected for your HAProxy instances.</li>
               <li>Configure your load balancer, such as F5 or NSX, to forward domain names to the HAProxy IP addresses.</li>
             </ol>
