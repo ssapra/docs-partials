@@ -1,12 +1,12 @@
-After you upgrade to a patch release of PAS, PCF Metrics v1.6.x no longer works.
+After you upgrade to a patch release of <%= vars.app_runtime_abbr %>, App Metrics v1.6.x no longer works.
 This incompatibility is caused by an update to nodejs-offline-buildpack v1.7.9, 
 which removes support for Node.js 8.x.
 
-If you require PCF Metrics v1.6.x, do not upgrade to any of the following PAS patch versions:
+If you require App Metrics v1.6.x, do not upgrade to any of the following <%= vars.app_runtime_abbr %> patch versions:
 
 * PAS v2.5.20 and later
 * PAS v2.6.15 and later 
 * PAS v2.7.9 and later
 * PAS v2.8.3 and later
 
-If you have already upgraded, see the [PCF Metrics v1.6.x is not compatible with PAS 2.5.20+, 2.6.15+, 2.7.9+ & 2.8.3+](https://community.pivotal.io/s/article/PCF-Metrics-not-compatible-with-PAS) for potential workarounds.
+If you have already upgraded, see the [PCF Metrics v1.6.x is not compatible with <%= vars.app_runtime_abbr %> 2.5.20+, 2.6.15+, 2.7.9+ & 2.8.3+](https://community.pivotal.io/s/article/PCF-Metrics-not-compatible-with-PAS) for potential workarounds.

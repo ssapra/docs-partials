@@ -30,7 +30,7 @@ If you significantly increase the value of the graceful shutdown period, platfor
 
 <%= vars.recommended_by %> recommends using isolation segments to separate apps that have different shutdown requirements to ensure Diego Cell update times are reliable.
 <% if current_page.data.deployment != "IST" %>
-For more information, see <a href="https://docs.pivotal.io/platform/application-service/operating/installing-pcf-is.html"> Installing Pivotal Isolation Segment</a>.
+For more information, see <a href="https://docs.pivotal.io/platform/application-service/operating/installing-pcf-is.html"> Installing Isolation Segment</a>.
 <%end%>
 
 <p class="note"><strong>Note:</strong> You must ensure that <strong>App graceful shutdown period</strong> has the same value in all environments that have deployed apps. This is to avoid unexpected behavior.</p>
