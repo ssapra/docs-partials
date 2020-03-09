@@ -4,9 +4,8 @@
     Use the cf CLI to determine the GUID associated with the service instance
     for which you want to retrieve credentials by running:
 
-    <pre><code>cf service service-instance --guid</code></pre>
-    Where <code>SERVICE-INSTANCE</code> is the name of the service instance.
-    <br><br>
+    <pre><code>cf service SERVICE-INSTANCE-NAME --guid</code></pre>
+
     For example: <br>
     <pre class="terminal">$ cf service my-service-instance --guid
 
@@ -14,7 +13,7 @@
     If you do not know the name of the service instance, you can list service instances in the space with
     <code>cf services</code>.
   </li>
-  <li>Do the steps in
+  <li>Follow the steps in
     <a href="https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#gather">Gather Credential and IP Address Information</a>
     and
     <a href="https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#ssh">Log In to the <%= vars.ops_manager %> VM with SSH</a>
