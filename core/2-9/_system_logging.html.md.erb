@@ -1,4 +1,4 @@
-In the **System Logging** pane, you can configure system logging in <%= vars.app_runtime_abbr %> to forward log messages from <%= vars.app_runtime_abbr %> component VMs to an external service. <%= vars.recommended_by %> recommends forwarding logs to an external service for use in troubleshooting. If you do not fill these fields, platform logs are not forwarded but remain available on the component VMs and for download through <%= vars.ops_manager %>.
+In the **System Logging** pane, you can configure system logging in <%= vars.app_runtime_abbr %> to forward log messages from <%= vars.app_runtime_abbr %> component VMs to an external service. <%= vars.company_name %> recommends forwarding logs to an external service for use in troubleshooting. If you do not fill these fields, platform logs are not forwarded but remain available on the component VMs and for download through <%= vars.ops_manager %>.
 
 <p class="note"><strong>Note:</strong> This procedure explains how to configure system logging for <%= vars.app_runtime_abbr %> component VMs. To forward logs from <%= vars.platform_name %> tiles to an external service, you must also configure system logging in each tile. For more information about configuring system logging, see the documentation for the given tiles.</p>
 
@@ -39,7 +39,7 @@ To configure the **System Logging** pane:
 	<p class="note"><strong>Note:</strong> If you deselect this checkbox to disable the V2 Firehose,
            you must also disable the V1 Firehose.
         </p>
-	<div class='note warning'><strong>Warning:</strong> If you disable the V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. <%= vars.recommended_by %> recommends that you do not disable the Firehose if you are dependent on any of these:
+	<div class='note warning'><strong>Warning:</strong> If you disable the V2 Firehose, you must select the <strong>Enable Log Cache syslog ingestion</strong> checkbox, or logs and metrics do not appear in Log Cache. <%= vars.company_name %> recommends that you do not disable the Firehose if you are dependent on any of these:
 		<ul>
 			<li>Service tile metrics</li>
 			<li>Healthwatch or App Metrics</li>

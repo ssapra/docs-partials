@@ -1,4 +1,4 @@
-The **Advanced Features** pane includes new functionality that may have certain constraints. Although these features are fully supported, <%= vars.recommended_by %> recommends caution when using them in production environments.
+The **Advanced Features** pane includes new functionality that may have certain constraints. Although these features are fully supported, <%= vars.company_name %> recommends caution when using them in production environments.
 
 ### <a id="disk-memory-overcommit"></a> Diego Cell Memory and Disk Overcommit
 
@@ -6,7 +6,7 @@ If your apps do not use the full allocation of disk space and memory set in the 
 
 For example, you might want to use the overcommit if your apps use a small amount of disk and memory capacity compared to the amounts set in the **Resource Config** settings for **Diego Cell**.
 
-<p class="note"><strong>Note:</strong> Due to the risk of app failure and the deployment-specific nature of disk and memory use, <%= vars.recommended_by %> has no recommendation for how much, if any, memory or disk space to overcommit.</p>
+<p class="note"><strong>Note:</strong> Due to the risk of app failure and the deployment-specific nature of disk and memory use, <%= vars.company_name %> has no recommendation for how much, if any, memory or disk space to overcommit.</p>
 
 To enable overcommit:
 
@@ -28,7 +28,7 @@ When <%= vars.app_runtime_abbr %> requests a shutdown of an app, the processes i
 
 If you significantly increase the value of the graceful shutdown period, platform upgrades and updates might become slower. This is because each Diego Cell uses the graceful shutdown period when it is cleaning up evacuated app instances and waits for each app to gracefully shut down.
 
-<%= vars.recommended_by %> recommends using isolation segments to separate apps that have different shutdown requirements to ensure Diego Cell update times are reliable.
+<%= vars.company_name %> recommends using isolation segments to separate apps that have different shutdown requirements to ensure Diego Cell update times are reliable.
 <% if current_page.data.deployment != "IST" %>
 For more information, see <a href="https://docs.pivotal.io/platform/application-service/operating/installing-pcf-is.html"> Installing Isolation Segment</a>.
 <%end%>
@@ -145,7 +145,7 @@ To configure this retention period:
 
 1. Enter the number of days of granular data you want to retain in the **Usage service cutoff age** field.
 
-To avoid performance or data migration issues, <%= vars.recommended_by %> recommends that you do not retain data for longer than 365 days. Configuring this field does not affect monthly summary records.
+To avoid performance or data migration issues, <%= vars.company_name %> recommends that you do not retain data for longer than 365 days. Configuring this field does not affect monthly summary records.
 
 For more information, see [Usage Data Retention](./accounting-report.html#usage-retention) in _Reporting App, Task, and Service Instance Usage_.
 

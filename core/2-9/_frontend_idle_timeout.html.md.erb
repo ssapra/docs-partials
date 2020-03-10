@@ -8,15 +8,15 @@
 		</tr>
 		<tr>
 			<td>AWS</td>
-			<td>AWS ELB has a default timeout of 60 seconds, so <%= vars.recommended_by %> recommends a value greater than <code>60</code>.</td>
+			<td>AWS ELB has a default timeout of 60 seconds, so <%= vars.company_name %> recommends a value greater than <code>60</code>.</td>
 		</tr>
 		<tr>
 			<td>Azure</td>
-			<td>By default, Azure load balancer times out at 240 seconds without sending a TCP RST to clients, so <%= vars.recommended_by %> recommends a value lower than <code>240</code> to force the load balancer to send the TCP RST.</td>
+			<td>By default, Azure load balancer times out at 240 seconds without sending a TCP RST to clients, so <%= vars.company_name %> recommends a value lower than <code>240</code> to force the load balancer to send the TCP RST.</td>
 		</tr>
 		<tr>
 			<td>GCP</td>
-			<td>GCP has a default timeout of 600 seconds. For GCP HTTP load balancers, <%= vars.recommended_by %> recommends a value greater than <code>600</code>. For GCP TCP load balancers, <%= vars.recommended_by %> recommends a value less than <code>600</code> to force the load balancer to send a TCP RST.</td>
+			<td>GCP has a default timeout of 600 seconds. For GCP HTTP load balancers, <%= vars.company_name %> recommends a value greater than <code>600</code>. For GCP TCP load balancers, <%= vars.company_name %> recommends a value less than <code>600</code> to force the load balancer to send a TCP RST.</td>
 		</tr>
 		<tr>
 			<td>Other</td>

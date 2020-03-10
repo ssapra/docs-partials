@@ -27,17 +27,17 @@ To use an external S3-compatible filestore for <%= vars.app_runtime_abbr %> file
           <tr>
             <td><strong>Droplets bucket name</strong></td>
             <td><code><%= vars.product_name_lc %>-droplets-bucket</code></td>
-            <td>This S3 bucket stores app droplets. <%= vars.recommended_by %> recommends that you use a unique bucket name for droplets, but you can also use the same name as above.</td>
+            <td>This S3 bucket stores app droplets. <%= vars.company_name %> recommends that you use a unique bucket name for droplets, but you can also use the same name as above.</td>
           </tr>
           <tr>
             <td><strong>Packages bucket name</strong></td>
             <td><code><%= vars.product_name_lc %>-packages-bucket</code></td>
-            <td>This S3 bucket stores app packages. <%= vars.recommended_by %> recommends that you use a unique bucket name for packages, but you can also use the same name as above.</td>
+            <td>This S3 bucket stores app packages. <%= vars.company_name %> recommends that you use a unique bucket name for packages, but you can also use the same name as above.</td>
           </tr>
           <tr>
             <td><strong>Resources bucket name</strong></td>
             <td><code><%= vars.product_name_lc %>-resources-bucket</code></td>
-            <td>This S3 bucket stores app resources. <%= vars.recommended_by %> recommends that you use a unique bucket name for app resources, but you can also use the same name as above.</td>
+            <td>This S3 bucket stores app resources. <%= vars.company_name %> recommends that you use a unique bucket name for app resources, but you can also use the same name as above.</td>
           </tr>
         </table>
     * Configure these checkboxes depending on whether your S3 buckets have versioning enabled:
@@ -61,12 +61,12 @@ To use an external S3-compatible filestore for <%= vars.app_runtime_abbr %> file
           <tr>
             <td><strong>Backup droplets bucket name</strong></td>
             <td><code>droplets-backup-bucket</code></td>
-            <td>This S3 bucket is used to back up and restore your droplets bucket. <%= vars.recommended_by %> recommends that you use a unique bucket name for droplet backups, but you can also use the same name as above.</td>
+            <td>This S3 bucket is used to back up and restore your droplets bucket. <%= vars.company_name %> recommends that you use a unique bucket name for droplet backups, but you can also use the same name as above.</td>
           </tr>
           <tr>
             <td><strong>Backup packages bucket name</strong></td>
             <td><code>packages-backup-bucket</code></td>
-            <td>This S3 bucket is used to back up and restore your packages bucket. <%= vars.recommended_by %> recommends that you use a unique bucket name for package backups, but you can also use the same name as above.</td>
+            <td>This S3 bucket is used to back up and restore your packages bucket. <%= vars.company_name %> recommends that you use a unique bucket name for package backups, but you can also use the same name as above.</td>
           </tr>
         </table>
 

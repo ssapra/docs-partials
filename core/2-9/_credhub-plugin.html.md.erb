@@ -13,10 +13,10 @@ To build and install a tile:
         ```
         Where:
         `TILE-BINARY` is the name of the tile binary file.
-    * Use Python 2 and [Virtualenv](https://virtualenv.pypa.io/en/stable/). <%= vars.recommended_by %> recommends that you use a `virtualenv` environment to avoid conflicts with other Python packages. A `virtualenv` is a directory containing dependencies for a project. When a virtual environment is active, packages install into the `virtualenv` instead of the system-wide Python installation.
+    * Use Python 2 and [Virtualenv](https://virtualenv.pypa.io/en/stable/). <%= vars.company_name %> recommends that you use a `virtualenv` environment to avoid conflicts with other Python packages. A `virtualenv` is a directory containing dependencies for a project. When a virtual environment is active, packages install into the `virtualenv` instead of the system-wide Python installation.
 	<br>
 	<br>
-	To use this method, run: 
+	To use this method, run:
 
         ```
         virtualenv -p python2 tile-generator-env
@@ -84,7 +84,7 @@ To build and install a tile:
 	```
 	The tile generator wraps the BOSH release of the KMS plugin into a tile, then places the tile file in the `product` subdirectory.
 
-1. Navigate to <%= vars.ops_manager %>, log in, and add the tile to the <%= vars.ops_manager %> Installation Dashboard. For more information, see [Adding and Deleting Products](https://docs.pivotal.io/pivotalcf/customizing/add-delete.html). 
+1. Navigate to <%= vars.ops_manager %>, log in, and add the tile to the <%= vars.ops_manager %> Installation Dashboard. For more information, see [Adding and Deleting Products](https://docs.pivotal.io/pivotalcf/customizing/add-delete.html).
 
 1. Click the tile and complete the configuration.
 

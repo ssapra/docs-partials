@@ -65,7 +65,7 @@ To configure multi-foundation support in Apps Manager:
 1. If Foundation B is configured to use a certificate for TLS termination that is not signed by a globally-trusted CA, you must add the root CA certificate that signed Foundation B's TLS certificate as trusted by Foundation A's BOSH Director. This allows Apps Manager on Foundation A to validate the certificates used on Foundation B's endpoints, such as Foundation B's Cloud Controller). For more information about setting the trusted certificates in BOSH, see [Setting Trusted
 Certificates](../customizing/trusted-certificates.html)
 
-1. (Optional) <%= vars.recommended_by %> recommends that you configure UAA on all foundations to use the same external SAML identity provider. This allows Apps Manager to automatically log in with your identity provider on each foundation. To configure all foundations to use the same SAML identity provider, ensure all foundations use the same value in the **Provider name** field in the **UAA** pane of the <%= vars.app_runtime_abbr %> tile.
+1. (Optional) <%= vars.company_name %> recommends that you configure UAA on all foundations to use the same external SAML identity provider. This allows Apps Manager to automatically log in with your identity provider on each foundation. To configure all foundations to use the same SAML identity provider, ensure all foundations use the same value in the **Provider name** field in the **UAA** pane of the <%= vars.app_runtime_abbr %> tile.
 
 For more information about UAA and identity providers, see [Identity Providers in UAA](../uaa/identity-providers.html).
 
