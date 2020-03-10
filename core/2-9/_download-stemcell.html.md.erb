@@ -1,12 +1,12 @@
-This step is only required if your <%= vars.ops_manager %> does not already have the stemcell version <%= vars.app_runtime_abbr %> requires. For more information about importing stemcells, see [Importing and Managing Stemcells](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/managing-stemcells.html).
+This step is only required if your <%= vars.ops_manager %> deployment does not already have the stemcell version <%= vars.app_runtime_abbr %> requires. For more information about importing stemcells, see [Importing and Managing Stemcells](https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/opsguide/managing-stemcells.html).
 
 To download the stemcell version <%= vars.app_runtime_abbr %> requires:
 
-1. Go to the [Stemcell product page](https://network.pivotal.io/products/stemcells) in the Pivotal Network. You may have to log in.
+1. Go to the [Stemcell product page](https://network.pivotal.io/products/stemcells) on <%= vars.product_network %>. You may have to log in.
 
 1. Download the appropriate stemcell version targeted for your IaaS.
 
-1. Navigate to **Stemcell Library** in the **Installation Dashboard**.
+1. In the <%= vars.ops_manager %> Installation Dashboard, navigate to **Stemcell Library**.
 
 1. Click **Import Stemcell** to import the downloaded stemcell `.tgz` file.
 
