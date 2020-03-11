@@ -28,23 +28,24 @@ Apps and clients can use this secure port to establish encrypted connections wit
 <% else %>
 
 When you use TLS, you are provisioned a <%= product_short %> server with a certificate.
-With this certificate, apps and clients can establish an encrypted connection with the service.
+With this certificate, apps and clients can establish an encrypted connection with 
+the service.
 
 <% end %>
 
-The BOSH CredHub component generates or stores the server certificate 
-with a Certificate Authority (CA) certificate. 
-For an overview of the purpose and functionality of the BOSH 
-CredHub component see [CredHub](https://docs.pivotal.io/platform/credhub/).
+CredHub generates a server certificate using a Certificate Authority (CA) 
+certificate. You can either provide the CA or generate it using CredHub.
+For an overview of the purpose and functionality of the 
+CredHub component, see [CredHub](https://docs.pivotal.io/platform/credhub/).
 
-To check that the server certificate is trustworthy, apps and clients access the
-public component of the CA certificate to communicate with the <%= product_short %> 
-server.
+Apps and clients use this CA certificate to check that the server certificate is 
+trustworthy. A trustworthy server certificate allows apps and clients to 
+securely communicate with the <%= product_short %> server.
 
 
 <% if vars.product_full.include?("Redis") %>
 
-<%= platform_name %> distributes the public component of the CA certificate 
+<%= platform_name %> shares the CA certificate public component 
 in the following way:
 
 *  <%= platform_name %> provisions a copy of the CA certificate in the 
@@ -54,7 +55,7 @@ automatically discover the CA certificate in the trusted store.
 
 <% else %>
 
-  <%= platform_name %> distributes the public component of the CA certificate the following
+  <%= platform_name %> shares the CA certificate public component in the following
   ways:
 
 * <%= platform_name %> provisions a copy of the CA certificate in the trusted store of each
