@@ -171,20 +171,24 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
    Otherwise, find out if a services CA certificate already is present by running the following command:
 
 	```
-	credhub get --name="/services/tls_ca"
+	credhub get --name=NEW-CERT
 	```
-	If you already have a certificate at the `services/tls_ca` path, go to step 5.
+	Where `NEW-CERT` is your chosen CredHub path or name to the new certificate.
+	If you already have a certificate, go to step 5.
 
 4. Use the CredHub CLI to generate a CA certificate or provide an existing one.
     <p class="note"><strong>Note</strong>: Your deployment can have
 			multiple CA certificates.
        Pivotal recommends a dedicated CA certificate for services.</p>
 	* **If you do not have a CA certificate:** Use the CredHub CLI to generate one by running:
-			<pre class="terminal">$ credhub generate \
-			--name="/services/tls\_ca" \
+			<pre>credhub generate \
+			--name="NEW-CERT" \
 			--type="certificate" \
 			--is-ca \
-            --common-name="rootCA"</pre>
+            --common-name="COMMON-NAME"</pre>
+            Where:
+	        - `NEW-CERT` is your chosen CredHub path or name to the new certificate.
+	        - `COMMON-NAME` is the common name of the generated certificate.
 
 		<p class=note><strong>Note:</strong> When you run the above command,
 			the generated certificate is valid for one year by default.
@@ -200,15 +204,13 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
 	        --type="certificate" \
 	        --certificate=./root.pem \
 	        --private=ERKSOSMFF...</pre>
-5. Use the BOSH CLI to extract the `certificate` portion from the CA certificate and print it
-   by running:
+5. Record the `certificate` portion from the CA certificate by running:
 
 	 ```
-   bosh int <(credhub get \
-	   --name=/services/tls_ca) \
-	   --path /value/certificate
+   credhub get \
+	   --name=/services/tls_ca \
+	   -k ca
    ```
-	 Record the output.
 
 1. Navigate to the <%= vars.ops_manager %> **Installation Dashboard** > **BOSH Director** > **Security**.
 
