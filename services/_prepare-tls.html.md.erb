@@ -176,7 +176,7 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
 	Where `NEW-CERT` is your chosen CredHub path or name to the new certificate.
 	If you already have a certificate, go to step 5.
 
-4. Use the CredHub CLI to generate a CA certificate or provide an existing one.
+4. To obtain or generate a new CA certificate:
     <p class="note"><strong>Note</strong>: Your deployment can have
 			multiple CA certificates.
        Pivotal recommends a dedicated CA certificate for services.</p>
@@ -190,20 +190,37 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
 	        - `NEW-CERT` is your chosen CredHub path or name to the new certificate.
 	        - `COMMON-NAME` is the common name of the generated certificate.
 
-		<p class=note><strong>Note:</strong> When you run the above command,
+		<p class="note"><strong>Note:</strong> When you run the above command,
 			the generated certificate is valid for one year by default.
 		You can use the <code>--duration</code> flag to set the validity period to a specific time.
 		For example, if you add <code>--duration=1825</code> to the above command,
 		the generated certificate is valid for five years.</p>
-	* **If you have an existing CA certificate that you want to use:** Create
-	a new file called `root.pem` with the contents of the certificate.
-	  Then run the following command, specifying the path to `root.pem` and
-		the private key for the certificate:
-	    <pre class="terminal">$ credhub set \
-	        --name="/services/tls_ca" \
-	        --type="certificate" \
-	        --certificate=./root.pem \
-	        --private=ERKSOSMFF...</pre>
+  	* **If you use an intermediate certificate signed by a root CA in CredHub:**
+Generate a new certificate signed by the CredHub root CA:
+
+        ```
+        credhub generate \
+        --name="NEW-CERT" \
+        --type="certificate" \
+        --no-overwrite \
+        --is-ca \
+        --common-name="COMMON-NAME" \
+        --ca=PATH-TO-ROOT-CA
+        ```
+        Where:
+        - `NEW-CERT` is your chosen CredHub path or name to the new certificate.
+        - `COMMON-NAME` is the common name of the generated certificate.
+        - `PATH-TO-ROOT-CA` is the name of CA used to sign the generated certificate.
+
+        For example:
+        <pre class="terminal">
+        $ credhub generate \
+          --name="/services/new_ca" \
+          --type="certificate" \
+          --no-overwrite \
+          --is-ca \
+          --common-name="servicesCA" \
+          --ca=/path-to-root-ca</pre>
 5. Record the `certificate` portion from the CA certificate by running:
 
 	 ```
