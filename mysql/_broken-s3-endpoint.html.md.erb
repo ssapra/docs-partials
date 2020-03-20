@@ -1,5 +1,5 @@
-* The backup that <%= vars.product_short %> creates is not 
-being uploaded to s3 external storage. <%= vars.product_short %> 
+* **<%= vars.product_short %> backups do not upload to s3 
+external storage:** <%= vars.product_short %> 
 does not configure the endpoint url and instead uses the 
 default AWS endpoint.
 
@@ -8,7 +8,6 @@ default AWS endpoint.
   - Ceph storage clusters
   - Other S3-compatible endpoints certified by VMware
 
-
-  To mitigate this issue, you can get the backup artifact, 
-  manually upload the artifact to your external storage, 
-  and clean the disk.
+  To mitigate this issue, configure a different external storage option. 
+  You can configure secure copy protocol (SCP), Google Cloud Storage (GCS), or Azure Storage. For 
+  more information about how to configure external storage, see [Backing up MySQL for Pivotal Platform](./backup.html).
