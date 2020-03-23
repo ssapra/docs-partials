@@ -169,6 +169,8 @@ Generate a new certificate signed by the CredHub root CA:
         - `COMMON-NAME` is the common name of the generated certificate.
         - `PATH-TO-ROOT-CA` is the name of CA used to sign the generated certificate.
 
+	**Note**: If `NEW-CERT` already exists, remove it with `credhub delete` before running the `credhub generate`.
+
         For example:
         <pre class="terminal">
         $ credhub generate \
