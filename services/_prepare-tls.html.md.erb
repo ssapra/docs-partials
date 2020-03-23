@@ -175,7 +175,7 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
 	```
 	If you already have a certificate at the `services/tls_ca` path, go to step 5.
 
-4. Use the CredHub CLI to generate a CA certificate or provide an existing one.
+4. To obtain or generate a new CA certificate:
     <p class="note"><strong>Note</strong>: Your deployment can have
 			multiple CA certificates.
        Pivotal recommends a dedicated CA certificate for services.</p>
@@ -186,7 +186,7 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
 			--is-ca \
             --common-name="rootCA"</pre>
 
-		<p class=note><strong>Note:</strong> When you run the above command,
+		<p class="note"><strong>Note:</strong> When you run the above command,
 			the generated certificate is valid for one year by default.
 		You can use the <code>--duration</code> flag to set the validity period to a specific time.
 		For example, if you add <code>--duration=1825</code> to the above command,
@@ -200,15 +200,13 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
 	        --type="certificate" \
 	        --certificate=./root.pem \
 	        --private=ERKSOSMFF...</pre>
-5. Use the BOSH CLI to extract the `certificate` portion from the CA certificate and print it
-   by running:
+5. Record the `certificate` portion from the CA certificate by running:
 
 	 ```
-   bosh int <(credhub get \
-	   --name=/services/tls_ca) \
-	   --path /value/certificate
+   credhub get \
+	   --name=/services/tls_ca \
+	   -k ca
    ```
-	 Record the output.
 
 1. Navigate to the <%= vars.ops_manager %> **Installation Dashboard** > **BOSH Director** > **Security**.
 
