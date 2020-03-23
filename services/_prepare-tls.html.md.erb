@@ -179,9 +179,8 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
 			--is-ca \
             --common-name="COMMON-NAME"</pre>
             Where:
-	        
-	       - `NEW-CERT` is your chosen CredHub path or name to the new certificate.
-	       - `COMMON-NAME` is the common name of the generated certificate.
+	        - `NEW-CERT` is your chosen CredHub path or name to the new certificate.
+	        - `COMMON-NAME` is the common name of the generated certificate.
 
 		<p class="note"><strong>Note:</strong> When you run the above command,
 			the generated certificate is valid for one year by default.
@@ -218,7 +217,7 @@ Generate a new certificate signed by the CredHub root CA:
 
 	 ```
    credhub get \
-	   --name=NEW-CERT \
+	   --name=/services/tls_ca \
 	   -k ca
    ```
 
