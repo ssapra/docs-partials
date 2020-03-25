@@ -24,6 +24,10 @@ To configure external databases for your deployment:
   * **AWS Terraform**: `rds_address`
   * **GCP Terraform**: `sql_db_ip`
 
+1. The **Enable hostname validation** checkbox is selected by default. When **Enable hostname validation** is selected and you enable TLS for your external databases, <%= vars.app_runtime_abbr %> verifies the hostname of the external databases when they communicate with <%= vars.app_runtime_abbr %> components.
+  <p class='note warning'><strong>Warning:</strong> If your deployment uses a GCP or Azure external database for <%= vars.app_runtime_abbr %>, you must deselect the <strong>Enable hostname validation</strong> checkbox. For more information, see <a href="https://docs.pivotal.io/platform/2-9/upgrading/checklist.html#disable-hostname-validation">Disable Hostname Validation for External Databases on GCP and Azure</a> in <em>Upgrade Preparation Checklist for <%= vars.ops_manager %> <%= vars.v_major_version %></em>.</p>
+  <p class='note'><strong>Note:</strong> The <strong>Enable hostname validation</strong> checkbox does not affect communcation between <%= vars.app_runtime_abbr %> components and external CredHub databases. To enable or disable hostname validation for CredHub external database, see <a href="#credhub">Configure CredHub</a>.</p>
+
 1. For **TCP port**, enter the port of the database server.
   * If you are using GCP CloudSQL, enter `3306`.
   * If you are installing <%= vars.app_runtime_abbr %> on AWS using Terraform, enter the value for `rds_port`.
