@@ -63,7 +63,7 @@
         Retrieve the password for the admin user by running:
         <pre><code>credhub get -n /p-bosh/service-instance_GUID/admin_password</code></pre>
         In the output, the password appears under
-        <code>value</code>.
+        <code>value</code>. Record the password.
       </li>
       <% if vars.product_short.include?("MySQL") %>
       <li>
@@ -83,4 +83,19 @@
   value: UMF2DXsqNPPlCNWMdVMcNv7RC3Wi10
   version_created_at: 2018-04-02T23:16:09Z</pre>
   </li>
+  <% if vars.product_short.include?("MySQL") %>
+  <li>
+    Record the IP of your service instance. See <a href="./establish.html#ip-address" target="_blank">Connect Using an IP Address</a>.
+  </li>
+  <li>
+    To connect to your database, use one of the following methods:
+    <ul>
+      <li>Connect using a management tool. See <a href="./tools.html">Using Management Tools for <%= vars.product_short %></a></li>
+      <li>Connect directly from your workstation using the MySQL client by 
+        running: 
+        <pre>mysql -h IP-ADDRESS -u admin -P 3306 -p</pre>
+        When prompted for a password, enter the password you recorded.</li>
+    </ul>
+  </li>
+  <% end %>
 </ol>
