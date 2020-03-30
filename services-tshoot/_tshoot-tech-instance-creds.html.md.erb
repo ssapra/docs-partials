@@ -28,9 +28,9 @@
   <li>
     <p>Find the values for <code>BOSH_CLIENT</code> and <code>BOSH_CLIENT_SECRET</code>:</p>
     <ol>
-      <li>In the <%= vars.ops_manager %> Installation Dashboard, click the BOSH Director tile.</li>
+      <li>In the <%= vars.ops_manager %> Installation Dashboard, click the <strong>BOSH Director</strong> tile.</li>
       <li>Click the <strong>Credentials</strong> tab.</li>
-      <li>In the BOSH Director section, click the link to the BOSH Commandline Credentials.</li>
+      <li>In the <strong>BOSH Director</strong> section, click the link to the <strong>BOSH Commandline Credentials</strong> .</li>
       <li>Record the values for <code>BOSH_CLIENT</code> and <code>BOSH_CLIENT_SECRET</code>.</li>
     </ol>
   </li>
@@ -57,42 +57,47 @@
       --client-secret=abcdefghijklm123456789</pre>
   </li>
   <li>
-    <p>Use the CredHub CLI to retrieve the credentials:</p>
+    <p>Use the CredHub CLI to retrieve the credentials
+      <% if vars.product_short.include?("MySQL") %>
+      by doing one of following
+      <% end %>
+      :</p>
     <ul>
       <li>
         Retrieve the password for the admin user by running:
         <pre><code>credhub get -n /p-bosh/service-instance_GUID/admin_password</code></pre>
         In the output, the password appears under
-        <code>value</code>. Record the password.
+        <code>value</code>. Record the password.<br>
+        For example:
+        <pre class="terminal">$ credhub get \
+  -n /p-bosh/service-instance_70d30bb6-7f30-441a-a87c-05a5e4afff26/admin_password <br>
+  id: d6e5bd10-3b60-4a1a-9e01-c76da688b847
+  name: /p-bosh/service-instance_70d30bb6-7f30-441a-a87c-05a5e4afff26/admin_password
+  type: password
+  value: UMF2DXsqNPPlCNWMdVMcNv7RC3Wi10
+  version_created_at: 2018-04-02T23:16:09Z</pre>
       </li>
       <% if vars.product_short.include?("MySQL") %>
       <li>
         Retrieve the password for the read-only admin user by running:
         <pre><code>credhub get -n /p-bosh/service-instance_GUID/read_only_admin_password</code></pre>
         In the output, the password appears under
-        <code>value</code>.
+        <code>value</code>. Record the password. <br>
       </li>
       <% end %>
     </ul>
-    For example:
-    <pre class="terminal">$ credhub get \
-      -n /p-bosh/service-instance_70d30bb6-7f30-441a-a87c-05a5e4afff26/admin_password <br>
-  id: d6e5bd10-3b60-4a1a-9e01-c76da688b847
-  name: /p-bosh/service-instance_70d30bb6-7f30-441a-a87c-05a5e4afff26/admin_password
-  type: password
-  value: UMF2DXsqNPPlCNWMdVMcNv7RC3Wi10
-  version_created_at: 2018-04-02T23:16:09Z</pre>
+
   </li>
   <% if vars.product_short.include?("MySQL") %>
   <li>
     Record the IP of your service instance. See <a href="./establish.html#ip-address" target="_blank">Connect Using an IP Address</a>.
   </li>
   <li>
-    To connect to your database, use one of the following methods:
+    Connect to your database by doing one of following:
     <ul>
       <li>Connect using a management tool. See <a href="./tools.html">Using Management Tools for <%= vars.product_short %></a></li>
-      <li>Connect directly from your workstation using the MySQL client by 
-        running: 
+      <li>Connect directly from your workstation using the MySQL client by
+        running:
         <pre>mysql -h IP-ADDRESS -u admin -P 3306 -p</pre>
         When prompted for a password, enter the password you recorded.</li>
     </ul>
