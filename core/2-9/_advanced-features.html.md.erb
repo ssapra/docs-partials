@@ -43,28 +43,6 @@ To increase the app graceful shutdown period:
 
 1. Click **Save**.
 
-<% if current_page.data.deployment = "IST" %>
-
-### <a id='smb'></a> SMB Volume Services
-
-Enabling SMB volume services allows developers to bind existing SMB shares to their apps for shared file access.
-
-To enable SMB volume services:
-
-1. Select **Advanced Features**.
-
-1. Select the **Enable SMB volume services** checkbox.
-
-1. Click **Save**.
-
-1. In the **Errands** pane of the <%= vars.app_runtime_abbr %> tile, set the **SMB Broker Errand** to **On**.
-
-1. Click **Save**.
-
-For more information about SMB volume services, see [Enabling Volume Services](../opsguide/enable-vol-services.html).
-
-<% end %>
-
 <% if current_page.data.deployment != "IST" %>
 
 ### <a id="rfc_allowlist"></a> Non-RFC-1918 Private Network Allow List
@@ -168,5 +146,25 @@ To configure this retention period:
 To avoid performance or data migration issues, <%= vars.company_name %> recommends that you do not retain data for longer than 365 days. Configuring this field does not affect monthly summary records.
 
 For more information, see [Usage Data Retention](./accounting-report.html#usage-retention) in _Reporting App, Task, and Service Instance Usage_.
+
+<% else %>
+
+### <a id='smb'></a> SMB Volume Services
+
+Enabling SMB volume services allows developers to bind existing SMB shares to their apps for shared file access.
+
+To enable SMB volume services:
+
+1. Select **Advanced Features**.
+
+1. Select the **Enable SMB volume services** checkbox.
+
+1. Click **Save**.
+
+1. In the **Errands** pane of the <%= vars.app_runtime_abbr %> tile, set the **SMB Broker Errand** to **On**.
+
+1. Click **Save**.
+
+For more information about SMB volume services, see [Enabling Volume Services](../opsguide/enable-vol-services.html).
 
 <% end %>
