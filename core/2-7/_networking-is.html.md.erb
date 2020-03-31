@@ -45,4 +45,6 @@ To configure the **Networking** pane:
 	* **Isolation segment only**: The Gorouters for the <%= vars.segment_runtime_full %> tile acknowledge requests only from apps deployed within the Diego Cells of the <%= vars.segment_runtime_full %> tile. All other requests fail.
 	* **No isolation segment**: The Gorouters for the <%= vars.app_runtime_abbr %> tile reject requests from any isolation segment. Choose this option to add a group of Gorouters for the <%= vars.app_runtime_abbr %> tile, such as when you want a private point of entry for the system domain.
 
+1. (Optional) For additional security, enter headers that you want the Gorouter to remove from app responses in **Remove specified HTTP response headers**.
+
 1. Click **Save**.
