@@ -1,6 +1,6 @@
 To access metrics for <%= service_name %> service instances, you can use Loggregator's Log
 Cache feature with the Log Cache CLI plugin.
-Log Cache is enabled by default in  <%= vars.app_runtime_full %> v2.2 and later.
+Log Cache is enabled by default.
 
 <p class='note'>
   <strong>Note:</strong> To use this feature the <strong>V2 Firehose</strong> must be enabled
@@ -68,7 +68,7 @@ To access metrics for on-demand service instances, do the following:
 <% elsif service_name.include?("Redis") %>
 [Redis KPIs](./monitoring.html#Redis-KPIs).
 <% elsif service_name.include?("RabbitMQ") %>
-[Monitoring and KPIs for On-Demand RabbitMQ for <%= platform_name %>](./monitor.html).
+[Monitoring and KPIs for On-Demand <%= vars.product_short %>](./monitor.html).
 <% end %>
 
 For more information about how to enable Log Cache and about the `cf tail` command,
