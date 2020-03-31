@@ -1,4 +1,4 @@
-If you want to force browsers to use HTTPS when making requests to HAProxy, select **Enable** under **HAProxy support for HSTS** and complete these optional configuration steps:
+(Optional) To force browsers to use HTTPS when making requests to HAProxy, select **Enable** under **HAProxy support for HSTS** and complete these optional configuration steps:
 	![This image depicts the HSTS configuration fields for HAProxy. Under the text 'HAProxy support for HSTS', there is a selected radio button labeled 'Enable' Under this option is a field labeled 'Maximum age', with a red asterisk to denote that it is a required field, containing the text '31536000'. Under this field are two disabled checkboxes labeled 'Include subdomains' and 'Enable preload'. Under these checkboxes is another radio button labeled 'Disable'.](images/haproxy-hsts-enable-fields.png)
 	* Enter a **Maximum age** in seconds for the HSTS request. HAProxy forces HTTPS requests from browsers for the duration of this setting. The maximum age is one year, or 31536000 seconds.
 	* Enable the **Include subdomains** checkbox to force browsers to use HTTPS requests for all component subdomains.
