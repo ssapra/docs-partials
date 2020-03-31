@@ -28,42 +28,42 @@ Apps and clients can use this secure port to establish encrypted connections wit
 <% else %>
 
 When you use TLS, you are provisioned a <%= product_short %> server with a certificate.
-With this certificate, apps and clients can establish an encrypted connection with 
+With this certificate, apps and clients can establish an encrypted connection with
 the service.
 
 <% end %>
 
-CredHub generates a server certificate using a Certificate Authority (CA) 
+CredHub generates a server certificate using a Certificate Authority (CA)
 certificate. You can either provide the CA or generate it using CredHub.
-For an overview of the purpose and functionality of the 
+For an overview of the purpose and functionality of the
 CredHub component, see [CredHub](https://docs.pivotal.io/platform/credhub/).
 
-Apps and clients use this CA certificate to check that the server certificate is 
-trustworthy. A trustworthy server certificate allows apps and clients to 
+Apps and clients use this CA certificate to check that the server certificate is
+trustworthy. A trustworthy server certificate allows apps and clients to
 securely communicate with the <%= product_short %> server.
 
 
 <% if vars.product_full.include?("Redis") %>
 
-<%= platform_name %> shares the CA certificate public component 
-in the following way:
+<%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>) shares the CA certificate
+public component in the following way:
 
-*  <%= platform_name %> provisions a copy of the CA certificate in the 
+* <%= vars.app_runtime_abbr %> provisions a copy of the CA certificate in the
 trusted store of each container's operating system.
-* Apps written in Java and Spring, or C# and Steeltoe, 
+* Apps written in Java and Spring, or C# and Steeltoe,
 automatically discover the CA certificate in the trusted store.
 
 <% else %>
 
-  <%= platform_name %> shares the CA certificate public component in the following
-  ways:
+<%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>) shares the CA certificate
+public component in the following ways:
 
-* <%= platform_name %> provisions a copy of the CA certificate in the trusted store of each
+* <%= vars.app_runtime_abbr %> provisions a copy of the CA certificate in the trusted store of each
 container's operating system.
 Apps written in Java and Spring automatically discover the CA certificate in
 	the trusted store.
 
-* <%= platform_name %> supplies the public CA certificate in an environment variable called
+* <%= vars.app_runtime_abbr %> supplies the public CA certificate in an environment variable called
 `VCAP_SERVICES` that exists in every container.
 Apps not written in Java and Spring can retrieve the public component of the
 	CA certificate from `VCAP_SERVICES`
@@ -167,7 +167,7 @@ To generate and add the CA Certificate to <%= vars.ops_manager %>:
 	    	--client-name=credhub \
 	    	--client-secret=abcdefghijklm123456789</pre>
 
-3. If you are using <%= vars.ops_manager %> v2.6 or later, skip this step and the next step. 
+3. If you are using <%= vars.ops_manager %> v2.6 or later, skip this step and the next step.
    Otherwise, find out if a services CA certificate already is present by running the following command:
 
 	```
