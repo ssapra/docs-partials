@@ -1,15 +1,8 @@
 <p>
-	When you make changes to the plan configuration, you should
-	upgrade all the <%= vars.product_short %> service instances to the latest version of the plan.
-</p>
-
-<h3> What the Errand Does </h3>
-
-<p>
 	The <code>upgrade-all-service-instances</code> errand does the following:
 </p>
 
-<ol>
+<ol class="about-broker">
 	<li>Collects all of the service instances that the on-demand broker has registered.</li>
 	<li>For each instance the errand does the following:
 		<ol>
@@ -24,29 +17,13 @@
 </ol>
 
 <p>
+	When you make changes to the plan configuration, 
+	upgrade all the <%= vars.product_short %> service instances to the latest version of the plan.
+</p>
+
+<p>
 	If any instance fails to upgrade, the errand fails immediately.
 	This prevents systemic problems from spreading to the rest of your service instances.
 </p>
 
-<h3> How to Run the Errand </h3>
 
-<p>
-	To run the errand:
-</p>
-<ol>
-	<li>Do one of the following:</li>
-
-	<ul>
-		<li>
-			Select the errand in the <strong><%= vars.ops_manager %> Installation Dashboard</strong>
-			on the <strong>Review Pending Changes</strong> page and
-			then click <strong>Apply Changes</strong>.
-		</li>
-		<li>
-			<p>
-				Run the following command:
-			</p>
-			<pre><code>bosh -d DEPLOYMENT-NAME run-errand upgrade-all-service-instances</code></pre>
-		</li>
-	</ul>
-</ol>
