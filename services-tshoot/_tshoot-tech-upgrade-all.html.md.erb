@@ -6,7 +6,7 @@
 	<li>Collects all of the service instances that the on-demand broker has registered.</li>
 	<li> Issues an upgrade command to the on-demand broker, regenerates the service instance 
 		manifest based on the latest configuration from the tile, deploys the new manifest for 
-		the service instance, and waits for this operation to complete, then proceeds to the next instance.
+		the service instance, and waits for the operation to complete before continuing to the next instance.
 	</li>
 	<li>Adds to a retry list any instances that have ongoing BOSH tasks at the time of upgrade. 
 		Retries any instances in the retry list until all instances are upgraded.</li>
