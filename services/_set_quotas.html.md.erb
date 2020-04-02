@@ -28,9 +28,8 @@ then the number of service instances for all plans combined cannot exceed the gl
 quota for the service.
 
 The operator sets a global quota for each <%= product_short %> service independently.
-For example, if you have Redis for <%= platform_name %> and RabbitMQ for <%= platform_name %>,
-you must set a separate
-global service quota for each of them.
+For example, if you have <%= product_short %> and Redis for Pivotal Platform,
+you must set a separate global service quota for each of them.
 
 When the global quota is reached for a service, no more instances of that service
 can be created unless the quota is increased, or some instances of that service are deleted.
