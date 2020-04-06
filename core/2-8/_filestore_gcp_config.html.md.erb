@@ -22,10 +22,10 @@ To configure file storage for GCP, follow one of these procedures:
    1. Copy and paste the generated values into the corresponding <%= vars.app_runtime_abbr %> fields. <%= vars.app_runtime_abbr %> uses these values for authentication when connecting to Google Cloud Storage.
 
 1. Enter the names of the storage buckets you created in [Preparing to Deploy <%= vars.ops_manager %> on GCP Manually](https://docs.pivotal.io/platform/ops-manager/<%= vars.current_major_version.sub('.', '-') %>/gcp/prepare-env-manual.html#dbs):
-   * **Buildpacks bucket name:** `YOUR-<%= vars.platform_code %>-buildpacks`
-   * **Droplets bucket name:** `YOUR-<%= vars.platform_code %>-droplets`
-   * **Resources bucket name:** `YOUR-<%= vars.platform_code %>-resources`
-   * **Packages bucket name:** `YOUR-<%= vars.platform_code %>-packages`
+   * **Buildpacks bucket name:** `PREFIX-pcf-buildpacks`
+   * **Droplets bucket name:** `PREFIX-pcf-droplets`
+   * **Resources bucket name:** `PREFIX-pcf-resources`
+   * **Packages bucket name:** `PREFIX-pcf-packages`
 
 1. Click **Save**.
 
