@@ -11,7 +11,7 @@ You can configure Gorouter sharding for isolation segments depending on your use
 		<td>To provide security guarantees in addition to the firewall rules described above, you can configure sharding of the Gorouter's routing table, resulting in a Gorouter dedicated to an isolation segment that only recognizes routes for apps in the same isolation segment.</td>
 		<td>
 			<ol>
-				<li>In the <strong>Networking</strong> pane of the <%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>) tile, enable the <strong>Gorouters reject requests for isolation segments</strong> checkbox.</li>
+				<li>In the <strong>Networking</strong> pane of the <%= vars.app_runtime_abbr %> tile, enable the <strong>Gorouters reject requests for isolation segments</strong> checkbox.</li>
 				<li>Set the <strong>Gorouter sharding mode</strong> in the <%= vars.segment_runtime_full %> tile to <strong>Isolation segment only</strong>.</li>
 			</ol>
 		</td>
