@@ -153,33 +153,41 @@ in CredHub:
           --is-ca \
           --common-name="servicesCA"</pre>
   * **If you use an intermediate certificate signed by a root CA in credhub:**
-Generate a new certificate signed by the CredHub root CA:
+    
+      1. Check if a certificate already exists by running:
+          <pre>
+          credhub get -n NEW-CERT
+          </pre>
+          Where `NEW-CERT` is your chosen CredHub path or name for the new certificate.
 
-        ```
-        credhub generate \
-        --name="NEW-CERT" \
-        --type="certificate" \
-        --no-overwrite \
-        --is-ca \
-        --common-name="COMMON-NAME" \
-        --ca=PATH-TO-ROOT-CA
-        ```
-        Where:
-        - `NEW-CERT` is your chosen CredHub path or name to the new certificate.
-        - `COMMON-NAME` is the common name of the generated certificate.
-        - `PATH-TO-ROOT-CA` is the name of CA used to sign the generated certificate.
+      1. If a certificate already exists, delete the certificate by running:
+        <pre>
+        credhub delete -n NEW-CERT
+        </pre>
 
-	**Note**: If `NEW-CERT` already exists, remove it with `credhub delete` before running the `credhub generate`.
-
-        For example:
-        <pre class="terminal">
-        $ credhub generate \
-          --name="/services/new_ca" \
+      1. Generate a new certificate signed by the CredHub root CA by running: 
+          <pre>
+          credhub generate \
+          --name="NEW-CERT" \
           --type="certificate" \
           --no-overwrite \
           --is-ca \
-          --common-name="servicesCA" \
-          --ca=/path-to-root-ca</pre>
+          --common-name="COMMON-NAME" \
+          --ca=PATH-TO-ROOT-CA
+          </pre>
+          Where:
+          - `COMMON-NAME` is the common name of the generated certificate.
+          - `PATH-TO-ROOT-CA` is the name of CA used to sign the generated certificate.
+
+            For example:
+            <pre class="terminal">
+            $ credhub generate \
+              --name="/services/new_ca" \
+              --type="certificate" \
+              --no-overwrite \
+              --is-ca \
+              --common-name="servicesCA" \
+              --ca=/path-to-root-ca</pre>
 
 ### <a id="addnewandold" class="no-quick-link"></a> Add Certificates to <%= vars.ops_manager %>
 
