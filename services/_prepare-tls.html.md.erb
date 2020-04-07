@@ -42,19 +42,6 @@ Apps and clients use this CA certificate to check that the server certificate is
 trustworthy. A trustworthy server certificate allows apps and clients to
 securely communicate with the <%= product_short %> server.
 
-
-<% if vars.product_full.include?("Redis") %>
-
-<%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>) shares the CA certificate
-public component in the following way:
-
-* <%= vars.app_runtime_abbr %> provisions a copy of the CA certificate in the
-trusted store of each container's operating system.
-* Apps written in Java and Spring, or C# and Steeltoe,
-automatically discover the CA certificate in the trusted store.
-
-<% else %>
-
 <%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %>) shares the CA certificate
 public component in the following ways:
 
@@ -68,8 +55,6 @@ Apps written in Java and Spring automatically discover the CA certificate in
 Apps not written in Java and Spring can retrieve the public component of the
 	CA certificate from `VCAP_SERVICES`
 and use it to establish an encrypted connection with the data service.
-
-<% end %>
 
 ##<a id='preq'></a> Prerequisite
 
