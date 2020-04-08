@@ -13,13 +13,11 @@ To use an external S3-compatible filestore for <%= vars.app_runtime_abbr %> file
     * Select **Server-side encryption** to encrypt the contents of your S3 filestore. This option is only available for AWS S3.
     * (Optional) If you selected **Server-side encryption**, you can also specify a **KMS key ID**. <%= vars.app_runtime_abbr %> uses the KMS key to encrypt files uploaded to the blobstore. If you do not provide a KMS Key ID, <%= vars.app_runtime_abbr %> uses the default AWS key. For more information, see [Protecting Data Using Server-Side Encryption with AWS KMS–Managed Keys (SSE-KMS)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html) in the AWS documentation.
     * Clear the **Path Style S3 URLs (deprecated)** checkbox.
-      This means that the S3 bucket is accessed using the virtual-hosted model
-      instead of the old path-based model.
-      You must deselect this checkbox before AWS removes the old path-based model on September 30, 2020.
+      When this checkbox is cleared, the S3 bucket is accessed
+      using the virtual-hosted model instead of the old path-based model.
+      On September 30, 2020, AWS removes the old path-based model.
       For information about S3 path deprecation, see the [Amazon news
       blog](https://aws.amazon.com/blogs/aws/amazon-s3-path-deprecation-plan-the-rest-of-the-story/).
-    <br />
-    <%= image_tag("images/path-style-s3-urls-deprecated.png", alt: "The Path Style S3 URLs (deprecated) is enabled by default", :width => "300") %>
     * Enter names for your S3 buckets:
         <table border="1" class="nice" >
           <tr>
