@@ -47,14 +47,21 @@ public component in the following ways:
 
 * <%= vars.app_runtime_abbr %> provisions a copy of the CA certificate in the trusted store of each
 container's operating system.
-Apps written in Java and Spring automatically discover the CA certificate in
-	the trusted store.
+<% if vars.product_full.include?("Redis") %>
+Apps written in Java and Spring, or C# and Steeltoe, automatically discover the CA certificate in the trusted store.
+<% else %>
+Apps written in Java and Spring automatically discover the CA certificate in the trusted store.
+<% end %>
 
 * <%= vars.app_runtime_abbr %> supplies the public CA certificate in an environment variable called
 `VCAP_SERVICES` that exists in every container.
-Apps not written in Java and Spring can retrieve the public component of the
-	CA certificate from `VCAP_SERVICES`
+<% if vars.product_full.include?("Redis") %>
+Apps not written in Java and Spring, or C# and Steeltoe, can retrieve the public component of the CA certificate from `VCAP_SERVICES`
 and use it to establish an encrypted connection with the data service.
+<% else %>
+Apps not written in Java and Spring can retrieve the public component of the CA certificate from `VCAP_SERVICES`
+and use it to establish an encrypted connection with the data service.
+<% end %>
 
 ##<a id='preq'></a> Prerequisite
 
