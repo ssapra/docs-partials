@@ -209,7 +209,7 @@ To view configurations for your <%= product_short %> on-demand plan, do the foll
 
 1. Click the section for the plan you want to view. For example, **Plan 1**.
 
-<% elsif product_short.include?("Cloud Cache")%>
+<% elsif product_short.include?("Cloud Cache") || product_short.include?("Gemfire") %>
 1. Click the section for the plan you want to view. For example, **Plan 1**.
 
 <% elsif product_short.include?("Redis")%>
@@ -225,7 +225,7 @@ To view configurations for your <%= product_short %> on-demand plan, do the foll
 
 The image below shows an example that includes the VM type and persistent disk
 selected for the server VMs, as well as the quota for this plan.
-<% if product_short.include?("Cloud Cache")%>
+<% if product_short.include?("Cloud Cache") || product_short.include?("Gemfire") %>
 The quota is shown in the **Maximum service instances** field.
 <% end %>
 
