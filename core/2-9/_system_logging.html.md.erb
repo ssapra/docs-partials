@@ -46,7 +46,7 @@ To configure the **System Logging** pane:
            Otherwise, the deploy fails.
            To disable errands, see <a href="#errands">Configure Errands</a>.
            </p>
-  <p class="note"><strong>Note:</strong> If you disable the V2 or V1 Firehose, then you must upgrade to the cf CLI v6.50 or later. Earlier versions of the cf CLI return errors when you run the <code>cf push</code> and <code>cf logs</code> commands. For more information, see <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/release-notes/runtime-rn.html#cf-cli-firehose-errors">Errors Viewing App Logs after Disabling v1 and v2 Firehose</a> in the _TAS for VMs Release Notes_.
+  <p class="note"><strong>Note:</strong> If you disable the V2 or V1 Firehose, then you must upgrade the cf CLI to v6.50 or later. Earlier versions of the cf CLI return errors when you run the <code>cf push</code> and <code>cf logs</code> commands. For more information, see <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/release-notes/runtime-rn.html#cf-cli-firehose-errors">Errors Viewing App Logs after Disabling v1 and v2 Firehose</a> in the _TAS for VMs Release Notes_.
            </p>
 
 1. Select the **Enable Log Cache syslog ingestion** checkbox to configure Log Cache to ingest logs and metrics through the syslog server instead of the Reverse Log Proxy. You must select this checkbox if you disable the V2 Firehose.
