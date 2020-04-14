@@ -129,15 +129,11 @@ To manually rotate the CA certificate:
 To obtain or generate a new CA certificate:
 
 1. Check if a certificate already exists by running:
-    <pre><code>
-    credhub get -n NEW-CERT
-    </code></pre>
+    <pre><code>credhub get -n NEW-CERT</code></pre>
     Where `NEW-CERT` is your chosen CredHub path or name for the new certificate.
 
 1. If a certificate already exists, delete the certificate by running:
-  <pre><code>
-  credhub delete -n NEW-CERT
-  </code></pre>
+  <pre><code>credhub delete -n NEW-CERT</code></pre>
 
 1. Do one of the following:
   * **If you can obtain a CA (certificate authority):** Obtain the CA that signs its certificate. You add this to the <%= vars.ops_manager %> settings in the following section.
@@ -164,15 +160,13 @@ in CredHub:
           --is-ca \
           --common-name="servicesCA"</pre>
   * **If you use an intermediate certificate signed by a root CA in credhub:** Generate a new certificate signed by the CredHub root CA by running: 
-          <pre><code>
-          credhub generate \
+          <pre><code>credhub generate \
           --name="NEW-CERT" \
           --type="certificate" \
           --no-overwrite \
           --is-ca \
           --common-name="COMMON-NAME" \
-          --ca=PATH-TO-ROOT-CA
-          </code></pre>
+          --ca=PATH-TO-ROOT-CA</code></pre>
           Where:
           - `COMMON-NAME` is the common name of the generated certificate.
           - `PATH-TO-ROOT-CA` is the name of CA used to sign the generated certificate.
