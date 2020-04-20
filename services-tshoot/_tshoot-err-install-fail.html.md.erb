@@ -4,7 +4,7 @@
 
     description: 'Failed Installation',
 
-    symptom: vars.service_name + ' fails to install.',
+    symptom: vars.product_short + ' fails to install.',
 
     cause: 'Reasons for a failed installation include:
     <ul>
@@ -15,7 +15,7 @@
     </li>
     <li>Networking problems: </li>
     <ul>
-    <li>Cloud Foundry cannot reach ' + vars.service_name_article_full + ' broker</li>
+    <li>Cloud Foundry cannot reach the ' + vars.product_short + ' broker</li>
     <li>Cloud Foundry cannot reach the service instances</li>
     <li>The service network cannot access the BOSH director </li>
     </ul>
@@ -23,7 +23,7 @@
     <li>The smoke test errand fails.</li>
     <li>
     Resource sizing issues: These occur when the resource sizes selected for a
-    given plan are less than ' + vars.service_name_article_full + ' requires to function.
+    given plan are less than ' + vars.product_short + ' requires to function.
     </li>
     <li>Other service-specific issues.</li>
     </ul>',

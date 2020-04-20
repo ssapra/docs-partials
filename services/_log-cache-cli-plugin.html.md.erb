@@ -19,7 +19,7 @@ To access metrics for on-demand service instances, do the following:
 
 1. To access metrics for a service instance, run the following command:
 
-<% if service_name.include?("MySQL") %>
+<% if product_short.include?("MySQL") %>
     ```
     cf tail SERVICE-INSTANCE-NAME
     ```
@@ -28,11 +28,11 @@ To access metrics for on-demand service instances, do the following:
       - `--json`: Output metrics logs as envelopes in JSON format.
       For a complete list of `cf tail` options, see the [Log Cache CLI repository](https://github.com/cloudfoundry/log-cache-cli#usage).
 
-<% elsif service_name.include?("Redis") %>
+<% elsif product_short.include?("Redis") %>
     ```
     cf tail SERVICE-INSTANCE-NAME
     ```
-<% elsif service_name.include?("RabbitMQ") %>
+<% elsif product_short.include?("RabbitMQ") %>
     ```
     cf tail SERVICE-INSTANCE-NAME
     ```
@@ -43,7 +43,7 @@ To access metrics for on-demand service instances, do the following:
 
     <pre class="terminal">
     <%# Switch output for different services %>
-<% if service_name.include?("MySQL") %>
+<% if product_short.include?("MySQL") %>
      $ cf tail -f my-instance | egrep 'connected|available|persistent_disk_used_percent'
      2019-05-17T11:25:59.48-0700 [my-instance] GAUGE /p.mysql/available:1.000000 boolean
      2019-05-17T11:26:29.49-0700 [my-instance] GAUGE /p.mysql/system/persistent_disk_used_percent:17.000000 percentage
@@ -51,11 +51,11 @@ To access metrics for on-demand service instances, do the following:
      2019-05-17T11:26:59.50-0700 [my-instance] GAUGE /p.mysql/available:1.000000 boolean
      2019-05-17T11:27:29.50-0700 [my-instance] GAUGE /p.mysql/system/persistent_disk_used_percent:17.000000 percentage
      2019-05-17T11:27:29.50-0700 [my-instance] GAUGE /p.mysql/performance/threads_connected:**7**.000000 connection
-<% elsif service_name.include?("Redis") %>
+<% elsif product_short.include?("Redis") %>
      $ cf tail my-instance
      Retrieving logs for service my-instance in org system / space pivotal-services as admin...
      2018-07-03T09:54:14.84+0100 [my-instance] GAUGE info.clients.blocked_clients:0.000000 metric info.clients.client_biggest_input_buf:0.000000 metric ...
-<% elsif service_name.include?("RabbitMQ") %>
+<% elsif product_short.include?("RabbitMQ") %>
      $ cf tail my-instance
      Retrieving logs for service my-instance in org system / space pivotal-services as admin...
      2018-12-06T11:01:06.03+0000 [my-instance] GAUGE /p.rabbitmq/rabbitmq/channels/count:0.000000 count /p.rabbitmq/rabbitmq/connections/count:0.000000...
@@ -63,11 +63,11 @@ To access metrics for on-demand service instances, do the following:
     </pre>
   For more information about the metrics output, see
 <%# Switch links for different services %>
-<% if service_name.include?("MySQL") %>
+<% if product_short.include?("MySQL") %>
   the [Key Performance Indicators](#kpi) and [Component Metrics](#component-metrics) sections below.
-<% elsif service_name.include?("Redis") %>
+<% elsif product_short.include?("Redis") %>
 [Redis KPIs](./monitoring.html#Redis-KPIs).
-<% elsif service_name.include?("RabbitMQ") %>
+<% elsif product_short.include?("RabbitMQ") %>
 [Monitoring and KPIs for On-Demand <%= vars.product_short %>](./monitor.html).
 <% end %>
 
