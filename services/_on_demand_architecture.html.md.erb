@@ -31,6 +31,12 @@ running on a separate services network, while other components run on the defaul
 network.
 </p>
 
-<img src="../partials/images/odb-architecture.png">
+<%# There are two diagrams: a Pivotal-branded diagram and a VMware-branded diagram.
 
-<a href="../partials/images/odb-architecture.png" target="_blank">View a larger version of this image</a>
+Logic is included to append '-vmware' to the filename if rebranded to VMware. 
+%>
+
+<img src="../partials/images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png">
+
+<a href="../partials/images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png" target="_blank">View a larger version of this image</a>
+
