@@ -1,0 +1,46 @@
+<p>
+  To use on-demand <%= vars.product_short %> with your <%= vars.app_runtime_abbr %> apps, you need:
+  <ul>
+    <% if vars.product_short.include?("MySQL") && product_info['local_product_version'].to_f >= "2.8" %>
+
+    <li>To decide what type of plan you want from the following options: single node, leader-follower,
+    highly available (HA) cluster, and <%= vars.single_leader_plan %>.
+    <%= vars.single_leader_plan %> is used to deploy a leader-follower service instance across multiple foundations or data centers.
+    Your marketplace might not offer all of these types.
+    For about service plans information, see [Availability Options](availability-options.html).</li>
+
+    <li>If you intend to use a <%= vars.single_leader_plan %> plan for deploying a leader-follower service instance
+    across multiple foundations or data centers, review the limitations associated with this topology.
+    See [<%= vars.single_leader_plan %> Limitations](./about-multi-site.html#limitations).</li>
+
+    <li>If you intend to use an HA cluster plan, review the limitations associated with this plan type.
+    See [Highly Available Cluster Limitations](./about-ha.html#limitations).</li>
+
+    <% elsif vars.product_short.include?("MySQL") && product_info['local_product_version'].to_f <= "2.7" %>
+
+    <li>To decide what type of plan you want from the following options: single node, leader-follower,
+    and highly available (HA) cluster.
+    Your marketplace might not offer all of these types.
+    For about service plans information, see [Availability Options](availability-options.html).</li>
+
+    <li>If you intend to use an HA cluster plan, review the limitations associated with this plan type.
+    See [Highly Available Cluster Limitations](./about-ha.html#limitations).</li>
+
+    <% end %>
+
+    <li>An <%= vars.ops_manager %> installation with <%= vars.product_short %> installed and listed in the Marketplace.
+    For more information, see <a href="#marketplace">Confirm Service Availability</a> below.</li>
+    <li>A Space Developer or Admin account on the <%= vars.app_runtime_abbr %> installation.
+    For more information, see <a href="http://docs.pivotal.io/pivotalcf/concepts/roles.html#roles">User Roles</a>.</li>
+    <li>A local machine with the following installed:
+      <ul>
+       <li>A browser</li>
+       <li>A shell</li>
+       <li>The <a href="http://docs.pivotal.io/pivotalcf/cf-cli/install-go-cli.html">Cloud Foundry Command-Line Interface</a> (cf CLI)</li>
+       <li>The Linux <a href="http://www.linfo.org/watch.html">watch</a> command</li>
+    </li>
+    <li>To log in to the org and space containing your app. For instructions, see
+      <a href="https://docs.pivotal.io/platform/application-service/cf-cli/getting-started.html#login">Log In With the CLI</a>.
+    </li>
+  </ul>
+</p>
