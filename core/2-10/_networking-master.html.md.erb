@@ -91,7 +91,8 @@ To configure the **Networking** pane:
     </ol>
   </li>
 
-1. For **DNS search domains**, enter DNS search domains for your containers as a comma-separated list. DNS on your containers appends these names to its hostnames, to resolve them into full domain names.
+1. For **DNS search domains**, enter the domains for your app containers to use as DNS search domains. 
+Specify multiple DNS search domains as a comma-separated list.
 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/networking_database_timeout" %>
 
