@@ -4,10 +4,14 @@
 
 <ol>
 	<li>
+		<p
+			View the BOSH deployment name for your service broker by running:
+		</p>
+		<pre><code>bosh deployments</code></pre>
 		<p>
 			To SSH into the <%= vars.product_short %> service broker, run the following command:
 		</p>
-		<pre><code>bosh -d service-instance_GUID ssh</code></pre>
+		<pre><code>bosh -d DEPLOYMENT-NAME ssh</code></pre>
 	</li>
 	<li>
 		<p>
