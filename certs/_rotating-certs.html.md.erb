@@ -159,7 +159,7 @@ in CredHub:
           --no-overwrite \
           --is-ca \
           --common-name="servicesCA"</pre>
-  * **If you use an intermediate certificate signed by a root CA in credhub:** Generate a new certificate signed by the CredHub root CA by running: 
+  * **If you use an intermediate certificate signed by a root CA in credhub:** Generate a new certificate signed by the CredHub root CA by running:
           <pre><code>credhub generate \
           --name="NEW-CERT" \
           --type="certificate" \
@@ -234,6 +234,10 @@ To apply these changes:
 If your apps do not use the trusted store to validate server certificates, you
 must rebind apps to the service instance to receive the updated CA certificate.
 Apps must be written in Spring to use the trusted store.
+
+<% if local_product_name.include?("MySQL") %>
+<%= partial vars.path_to_partials + "/mysql/rebind-warning" %>
+<% end %>
 
 To rebind your app:
 
