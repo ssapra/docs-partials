@@ -4,10 +4,13 @@ with every release %>
 <% current_version = product_info['local_product_version'] %>
 
 
+
 <p class="note breaking"><strong>Breaking Change:</strong>
   This release is incompatible with the v<%= previous_version %> beta release of <%= vars.product_short %>.
   Before you install <%= vars.product_short %> v<%= current_version %>, you must uninstall
   <%= vars.product_short %> v<%= previous_version %>  from <%= vars.ops_manager %>.
   After you install <%= vars.product_short %> v<%= current_version %>, you must re-add your service offerings.
+  <% if current_page.data.title != "Upgrading KSM" %>
   For more information, see <a href="./upgrading.html">Upgrading KSM</a>.
+  <% end %>
   </p>
