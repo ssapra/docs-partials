@@ -41,7 +41,10 @@ To use an external S3-compatible filestore for <%= vars.app_runtime_abbr %> file
           </tr>
         </table>
     * Configure these checkboxes depending on whether your S3 buckets have versioning enabled:
-      * For versioned S3 buckets, enable the **Use versioning for backup and restore** checkbox to archive each bucket to a version.
+      * For versioned S3 buckets, enable the **Use versioning for backup and restore** checkbox to archive each bucket to a version.<br>
+      If you are using Dell ECS, VMware recommends against versioned buckets.
+      For information, see _Step 3: Configure PAS File Storage_ in [this Dell EMC ECS whitepaper](https://www.dellemc.com/resources/en-us/asset/white-papers/products/storage/h17569_wp_ecs_with_pivotal_cloud_foundry_config_guide_and_best_practices.pdf).
+      You can use mirroring as an alternative to versioning.
       * For unversioned S3 buckets, disable the **Use versioning for backup and restore** checkbox, and enter a backup bucket name for each active bucket. The backup bucket name must be different from the name of the active bucket it backs up.<br>
           <%= image_tag("images/backup-buckets.png", alt: "At the top of the image is a disabled checkbox labeled 'Use versioning for backup and restore'. Below this checkbox are four fields labeled, from top to bottom: 'Backup region', 'Backup buildpacks bucket name', 'Backup droplets bucket name', and 'Backup packages bucket name'. The 'Backup region' field contains the ghost text 'us-east-1'.") %><br>
       For more information about setting up external S3 blobstores, see [Backup and Restore with External Blobstores](https://docs.cloudfoundry.org/bbr/external-blobstores.html#enable-s3-versioning) in the Cloud Foundry documentation.
