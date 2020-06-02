@@ -51,6 +51,8 @@ To configure the **System Logging** pane:
 
 1. Select the **Enable Log Cache syslog ingestion** checkbox to configure Log Cache to ingest logs and metrics through the syslog server instead of the Reverse Log Proxy. You must select this checkbox if you disable the V2 Firehose.
 
+1. Select the **Disable Logs In Firehose** checkbox to prevent the Firehose from emitting app logs but still allow Firehose to emit app metrics. Disabling logs in Firehose helps reduce the load on <%= app_runtime_abbr %> by allowing you to scale down Doppler and Traffic Controller VMs.
+
 1. For **Aggregate log and metric drain destinations**, enter a comma-separated list of syslog endpoints for an aggregate log and metric drain. Aggregate drains forward all app logs, app metrics, and <%= vars.app_runtime_abbr %> component VM metrics on your foundation to the endpoints that you provide in this list.
 
 1. Click **Save**.
