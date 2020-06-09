@@ -56,8 +56,12 @@ To configure the **System Logging** pane:
 1. For **Aggregate log and metric drain destinations**, enter a comma-separated list of syslog endpoints for an aggregate log and metric drain. Aggregate drains forward all app logs, app metrics, and <%= vars.app_runtime_abbr %> component VM metrics on your foundation to the endpoints that you provide in this list.
 
 1. For **Timestamp Format for Component Logs**, select one of the following:
-  + **Converge to human-readable RFC3339 format**: <%= vars.app_runtime_abbr %> components use RFC3339 timestamps in their logs.
-  <p class="note"><strong>Note</strong>: Some <%= vars.app_runtime_abbr %> components do not yet use RFC3339 timestamps.</p>
+  + **Converge to human-readable RFC3339 format**: Every <%= vars.app_runtime_abbr %> component that supports RFC3339 timestamps uses this format in their logs.
+  The RFC3339 format uses Coordinated Universal Time (UTC) and provides up to nine points of precision.
+  For more information, see [RFC3339](https://tools.ietf.org/html/rfc3339).<br><br>For example:
+      + 2019-11-21T22:16:18.750673404Z
+      + 2019-11-21T22:16:18.750000000Z
+  <p class="note"><strong>Note</strong>: For a current list of components that use the RFC3339 timestamp format, see <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/release-notes/runtime-rn.html">VMware Tanzu Application Service for VMs v2.9 Release Notes</a>.</p>
   + **Maintain previous format**: <%= vars.app_runtime_abbr %> component logs use their original timestamp format.
 
 1. Click **Save**.
