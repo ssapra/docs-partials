@@ -37,8 +37,6 @@ To configure the **App Containers** pane:
 1. (Optional) To enable SMB volume services, select the **Enable SMB volume services** checkbox. Enabling SMB volume services allows developers to bind existing SMB shares to their apps. For more information, see [Enabling Volume Services](../opsguide/enable-vol-services.html).
     <p class="note"><strong>Note:</strong> If you enable SMB volume services, you must set the <strong>SMB Broker Errand</strong> to <strong>On</strong> in the <strong>Errands</strong> pane.</p>
 
-1. Select the **Format of timestamps in Diego logs**, either **RFC3339 timestamps** or **Seconds since the Unix epoch**.
-
 1. (Optional) Modify the **Default health check timeout**. The value configured for this field is the amount of time allowed between starting up an app and the first healthy response from the app. If the health check does not receive a healthy response within the configured timeout, then the app is declared unhealthy. The default timeout is `60` seconds and the maximum configurable timeout is `600` seconds.
     <p class='note warning'><strong>Warning:</strong> If you decrease the default health check timeout value below its current value, existing apps with startup times greater than the new value may fail to start up.</p>
 
