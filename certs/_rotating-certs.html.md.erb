@@ -70,7 +70,7 @@ CredHub server by running the following command:
 
 ## <a id="check"></a> Check Expiration Dates
 
-You can check the expiration date for CA and <%= local_product_name %> certificates.
+You can check the expiration date for CA and <%= vars.product_short %> certificates.
 
 To check certificate expiration dates:
 
@@ -95,7 +95,7 @@ To check certificate expiration dates:
     and finds its `Validity` properties.
     The expiration date for the certificate is the value of `Not After`.<br><br>
 
-<% if local_product_name.include?("MySQL") %>
+<% if vars.product_short.include?("MySQL") %>
 1. If any of your certificates are about to expire or have expired, do one of the following:
   * **If your TLS certificates are about to expire or have expired:**
     Do the procedures in [Rotate CA Certificates Manually](#tls) below.
@@ -114,13 +114,13 @@ To manually rotate the CA certificate:
 1. [Obtain or Generate a New CA Certificate](#obtainorgenerate)
 1. [Add New Certificates to <%= vars.ops_manager %>](#addnewandold)
 1. [Apply Changes](#applychanges)
-<% if !local_product_name.include?("RabbitMQ") %>
+<% if !vars.product_short.include?("RabbitMQ") %>
 1. [Rebind Your Apps](#rebind)
 <% end %>
 1. [Set New CA Certificate](#setnew)
 1. [Remove the Old CA Certificate](#remove)
 1. [Apply Changes](#applychanges2)
-<% if !local_product_name.include?("RabbitMQ") %>
+<% if !vars.product_short.include?("RabbitMQ") %>
 1. [Rebind Your Apps](#rebind2)
 <% end %>
 
@@ -227,7 +227,7 @@ To apply these changes:
 1. Select the errand to upgrade all service instances.
 1. Click **Apply Changes**.
 
-<% if !local_product_name.include?("RabbitMQ") %>
+<% if !vars.product_short.include?("RabbitMQ") %>
 
 ### <a id='rebind' class="no-quick-link"></a> Rebind Your Apps
 
@@ -235,7 +235,7 @@ If your apps do not use the trusted store to validate server certificates, you
 must rebind apps to the service instance to receive the updated CA certificate.
 Apps must be written in Spring to use the trusted store.
 
-<% if local_product_name.include?("MySQL") %>
+<% if vars.product_short.include?("MySQL") %>
 <p class="note warning"><strong>Warning:</strong>
 If a developer rebinds an app to the <%= vars.product_short %> service after unbinding,
 they must also rebind any existing custom schemas to the app.
@@ -369,7 +369,7 @@ To apply these changes:
 1. Select the errand to upgrade all service instances.
 1. Click **Apply Changes**.
 
-<% if !local_product_name.include?("RabbitMQ") %>
+<% if !vars.product_short.include?("RabbitMQ") %>
 
 ### <a id='rebind2' class="no-quick-link"></a> Rebind Your Apps
 
