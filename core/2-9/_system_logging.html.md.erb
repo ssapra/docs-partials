@@ -26,16 +26,16 @@ To configure the **System Logging** pane:
 
 1. For **Custom rsyslog configuration**, enter a custom syslog rule. For more information about adding custom syslog rules, see [Customizing Platform Log Forwarding](../customizing/custom-syslog-rules.html).
 
-1. In the next series of checkboxes, you configure how <%= vars.app_runtime_abbr %> emits app logs and app metrics for ingestion in your deployment. You have the option of disabling or maintaining Firehose integrations. Use the following table to determine your desired configuration.
+1. In the next section of the pane, you configure how <%= vars.app_runtime_abbr %> emits app logs and app metrics for ingestion in your deployment. You have the option of disabling or maintaining Firehose integrations. Use the following table to determine your desired configuration.
     <table>
     <tr><th>
   If you want to:</th><th>Then follow this configuration procedure:</th>
     </tr>
-    <tr><td><b>Completely disable the Firehose and use alternate methods for both app log and metrics ingestion</b></td>  
+    <tr><td valign="top"><b>Completely disable the Firehose and use alternate methods for both app log and metrics ingestion</b></td>  
    <td>
     **Prerequisites:**
     
-    Do not completely disable the Firehose if you are dependent on any of these:
+    Do not completely disable the Firehose if your deployment is dependent on any of these:
           <ul>
           <li>Service tile metrics</li>
           <li>Healthwatch or App Metrics</li>
@@ -51,6 +51,8 @@ To configure the **System Logging** pane:
      <li> Disable the Smoke Test errand. Otherwise, the deploy fails. 
        To disable errands, see <a href="#errands">Configure Errands</a>. </li>
     </ol> See the <a href="#field-desc">**Field Descriptions**</a> table for more details on each field.
+        <p class="note"><strong>Note:</strong> If you disable the V2 or V1 Firehose, then you must upgrade the cf CLI to v6.50 or later. Earlier versions of the cf CLI return errors when you run the <code>cf push</code> and <code>cf logs</code> commands. For more information, see <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/release-notes/runtime-rn.html#cf-cli-firehose-errors">Errors Viewing App Logs after Disabling v1 and v2 Firehose</a> in the _TAS for VMs Release Notes_.
+    </p> 
     </td>
    </tr>
      <tr><td><strong>Keep using existing Firehose app log and metrics integrations</strong></td>
@@ -63,8 +65,6 @@ To configure the **System Logging** pane:
      <li> (Optional) Configure **Aggregate log and metric drain destinations**. 
      </li>
     </ol> See the <a href="#field-desc">**Field Descriptions**</a> table for more details on each field.
-    <p class="note"><strong>Note:</strong> If you disable the V2 or V1 Firehose, then you must upgrade the cf CLI to v6.50 or later. Earlier versions of the cf CLI return errors when you run the <code>cf push</code> and <code>cf logs</code> commands. For more information, see <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/release-notes/runtime-rn.html#cf-cli-firehose-errors">Errors Viewing App Logs after Disabling v1 and v2 Firehose</a> in the _TAS for VMs Release Notes_.
-    </p> 
     </td>
     </tr>
     </table>
