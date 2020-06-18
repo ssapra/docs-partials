@@ -21,13 +21,13 @@ After you set quotas, you can:
 
 ## <a id="global"></a> Create Global-level Quotas
 
-Each <%= product_full %> service has a separate service broker.
+Each on-demand service has a separate service broker.
 A global quota at the service level sets the maximum number of service instances
 that can be created by a given service broker. If a service has more than one plan,
 then the number of service instances for all plans combined cannot exceed the global
 quota for the service.
 
-The operator sets a global quota for each <%= product_short %> service independently.
+The operator sets a global quota for each service tile independently.
 For example, if you have two service tiles,
 you must set a separate global service quota for each of them.
 
@@ -49,10 +49,10 @@ unless the plan quota is increased or some instances of that plan are deleted.
 
 ## <a id="org"></a> Create and Set Org-level Quotas
 
-An org-level quota applies to all <%= product_short %> services and sets the maximum number of
-service instances an organization can create within <%= product_short %>.
+An org-level quota applies to all on-demand services and sets the maximum number of
+service instances an organization can create within their foundation.
 For example, if you set your org-level quota to 100, developers can create up to
-100 service instances in that org using any combination of <%= product_short %> services.
+100 service instances in that org using any combination of on-demand services.
 
 When this quota is met, no more service instances of any kind can be created in
 the org unless the quota is increased or some service instances are deleted.
@@ -90,12 +90,12 @@ see [Creating and Modifying Quota Plans](https://docs.pivotal.io/pivotalcf/1-12/
 
 ## <a id="space"></a> Create and Set Space-level Quotas
 
-A space-level service quota applies to all <%= product_short %> services and sets the maximum
+A space-level service quota applies to all on-demand services and sets the maximum
 number of service instances
-that can be created within a given space in <%= product_short %>.
+that can be created within a given space in a foundation.
 For example, if you set your space-level quota to 100,
 developers can create up to 100 service instances in that space using any
-combination of <%= product_short %> services.
+combination of on-demand services.
 
 When this quota is met, no more service instances of any kind can be created in
 the space unless the quota is updated
