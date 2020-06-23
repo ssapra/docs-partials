@@ -1,5 +1,6 @@
-* **Default setting for mirrored queues causes pre-stop scripts to timeout:**
-In production use cases where mirror queues are used with
-default `ha-sync-mode: manual`, the pre-stop script fails with
-``"Timed out waiting for mirror queue critical node to sync after 3600 seconds"``
-when the queues have not been manually synced by the operator or the developer.
+* **The default setting for mirrored queues can cause the pre-stop script to timeout:**
+In production, if you use mirrored queues with
+the default policy setting `ha-sync-mode: manual` and if you have not manually synced 
+your queues, the pre-stop script fails. You receive 
+the following error: `"Timed out waiting for mirror queue critical node to sync after 3600 seconds"`. You can set `ha-sync-mode` to `automatic`. To change the policy, see 
+[Setting or Changing the Policy](./policies.html#viewing).
