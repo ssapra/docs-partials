@@ -26,7 +26,7 @@ To configure the **System Logging** pane:
 
 1. For **Custom rsyslog configuration**, enter a custom syslog rule. For more information about adding custom syslog rules, see [Customizing Platform Log Forwarding](../customizing/custom-syslog-rules.html).
 
-1. In the next section of the pane, you configure how <%= vars.app_runtime_abbr %>emits app logs and app metrics for ingestion in your deployment. You have the option of disabling, partially disabling or maintaining Firehose integrations. Use the following table to determine your desired configuration. 
+1. In the next section of the **System Logging** pane, you configure how <%= vars.app_runtime_abbr %> emits app logs and app metrics for ingestion in your deployment. You have the option of maintaining, partially disabling or completely disabling Firehose integrations. Use the following table to determine your desired configuration. 
 <table>
   <tr><th>If you want to:</th>
     <th>Then follow this configuration procedure:</th>
@@ -106,7 +106,7 @@ To configure the **System Logging** pane:
       <td>
       **Aggregate log and metric drain destinations**
       </td>
-      <td> Aggregate drains forward all app logs, app metrics, and <%= vars.app_runtime_abbr %> component VM metrics on your foundation to the endpoints that you provide in this field. Enter a comma-separated list of syslog endpoints  for an aggregate log and metric drain. Specify the endpoint in the format: `syslog://HOSTNAME:PORT`. To use TLS for sending logs, specify `syslog-tls://HOSTNAME:PORT`. To send app and component VM metrics in addition to logs, add `?include-metrics-deprecated=true` to the endpoint. For example, `syslog://myhost:514?include-metrics-deprecated=true`.
+      <td> Aggregate drains forward all app logs on your foundation to the endpoints that you provide in this field. Optionally, you can choose to forward all app metrics and <%= vars.app_runtime_abbr %> component VM metrics. Enter a comma-separated list of syslog endpoints for aggregate log and metric drains. Specify the endpoints in the format: `syslog://HOSTNAME:PORT`. To use TLS for sending logs, specify `syslog-tls://HOSTNAME:PORT`. To send app and component VM metrics in addition to logs, add `?include-metrics-deprecated=true` to the endpoint. For example, `syslog://myhost:514?include-metrics-deprecated=true`.
       </td> 
     </tr>
  </table>
