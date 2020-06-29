@@ -42,11 +42,11 @@ Logic is included to append '-vmware' to the filename if rebranded to VMware.
 <a href="<%= vars.path_to_partials %>/images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png" target="_blank">View a larger version of this image</a>
 
 
-<% elsif vars.product_short.include?("ODB") %>
+<% elsif vars.product_abbr.include?("ODB") %>
 
-<img src="./img/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png">
+<img src="<%= vars.path_to_partials %>/images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png">
 
-<a href="./img/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png" target="_blank">View a larger version of this image</a>
+<a href="<%= vars.path_to_partials %>/images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png" target="_blank">View a larger version of this image</a>
 
 <% else %>
 
