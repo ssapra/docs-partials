@@ -1,0 +1,5 @@
+* <%= vars.product_short %> recreates federated queues with a new cluster name after
+you run the `upgrade-all-service-instances` errand.
+This happens once after upgrading.
+This duplicates the number of downstream queues consuming messages from the same
+upstream queue.
