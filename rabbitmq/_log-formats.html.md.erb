@@ -60,6 +60,20 @@ The following table describes the logging tags used in this template:
 
 ####<a id='program-names'></a> RabbitMQ Program Names
 
+<% if product_info['local_product_version'] == '0.20' %>
+
+For new service instances created using <%= vars.product_short %> v1.20 and later,
+the default program name is `rabbitmq-server`.
+
+All existing instances including upgraded instances from earlier versions
+will keep the program names as below.
+
+If you want to keep the program names consistent for new service instances,
+you must add rules manually to the **Custom Syslog Configuration** field in the Syslog settings pane
+depending on how you want to filter the logs.
+
+<% end %>
+
 <table>
   <thead>
     <th>Program Name</th>
