@@ -25,7 +25,7 @@ Before you begin this rotation procedure, ensure that you have the following:
 
 * Access to the <%= vars.ops_manager %> VM, BOSH CredHub and CredHub CLI. For more information, see [Accessing BOSH CredHub with the CredHub CLI](bosh_credhub_cli_access.html).
 * Only one <%= vars.ops_manager %> foundation and not a multi-site or Wide Area Network (WAN) setup.
-For a mutli-site or WAN setup, you must perform the <bold>Apply Changes</bold> steps across your all your sites or WAN.
+For a mutli-site or WAN setup, you must perform the <bold>Apply Changes</bold> steps across all your sites or WAN.
 * All certificates must include Subject Alternate Name (SAN) and Common Name (CN) entries.
 * Set up your services for high availability to minimize potential app impact during CA rotation. Rotating the Services TLS CA requires an upgrade all on-demand service instances, which can cause service downtime.
 
@@ -162,7 +162,7 @@ To apply these changes:
     ```
 1. From the returned list, identify which on-demand service tiles use TLS in your deployment, such as <%= vars.on_demand_service_tiles %>.
 1. For each on-demand service tile that uses TLS:
-    1. Expand the errands for each tile. 
+    1. Expand the errands. 
     1. Enable the errand to upgrade all service instances.
         <p class="note"><strong>Note:</strong> The name of the upgrade all service instances errand may differ slightly between services.</p>
 1. Click **Apply Changes**.
