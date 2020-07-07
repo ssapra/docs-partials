@@ -110,6 +110,7 @@ To configure the **System Logging** pane:
       </td> 
     </tr>
  </table>
+
 1. For **Timestamp Format for Component Logs**, select one of the following:
   + **Converge to human-readable RFC3339 format**: Every <%= vars.app_runtime_abbr %> component that supports RFC3339 timestamps uses this format in their logs.
   The RFC3339 format uses Coordinated Universal Time (UTC) and provides up to nine points of precision.
@@ -118,6 +119,7 @@ To configure the **System Logging** pane:
       + 2019-11-21T22:16:18.750000000Z
   <p class="note"><strong>Note</strong>: For a current list of components that use the RFC3339 timestamp format, see <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/release-notes/runtime-rn.html">VMware Tanzu Application Service for VMs v2.10 Release Notes</a>.</p>
   + **Maintain previous format**: <%= vars.app_runtime_abbr %> component logs use their original timestamp format.
+  <p class='note breaking'><strong>Breaking Change:</strong> The <strong>Timestamp format for component logs</strong> feature replaces the <strong>Format of timestamps in Diego logs</strong> feature in the <strong>App Containers</strong> pane of the <%= vars.app_runtime_abbr %> tile. However, when you upgrade to <%= vars.app_runtime_abbr %> v2.10, the option that was selected under <strong>Format of timestamps in Diego logs</strong> in your previous deployment is applied to <strong>Timestamp format for component logs</strong>. For more information, see <a href='https://docs.pivotal.io/platform/2-10/release-notes/breaking-changes.html#timestamps'>Timestamp Format for Component Logs Replaces Timestamp Format for Diego Logs</a> in <em><%= vars.ops_manager %> and Runtime Breaking Changes</em>.</p>
 
 1. Click **Save**.
 
