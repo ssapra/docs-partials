@@ -3,7 +3,7 @@ This topic provides an overview of the Services TLS Certificate Authority (CA)
 and a procedure for rotating the Services TLS CA
 and its leaf certificates.
 
-##<a id='services-tls-ca-overview'></a> Overview
+##<a id='services-tls-ca-overview'></a> Services TLS CA Overview
 
 In an <%= vars.ops_manager %> and <%= vars.app_runtime_full %> (<%= vars.app_runtime_abbr %> ) deployment, the Services TLS CA is the certificate that service brokers use to sign leaf certificates for TLS-enabled service instances.
 
@@ -19,13 +19,13 @@ When an operator creates an on-demand TLS enabled service instance or updates an
 In this procedure, BOSH rotates leaf certificates 
 when you select the upgrade all service instances errand for an on-demand service tile and apply changes in Ops Manager.
 
-##<a id='prerequisites'></a> Prerequisites
+##<a id='prerequisites'></a> Prerequisites for Rotating the Services TLS CA
 
 Before you begin this rotation procedure, ensure that you have the following:
 
 * Access to the <%= vars.ops_manager %> VM, BOSH CredHub and CredHub CLI. For more information, see [Accessing BOSH CredHub with the CredHub CLI](bosh_credhub_cli_access.html).
 * Only one <%= vars.ops_manager %> foundation and not a multi-site or Wide Area Network (WAN) setup.
-For a mutli-site or WAN setup, you must perform the <bold>Apply Changes</bold> steps across all your sites or WAN.
+For a multi-site or WAN setup, you must perform the <bold>Apply Changes</bold> steps across all your sites or WAN.
 * All certificates must include Subject Alternate Name (SAN) and Common Name (CN) entries.
 * Set up your services for high availability to minimize potential app impact during CA rotation. Rotating the Services TLS CA requires an upgrade all on-demand service instances, which can cause service downtime.
 
@@ -42,7 +42,7 @@ There is a potential for app downtime in the following specific cases:<br><br>
     <li>If you are using Redis for <%= vars.product_name %> v2.2 or v2.3 and use this procedure to rotate the Services TLS CA certificate, you may experience downtime for apps that bind to Redis service instances. To workaround the issue, see this <a href="https://community.pivotal.io/s/article/Redis-On-Demand-Services-do-not-rotated-services-tls-ca-leaf-certs">Knowledgebase Article</a>.</li>
     </ul></div>
 
-##<a id='tls'></a> Procedure
+##<a id='tls'></a> Procedure for Rotating the Services TLS CA
 
 This section provides the procedure to rotate the Services TLS CA 
 and update all its leaf certificates.
@@ -144,7 +144,7 @@ To add your new and current Services TLS CA certificate to <%= vars.ops_manager 
 1. In the <%= vars.app_runtime_abbr %> and Pivotal Isolation Segment tiles, paste both CA values into the **Networking** > <%= vars.ca_trust_gorouter_haproxy_fields %>.
 1. Click **Save**.
 
-### <a id="applychanges"></a> Apply Changes for the First Time
+### <a id="applychanges1"></a> Apply Changes for the First Time
 
 <p class="note warning"><strong>Warning</strong>: This procedure involves redeploying
 all of the VMs in your <%= vars.ops_manager %> deployment to apply a CA certificate. The
