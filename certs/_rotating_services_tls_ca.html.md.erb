@@ -33,13 +33,13 @@ For a multi-site or WAN setup, you must perform the <bold>Apply Changes</bold> s
 <strong>Warning:</strong>
 There is a potential for app downtime in the following specific cases:<br><br>
 	<ul>
-		<li>If you have non-Java apps that use MySQL for <%= vars.product_name %> and rely on <code>VCAP_SERVICES</code> for TLS, you will experience app downtime if you perform 
+		<li>If you have non-Java apps that use <%= vars.mysql_product_name %> and rely on <code>VCAP_SERVICES</code> for TLS, you will experience app downtime if you perform 
       the CA rotation described in this procedure. <%= vars.mysql_services_tls_ca_kb %>
       Only follow the procedure in this topic if all of your MySQL 
-      for <%= vars.product_name %> apps use <code>jdbcURL</code> 
+      apps use <code>jdbcURL</code> 
       or consume CA certificates from <code>/etc/ssl/certs/ca-certificate.crt</code>.
     </li>
-    <li>If you are using Redis for <%= vars.product_name %> v2.2 or v2.3 and use this procedure to rotate the Services TLS CA certificate, you may experience downtime for apps that bind to Redis service instances. To workaround the issue, see this <a href="https://community.pivotal.io/s/article/Redis-On-Demand-Services-do-not-rotated-services-tls-ca-leaf-certs">Knowledgebase Article</a>.</li>
+    <li>If you are using Redis for Pivotal Platform v2.2 or v2.3 and use this procedure to rotate the Services TLS CA certificate, you may experience downtime for apps that bind to Redis service instances. To workaround the issue, see this <a href="https://community.pivotal.io/s/article/Redis-On-Demand-Services-do-not-rotated-services-tls-ca-leaf-certs">Knowledgebase Article</a>.</li>
     </ul></div>
 
 ##<a id='tls'></a> Procedure for Rotating the Services TLS CA
