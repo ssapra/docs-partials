@@ -1,5 +1,5 @@
 <%# 
-The following partial relies on two local variables:
+The following partial content uses two optional local variables:
 
 maestro_incompatible (BOOLEAN): 'false' by default. If set to 'true', 
 Maestro is incompatible with the current service tile version. 
@@ -10,58 +10,35 @@ with the current service tile. If defined, filters
 list of recommended links based on compatible versions. For example, ["2.7", "2.8"] 
 shows only procedures for v2.7 and v2.8.
 
+If your service tile is compatible with Maestro and is compatible with 
+v2.7, v2.8, v2.9, and v2.10, you do not need to set any local variables.
+
+
 For information about procedure compatibility, see the following Google document titled 
 "Services TLS CA Rotation Links":
 https://docs.google.com/document/d/1JEk2kJ0l7Wv3zpeZgRsiU1iYjDYWlgy-VO7AcjPXjgY/edit# %>
 
 
+
 To rotate the Services TLS CA and its leaf certificates, 
 use one of the following procedures:
 
-
 <ul>
-<% if defined?(maestro_incompatible) %>
 
-  <% if defined?(compatible_om_versions) and compatible_om_versions.include?("2.10")  %>
-    <li>
-      <strong>Ops Manager v2.10:</strong> See 
-      <a href="https://docs.pivotal.io/platform/2-10/security/pcf-infrastructure/services_tls_ca_rotate.html">Rotating the Services TLS CA and Its Leaf Certificates</a>.
-    </li>
-  <% end %>
-
-  <% if defined?(compatible_om_versions) and compatible_om_versions.include?("2.9")  %>
-    <li><strong>Ops Manager v2.9:</strong> See 
-      <a href="https://docs.pivotal.io/platform/2-9/security/pcf-infrastructure/services_tls_ca_rotate.html">Rotating the Services TLS CA and Its Leaf Certificates</a>.
-    </li>
-  <% end %>
-
-<% else %>
-
-  <% if defined?(compatible_om_versions) and compatible_om_versions.include?("2.10")  %>
-    <li><strong>Ops Manager v2.10:</strong> See 
-      <a href="https://docs.pivotal.io/platform/2-10/security/pcf-infrastructure/advanced-certificate-rotation.html#services-rotation">Rotate the Services TLS CA and Its Leaf Certificates</a>.
-    </li>
-  <% end %>
-
-  <% if defined?(compatible_om_versions) and compatible_om_versions.include?("2.9")  %>
-    <li><strong>Ops Manager v2.9:</strong> See 
-      <a href="https://docs.pivotal.io/platform/2-9/security/pcf-infrastructure/advanced-certificate-rotation.html#services-rotation">Rotate the Services TLS CA and Its Leaf Certificates</a>.
-    </li>
-  <% end %>
-
-<% end %>
-
-<% if defined?(compatible_om_versions) and compatible_om_versions.include?("2.8")  %>
-  <li><strong>Ops Manager v2.8:</strong> See 
-    <a href="https://docs.pivotal.io/platform/2-8/security/pcf-infrastructure/services_tls_ca_rotate.html">Rotating the Services TLS CA and Its Leaf Certificates</a>.
+<% if defined?(compatible_om_versions) and compatible_om_versions.length > 0 %>
+  <% compatible_om_versions.each do |om_version| %>
+  <li><strong>Ops Manager v<%= om_version %>:</strong> See 
+      <% if om_version == "2.9" or om_version == "2.10"%>
+        <a href="https://docs.pivotal.io/platform/<%= om_version.gsub('.','-')%>/security/pcf-infrastructure/<%= (defined?(maestro_incompatible) and maestro_incompatible) ? "services_tls_ca_rotate.html" : "advanced-certificate-rotation.html#services-rotation" %>">Rotating the Services TLS CA and Its Leaf Certificates</a>.
+      <% else %>
+        <a href="https://docs.pivotal.io/platform/<%= om_version.gsub('.','-')%>/security/pcf-infrastructure/services_tls_ca_rotate.html">Rotating the Services TLS CA and Its Leaf Certificates</a>.
+      <% end %>
   </li>
 <% end %>
 
-<% if defined?(compatible_om_versions) and compatible_om_versions.include?("2.7")  %>
-  <li><strong>Ops Manager v2.7:</strong> See 
-    <a href="https://docs.pivotal.io/platform/2-7/security/pcf-infrastructure/services_tls_ca_rotate.html">Rotating the Services TLS CA and Its Leaf Certificates</a>.
-  </li>
 
+
+<%# The following is what displays by default without local variable configurations. %>
 <% else %>
 
 <ul>
@@ -79,9 +56,7 @@ use one of the following procedures:
     <a href="https://docs.pivotal.io/platform/2-7/security/pcf-infrastructure/services_tls_ca_rotate.html">Rotating the Services TLS CA and Its Leaf Certificates</a>.
   </li>
 </ul>
-
 <% end %>
-
 </ul>
 
 Ops Manager v2.9 and later is compatible with Maestro.
