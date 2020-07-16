@@ -169,7 +169,7 @@ To apply these changes:
 
 ### <a id="setnew"></a> Set New Services TLS CA Certificate
 
-To have all service instances use the new Services TLS CA certificate:
+To set the new Services TLS CA certificate:
 
 1. Do one of the following:
   * **If you have an existing certificate:** Obtain the CA certificate and private key file corresponding
@@ -203,6 +203,8 @@ To have all service instances use the new Services TLS CA certificate:
 <p class="note warning"><strong>Warning: </strong> This procedure involves redeploying
   all of the VMs in your <%= vars.ops_manager %> deployment to apply a CA certificate. The
   operation can take a long time to complete.</p>
+
+In this step, you apply changes to ensure that all on-demand service instances generate new leaf certificates from the new Services TLS CA.
 
 To apply these changes:
 
