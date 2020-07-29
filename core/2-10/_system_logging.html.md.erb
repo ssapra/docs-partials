@@ -31,98 +31,105 @@ To configure the **System Logging** pane:
     * Preserve existing Firehose integrations for app metrics, but use an alternate method for app log ingestion.
     * Disable all Firehose integrations and use alternate methods for both app log and app metric ingestion.<br/><br/>
     The following table provides the configuration procedures for each option.
-    For more information about each field, see the <a href="#field-desc">**Field Descriptions**</a> table below.
-<table>
-  <tr><th>Option:</th>
-    <th>Configuration Procedure:</th>
-  </tr>
-  <tr><td><strong>Use existing Firehose app log and metrics integrations</strong></td>
-    <td>
-    <ol>
-     <li> Select **Enable V1 Firehose**. </li>
-     <li> Select **Enable V2 Firehose**. </li>
-     <li> Deselect **Enable Log Cache Syslog Ingestion**. </li>
-     <li> Deselect **Disable logs in Firehose**. </li>
-     <li> (Optional) Configure **Aggregate log and metric drain destinations**.</li>
-    </ol>
-    </td>
-  </tr>
-  <tr>
-    <td><strong>Preserve existing Firehose integrations for app metrics, but use an alternate method for app log ingestion</strong>
-    </td>
-    <td><div class="note warning"><strong>Warning:</strong> Do not use this option if your deployment depends on partner log integrations. </div>
-    <ol>
-     <li> Select **Enable V1 Firehose**. </li>
-     <li> Select **Enable V2 Firehose**. </li>
-     <li> Select **Enable Log Cache Syslog Ingestion**. </li>
-     <li> Select **Disable logs in Firehose**. </li>
-     <li> Configure **Aggregate log and metric drain destinations**.</li>
-    </ol>
-    </td>
-    </tr>
-  <tr>
-    <td valign="top"><strong>Disable all Firehose integrations and use alternate methods for both app log and app metric ingestion</strong></td>
-    <td><div class="note warning"><strong>Warning:</strong> Do not use this option if your deployment depends on any of these:
-    <ul><li>Service tile metrics</li>
-        <li>Healthwatch or App Metrics</li>
-        <li>Partner log or metric integrations</li></ul></div>
-    <ol>
-     <li> Deselect **Enable V1 Firehose**.</li>
-     <li> Deselect **Enable V2 Firehose**. </li>
-     <li> Select **Enable Log Cache syslog ingestion**. </li>
-     <li> Deselect **Disable logs in Firehose**. </li>
-     <li> Configure **Aggregate log and metric drain destinations**. </li>
-     <li> Disable the Smoke Test errand. Otherwise, the TAS for VMs deployment fails.
-       To disable errands, see <a href="#errands">Configure Errands</a>. </li>
-     <li> Upgrade the cf CLI to v6.50 or later. Earlier versions of the cf CLI return errors when the V1 Firehose is disabled, and you run the <code>cf push</code> and <code>cf logs</code> commands. For more information, see <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/release-notes/runtime-rn.html#cf-cli-firehose-errors">Errors Viewing App Logs after Disabling v1 Firehose</a> in the _TAS for VMs Release Notes_.</li> </ol>
-    </td>
-   </tr>
-   </table>
+    For more information about each field, see the [Field Descriptions](#field-desc) table below.
+    <table>
+      <tr>
+        <th>Option:</th>
+        <th>Configuration Procedure:</th>
+      </tr>
+      <tr>
+        <td><strong>Use existing Firehose app log and metrics integrations</strong></td>
+        <td>
+          <ol>
+            <li>Select <strong>Enable V1 Firehose</strong>.</li>
+            <li>Select <strong>Enable V2 Firehose</strong>.</li>
+            <li>Deselect <strong>Enable Log Cache Syslog Ingestion</strong>.</li>
+            <li>Deselect <strong>Disable logs in Firehose</strong>.</li>
+            <li>(Optional) Configure <strong>Aggregate log and metric drain destinations</strong>.</li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td><strong>Preserve existing Firehose integrations for app metrics, but use an alternate method for app log ingestion</strong></td>
+        <td><div class="note warning"><strong>Warning:</strong> Do not use this option if your deployment depends on partner log integrations.</div>
+          <ol>
+            <li>Select <strong>Enable V1 Firehose</strong>.</li>
+            <li>Select <strong>Enable V2 Firehose</strong>.</li>
+            <li>Select <strong>Enable Log Cache Syslog Ingestion</strong>.</li>
+            <li>Select <strong>Disable logs in Firehose</strong>.</li>
+            <li>Configure <strong>Aggregate log and metric drain destinations</strong>.</li>
+          </ol>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top"><strong>Disable all Firehose integrations and use alternate methods for both app log and app metric ingestion</strong></td>
+        <td><div class="note warning"><strong>Warning:</strong> Do not use this option if your deployment depends on any of these:
+          <ul>
+            <li>Service tile metrics</li>
+            <li>Healthwatch or App Metrics</li>
+            <li>Partner log or metric integrations</li>
+          </ul></div>
+          <ol>
+            <li>Deselect <strong>Enable V1 Firehose</strong>.</li>
+            <li>Deselect <strong>Enable V2 Firehose</strong>.</li>
+            <li>Select <strong>Enable Log Cache syslog ingestion</strong>.</li>
+            <li>Deselect <strong>Disable logs in Firehose</strong>.</li>
+            <li>Configure <strong>Aggregate log and metric drain destinations</strong>.</li>
+            <li>Disable the Smoke Test errand. Otherwise, the <%= vars.app_runtime_abbr %> deployment fails. To disable errands, see <a href="#errands">Configure Errands</a>.</li>
+            <li>Upgrade the cf CLI to v6.50 or later. Earlier versions of the cf CLI return errors when the V1 Firehose is disabled, and you run the <code>cf push</code> and <code>cf logs</code> commands. For more information, see <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/release-notes/runtime-rn.html#cf-cli-firehose-errors">Errors Viewing App Logs after Disabling v1 Firehose</a> in _<%= vars.app_runtime_full %> <%= vars.current_major_version %> Release Notes_.</li>
+          </ol>
+        </td>
+      </tr>
+    </table>
     <a name="field-desc">&nbsp;</a>
     <br>
-    **Field Descriptions**:<br><br>
+    **Field Descriptions:**
+    <br>
+    <br>
     The following table provides more details on field values:
     <table>
-      <tr><th>Field Name</th><th>Description</th>
+      <tr>
+        <th>Field Name</th>
+        <th>Description</th>
       </tr>
-      <tr><td>
-     **Enable V1 Firehose** </td>
-     <td>Enabled by default. When enabled, app logs and app metrics flow to the Loggregator V1 Firehose.
-     </td>
+      <tr>
+        <td><strong>Enable V1 Firehose</strong></td>
+        <td>Enabled by default. When enabled, app logs and app metrics flow to the Loggregator V1 Firehose.</td>
       </tr>
-     <tr>
-      <td>**Enable V2 Firehose** </td>
-      <td>Enabled by default. When enabled, app logs and app metrics flow to the Loggregator V2 Firehose. If you deselect the checkbox to disable the V2 Firehose, you must also disable the V1 Firehose.</td>
-    </tr>
-    <tr>
-      <td>**Enable Log Cache syslog ingestion**</td>
-      <td>Disabled by default. Configures Log Cache to ingest app logs and app metrics through the syslog server instead of the Reverse Log Proxy.
-      If you disable the V1 Firehose, you must enable Log Cache syslog ingestion in order to receive service tile metrics.</td>
-    </tr>
-    <tr>
-      <td>**Disable Logs in Firehose** </td>
-      <td>Deselected by default. Prevents the Firehose from emitting app logs but still allows Firehose to emit app metrics. Disabling logs in Firehose helps reduce the load on <%= vars.app_runtime_abbr %> by allowing you to scale down Doppler and Traffic Controller VMs.
-      </td>
-    </tr>
-    <tr>
-      <td valign="top">
-      **Aggregate log and metric drain destinations**
-      </td>
-      <td> Aggregate drains forward all app logs on your foundation to the endpoints that you provide in this field. Enter a comma-separated list of syslog endpoints for aggregate log drains. Specify the endpoints in the format: `syslog://HOSTNAME:PORT`. To use TLS for sending logs, specify `syslog-tls://HOSTNAME:PORT` or `https\://HOSTNAME:PORT`. <br/><br/>
-      In <% vars.app_runtime_abbr %> v2.10, aggregate drains no longer forward metrics by default. You can choose to forward app metrics and <%= vars.app_runtime_abbr %> component VM metrics by adding `?include-metrics-deprecated=true` to the endpoints. For example, `syslog://myhost:514?include-metrics-deprecated=true`. <p class="note breaking"><strong>Breaking Change:</strong> If you are upgrading from <% vars.app_runtime_abbr %> v2.9 and want the aggregate drain to continue forwarding app and component VM metrics, you must add <code>?include-metrics-deprecated=true</code> to the endpoint. For more information, see <a href="https://docs.pivotal.io/platform/2-10/release-notes/breaking-changes.html#aggregate-drains">Aggregate Syslog Drains Contain Logs Only</a> in <em><%= vars.ops_manager %> and Runtime Breaking Changes</em>.</p>
-      </td>
-    </tr>
- </table>
+      <tr>
+        <td><strong>Enable V2 Firehose</strong></td>
+        <td>Enabled by default. When enabled, app logs and app metrics flow to the Loggregator V2 Firehose. If you deselect the checkbox to disable the V2 Firehose, you must also disable the V1 Firehose.</td>
+      </tr>
+      <tr>
+        <td><strong>Enable Log Cache syslog ingestion</strong></td>
+        <td>Disabled by default. Configures Log Cache to ingest app logs and app metrics through the syslog server instead of the Reverse Log Proxy. If you disable the V1 Firehose, you must enable Log Cache syslog ingestion in order to receive service tile metrics.</td>
+      </tr>
+      <tr>
+        <td><strong>Disable logs in Firehose</strong></td>
+        <td>Deselected by default. Prevents the Firehose from emitting app logs but still allows the Firehose to emit app metrics. Disabling logs in Firehose helps reduce the load on <%= vars.app_runtime_abbr %> by allowing you to scale down Doppler and Traffic Controller VMs.</td>
+      </tr>
+      <tr>
+        <td valign="top"><strong>Aggregate log and metric drain destinations</strong></td>
+        <td>Aggregate drains forward all app logs on your foundation to the endpoints that you provide in this field. Enter a comma-separated list of syslog endpoints for aggregate log drains. Specify the endpoints in the format: <code>syslog://HOSTNAME:PORT</code>. To use TLS for sending logs, specify <code>syslog-tls://HOSTNAME:PORT</code> or <code>https​:​//HOSTNAME:PORT</code>.
+        <br/>
+        <br/>
+        In <% vars.app_runtime_abbr %> v2.10, aggregate drains no longer forward metrics by default. You can choose to forward app metrics and <%= vars.app_runtime_abbr %> component VM metrics by adding <code>?include-metrics-deprecated=true</code> to the endpoints. For example, <code>syslog://myhost:514?include-metrics-deprecated=true</code>.
+        <p class="note breaking"><strong>Breaking Change:</strong> If you are upgrading from <% vars.app_runtime_abbr %> v2.9 and want the aggregate drain to continue forwarding app and component VM metrics, you must add <code>?include-metrics-deprecated=true</code> to the endpoint. For more information, see <a href="https://docs.pivotal.io/platform/2-10/release-notes/breaking-changes.html#aggregate-drains">Aggregate Syslog Drains Contain Logs Only</a> in <em><%= vars.ops_manager %> and Runtime Breaking Changes</em>.</p></td>
+      </tr>
+    </table>
 
 1. For **Timestamp format for component logs**, select one of the following:
   <p class='note breaking'><strong>Breaking Change:</strong> If you are upgrading from <%= vars.app_runtime_abbr %> v2.9, update any external monitoring configuration you use to account for the correct new timestamp format after configuring <strong>Timestamp format for component logs</strong>. For more information, see <a href='https://docs.pivotal.io/platform/2-10/release-notes/breaking-changes.html#timestamps'>Timestamp Format for Component Logs Replaces Timestamp Format for Diego Logs</a> in <em><%= vars.ops_manager %> and Runtime Breaking Changes</em>.</p>
-  + (Recommended) **Converge to human-readable RFC3339 format**: Every <%= vars.app_runtime_abbr %> component that supports RFC3339 timestamps uses this format in their logs.
+  * (Recommended) **Converge to human-readable RFC3339 format:** Every <%= vars.app_runtime_abbr %> component that supports RFC3339 timestamps uses this format in their logs.
   The RFC3339 format uses Coordinated Universal Time (UTC) and provides up to nine points of precision.
-  For more information, see [RFC3339](https://tools.ietf.org/html/rfc3339).<br><br>For example:
-      + 2019-11-21T22:16:18.750673404Z
-      + 2019-11-21T22:16:18.750000000Z
-  <p class="note"><strong>Note</strong>: For a current list of components that use the RFC3339 timestamp format, see <a href="https://docs.pivotal.io/platform/<%= vars.current_major_version.sub('.', '-') %>/release-notes/runtime-rn.html">VMware Tanzu Application Service for VMs v2.10 Release Notes</a>.</p>
-  + **Maintain previous format**: <%= vars.app_runtime_abbr %> component logs use their previous timestamp format. <%= vars.company_name %> recommends only selecting this option if you have scripts that require logs that use the previous timestamp format.
+  For more information, see [RFC3339](https://tools.ietf.org/html/rfc3339).
+  <br>
+  <br>
+  For example:
+      * 2019-11-21T22:16:18.750673404Z
+      * 2019-11-21T22:16:18.750000000Z
+  <p class="note"><strong>Note:</strong> For a current list of components that use the RFC3339 timestamp format, see <a href="https://docs.pivotal.io/platform/2-10/release-notes/runtime-rn.html"><%= vars.app_runtime_full %> v2.10 Release Notes</a>.</p>
+  * **Maintain previous format:** <%= vars.app_runtime_abbr %> component logs use their previous timestamp format. <%= vars.company_name %> recommends only selecting this option if you have scripts that require logs that use the previous timestamp format.
 
 1. Click **Save**.
 
