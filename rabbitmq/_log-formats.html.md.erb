@@ -68,11 +68,10 @@ the default program name is `rabbitmq-server`.
 All existing instances, including upgraded instances from earlier versions,
 will keep the program names as below.
 
-If you want to keep the program names consistent for new service instances, add rules manually to the
-**Custom Syslog Configuration** field in the syslog settings pane in line with how you want to filter
-the logs.
-For information about how to do so, see [RabbitMQ Syslog Custom Rules](#rabbitmq-syslog-custom-rules)
-below.
+As of <%= vars.product_short %> v1.20, if you want to keep the program names consistent for new service instances,
+you must manually add rules to the **Custom Syslog Configuration** field in the syslog settings pane in line
+with how you want to filter the logs.
+For information about how to do so, see [RabbitMQ Syslog Custom Rules](#rabbitmq-syslog-custom-rules) below.
 
 <% end %>
 
