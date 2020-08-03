@@ -119,17 +119,18 @@ To configure the **System Logging** pane:
     </table>
 
 1. For **Timestamp format for component logs**, select one of the following:
-  <p class='note breaking'><strong>Breaking Change:</strong> If you are upgrading from <%= vars.app_runtime_abbr %> v2.9, update any external monitoring configuration you use to account for the correct new timestamp format after configuring <strong>Timestamp format for component logs</strong>. For more information, see <a href='https://docs.pivotal.io/platform/2-10/release-notes/breaking-changes.html#timestamps'>Timestamp Format for Component Logs Replaces Timestamp Format for Diego Logs</a> in <em><%= vars.ops_manager %> and Runtime Breaking Changes</em>.</p>
+  <p class='note breaking'><strong>Breaking Change:</strong> If you change the timestamp format for logs, you might need to update any external monitoring configuration. For more information, see <a href='https://docs.pivotal.io/platform/2-10/release-notes/breaking-changes.html#timestamps'>Timestamp Format for Component Logs Replaces Timestamp Format for Diego Logs</a> in <em><%= vars.ops_manager %> and Runtime Breaking Changes</em>.</p>
   * (Recommended) **Converge to human-readable RFC3339 format:** Every <%= vars.app_runtime_abbr %> component that supports RFC3339 timestamps uses this format in their logs.
   The RFC3339 format uses Coordinated Universal Time (UTC) and provides up to nine points of precision.
   For more information, see [RFC3339](https://tools.ietf.org/html/rfc3339).
+  For a current list of components that use the RFC3339 timestamp format,
+  see [<%= vars.app_runtime_full %> v2.10 Release Notes](https://docs.pivotal.io/platform/2-10/release-notes/runtime-rn.html).
   <br>
   <br>
   For example:
       * 2019-11-21T22:16:18.750673404Z
       * 2019-11-21T22:16:18.750000000Z
-  <p class="note"><strong>Note:</strong> For a current list of components that use the RFC3339 timestamp format, see <a href="https://docs.pivotal.io/platform/2-10/release-notes/runtime-rn.html"><%= vars.app_runtime_full %> v2.10 Release Notes</a>.</p>
-  * **Maintain previous format:** <%= vars.app_runtime_abbr %> component logs use their previous timestamp format. <%= vars.company_name %> recommends only selecting this option if you have scripts that require logs that use the previous timestamp format.
+  * **Maintain previous format:** <%= vars.app_runtime_abbr %> component logs use their previous timestamp format. <%= vars.company_name %> only recommends this option if you have scripts that require logs that use the previous timestamp format.
 
 1. Click **Save**.
 
