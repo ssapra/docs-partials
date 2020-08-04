@@ -58,20 +58,25 @@ The following table describes the logging tags used in this template:
   </tr>
 </table>
 
-#### <a id='program-names'></a> RabbitMQ Program Names
+### <a id='program-names'></a> RabbitMQ Program Names
 
 <% if product_info['local_product_version'] == '1.20' %>
 
 For new service instances created using <%= vars.product_short %> v1.20 and later,
 the default program name is `rabbitmq-server`.
 
-All existing instances, including upgraded instances from earlier versions,
-will keep the program names as below.
+Existing service instances, including instances upgraded from <%= vars.product_short %> v1.19 and earlier,
+have the program names listed in the table below.
 
-As of <%= vars.product_short %> v1.20, if you want to keep the program names consistent for new service instances,
-you must manually add rules to the **Custom Syslog Configuration** field in the syslog settings pane in line
-with how you want to filter the logs.
-For information about how to do so, see [RabbitMQ Syslog Custom Rules](#rabbitmq-syslog-custom-rules) below.
+If you want new service instances to keep the program names that are in <%= vars.product_short %> v1.19 and earlier,
+you must manually add custom rules.
+For the custom rules to add, see [Add RabbitMQ Syslog Custom Rules](#rabbitmq-syslog-custom-rules) below.
+
+The following table lists the program names you can make available for use in the logs.
+
+<% else %>
+
+The following table lists the program names used in the logs:
 
 <% end %>
 
@@ -154,131 +159,144 @@ For information about how to do so, see [RabbitMQ Syslog Custom Rules](#rabbitmq
 
 <% if product_info['local_product_version'] == '1.20' %>
 
-#### <a id='rabbitmq-syslog-custom-rules'></a> RabbitMQ Syslog Custom Rules
+### <a id='rabbitmq-syslog-custom-rules'></a> Add RabbitMQ Syslog Custom Rules
 
-The custom rsyslog rules shown below are written in [RainerScript](https://www.rsyslog.com/doc/v8-stable/rainerscript/index.html).
-You can add the following rules to keep the program names consistent with the earlier versions.
+<%= vars.product_short %> syslog configuration is now managed by <%= vars.ops_manager %>.
+For new services instances, to continue to filter logs in the same way as <%= vars.product_short %>
+v1.19 and earlier, you must manually add custom rules.
+This retains the program names.
 
-```
-module(load="imfile")
-input(type="imfile"
-File="/var/vcap/sys/log/broker/post-start.stdout.log"
-Tag="rabbitmq_on_demand_broker_post_start_stdout")
+The custom rsyslog rules are written in RainerScript.
+For more information, see the [RainerScript](https://www.rsyslog.com/doc/v8-stable/rainerscript/index.html) documentation.
 
-input(type="imfile"
-File="/var/vcap/sys/log/broker/post-start.stderr.log"
-Tag="rabbitmq_on_demand_broker_post_start_stderr")
+To add custom rules that keep the same program names as in <%= vars.product_short %> v1.19 and earlier:
 
-input(type="imfile"
-File="/var/vcap/sys/log/broker/broker.log"
-Tag="rabbitmq_on_demand_broker")
+<p class="note">
+  <strong>Note:</strong> You can add a subset of the rules below depending on how you want to filter the logs.
+</p>
 
-input(type="imfile"
-File="/var/vcap/sys/log/broker/broker-ctl.log"
-Tag="rabbitmq_on_demand_broker_ctl")
+1. Add the following rules to the **Custom Syslog Configuration** field in the Syslog pane:
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-service-broker/broker_stdout.log"
-Tag="rabbitmq_broker_startup_stdout")
+    ```
+    module(load="imfile")
+    input(type="imfile"
+    File="/var/vcap/sys/log/broker/post-start.stdout.log"
+    Tag="rabbitmq_on_demand_broker_post_start_stdout")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-service-broker/broker_stderr.log"
-Tag="rabbitmq_broker_startup_stderr")
+    input(type="imfile"
+    File="/var/vcap/sys/log/broker/post-start.stderr.log"
+    Tag="rabbitmq_on_demand_broker_post_start_stderr")
 
-input(type="imfile"
-File="/var/vcap/sys/log/route_registrar/route_registrar.log"
-Tag="rabbitmq_broker_route_registrar_stdout")
+    input(type="imfile"
+    File="/var/vcap/sys/log/broker/broker.log"
+    Tag="rabbitmq_on_demand_broker")
 
-input(type="imfile"
-File="/var/vcap/sys/log/route_registrar/route_registrar.err.log"
-Tag="rabbitmq_broker_route_registrar_stderr")
+    input(type="imfile"
+    File="/var/vcap/sys/log/broker/broker-ctl.log"
+    Tag="rabbitmq_on_demand_broker_ctl")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-haproxy/haproxy.log"
-Tag="rabbitmq_haproxy")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-service-broker/broker_stdout.log"
+    Tag="rabbitmq_broker_startup_stdout")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-haproxy/pre-start.stderr.log"
-Tag="rabbitmq_haproxy_pre_start_stderr")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-service-broker/broker_stderr.log"
+    Tag="rabbitmq_broker_startup_stderr")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-haproxy/pre-start.stdout.log"
-Tag="rabbitmq_haproxy_pre_start_stdout")
+    input(type="imfile"
+    File="/var/vcap/sys/log/route_registrar/route_registrar.log"
+    Tag="rabbitmq_broker_route_registrar_stdout")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-haproxy/startup_stderr.log"
-Tag="rabbitmq_haproxy_pre_startup_stderr")
+    input(type="imfile"
+    File="/var/vcap/sys/log/route_registrar/route_registrar.err.log"
+    Tag="rabbitmq_broker_route_registrar_stderr")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-haproxy/startup_stdout.log"
-Tag="rabbitmq_haproxy_pre_startup_stdout")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-haproxy/haproxy.log"
+    Tag="rabbitmq_haproxy")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/rabbit@*-sasl.log"
-Tag="rabbitmq_server_sasl")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-haproxy/pre-start.stderr.log"
+    Tag="rabbitmq_haproxy_pre_start_stderr")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/rabbit@*.log"
-Tag="rabbitmq_server")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-haproxy/pre-start.stdout.log"
+    Tag="rabbitmq_haproxy_pre_start_stdout")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/startup_stderr.log"
-Tag="rabbitmq_server_startup_stderr")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-haproxy/startup_stderr.log"
+    Tag="rabbitmq_haproxy_pre_startup_stderr")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/startup_stdout.log"
-Tag="rabbitmq_server_startup_stdout")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-haproxy/startup_stdout.log"
+    Tag="rabbitmq_haproxy_pre_startup_stdout")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/shutdown_stdout.log"
-Tag="rabbitmq_server_shutdown_stdout")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/rabbit@*-sasl.log"
+    Tag="rabbitmq_server_sasl")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/shutdown_stderr.log"
-Tag="rabbitmq_server_shutdown_stderr")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/rabbit@*.log"
+    Tag="rabbitmq_server")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/management-ui/access.log*"
-Tag="rabbitmq_server_http_api_access")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/startup_stderr.log"
+    Tag="rabbitmq_server_startup_stderr")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/upgrade.log"
-Tag="rabbitmq_server_upgrade")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/startup_stdout.log"
+    Tag="rabbitmq_server_startup_stdout")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/init.log"
-Tag="rabbitmq_server_init")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/shutdown_stdout.log"
+    Tag="rabbitmq_server_shutdown_stdout")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/node-check.log"
-Tag="rabbitmq_server_node_check")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/shutdown_stderr.log"
+    Tag="rabbitmq_server_shutdown_stderr")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/cluster-check.log"
-Tag="rabbitmq_server_cluster_check")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/management-ui/access.log*"
+    Tag="rabbitmq_server_http_api_access")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/post-deploy.stderr.log"
-Tag="rabbitmq_server_post_deploy_stderr")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/upgrade.log"
+    Tag="rabbitmq_server_upgrade")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/post-deploy.stdout.log"
-Tag="rabbitmq_server_post_deploy_stdout")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/init.log"
+    Tag="rabbitmq_server_init")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/drain.log"
-Tag="rabbitmq_server_drain")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/node-check.log"
+    Tag="rabbitmq_server_node_check")
 
-input(type="imfile"
-File="/var/vcap/sys/log/rabbitmq-server/pre-start.log"
-Tag="rabbitmq_server_pre_start")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/cluster-check.log"
+    Tag="rabbitmq_server_cluster_check")
 
-input(type="imfile"
-File="/var/vcap/sys/log/route_registrar/route_registrar.log"
-Tag="rabbitmq_route_registrar_stdout")
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/post-deploy.stderr.log"
+    Tag="rabbitmq_server_post_deploy_stderr")
 
-input(type="imfile"
-File="/var/vcap/sys/log/route_registrar/route_registrar.err.log"
-Tag="rabbitmq_route_registrar_stderr")
-```
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/post-deploy.stdout.log"
+    Tag="rabbitmq_server_post_deploy_stdout")
+
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/drain.log"
+    Tag="rabbitmq_server_drain")
+
+    input(type="imfile"
+    File="/var/vcap/sys/log/rabbitmq-server/pre-start.log"
+    Tag="rabbitmq_server_pre_start")
+
+    input(type="imfile"
+    File="/var/vcap/sys/log/route_registrar/route_registrar.log"
+    Tag="rabbitmq_route_registrar_stdout")
+
+    input(type="imfile"
+    File="/var/vcap/sys/log/route_registrar/route_registrar.err.log"
+    Tag="rabbitmq_route_registrar_stderr")
+    ```
 <% end %>
