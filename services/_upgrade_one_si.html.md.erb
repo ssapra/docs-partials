@@ -1,0 +1,49 @@
+<p class="note"><strong>Note:</strong>
+  Before you individually upgrade service instances you must have cf CLI v6.46.0 or later.
+</p>
+
+You can use `cf update-service` with the `--upgrade` flag to individually upgrade service instances to
+the latest version of <%= vars.product_short %>.
+When you upgrade a service instance, you do not need to rebind your app or service keys.
+However, when you upgrade a service instance the
+<% if product_short.include?("MySQL") %>database is unavailable for several minutes.
+<% else %>the RabbitMQ nodes are updated serially and are therefore unavailable one node at a time.<% end %>
+
+For more information about using `cf update-service`,
+see the [Cloud Foundry CLI Reference Guide](https://cli.cloudfoundry.org/en-US/cf/update-service.html).
+
+To upgrade a single service instance:
+
+1. Confirm that an upgrade is available for the service instance by running:
+
+    ```
+    cf services
+    ```
+
+    The upgrade is available when the `upgrade available` column in the output says `yes`.
+    <br><br>
+    For example:
+
+    <% if product_short.include?("MySQL") %>
+    <pre class="terminal">$ cf services
+    Getting services in org system / space system as admin...
+
+    name         service    plan      bound apps    last operation    broker                    upgrade available
+    my-instance  p.mysql    db-small                create succeeded  dedicated-mysql-broker    yes
+    </pre>
+    <% else %>
+    <pre class="terminal">$ cf services
+    Getting services in org system / space system as admin...
+
+    name         service    plan      bound apps    last operation    broker                    upgrade available
+    my-instance  p.rabbitmq    single-node                create succeeded  dedicated-rabbitmq-broker    yes
+    </pre>
+    <% end %><%# Check if this RabbitMQ snippet is accurate %>
+
+1. Upgrade the service instance by running:
+
+    ```
+    cf update-service SERVICE-INSTANCE-NAME --upgrade
+    ```
+
+1. When prompted, confirm that you want to upgrade.
