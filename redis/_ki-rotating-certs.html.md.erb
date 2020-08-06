@@ -1,6 +1,6 @@
-* **Rotating the Services TLS CA certificate might cause app downtime:** If you rotate the Services TLS CA certificate using the procedure in
-[Rotating the Services TLS CA and Its Leaf Certificates](https://docs.pivotal.io/platform/security/pcf-infrastructure/services_tls_ca_rotate.html),
-you might experience downtime for apps that bind to <%= vars.product_short %> service instances.
+* **Rotating the Services TLS CA certificate might cause app downtime:** Leaf certificates do not rotate when following the procedure in
+[Rotating the Services TLS CA and Its Leaf Certificates](https://docs.pivotal.io/platform/security/pcf-infrastructure/services_tls_ca_rotate.html).
+This might cause downtime for apps that bind to <%= vars.product_short %> service instances.
 To workaround the issue, see
 [Redis On Demand Services do not rotate /services/tls_ca leaf certs resulting in app downtime](https://community.pivotal.io/s/article/Redis-On-Demand-Services-do-not-rotated-services-tls-ca-leaf-certs)
 in the Knowledge Base.
