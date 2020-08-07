@@ -28,15 +28,15 @@ To upgrade a single service instance:
     <pre class="terminal">$ cf services
     Getting services in org system / space system as admin...
 
-    name         service    plan      bound apps    last operation    broker                    upgrade available
-    my-instance  p.mysql    db-small                create succeeded  dedicated-mysql-broker    yes
+    name         service    plan      bound apps  last operation    broker                  upgrade available
+    my-instance  p.mysql    db-small              create succeeded  dedicated-mysql-broker  yes
     </pre>
     <% else %>
     <pre class="terminal">$ cf services
     Getting services in org system / space system as admin...
 
-    name         service    plan      bound apps    last operation    broker                    upgrade available
-    my-instance  p.rabbitmq    single-node                create succeeded  dedicated-rabbitmq-broker    yes
+    name         service     plan         bound apps  last operation    broker                     upgrade available
+    my-instance  p.rabbitmq  single-node              create succeeded  dedicated-rabbitmq-broker  yes
     </pre>
     <% end %><%# Check if this RabbitMQ snippet is accurate %>
 
