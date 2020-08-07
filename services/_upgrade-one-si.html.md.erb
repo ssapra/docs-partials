@@ -6,7 +6,7 @@ You can use `cf update-service` with the `--upgrade` flag to individually upgrad
 the latest version of <%= vars.product_short %>.
 When you upgrade a service instance, you do not need to rebind your app or service keys.
 However, when you upgrade a service instance the
-<% if product_short.include?("MySQL") %>database is unavailable for several minutes.
+<% if vars.product_short.include?("MySQL") %>database is unavailable for several minutes.
 <% else %>the RabbitMQ nodes are updated serially and are therefore unavailable one node at a time.<% end %>
 
 For more information about using `cf update-service`,
@@ -24,7 +24,7 @@ To upgrade a single service instance:
     <br><br>
     For example:
 
-    <% if product_short.include?("MySQL") %>
+    <% if vars.product_short.include?("MySQL") %>
     <pre class="terminal">$ cf services
     Getting services in org system / space system as admin...
 
