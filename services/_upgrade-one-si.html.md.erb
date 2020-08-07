@@ -1,29 +1,32 @@
 <p class="note"><strong>Note:</strong>
   Before you individually upgrade service instances you must have cf CLI v6.46.0 or later.
 </p>
-
-You can use `cf update-service` with the `--upgrade` flag to individually upgrade service instances to
-the latest version of <%= vars.product_short %>.
-When you upgrade a service instance, you do not need to rebind your app or service keys.
-However, when you upgrade a service instance the
-<% if vars.product_short.include?("MySQL") %>database is unavailable for several minutes.
-<% else %>the RabbitMQ nodes are updated serially and are therefore unavailable one node at a time.<% end %>
-
-For more information about using `cf update-service`,
-see the [Cloud Foundry CLI Reference Guide](https://cli.cloudfoundry.org/en-US/cf/update-service.html).
-
-To upgrade a single service instance:
-
-1. Confirm that an upgrade is available for the service instance by running:
-
-    ```
-    cf services
-    ```
-
-    The upgrade is available when the `upgrade available` column in the output says `yes`.
-    <br><br>
-    For example:
-
+<p>
+  You can use <code>cf update-service</code> with the <code>--upgrade</code> flag to individually upgrade service instances to
+  the latest version of <%= vars.product_short %>.
+  When you upgrade a service instance, you do not need to rebind your app or service keys.
+  However, when you upgrade a service instance the
+  <% if vars.product_short.include?("MySQL") %>database is unavailable for several minutes.
+  <% else %>the RabbitMQ nodes are updated serially and are therefore unavailable one node at a time.<% end %>
+</p>
+<p>
+  For more information about using <code>cf update-service</code>, see the
+  <a href="https://cli.cloudfoundry.org/en-US/cf/update-service.html">Cloud Foundry CLI Reference Guide</a>.
+</p>
+<p>
+  To upgrade a single service instance:
+</p>
+<ol>
+  <li>
+    <p>
+      Confirm that an upgrade is available for the service instance by running:
+    </p>
+    <pre><code>cf services</code></pre>
+    <p>
+      The upgrade is available when the <code>upgrade available</code> column in the output says <code>yes</code>.
+      <br><br>
+      For example:
+    </p>
     <% if vars.product_short.include?("MySQL") %>
     <pre class="terminal">$ cf services
     Getting services in org system / space system as admin...
@@ -39,11 +42,16 @@ To upgrade a single service instance:
     my-instance  p.rabbitmq  single-node              create succeeded  dedicated-rabbitmq-broker  yes
     </pre>
     <% end %><%# Check if this RabbitMQ snippet is accurate %>
-
-1. Upgrade the service instance by running:
-
-    ```
-    cf update-service SERVICE-INSTANCE-NAME --upgrade
-    ```
-
-1. When prompted, confirm that you want to upgrade.
+  </li>
+  <li>
+    <p>
+      Upgrade the service instance by running:
+    </p>
+    <pre><code> cf update-service SERVICE-INSTANCE-NAME --upgrade</code></pre>
+  </li>
+  <li>
+    <p>
+      When prompted, confirm that you want to upgrade.
+    </p>
+  </li>
+</ol>
