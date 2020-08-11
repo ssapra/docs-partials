@@ -12,7 +12,7 @@ To use an external S3-compatible filestore for <%= vars.app_runtime_abbr %> file
     * For **Region**, enter the region in which your S3 buckets are located. For example, `us-west-2`.
     * Select **Server-side encryption** to encrypt the contents of your S3 filestore. This option is only available for AWS S3.
     * (Optional) If you selected **Server-side encryption**, you can also specify a **KMS key ID**. <%= vars.app_runtime_abbr %> uses the KMS key to encrypt files uploaded to the blobstore. If you do not provide a KMS Key ID, <%= vars.app_runtime_abbr %> uses the default AWS key. For more information, see [Protecting Data Using Server-Side Encryption with AWS KMS–Managed Keys (SSE-KMS)](https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html) in the AWS documentation.
-    * Clear the **Path Style S3 URLs (deprecated)** checkbox.
+    * Clear the **Path-style S3 URLs (deprecated)** checkbox.
       When this checkbox is cleared, the S3 bucket is accessed
       using the virtual-hosted model instead of the path-based model.
       On September 30, 2020, AWS removes the deprecated path-based model.
