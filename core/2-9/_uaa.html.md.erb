@@ -43,7 +43,7 @@ To configure the **UAA** pane:
   * **Default zone sessions:**  Sessions in Apps Manager, <%= vars.platform_name %> Metrics, and other web UIs that use the UAA default zones.
   * **Identity zone sessions:** Sessions in apps that use a UAA identity zone, such as a <%= vars.platform_name %> Single Sign-On service plan.
 
-1. (Optional) Customize the text prompts used for username and password from the cf CLI and Apps Manager login popup by entering values for **Customize username label** and **Customize password label**.
+1. (Optional) Customize the text prompts used for username and password from the cf CLI and Apps Manager login popup by entering values for **Username label** and **Password label**.
 
 1. (Optional) The **Proxy IPs regular expression** field contains a pipe-separated set of regular expressions that UAA considers to be reverse proxy IP addresses. UAA respects the `x-forwarded-for` and `x-forwarded-proto` headers coming from IP addresses that match these regular expressions. To configure UAA to respond properly to Gorouter or HAProxy requests coming from a public IP address, append a regular expression or regular expressions to match the public IP address.
 
