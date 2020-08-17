@@ -27,7 +27,7 @@ To configure the **Internal MySQL** pane:
 
 1. In the **Maximum connections** field, enter the maximum number of connections allowed to the database. The default value is `3500`.
 
-1. To log audit events for internal MySQL, select **Enable server activity logging** under **Server activity logging**.
+1. To log audit events for internal MySQL, select **Enable** under **Server activity logging**.
 	* In the **Event types** field, you can enter the events you want the MySQL service to log. By default, this field includes `connect` and `query`, which tracks who connects to the system and what queries are processed. For more information about which events the Percona MySQL server can log, see [Audit Log Plugin](https://www.percona.com/doc/percona-server/5.7/management/audit_log_plugin.html) in the Percona documentation.
 	<p class='note'><strong>Note:</strong> Internal MySQL audit logs are not forwarded to the syslog server because they can contain personally identifying information (PII) and secrets.<br />
 	You can use the <code>download-logs</code> script to retrieve the logs, which each MySQL cluster node VM stores in <code>/var/vcap/store/mysql\_audit\_logs/</code>. For more information, see <a href="https://community.pivotal.io/s/article/script-to-download-mysql-logs-for-pas-tile-ha-clusters">Script to download MySQL logs for <%= vars.app_runtime_abbr %> or Tile HA Clusters</a> in the VMware Tanzu Knowledge Base.</p>

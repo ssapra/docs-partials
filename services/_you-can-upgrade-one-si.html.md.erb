@@ -1,0 +1,13 @@
++ **Individual service instance upgrades:**
+Developers can upgrade <%= vars.product_short %> on-demand service instances individually using the
+Cloud Foundry Command Line Interface (cf CLI).
+For more information about this feature, see
+<% if vars.product_short.include?("MySQL") %>
+[About Individual Service Instance Upgrades](https://docs.pivotal.io/p-mysql/2-8/upgrade.html#individual-upgrades).
+For instructions for individually upgrading service instances,
+see [Upgrade an Individual Service Instance](https://docs.pivotal.io/p-mysql/2-8/use.html#single).
+<% else %>
+[About Individual Service Instance Upgrades](http://docs.pivotal.io/rabbitmq-cf/upgrade.html#individual-upgrades).
+For instructions for individually upgrading service instances,
+see [Upgrade an Individual Service Instance](https://docs.pivotal.io/rabbitmq-cf/use.html#individual-upgrades).
+<% end %>
