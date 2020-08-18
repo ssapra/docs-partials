@@ -303,17 +303,17 @@ function openDocs(evt, docsName) {
 
 
 <div id="tab1" class="tabcontent" style="display:block">
-  <img src="./images/sn-lf-plan.png">
+  <img src="./images/sn-lf-plan.png"><%# Images require alt text that describes the image in detail. %>
 </div>
 <div id="tab2" class="tabcontent">
-  <img src="./images/galera-plan.png">
+  <img src="./images/galera-plan.png"><%# Images require alt text that describes the image in detail. %>
 </div>
 
 
 <% else %>
 
 <%= image_tag("../images/plan-resources.png",
-:alt => "Example plan quota configuration showing the plan quota field set to 15 instances, VM type set to micro, and persistent disk type set to 20 GB",
+:alt => "Screenshot of an example plan quota configuration showing the plan quota field set to 15 instances, VM type set to micro, and persistent disk type set to 20 GB",
 :width => "400") %>
 
 <% end %>
