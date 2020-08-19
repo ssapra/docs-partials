@@ -24,13 +24,13 @@ To enable overcommit:
 
 If your apps require a longer period of time to finish in-flight jobs and gracefully shut down, you can increase the graceful shutdown period. By default, this graceful shutdown period is set to 10 seconds.
 
-When <%= vars.app_runtime_abbr %> requests a shutdown of an app, the processes in the container have a period of time to gracefully shut down before the processes are forcefully terminated. For more information, see [Shutdown](https://docs.pivotal.io/platform/application-service/devguide/deploy-apps/app-lifecycle.html#shutdown) in _App Container Lifecycle_.
+When <%= vars.app_runtime_abbr %> requests a shutdown of an app, the processes in the container have a period of time to gracefully shut down before the processes are forcefully terminated. For more information, see [Shutdown](https://docs.pivotal.io/application-service/devguide/deploy-apps/app-lifecycle.html#shutdown) in _App Container Lifecycle_.
 
 If you significantly increase the value of the graceful shutdown period, platform upgrades and updates might become slower. This is because each Diego Cell uses the graceful shutdown period when it is cleaning up evacuated app instances and waits for each app to gracefully shut down.
 
 <%= vars.company_name %> recommends using isolation segments to separate apps that have different shutdown requirements to ensure Diego Cell update times are reliable.
 <% if current_page.data.deployment != "IST" %>
-For more information, see <a href="https://docs.pivotal.io/platform/application-service/operating/installing-pcf-is.html"> Installing Isolation Segment</a>.
+For more information, see <a href="https://docs.pivotal.io/application-service/operating/installing-pcf-is.html"> Installing Isolation Segment</a>.
 <% end %>
 
 <p class="note"><strong>Note:</strong> You must ensure that <strong>App graceful shutdown period</strong> has the same value in all environments that have deployed apps. This is to avoid unexpected behavior.</p>
