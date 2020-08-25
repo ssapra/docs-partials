@@ -39,7 +39,7 @@ There is a potential for app downtime in the following specific cases:<br><br>
       apps use <code>jdbcURL</code> 
       or consume CA certificates from <code>/etc/ssl/certs/ca-certificate.crt</code>.
     </li>
-    <li>If you are using Redis for Pivotal Platform v2.2 or v2.3 and use this procedure to rotate the Services TLS CA certificate, you may experience downtime for apps that bind to Redis service instances. To workaround the issue, see this <a href="https://community.pivotal.io/s/article/Redis-On-Demand-Services-do-not-rotated-services-tls-ca-leaf-certs">Knowledgebase Article</a>.</li>
+    <li>If you are using Redis for Pivotal Platform v2.2 or v2.3 and use this procedure to rotate the Services TLS CA certificate, you may experience downtime for apps that bind to Redis service instances. To workaround the issue in v2.2 or 2.3, see this <a href="https://community.pivotal.io/s/article/Redis-On-Demand-Services-do-not-rotated-services-tls-ca-leaf-certs">Knowledgebase Article</a>. This issue is fixed in Redis for VMware Tanzu Application Service v2.4.1.</li>
     </ul></div>
 
 ##<a id='tls'></a> Procedure for Rotating the Services TLS CA
