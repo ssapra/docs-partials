@@ -1,4 +1,4 @@
-+ If your chart uses custom resources, KSM might incorrectly report that a service instance
++ If your chart uses custom resources, <%= vars.product_short %> might incorrectly report that a service instance
 was created successfully before the custom resources are created.
 This is because Kubernetes does not have a generic method to detect resource readiness.
 Kubernetes primitives have known patterns for detecting readiness, but custom resource readiness is defined by its author. <br><br>
