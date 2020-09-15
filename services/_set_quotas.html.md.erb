@@ -40,7 +40,7 @@ A service may offer one or more plans.
 You can set a separate quota per plan so that instances of that plan cannot exceed the plan quota.
 For a service with multiple plans, the total number of instances created for all
 plans combined cannot exceed the [global quota](#global) for the service.
-<% if product_short.include?("MySQL") %>
+<% if product_short.include?("SQL") %>
 If the plan quota field is blank, the plan quota is set to the global quota by default.
 <%end%>
 
@@ -205,7 +205,7 @@ To view configurations for your <%= product_short %> on-demand plan, do the foll
 
 1. Click the section for the plan you want to view. For example, **On Demand Instance: Plan 1**.
 
-<% elsif product_short.include?("MySQL")%>
+<% elsif product_short.include?("SQL")%>
 
 1. Click the section for the plan you want to view. For example, **Plan 1**.
 

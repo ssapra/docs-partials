@@ -80,7 +80,7 @@ The following workflow describes enabling TLS for <%= product_full %>:
 <% if vars.product_full.include?("Redis") %>
 1. An app developer modifies their app to communicate securely with the <%= product_short %> server.
 See [Using TLS](./appdevs.html#using-tls).
-<% elsif vars.product_full.include?("MySQL") %>
+<% elsif vars.product_full.include?("SQL") %>
 1. A developer enables TLS for an existing service instance.
     See [Using TLS](./using-tls.html).
 1. A developer modifies their app to communicate securely with the <%= product_short %> server:

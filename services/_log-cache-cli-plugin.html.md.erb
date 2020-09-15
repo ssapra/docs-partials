@@ -19,7 +19,7 @@ Log Cache is enabled by default.
   </li>
   <li>
     To access metrics for a service instance, run:
-    <% if vars.product_short.include?("MySQL") %>
+    <% if vars.product_short.include?("SQL") %>
         <pre><code>cf tail SERVICE-INSTANCE-NAME</code></pre>
         Two useful flags to append to this command are:
         <ul>
@@ -42,7 +42,7 @@ Log Cache is enabled by default.
 
         <pre class="terminal">
         <%# Switch output for different services %>
-    <% if vars.product_short.include?("MySQL") %>
+    <% if vars.product_short.include?("SQL") %>
          $ cf tail -f my-instance | egrep 'connected|available|persistent_disk_used_percent'
          2019-05-17T11:25:59.48-0700 [my-instance] GAUGE /p.mysql/available:1.000000 boolean
          2019-05-17T11:26:29.49-0700 [my-instance] GAUGE /p.mysql/system/persistent_disk_used_percent:17.000000 percentage
@@ -62,7 +62,7 @@ Log Cache is enabled by default.
         </pre>
       For more information about the metrics output, see
     <%# Switch links for different services %>
-    <% if vars.product_short.include?("MySQL") %>
+    <% if vars.product_short.include?("SQL") %>
       the <a href="#kpi">Key Performance Indicators</a> and <a href="#component-metrics">Component Metrics</a> sections below.
     <% elsif vars.product_short.include?("Redis") %>
     <a href="./monitoring.html#Redis-KPIs">Redis KPIs</a>.

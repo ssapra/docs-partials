@@ -6,7 +6,7 @@
   on-demand service instances to the latest version of <%= vars.product_short %>.
   When you upgrade a service instance, you do not need to rebind your app or service keys.
   However, when you upgrade a service instance the
-  <% if vars.product_short.include?("MySQL") %>database is unavailable for several minutes.
+  <% if vars.product_short.include?("SQL") %>database is unavailable for several minutes.
   <% else %>the RabbitMQ nodes are updated serially and are therefore unavailable one node at a time.<% end %>
 </p>
 <p>
@@ -27,7 +27,7 @@
       <br><br>
       For example:
     </p>
-<% if vars.product_short.include?("MySQL") %>
+<% if vars.product_short.include?("SQL") %>
 <pre class="terminal">
 $ cf services
 Getting services in org system / space system as admin...

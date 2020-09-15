@@ -58,7 +58,7 @@
   </li>
   <li>
     <p>Use the CredHub CLI to retrieve the credentials
-      <% if vars.product_short.include?("MySQL") %>
+      <% if vars.product_short.include?("SQL") %>
       by doing one of following
       <% end %>
       :</p>
@@ -77,7 +77,7 @@
   value: UMF2DXsqNPPlCNWMdVMcNv7RC3Wi10
   version_created_at: 2018-04-02T23:16:09Z</pre>
       </li>
-      <% if vars.product_short.include?("MySQL") %>
+      <% if vars.product_short.include?("SQL") %>
       <li>
         Retrieve the password for the read-only admin user by running:
         <pre><code>credhub get -n /p-bosh/service-instance_GUID/read_only_admin_password</code></pre>
@@ -88,7 +88,7 @@
     </ul>
 
   </li>
-  <% if vars.product_short.include?("MySQL") %>
+  <% if vars.product_short.include?("SQL") %>
   <li>
     Record the IP of your service instance. See <a href="./establish.html#ip-address" target="_blank">Connect Using an IP Address</a>.
   </li>

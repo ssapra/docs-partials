@@ -1,7 +1,7 @@
 <p>
   To use <%= vars.product_short %> with your <%= vars.app_runtime_abbr %> apps, you must:
   <ul>
-    <% if vars.product_short.include?("MySQL") %>
+    <% if vars.product_short.include?("SQL") %>
         <% if product_info['local_product_version'].to_f >= 2.8 %>
           <li>
             Decide what type of plan you want from the following options: single node, leader-follower,
