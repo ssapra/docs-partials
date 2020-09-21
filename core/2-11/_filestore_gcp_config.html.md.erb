@@ -19,7 +19,7 @@ To configure file storage for GCP, follow one of these procedures:
       <%= image_tag("gcp/gcp-key-secret-create.png") %>
    1. Copy and paste the generated values into the corresponding <%= vars.app_runtime_abbr %> fields. <%= vars.app_runtime_abbr %> uses these values for authentication when connecting to Google Cloud Storage.
 
-1. Enter the names of the storage buckets you created in [Preparing to Deploy <%= vars.ops_manager %> on GCP Manually](https://docs.pivotal.io/ops-manager/<%= vars.current_major_version.sub('.', '-') %>/gcp/prepare-env-manual.html#dbs):
+1. Enter the names of the storage buckets you created in [Preparing to Deploy <%= vars.ops_manager %> on GCP Manually](https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/prepare-env-manual.html#dbs):
    * **Buildpacks bucket name:** `PREFIX-pcf-buildpacks`
    * **Droplets bucket name:** `PREFIX-pcf-droplets`
    * **Resources bucket name:** `PREFIX-pcf-resources`
@@ -29,7 +29,7 @@ To configure file storage for GCP, follow one of these procedures:
 
 #### <a name="manual-storage-account"></a> External Google Cloud Storage with Service Account
 
-<p class='note'><strong>Note:</strong> You can either use the same service account that you created for <%= vars.ops_manager %>, or create a separate service account for <%= vars.app_runtime_abbr %> file storage. To create a separate service account for <%= vars.app_runtime_abbr %> file storage, follow the procedure in <a href="https://docs.pivotal.io/ops-manager/<%= vars.current_major_version.sub('.', '-') %>/gcp/prepare-env-manual.html#iam_account">Set up IAM Service Accounts</a>, but only select the <strong>Storage > Storage Admin</strong> role.</p>
+<p class='note'><strong>Note:</strong> You can either use the same service account that you created for <%= vars.ops_manager %>, or create a separate service account for <%= vars.app_runtime_abbr %> file storage. To create a separate service account for <%= vars.app_runtime_abbr %> file storage, follow the procedure in <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/prepare-env-manual.html#iam_account">Set up IAM Service Accounts</a>, but only select the <strong>Storage > Storage Admin</strong> role.</p>
 
 1. Select **External Google Cloud Storage with service account**.
 <%= image_tag("gcp/gcp-filestore-gcs-service-account.png", alt: "At the top of the image is the text 'Configure your Cloud Controller's filesystem:', with a red asterisk to denote that it is a required configuration. Below this text are four radio buttons: three buttons labeled 'Internal WebDAV', 'External S3-compatible file store', and 'External Google Cloud Storage with access key and secret key'; and one selected radio button labeled 'External Google Cloud Storage with service account'. Below the selected radio button are two fields with red asterisks labeled, from top to bottom: 'GCP project ID' and 'GCP service account email'. Next is a text area with a red asterisk labeled 'GCP service account key JSON'. Next are five fields with red asterisks labeled, from top to bottom: 'Buildpacks bucket name', 'Droplets bucket name', 'Packages bucket name', 'Resources bucket name', and' Backup bucket name'.", :width => "400") %>
@@ -40,7 +40,7 @@ To configure file storage for GCP, follow one of these procedures:
 
 1. For **GCP service account JSON**, enter the account key that you use to access the specified GCP project, in JSON format.
 
-1. Enter the names of the storage buckets you created in [Preparing to Deploy <%= vars.ops_manager %> on GCP Manually](https://docs.pivotal.io/ops-manager/<%= vars.current_major_version.sub('.', '-') %>/gcp/prepare-env-manual.html#buckets):
+1. Enter the names of the storage buckets you created in [Preparing to Deploy <%= vars.ops_manager %> on GCP Manually](https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/gcp/prepare-env-manual.html#buckets):
    * **Buildpacks bucket name:** `YOUR-<%= vars.platform_code %>-buildpacks`
    * **Droplets bucket name:** `YOUR-<%= vars.platform_code %>-droplets`
    * **Resources bucket name:** `YOUR-<%= vars.platform_code %>-resources`
