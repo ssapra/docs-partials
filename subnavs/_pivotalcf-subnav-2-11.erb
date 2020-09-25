@@ -9,7 +9,7 @@
                <a href="https://docs.pivotal.io/platform/<%= product_info['local_product_version'].to_s.sub('.','-') %>/release-notes/highlights.html"><%= vars.platform_name %> and Runtime Feature Highlights</a>
             </li>
             <li class="">
-               <a href="https://docs.pivotal.io/ops-manager/2-10/release-notes.html"><%= vars.ops_manager %> v2.10 Release Notes</a>
+               <a href="https://docs.pivotal.io/ops-manager/2-11/release-notes.html"><%= vars.ops_manager %> v2.11 Release Notes</a>
             </li>
             <li class="">
                <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/overview/release-notes/runtime-rn.html"><%= vars.app_runtime_full %> v2.11 Release Notes</a>
@@ -28,6 +28,47 @@
             </li>
          </ul>
       </li>
+         <li class="has_submenu">
+            <span role="button"><strong>Platform Architecture and Planning</strong></span>
+            <ul>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/index.html">Platform Architecture and Planning Overview</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/aws/aws_ref_arch.html">AWS Reference Architecture</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/azure/azure_ref_arch.html">Azure Reference Architecture</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/gcp/gcp_ref_arch.html">GCP Reference Architecture</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/openstack/openstack_ref_arch.html">OpenStack Reference Architecture</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/vsphere/vsphere_ref_arch.html">vSphere Reference Architecture</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/vsphere/vsphere_nsx_cookbook.html">Using Edge Services Gateway on VMware NSX</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/vsphere/vsphere_upgrade.html">Upgrading vSphere without <%= vars.platform_name %> Downtime</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/vsphere/vsphere_migrate_datastore.html">Migrating <%= vars.platform_name %> to a New Datastore in vSphere</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/control.html">Control Plane Reference Architectures</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/tkgi/1-9/nsxt-multi-pks.html">Implementing a Multi-Foundation PKS Deployment</a>
+               </li>
+               <li class="">
+                  <a href="https://docs.pivotal.io/ops-manager/<%= product_info['local_product_version'].to_s.sub('.','-') %>/refarch/global-dns-lb.html">Global DNS Load Balancers for Multi-Foundation Environments</a>
+               </li>
+            </ul>
+         </li>
       <span role="button"><strong>Installing <%= vars.platform_name %> on GCP</strong></span>
       <ul>
          <li class="">
