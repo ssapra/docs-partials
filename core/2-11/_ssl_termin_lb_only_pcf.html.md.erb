@@ -38,9 +38,6 @@ To configure SSL termination on the load balancer only in <%= vars.app_runtime_a
 
 1. Under **HAProxy forwards all requests to the Gorouter over TLS**, select **Disable**.
 
-1. (Optional) If you are not using SSL encryption or if you are using self-signed certificates, you can select the **Disable SSL certificate verification for this environment** checkbox. Selecting this checkbox also disables SSL verification for route services.
-  <p class="note"><strong>Note:</strong> Select this checkbox only for development and testing environments. Do not select it for production environments.</p>
-
 1. (Optional) If you do not want the Gorouter to accept any non-encrypted HTTP traffic, enable the **Disable HTTP on the Gorouter and HAProxy** checkbox.
 
 1. Click **Save**.
