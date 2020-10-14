@@ -27,7 +27,7 @@ To configure the **System Logging** pane:
 1. For **Custom rsyslog configuration**, enter a custom syslog rule. For more information about adding custom syslog rules, see [Customizing Platform Log Forwarding](../customizing/custom-syslog-rules.html).
 
 1. For **Timestamp format for component logs**, select one of the following:
-  <p class='note breaking'><strong>Breaking Change:</strong> If you change the timestamp format for logs, you might need to update any external monitoring configuration. For more information, see <a href='https://docs.pivotal.io/platform/2-10/release-notes/breaking-changes.html#timestamps'>Timestamp Format for Component Logs Replaces Timestamp Format for Diego Logs</a> in <em><%= vars.ops_manager %> and Runtime Breaking Changes</em>.</p>
+  <p class='note breaking'><strong>Breaking Change:</strong> If you change the timestamp format for logs, you might need to update any external monitoring configuration. For more information, see <a href='https://docs.pivotal.io/application-service/2-10/overview/release-notes/runtime-rn.html#timestamps-br'>Timestamp Format for Component Logs Replaces Timestamp Format for Diego Logs</a> in <em><%= vars.ops_manager %> and Runtime Breaking Changes</em>.</p>
   * (Recommended) **Converge to human-readable RFC3339 format:** Every <%= vars.app_runtime_abbr %> component that supports RFC3339 timestamps uses this format in their logs.
   The RFC3339 format uses Coordinated Universal Time (UTC) and provides up to nine points of precision.
   For more information, see [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -128,7 +128,7 @@ To configure the **System Logging** pane:
         <br/>
         <br/>
         In <% vars.app_runtime_abbr %> v2.10, aggregate drains no longer forward metrics by default. You can choose to forward app metrics and <%= vars.app_runtime_abbr %> component VM metrics by adding <code>?include-metrics-deprecated=true</code> to the endpoints. For example, <code>syslog://myhost:514?include-metrics-deprecated=true</code>.
-        <p class="note breaking"><strong>Breaking Change:</strong> If you are upgrading from <% vars.app_runtime_abbr %> v2.9 and want the aggregate drain to continue forwarding app and component VM metrics, you must add <code>?include-metrics-deprecated=true</code> to the endpoint. For more information, see <a href="https://docs.pivotal.io/platform/2-10/release-notes/breaking-changes.html#aggregate-drains">Aggregate Syslog Drains Contain Logs Only</a> in <em><%= vars.ops_manager %> and Runtime Breaking Changes</em>.</p></td>
+        <p class="note breaking"><strong>Breaking Change:</strong> If you are upgrading from <% vars.app_runtime_abbr %> v2.9 and want the aggregate drain to continue forwarding app and component VM metrics, you must add <code>?include-metrics-deprecated=true</code> to the endpoint. For more information, see <a href="https://docs.pivotal.io/application-service/2-10/overview/release-notes/runtime-rn.html#aggregate-drains-br">Aggregate Syslog Drains Contain Logs Only</a> in the <em><%= vars.app_runtime_abbr %> Breaking Changes</em>.</p></td>
       </tr>
     </table>
 
