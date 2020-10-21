@@ -70,12 +70,14 @@ Ops Manager can generate a CA certificate for TLS to use.
 Alternatively, you can choose to provide your own CA certificate for TLS to use.
 
 <% if vars.product_full.include?("SQL") %>
+<p class="note"><strong>Note:</strong>
 If you are using Ops Manager v2.5 or earlier, then Ops Manager does not
 generate a certificate.
 You must generate one with CredHub.
 To use TLS with Ops Manager v2.5 or earlier, see 
-[Preparing for TLS](https://docs.pivotal.io/p-mysql/2-6/prepare-tls.html)
+<a href="https://docs.pivotal.io/p-mysql/2-6/prepare-tls.html">Preparing for TLS</a>
 in MySQL for PCF v2.6.
+</p>
 <% end %>
 
 
