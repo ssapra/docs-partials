@@ -26,7 +26,8 @@ Before you begin this rotation procedure, ensure that you have the following:
 * Access to the <%= vars.ops_manager %> VM, BOSH CredHub and CredHub CLI. For more information, see [Accessing BOSH CredHub with the CredHub CLI](bosh_credhub_cli_access.html).
 * Only one <%= vars.ops_manager %> foundation and not a multi-site or Wide Area Network (WAN) setup.
 For a multi-site or WAN setup, you must perform the <bold>Apply Changes</bold> steps across all your sites or WAN.
-To rotate the certificate for Tanzu GemFire for VMs WAN-connected clusters,
+To rotate the certificates for Tanzu GemFire for VMs WAN-connected clusters,
+where the Tanzu GemFire clusters reside on distinct foundations,
 follow the procedure at [Rotating Certificates](https://docs.pivotal.io/p-cloud-cache/rotating-ca.html).
 * All certificates include Subject Alternate Name (SAN) and Common Name (CN) entries.
 * Your services are set for high availability to minimize potential app impact during certificate rotation. Rotating the Services TLS CA certificate requires an upgrade all on-demand service instances, which can cause service downtime.
