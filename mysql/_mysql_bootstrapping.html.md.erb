@@ -391,6 +391,17 @@ Do the following for each node in the cluster:
 Re-bootstrapping the cluster is not successful unless you shut down the
 `mysqld` process on all nodes in the cluster.
 
+If monit succeeds in stopping galera-init, then proceed with these instructions, following the **"Monit Retstart Procedure"**
+(instead of "Manual Redeploy Procedure") where indicated in the below instructions.
+
+If monit exits with the following error:
+    ```
+    Warning: include files not found '/var/vcap/monit/job/*.monitrc'
+    monit: action failed -- There is no service by that name
+    ```
+then this requires additional manual steps to bootstrap your cluster. Follow the **"Manual Redeploy Procedure"**
+(instead of "Monit Retstart Procedure") where indicated in the below instructions.
+
 ### <a id="choose-node"></a> Choose Node to Bootstrap
 
 <% if current_page.data.title == "Recovering From MySQL Cluster Downtime" %>
@@ -502,22 +513,48 @@ to bootstrap the node:
 1. SSH into the node using the procedure in
    [BOSH SSH](https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#bosh-ssh).
 
-1. To update the state file and restart the
-<code>mysqld</code> process on the new bootstrap node, run the following commands:
+1. To update the node state to trigger its initialization of the cluster, run the following command:
 
-    <pre><code>echo -n "NEEDS_BOOTSTRAP" > /var/vcap/store/pxc-mysql/state.txt
-    monit start galera-init</code></pre>
+    <pre><code>echo -n "NEEDS_BOOTSTRAP" > /var/vcap/store/pxc-mysql/state.txt</code></pre>
 
-1. It can take up to ten minutes for <code>monit</code> to start the
-<code>mysqld </code> process.
-   To check if the <code>mysqld</code> process has started successfully,
-   run the following command:
+1. **Monit Restart Procedure:** If above in "Shut Down MySQL" you successfully used `monit` to shut down your
+galera-init process, then re-launch the <code>mysqld</code> process on the new bootstrap node.
+
+  1. Run the following command:
+
+    <pre><code>monit start galera-init</code></pre>
+
+  1. It can take up to ten minutes for <code>monit</code> to start the
+    <code>mysqld </code> process.
+    To check if the <code>mysqld</code> process has started successfully,
+    run the following command:
 
     <pre><code>watch monit summary</code></pre>
 
+1. **Manual Redeploy Procedure:** If above in "Shut Down Mysql" you encountered monit errors, then re-deploy the <code>mysqld</code>
+software to your bootstrap node by performing the following:
+
+  1. Leave the mysql ssh login shell, returning to your local environment.
+
+  1. Focus bosh on your bootstrap node by telling it to ignore the other nodes in your cluster. For nodes which are **not
+    the bootstrap node you identified above**, run the following command:
+
+    <pre><code>bosh -e YOUR-ENV -d YOUR-DEPLOYMENT ignore mysql/<non-bootstrap-node#1-of-2>
+    bosh -e YOUR-ENV -d YOUR-DEPLOYMENT ignore mysql/<non-bootstrap-node#2-of-2></code></pre>
+
+  1. To turn off the bosh resurrector, run the command:
+  
+  <pre><code>bosh update-resurrection off </code></pre>
+
+  1. To use the bosh manifest to bootstrap your bootstrap machine, run the following commands:
+    <pre><code>bosh -e YOUR-ENV -d YOUR-DEPLOYMENT manifest > /tmp/manifest.yml
+    bosh -e YOUR-ENV -d YOUR-DEPLOYMENT deploy /tmp/manifest.yml</code></pre>
+
 ### <a id="restart-nodes"></a>Restart Remaining Nodes ###
 
-After the bootstrapped node is running, to restart the nodes do the following:
+After the bootstrapped node is running, to restart the remaining nodes do the following:
+
+**Monit Restart Procedure:**
 
 1. SSH into the node using the procedure in
    [BOSH SSH](https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#bosh-ssh).
@@ -574,6 +611,31 @@ the highest `sequence_number` is `mysql/0`. <br><br>
         Where:
         + `YOUR-ENV` is the name of your environment.
         + `YOUR-DEPLOYMENT` is the name of your deployment.
+
+
+**Manual Redeploy Procedure:**
+
+URHERE
+
+
+  1. To tell bosh to no longer ignore the non-bootstrap nodes in your cluster, run the following command:
+
+    <pre><code>bosh -e YOUR-ENV -d YOUR-DEPLOYMENT unignore mysql/<non-bootstrap-node#1-of-2>
+    bosh -e YOUR-ENV -d YOUR-DEPLOYMENT unignore mysql/<non-bootstrap-node#2-of-2></code></pre>
+    
+  1. To re-deploy software to the other two nodes and have them rejoin the cluster bootstrapped from the above node,
+    run the following command:
+ 
+    ```
+    bosh -e YOUR-ENV -d YOUR-DEPLOYMENT deploy /tmp/manifest.yml
+    ```
+    
+  1. With your redeploys completed, turn the bosh resurrector back on, run the following command:
+  
+  <pre><code>bosh -e YOUR-ENV update-resurrection on</code></pre>
+
+ 
+**(END of Manual Redeploy Procedure)**
 
 1. To verify that the new nodes have successfully joined the cluster,
 SSH into the bootstrap node and run the following command to output the
