@@ -8,7 +8,7 @@ You can bootstrap your cluster by using one of two methods:
 
 ## <a id="when-to-bootstrap"></a> When to Bootstrap
 
-You must bootstrap a cluster that loses quorum. A cluster loses quorum when less than half of the
+You must bootstrap a cluster that loses quorum. A cluster loses quorum when fewer than half the
  nodes can communicate with each other for longer than the configured grace period. If a cluster
  does not lose quorum, individual unhealthy nodes automatically rejoin the cluster after resolving
  the error, restarting the node, or restoring connectivity.
@@ -363,7 +363,7 @@ following command:
 ## <a id="manual-bootstrap"></a>Bootstrap Manually
 
 If the bootstrap errand is not able to automatically recover the cluster,
-you might need to do the steps manually.
+you need to do the steps manually.
 
 Do the procedures in the sections below to manually bootstrap your cluster.
 
@@ -377,7 +377,8 @@ Do the procedures in the sections below to manually bootstrap your cluster.
 
 ### <a id="shut-down"></a>Shut Down MySQL
 
-Do the following for each node in the cluster:
+Follow these steps to stop the galera-init process for each node in the cluster.
+For each node, record if the monit stop command was successful:
 
 1. SSH into the node using the procedure in
    [BOSH SSH](https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#bosh-ssh).
@@ -388,23 +389,24 @@ Do the following for each node in the cluster:
     monit stop galera-init
     ```
 
-3. Repeat steps 1 and 2 above for each node in the cluster.
-
-    You cannot re-bootstrap the cluster unless you have shut down the `mysqld` process
-    on all nodes in the cluster.
-
-1. If monit succeeds in stopping `galera-init`,
-   then you can do a monit restart for this node.
-   Follow all the steps below except the ones marked **Manual Redeploy**.
-
-1. If monit exits with the following error:
+1. Record if the monit command succeeds or exits with the error:
+  + If monit succeeds in stopping `galera-init`,
+   then you will do a monit restart for this node.
+   Follow the steps below including the steps marked **Monit Restart**
+   but omitting the steps marked **Manual Redeploy**.<br><br>
+  + If monit exits with the following error, then you will do a manual redeploy for this node:
     ```
     Warning: include files not found '/var/vcap/monit/job/*.monitrc'
     monit: action failed -- There is no service by that name
     ```
-    then you need to do the manual redeployment for this node.
-    Follow all the steps below except the ones marked **Monit Restart**.
+    Follow all the steps below including the steps marked **Manual Redeploy**
+    but omitting the steps marked **Monit Restart**.
 
+
+3. Repeat the steps above for each node in the cluster.
+
+    You cannot re-bootstrap the cluster unless you have shut down the `mysqld` process
+    on all nodes in the cluster.
 
 ### <a id="choose-node"></a> Choose Node to Bootstrap
 
@@ -521,7 +523,7 @@ to bootstrap the node:
 
     <pre><code>echo -n "NEEDS_BOOTSTRAP" > /var/vcap/store/pxc-mysql/state.txt</code></pre>
 
-1. **Monit Restart:** If above in "Shut Down MySQL" you successfully used `monit` to shut down your
+1. **Monit Restart:** If in [Shut Down MySQL](#shut-down) above you successfully used `monit` to shut down your
 galera-init process, then re-launch the <code>mysqld</code> process on the new bootstrap node.
 
   1. Run the following command:
@@ -535,7 +537,7 @@ galera-init process, then re-launch the <code>mysqld</code> process on the new b
 
         <pre><code>watch monit summary</code></pre>
 
-1. **Manual Redeploy:** If above in "Shut Down Mysql" you encountered monit errors, then re-deploy the <code>mysqld</code>
+1. **Manual Redeploy:** If in [Shut Down MySQL](#shut-down) above you encountered monit errors, then redeploy the <code>mysqld</code>
 software to your bootstrap node by performing the following:
 
   1. Leave the MySQL SSH login shell and return to your local environment.
@@ -550,7 +552,7 @@ software to your bootstrap node by performing the following:
   
         <pre>bosh update-resurrection off</pre>
 
-  1. To use the bosh manifest to bootstrap your bootstrap machine, run the following commands:
+  1. To use the BOSH manifest to bootstrap your bootstrap machine, run the following commands:
     <pre><code>bosh -e YOUR-ENV -d YOUR-DEPLOYMENT manifest > /tmp/manifest.yml
     bosh -e YOUR-ENV -d YOUR-DEPLOYMENT deploy /tmp/manifest.yml</code></pre>
 
@@ -627,7 +629,7 @@ the highest `sequence_number` is `mysql/0`. <br><br>
     <pre>bosh -e YOUR-ENV -d YOUR-DEPLOYMENT unignore mysql/<non-bootstrap-node#1-of-2>
     bosh -e YOUR-ENV -d YOUR-DEPLOYMENT unignore mysql/<non-bootstrap-node#2-of-2></pre>
     
-  1. To re-deploy software to the other two nodes and have them rejoin the cluster bootstrapped from the above node,
+  1. To redeploy software to the other two nodes and have them rejoin the cluster bootstrapped from the above node,
     run the following command:
  
     ```
