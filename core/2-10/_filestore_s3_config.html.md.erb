@@ -8,11 +8,6 @@ To use an external S3-compatible filestore for <%= vars.app_runtime_abbr %> file
 1. If you use an AWS instance profile to manage role information for your filestore,
 enable the **S3 AWS with instance profile** checkbox. For more information, see
 [AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html) in the AWS documentation.
-<br>
-  <%= image_tag("images/external-s3-filestore-instance-profile.png", alt: "At the top
-  of the image is an enabled checkbox labeled 'S3 AWS with instance profile'. Below this
-  checkbox are two fields labeled 'Access key' and 'Secret key'. The 'Secret key' field
-  contains the ghost text 'Secret'.", :width => "300") %>
 
 <% if aws == true %>
 1. (Optional) If your <%= vars.app_runtime_abbr %> deployment is on AWS, you can alternatively
@@ -89,17 +84,10 @@ on the AWS News Blog.
     use mirroring as an alternative to versioning.
     * For unversioned S3 buckets, disable the **Use versioning for backup and restore**
     checkbox, and enter a backup bucket name for each active bucket. The backup bucket name
-    must be different from the name of the active bucket it backs up.
-      <br>
-      <%= image_tag("images/backup-buckets.png", alt: "At the top of the image is a disabled
-      checkbox labeled 'Use versioning for backup and restore'. Below this checkbox are four
-      fields labeled, from top to bottom: 'Backup region', 'Backup buildpacks bucket name',
-      'Backup droplets bucket name', and 'Backup packages bucket name'. The 'Backup region'
-      field contains the ghost text 'us-east-1'.", :width => "300") %>
-      <br>
-      For more information about setting up external S3 blobstores, see [Enable Versioning
-      on Your S3-Compatible Blobstore](https://docs.cloudfoundry.org/bbr/external-blobstores.html#enable-s3-versioning)
-      in _Backup and Restore for External Blobstores_ in the Cloud Foundry documentation.
+    must be different from the name of the active bucket it backs up. For more information
+    about setting up external S3 blobstores, see [Enable Versioning on Your S3-Compatible
+    Blobstore](https://docs.cloudfoundry.org/bbr/external-blobstores.html#enable-s3-versioning)
+    in _Backup and Restore for External Blobstores_ in the Cloud Foundry documentation.
 
 1. Enter the name of the region in which your backup S3 buckets are located. For example,
 `us-west-2`. These are the buckets used to back up and restore the contents of your S3
