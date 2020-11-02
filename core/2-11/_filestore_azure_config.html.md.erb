@@ -2,19 +2,6 @@ To use external Azure file storage for your <%= vars.app_runtime_abbr %> filesto
 
 1. Select **External Azure storage**.
 
-    <%= image_tag("azure/file_storage_azure.png", alt: "At the top of the image is the text
-    'Configure your Cloud Controller's filesystem:', with a red asterisk to denote that it
-    is a required configuration. Below this text are five radio buttons: four buttons labeled
-    'Internal WebDAV', 'External S3-compatible file store', 'External Google Cloud Storage
-    with access key and secret key', and 'External Google Cloud Storage with service account';
-    and one selected radio button labeled 'External Azure Storage'. Below the selected radio
-    button are seven fields with red asterisks labeled, from top to bottom: 'Account name',
-    'Access key', 'Environment', 'Buildpacks container name', 'Droplets container name',
-    'Packages container name', and 'Resources container name'. The 'Environment' field contains
-    the text 'AzureCloud'. Next is a disabled checkbox labeled 'Enable backup and restore'.
-    Next are two fields labeled, from top to bottom, 'Restore from storage account' and
-    'Restore using access key'.", :width => "400") %>
-
 1. To create a new storage account for the <%= vars.app_runtime_abbr %> filestore:
   1. Navigate to the Azure Portal.
   1. Select the **Storage accounts** tab.

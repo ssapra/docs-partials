@@ -14,14 +14,6 @@ Account](#manual-storage-account) below.
 To configure file storage for GCP using an access key and secret key:
 
 1. Select **External Google Cloud Storage with access key and secret key**.
-  <%= image_tag("gcp/gcp-filestore-gcs-access-key.png", alt: "At the top of the image is
-  the text 'Configure your Cloud Controller's filesystem:', with a red asterisk to denote
-  that it is a required configuration. Below this text are three radio buttons: two buttons
-  labeled 'Internal WebDAV' and 'External S3-compatible file store', and one selected radio
-  button labeled 'External Google Cloud Storage with access key and secret key'. Below the
-  selected radio button are six fields with red asterisks labeled, from top to bottom: 'Access
-  key', 'Secret key', 'Buildpacks bucket name', Droplets bucket name', 'Packages bucket name',
-  and 'Resources bucket name'.", :width => "400") %>
 
 1. Enter values for **Access key** and **Secret key**. To obtain the values for these fields:
   1. In the GCP Console, navigate to the **Storage** tab.
@@ -31,7 +23,6 @@ To configure file storage for GCP using an access key and secret key:
   already enabled, confirm that the default project matches the project where you are
   installing <%= vars.app_runtime_abbr %>.
   1. Click **Create a new key**.
-    <%= image_tag("gcp/gcp-key-secret-create.png") %>
   1. Copy and paste the generated values into the corresponding <%= vars.app_runtime_abbr %>
   fields. <%= vars.app_runtime_abbr %> uses these values for authentication when connecting
   to Google Cloud Storage.
@@ -61,17 +52,6 @@ To configure file storage for GCP using a service account:
   Admin</strong> role.</p>
 
 1. Select **External Google Cloud Storage with service account**.
-  <%= image_tag("gcp/gcp-filestore-gcs-service-account.png", alt: "At the top of the image
-  is the text 'Configure your Cloud Controller's filesystem:', with a red asterisk to denote
-  that it is a required configuration. Below this text are four radio buttons: three buttons
-  labeled 'Internal WebDAV', 'External S3-compatible file store', and 'External Google Cloud
-  Storage with access key and secret key'; and one selected radio button labeled 'External
-  Google Cloud Storage with service account'. Below the selected radio button are two fields
-  with red asterisks labeled, from top to bottom: 'GCP project ID' and 'GCP service account
-  email'. Next is a text area with a red asterisk labeled 'GCP service account key JSON'.
-  Next are five fields with red asterisks labeled, from top to bottom: 'Buildpacks bucket
-  name', 'Droplets bucket name', 'Packages bucket name', 'Resources bucket name', and' Backup
-  bucket name'.", :width => "400") %>
 
 1. For **GCP project ID**, enter the Project ID on your GCP Console that you want to use for
 your <%= vars.app_runtime_abbr %> file storage.
