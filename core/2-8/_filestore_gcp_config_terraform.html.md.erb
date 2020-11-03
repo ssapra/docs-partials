@@ -28,8 +28,8 @@ To configure file storage for GCP using an access key and secret key:
   to Google Cloud Storage.
 
 1. Enter the names of the storage buckets you created in [GCP Service Account Key for Blobstore]
-(https://docs.pivotal.io/ops-manager/2-10/gcp/prepare-env-terraform.html#gcs) in _Deploying
-<%= vars.ops_manager %> on GCP Using Terraform_:
+(https://docs.pivotal.io/ops-manager/<%= vars.current_major_version.sub('.','-') %>/gcp/prepare-env-terraform.html#gcs)
+in _Deploying <%= vars.ops_manager %> on GCP Using Terraform_:
   * **Buildpacks bucket name:** Enter the value of `buildpacks_bucket` from your Terraform
   output.
   * **Droplets bucket name:** Enter the value of `droplets_bucket` from your Terraform
