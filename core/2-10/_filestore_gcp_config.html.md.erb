@@ -28,8 +28,7 @@ To configure file storage for GCP using an access key and secret key:
   to Google Cloud Storage.
 
 1. Enter the names of the storage buckets you created in [Step 6: Create Database Instance
-and Databases](https://docs.pivotal.io/ops-manager/2-10/gcp/prepare-env-manual.html#dbs) in
-_Preparing to Deploy <%= vars.ops_manager %> on GCP Manually_:
+and Databases](https://docs.pivotal.io/ops-manager/<%= vars.current_major_version.sub('.','-') %>/gcp/prepare-env-manual.html#dbs) in _Preparing to Deploy <%= vars.ops_manager %> on GCP Manually_:
   * **Buildpacks bucket name:** `PREFIX-<%= vars.platform_code %>-buildpacks`
   * **Droplets bucket name:** `PREFIX-<%= vars.platform_code %>-droplets`
   * **Resources bucket name:** `PREFIX-<%= vars.platform_code %>-resources`
