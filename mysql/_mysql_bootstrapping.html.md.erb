@@ -195,9 +195,6 @@ To recreate your missing VMs, do the following:
 
 <!-- node or bosh vm -->
 
-1. SSH into the BOSH VMs using the procedure in
-   [BOSH SSH](https://docs.pivotal.io/pivotalcf/customizing/trouble-advanced.html#bosh-ssh).
-
 1. If BOSH Resurrector is enabled, disable it by running the following command:
 
     ```
@@ -538,6 +535,9 @@ galera-init process, then re-launch the <code>mysqld</code> process on the new b
     run the following command:
 
         <pre><code>watch monit summary</code></pre>
+
+        If monit succeeds in starting the galera-init process,
+    then the output includes the line `Process 'galera-init' running`.
 
 1. **Manual Redeploy:** If in [Shut Down MySQL](#shut-down) above you encountered monit errors, then redeploy the <code>mysqld</code>
 software to your bootstrap node by performing the following:
