@@ -381,10 +381,10 @@ For each node, record if the `monit stop` command was successful:
     ```
 
 1. Record if the monit command succeeds or exits with an error:
-    + If monit succeeds in stopping `galera-init`, then you can use `monit` to restart this node.
+    + **If monit succeeds in stopping `galera-init`,** then you can use monit to restart this node.
      Follow all the steps below including the steps marked **Monit Restart**
      but omitting the steps marked **Manual Redeploy**.<br><br>
-    + If monit exits with the following error, then you must manually deploy this node:
+    + **If monit exits with the following error,** then you must manually deploy this node:
 
         <pre class="terminal">
         Warning: include files not found '/var/vcap/monit/job/*.monitrc'
@@ -539,7 +539,7 @@ then redeploy the <code>mysqld</code> software to your bootstrap node as follows
 
   1. Leave the MySQL SSH login shell and return to your local environment.
 
-  1. Target BOSH on your bootstrap node by telling it to ignore the other nodes in your cluster.
+  1. Target BOSH on your bootstrap node by instructing it to ignore the other nodes in your cluster.
   For nodes all nodes except the bootstrap node you identified above, run:
 
         <pre><code>bosh -e YOUR-ENV -d YOUR-DEPLOYMENT ignore mysql/M
