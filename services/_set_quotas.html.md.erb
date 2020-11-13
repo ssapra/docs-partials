@@ -229,7 +229,7 @@ selected for the server VMs, as well as the quota for this plan.
 The quota is shown in the **Maximum service instances** field.
 <% end %>
 
-<%# Tabbed table to display image for MySQL, otherwise display image plainly. %>
+<%# Tabbed table to display image for MySQL, otherwise display image plainly with different alt text for each service. %>
 <% if current_page.data.galera %>
 Click the tabs below to show an example of each plan:
 
@@ -315,11 +315,26 @@ function openDocs(evt, docsName) {
 </div>
 
 
-<% else %>
+<% elsif product_short.include?("Cloud Cache") || product_short.include?("Gemfire") %>
+
+<%= image_tag("../images/plan-resources.png",
+:alt => "Screenshot of an example plan quota configuration showing the maximum service instances
+field set to 15, VM type for the locator VMs set to micro.cpu, persistent disk type for the locator VMs set to 10 GB,
+VM type for the server VMs set to micro, and persistent disk type for server VMs set to 20 GB",
+:width => "400") %>
+
+<% elsif product_short.include?("RabbitMQ")%>
 
 <%= image_tag("../images/plan-resources.png",
 :alt => "Screenshot of an example plan quota configuration showing the plan quota
-field set to 15, VM type set to micro, and persistent disk set to 20 GB",
+field set to 15, RabbitMQ VM type set to micro, and Persistent disk type set to 20 GB",
+:width => "400") %>
+
+<% elsif product_short.include?("Redis")%>
+
+<%= image_tag("../images/plan-resources.png",
+:alt => "Screenshot of an example plan quota configuration showing the plan quota
+field set to 15, server VM type set to micro, and server disk type set to 20 GB",
 :width => "400") %>
 
 <% end %>
