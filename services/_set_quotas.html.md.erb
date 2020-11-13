@@ -303,17 +303,23 @@ function openDocs(evt, docsName) {
 
 
 <div id="tab1" class="tabcontent" style="display:block">
-  <img src="./images/sn-lf-plan.png"><%# Images require alt text that describes the image in detail. %>
+  <img src="./images/sn-lf-plan.png"
+	alt="Screenshot of an example plan quota configuration showing the plan quota
+	field set to 15, VM type set to micro, and persistent disk type set to 20 GB">
 </div>
 <div id="tab2" class="tabcontent">
-  <img src="./images/galera-plan.png"><%# Images require alt text that describes the image in detail. %>
+  <img src="./images/galera-plan.png"
+	alt="Screenshot of an example plan quota configuration showing the plan quota
+	field set to 15, MySQL VM type set to micro, Jumpbox VM type set to micro,
+	MySQL persistent disk set to 20 GB, and Jumpbox persistent disk set to 20 GB">
 </div>
 
 
 <% else %>
 
 <%= image_tag("../images/plan-resources.png",
-:alt => "Screenshot of an example plan quota configuration showing the plan quota field set to 15 instances, VM type set to micro, and persistent disk type set to 20 GB",
+:alt => "Screenshot of an example plan quota configuration showing the plan quota
+field set to 15, VM type set to micro, and persistent disk set to 20 GB",
 :width => "400") %>
 
 <% end %>

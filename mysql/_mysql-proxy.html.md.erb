@@ -11,7 +11,11 @@ availability cluster for MySQL databases in <%= vars.product_short %>.
 
 <% if current_page.data.tile %>
 
-<%= image_tag "switchboard-all-healthy.png" %><%# Images require alt text that describes the image in detail. %>
+<%= image_tag "switchboard-all-healthy.png",
+:alt => "Screenshot of the Switchboard dashboard.
+At the top, there is a banner with the message 'all nodes are healthy'.
+Below this is a table with the headings nodes, status, current sessions, and IP address.
+For each node in the table, the status column is marked healthy." %>
 
 <%end%>
 
