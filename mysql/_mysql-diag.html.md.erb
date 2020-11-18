@@ -68,7 +68,8 @@ Here is a sample `mysql-diag` output after the tool identified a healthy HA clus
 :alt => "Screenshot of terminal output after running mysql-diag.
 The output contains the date on the first line.
 The following line checks the canary status, which is healthy.
-The following lines check the cluster status of six service instances and the final three are marked with 'done'.
+The following lines check the cluster status of the three service instances and stops when
+the three are marked with 'done'.
 The following lines contain a table with the headings Host, Name/UUID, WSREP Local State,
 WSREP Cluster Status, and WSREP Cluster Size.
 The table has three rows.
@@ -76,7 +77,7 @@ In each row, the value for WSREP Local State is 'Synced'.
 In each row, the value for WSREP Cluster Status is 'Primary'.
 In each row, the value for WSREP Cluster Size is '3'.
 The following lines check the disk status of the six services instances and the final three are marked with 'done'.
-The final lines contain a table with the headings host, name/UUID, persistent disk used, and ephemeral disc used.") %>
+The final lines contain a table with the headings host, name/UUID, persistent disk used, and ephemeral disk used.") %>
 <a href="images/mysql-diag-healthy-screen-shot.png" target="_blank">View a larger version of this image.</a>
 
 
@@ -94,15 +95,17 @@ Below is a sample `mysql-diag` output after the tool identified an unhealthy HA 
 :alt => "Screenshot of terminal output after running mysql-diag.
 The output contains the date on the first line.
 The following line checks the canary status, which is healthy.
-The following lines check the cluster status of six service instances and the final
-three are marked with 'connection refused'.
+The following lines check the cluster status of three service instances and the final
+state of three is 'connection refused'.
 The following lines contain a table with the headings Host, Name/UUID, WSREP Local State,
 WSREP Cluster Status, and WSREP Cluster Size.
 The table has three rows.
 In each row, the value for WSREP Local State, WSREP Cluster Status, and WSREP
 Cluster Size are 'N/A - Error'.
-The following lines check the disk status of the six services instances and the final three are marked with 'done'.
-The following lines contain a table with the headings host, name/UUID, persistent disk used, and ephemeral disc used.
+The following lines check the disk status of the three services instances. There are six lines.
+Each service instance is checked twice.
+The final three lines are marked with 'done'.
+The following lines contain a table with the headings host, name/UUID, persistent disk used, and ephemeral disk used.
 The output ends with messages marked as 'Critical' containing instructions for
 what you should and should not do to resolve the issues.") %>
 <a href="images/mysql-diag-unhealthy-screen-shot.png" target="_blank">View a larger version of this image.</a>
