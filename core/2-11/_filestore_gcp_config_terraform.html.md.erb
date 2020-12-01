@@ -34,9 +34,9 @@ To configure file storage for GCP using an access key and secret key:
   output.
   * **Droplets bucket name:** Enter the value of `droplets_bucket` from your Terraform
   output.
-  * **Resources bucket name:** Enter the value of `packages_bucket` from your Terraform
-  output.
   * **Packages bucket name:** Enter the value of `resources_bucket` from your Terraform
+  output.
+  * **Resources bucket name:** Enter the value of `packages_bucket` from your Terraform
   output.
 
 1. Click **Save**.
@@ -48,9 +48,9 @@ To configure file storage for GCP using a service account:
 <p class='note'><strong>Note:</strong> You can either use the same service account that you
   created for <%= vars.ops_manager %>, or create a separate service account for <%= vars.app_runtime_abbr %>
   file storage. To create a separate service account for <%= vars.app_runtime_abbr %> file
-  storage, follow the procedure in <a href="https://docs.pivotal.io/ops-manager/2-10/gcp/prepare-env-manual.html#iam_account">Step 1: Set Up IAM Service Accounts</a> in <em>Preparing to Deploy
-  <%= vars.ops_manager %> on GCP Manually</em>, but only select the <strong>Storage > Storage
-  Admin</strong> role.</p>
+  storage, follow the procedure in <a href="https://docs.pivotal.io/ops-manager/2-10/gcp/prepare-env-manual.html#iam_account">
+  Step 1: Set Up IAM Service Accounts</a> in <em>Preparing to Deploy <%= vars.ops_manager %>
+  on GCP Manually</em>, but only select the <strong>Storage > Storage Admin</strong> role.</p>
 
 1. Select **External Google Cloud Storage with service account**.
 
@@ -59,7 +59,7 @@ your <%= vars.app_runtime_abbr %> file storage.
 
 1. For **GCP service account email**, enter the email address associated with your GCP account.
 
-1. For **GCP service account JSON**, enter the account key that you use to access the specified
+1. For **GCP service account key JSON**, enter the account key that you use to access the specified
 GCP project, in JSON format.
 
 1. Enter the names of the storage buckets you created in [GCP Service Account Key for Blobstore]
@@ -69,9 +69,9 @@ GCP project, in JSON format.
   output.
   * **Droplets bucket name:** Enter the value of `droplets_bucket` from your Terraform
   output.
-  * **Resources bucket name:** Enter the value of `packages_bucket` from your Terraform
-  output.
   * **Packages bucket name:** Enter the value of `resources_bucket` from your Terraform
+  output.
+  * **Resources bucket name:** Enter the value of `packages_bucket` from your Terraform
   output.
   * **Backup bucket name:** Enter the value of `backup_bucket` from your Terraform output.
 
