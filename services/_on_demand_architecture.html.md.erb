@@ -37,17 +37,23 @@ Logic is included to append '-vmware' to the filename if rebranded to VMware.
 %>
 <% if vars.product_short.include?("On-Demand Services SDK") or vars.product_short.include?("GemFire") or vars.product_short.include?("Cloud Cache") %>
 
-<img src="<%= vars.path_to_partials %>/images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png" alt="Diagram shows a Default Network and
-Services Network. The Default Network shows the Cloud Controller, communicatinng to the On-Demand Broker, which communicates using cf create-service to the BOSH Director, 
-which communicates to the On-Demand Instances for CF Space, which has several Worker VMs.">
+<img src="<%= vars.path_to_partials %>/images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png"
+alt="Diagram shows the Default Network and the Services Network.
+The Default Network shows the Cloud Controller, communicating with the On-Demand Broker,
+which communicates with the BOSH Director when the user runs the cf create-service command.
+The BOSH Director then adds an on-demand instance to the Services network.
+The instances have been created in separate spaces and have several worker VMs.">
 
 <a href="<%= vars.path_to_partials %>/images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png" target="_blank">View a larger version of this image</a>
 
 <% else %>
 
-<img src="./images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png" alt="Diagram shows a Default Network and
-Services Network. The Default Network shows the Cloud Controller, communicatinng to the On-Demand Broker, which communicates using cf create-service to the BOSH Director, 
-which communicates to the On-Demand Instances for CF Space, which has several Worker VMs.">
+<img src="./images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png"
+alt="Diagram shows the Default Network and the Services Network.
+The Default Network shows the Cloud Controller, communicating with the On-Demand Broker,
+which communicates with the BOSH Director when the user runs the cf create-service command.
+The BOSH Director then adds an on-demand instance to the Services network.
+The instances have been created in separate spaces and have several worker VMs.">
 
 <a href="./images/odb-architecture<%= vars.book_title.include?('VMware') ? '-vmware' : ''  %>.png" target="_blank">View a larger version of this image</a>
 
