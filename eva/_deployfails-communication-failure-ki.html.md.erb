@@ -1,9 +1,9 @@
 * If you have VMware Tanzu™ SQL with MySQL for VMs (Tanzu SQL for VMs) v2.10 installed
 and **TLS Options** is set to any value other than **Not Configured**
-in the **Security** pane of the Tanzu SQL for VMs tile, the **Deploy <%= vars.product_full %>** errand
-fails with an error similar to the following example:
+in the **Security** pane of the Tanzu SQL for VMs tile,
+then the **Deploy <%= vars.product_full %>** errand fails with an error similar to the following example:
 
-    ```
+    <pre class="terminal">
     ERROR:
     Unable to obtain connection from database (jdbc://example.com) for user 'migrations_user': Communications link failure
 
@@ -14,6 +14,6 @@ fails with an error similar to the following example:
     Message    : Communications link failure
 
     The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
-    ```
-    To solve this issue, follow the procedure in
+    </pre>
+    To resolve this issue, see
     [Deploy <%= vars.product_short %> Errand Fails Due to Communications Link Failure](./troubleshooting.html#errand-communication-failure).
