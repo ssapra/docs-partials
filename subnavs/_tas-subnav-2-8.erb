@@ -172,6 +172,15 @@
               <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/start-stop-vms.html">Stopping and Starting Virtual Machines</a>
             </li>
             <li class="">
+              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/scaling-ert-components.html">Scaling <%= vars.app_runtime_abbr %></a>
+            </li>
+            <li class="">
+              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/scaling-cloud-controller.html">Scaling Cloud Controller</a>
+            </li>
+            <li class="">
+              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/config-cell-cleanup.html">Configuring Diego Cell Disk Cleanup Scheduling</a>
+            </li>
+            <li class="">
               <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/adminguide/examining_grootfs_disk.html">Examining GrootFS Disk Usage</a>
             </li>
             <li class="">
@@ -250,6 +259,29 @@
         </li>
         <li class="">
           <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/pw-policy.html">Configuring UAA Password Policy</a>
+        </li>
+        <li class="has_submenu">
+        <span role="button"><strong>UAA</strong></span>
+          <ul>
+            <li class="">
+              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/index.html">User Account and Authentication</a>
+            </li>
+            <li class="">
+              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/uaa-overview.html">UAA Overview</a>
+            </li>
+            <li class="">
+              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/uaa-concepts.html">UAA Concepts</a>
+            </li>
+            <li class="">
+              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/identity-providers.html">Identity Providers in UAA</a>
+            </li>
+            <li class="">
+              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/uaa/uaa-metrics.html">UAA Performance Metrics</a>
+            </li>
+          </ul>
+        </li>
+        <li class="">
+          <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/external-user-management.html">Adding Existing SAML or LDAP Users to a <%= vars.platform_name %> Deployment</a>
         </li>
         <li class="">
           <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/notifications-asg.html">Configuring App Security Groups for Email Notifications</a>
@@ -619,7 +651,10 @@
           <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/cf-cli/develop-cli-plugins.html">Developing cf CLI Plugins</a>
         </li>
         <li class="">
-          <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/cf-cli/cf-help.html">Cloud Foundry CLI Reference Guide</a>
+          <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/cf-cli/cf-help.html">cf CLI v6 Reference Guide</a>
+        </li>
+        <li class="">
+          <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/cf-cli/cf7-help.html">cf CLI v7 Reference Guide</a>
         </li>
         <li class="">
           <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/v3-commands.html">Using Experimental cf CLI Commands</a>
@@ -636,7 +671,7 @@
           <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/deploy-apps/prepare-to-deploy.html">Considerations for Designing and Running an App in the Cloud</a>
         </li>
         <li class="">
-          <a href="https://docs.pivotal.io/pcf-dev/index.html"><strong><%= vars.platform_name %> Dev</strong></a>
+          <a href="https://docs.pivotal.io/pcf-dev/index.html"><strong>Pivotal Dev</strong></a>
         </li>
         <li class="has_submenu">
         <span role="button"><strong>cf push</strong></span>
@@ -727,6 +762,9 @@
             </li>
             <li class="">
               <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/service-keys.html">Managing Service Keys</a>
+            </li>
+            <li class="">
+              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/route-binding.html">Managing App Requests with Route Services</a>
             </li>
             <li class="">
               <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/devguide/services/play-service-bindings.html">Configuring Play Framework Service Connections</a>
