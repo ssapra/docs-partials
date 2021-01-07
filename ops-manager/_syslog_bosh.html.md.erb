@@ -1,7 +1,10 @@
 1. Select **Syslog**.
 
 	<% if vars.product_short.include?("Redis") %>
-    ![The Syslog configuration page in the Redis for PCF tile in Ops Manager.](syslog-forwarding.png)
+    ![The Syslog configuration page in the Redis for PCF tile in Ops Manager.
+		See below for information about configuring this pane.](syslog-forwarding.png)
+		<a href="./images/syslog-forwarding.png" target="_blank" aria-hidden="true">
+			Click here to view a larger version of this image</a>
 	<% end %>
 
 1. (Optional) Select **Yes** to send <%= syslog_context %> system logs to a remote server.
