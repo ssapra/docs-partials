@@ -1084,13 +1084,8 @@
     <li class="has_submenu">
     <span role="button"><strong>Security and Compliance</strong></span>
       <ul>
-        <li class="has_submenu">
-        <span role="button"><strong>Security Policy and Processes</strong></span>
-          <ul>
-            <li class="">
-              <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/security.html"><%= vars.app_runtime_abbr %> Security</a>
-            </li>
-          </ul>
+        <li class="">
+          <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/concepts/security.html"><%= vars.app_runtime_abbr %> Security</a>
         </li>
         <li class="">
           <a href="https://docs.pivotal.io/application-service/<%= product_info['local_product_version'].to_s.sub('.','-') %>/operating/gdpr.html">General Data Protection Regulation and <%= vars.app_runtime_full %></a>
