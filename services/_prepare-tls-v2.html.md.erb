@@ -64,6 +64,21 @@ Apps not written in Java and Spring can retrieve the public component of the CA 
 and use it to establish an encrypted connection with the data service.
 <% end %>
 
+<% if vars.product_full.include?("SQL") && product_info['local_product_version'] != "2.8" %>
+##<a id='required-or-optional'></a> TLS Required or Optional?
+
+You must enable TLS if you are using Multi-Site Replication. 
+
+Also, if you use HA cluster, you need to enable TLS to facilitate restoring data from backup.
+This is because to restore an HA cluster, you first create a Multi-Site Replication service instance.
+In turn, before you can create a a Multi-Site Replication service instance, you need TLS enabled.
+For information about restoring an HA cluster,
+see [Restore a Service Instance](backup-restore.html#restore) in _Backing Up and Restoring VMware Tanzu SQL with MySQL for VMs_.
+
+In production environments, VMware recommends enabling TLS as a security practice,
+regardless of the database topology.
+<% end %>
+
 ##<a id='two-sources-of-ca'></a> Generated or Provided CA Certificate
 
 Ops Manager can generate a CA certificate for TLS to use.
