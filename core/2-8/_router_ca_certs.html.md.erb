@@ -1,16 +1,7 @@
-(optional) Some newer versions of TAS have the field "Certificate Authorities trusted by the Gorouter for back ends and route services"
-followed by the field "Certificate Authorities trusted by the Gorouter for client requests". These fields allow the operator greater flexibility
-when configuring which CA certs Gorouter trusts for different interactions.
-
-  1. When validating requests using mutual TLS to back ends and route services, the Gorouter trusts multiple certificate
-  authorities (CAs) by default. An operator can add additional CAs for the Gorouter to trust for these situations in the
-  field "Certificate Authorities trusted by the Gorouter for back ends and route services".
-  1. For backwards compatibility with older versions before these properties were split, an operator can configure the
-  exact same CA certs to be trusted for clients requests as are trusted for back ends and route services. An operator
-  can do this by going to the **Certificate Authorities trusted by the Gorouter for client requests** property and
-  selecting **Trust certs provided in "Certificate Authorities trusted by the Gorouter for back ends and route services"**
-  1. If an operator wants Gorouter to trust only a particular set of CAs for client requests, then the operator can
-  go to the **Certificate Authorities trusted by the Gorouter for client requests** property and select
-  **Only trust the following Certificate Authorities**. Then a text box will appear and the operator can enter the CAs.
-  When this option is selected Gorouter will only trust the provided CAs for client requests. It will not trust any
-  well known CAs provided with the stemcell.
+(Optional) When validating requests using mutual TLS to back ends and route services, the Gorouter trusts multiple CAs by default. You can use the following fields to configure which CA certificates Gorouter trusts:
+  - For backwards compatibility with older versions of <%= vars.segment_runtime_full %>:
+      1. Under **Certificate Authorities trusted by the Gorouter for client requests**, select **Trust certs provided in "Certificate Authorities trusted by the Gorouter for back ends and route services"**.
+  - If you want the Gorouter to trust a particular set of CAs only:
+      1. Under **Certificate Authorities trusted by the Gorouter for client requests**, select **Only trust the following Certificate Authorities**.
+      1. Enter the CAs in the field that appears.
+      When this option is selected, the Gorouter only trusts the provided CAs for client requests. It does not trust any well-known CAs that are provided with the stemcell.
