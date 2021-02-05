@@ -11,8 +11,7 @@ To configure the **Networking** pane:
 	<p class="note"><strong>Note:</strong> If you rely on HAProxy for a feature in <%= vars.app_runtime_abbr %> and you want isolated networking for this isolation segment, you may want to deploy the HAProxy provided by the <%= vars.segment_runtime_full %> tile.</p>
 
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/haproxy_router_cert_config" %>
-1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_ca_certs_old" %>
-1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_ca_certs_new" %>
+1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_haproxy_ca" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/min_tls_version" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/router_balancing_algorithm" %>
 1. <%= partial "/pcf/core/#{vars.current_major_version.sub('.', '-')}/ip_logging" %>
