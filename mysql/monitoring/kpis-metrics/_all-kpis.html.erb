@@ -57,7 +57,12 @@
        </ul>
          DESC
 
-         response: 'Upgrade the service instance to a plan with larger disk capacity.',
+         response: 'Upgrade the service instance to a plan with larger disk capacity.<br><br>
+                    For Tanzu SQL for VMs v2.9 and later,
+                       if you set the <code>optimize_for_short_words</code> parameter to <code>true</code>,
+                       then see <a href="https://docs.pivotal.io/p-mysql/troubleshoot-instances.html#disk-usage-increases">Persistent
+                       Disk Usage Is Increasing</a> before upgrading the service.</strong>
+                    ',
          id:'persistent-used',
          header: 'Persistent Disk Used'
       },
