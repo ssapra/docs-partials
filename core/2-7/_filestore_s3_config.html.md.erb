@@ -5,10 +5,8 @@ To use an external S3-compatible filestore for <%= vars.app_runtime_abbr %> file
 1. For **URL endpoint**, enter the `https://` URL endpoint for your region. For example,
 `https://s3.us-west-2.amazonaws.com/`.
 
-1. If you use an AWS instance profile to manage role information for your filestore, enable
-the **S3 AWS with instance profile** checkbox. For more information, see [AWS Identity and
-Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html)
-in the AWS documentation.
+1. Enter the **Access key** and **Secret key** of the `<%= vars.product_name_lc %>-user` you
+created when configuring AWS for <%= vars.platform_name %>.
 
 <% if aws == true %>
 1. (Optional) If your <%= vars.app_runtime_abbr %> deployment is on AWS, you can alternatively
