@@ -1,7 +1,7 @@
 <%= partial vars.path_to_partials + '/mysql/monitoring/kpis', locals: {
     kpis: [
     {
-      metric: '/p.mysql/last_successful_backup',
+      metric: 'last_successful_backup',
       description: <<~DESC,
         Using the configured backup schedule for the service instance as a threshold, this metric shows how many hours have passed since the last successful backup.
     DESC
